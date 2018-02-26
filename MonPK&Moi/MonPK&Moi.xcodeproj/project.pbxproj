@@ -14,6 +14,10 @@
 		AA1AC66820444E6F00F85FD3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AA1AC66720444E6F00F85FD3 /* Assets.xcassets */; };
 		AA1AC66B20444E6F00F85FD3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AA1AC66920444E6F00F85FD3 /* LaunchScreen.storyboard */; };
 		AA1AC67620444E6F00F85FD3 /* MonPK_MoiTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA1AC67520444E6F00F85FD3 /* MonPK_MoiTests.swift */; };
+		AAE38F9620447D430015C5E4 /* medical-drug-pill.png in Resources */ = {isa = PBXBuildFile; fileRef = AAE38F9520447D420015C5E4 /* medical-drug-pill.png */; };
+		AAE38F9A20447D9D0015C5E4 /* information.png in Resources */ = {isa = PBXBuildFile; fileRef = AAE38F9720447D9C0015C5E4 /* information.png */; };
+		AAE38F9B20447D9D0015C5E4 /* running.png in Resources */ = {isa = PBXBuildFile; fileRef = AAE38F9820447D9D0015C5E4 /* running.png */; };
+		AAE38F9C20447D9D0015C5E4 /* clock.png in Resources */ = {isa = PBXBuildFile; fileRef = AAE38F9920447D9D0015C5E4 /* clock.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +42,10 @@
 		AA1AC67120444E6F00F85FD3 /* MonPK&MoiTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "MonPK&MoiTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AA1AC67520444E6F00F85FD3 /* MonPK_MoiTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonPK_MoiTests.swift; sourceTree = "<group>"; };
 		AA1AC67720444E6F00F85FD3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AAE38F9520447D420015C5E4 /* medical-drug-pill.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "medical-drug-pill.png"; sourceTree = "<group>"; };
+		AAE38F9720447D9C0015C5E4 /* information.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = information.png; sourceTree = "<group>"; };
+		AAE38F9820447D9D0015C5E4 /* running.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = running.png; sourceTree = "<group>"; };
+		AAE38F9920447D9D0015C5E4 /* clock.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = clock.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +69,7 @@
 		AA1AC65120444E6E00F85FD3 = {
 			isa = PBXGroup;
 			children = (
+				AAE38F7C204471770015C5E4 /* Image */,
 				AA1AC65C20444E6F00F85FD3 /* MonPK&Moi */,
 				AA1AC67420444E6F00F85FD3 /* MonPK&MoiTests */,
 				AA1AC65B20444E6F00F85FD3 /* Products */,
@@ -97,6 +106,17 @@
 				AA1AC67720444E6F00F85FD3 /* Info.plist */,
 			);
 			path = "MonPK&MoiTests";
+			sourceTree = "<group>";
+		};
+		AAE38F7C204471770015C5E4 /* Image */ = {
+			isa = PBXGroup;
+			children = (
+				AAE38F9920447D9D0015C5E4 /* clock.png */,
+				AAE38F9720447D9C0015C5E4 /* information.png */,
+				AAE38F9820447D9D0015C5E4 /* running.png */,
+				AAE38F9520447D420015C5E4 /* medical-drug-pill.png */,
+			);
+			path = Image;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -182,8 +202,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AAE38F9A20447D9D0015C5E4 /* information.png in Resources */,
 				AA1AC66B20444E6F00F85FD3 /* LaunchScreen.storyboard in Resources */,
 				AA1AC66820444E6F00F85FD3 /* Assets.xcassets in Resources */,
+				AAE38F9B20447D9D0015C5E4 /* running.png in Resources */,
+				AAE38F9620447D430015C5E4 /* medical-drug-pill.png in Resources */,
+				AAE38F9C20447D9D0015C5E4 /* clock.png in Resources */,
 				AA1AC66320444E6F00F85FD3 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
