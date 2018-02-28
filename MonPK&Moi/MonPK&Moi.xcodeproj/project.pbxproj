@@ -3,60 +3,60 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 48;
+	objectVersion = 46;
 	objects = {
 
 /* Begin PBXBuildFile section */
-		AA1AC65E20444E6F00F85FD3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA1AC65D20444E6F00F85FD3 /* AppDelegate.swift */; };
-		AA1AC66020444E6F00F85FD3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA1AC65F20444E6F00F85FD3 /* ViewController.swift */; };
-		AA1AC66320444E6F00F85FD3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AA1AC66120444E6F00F85FD3 /* Main.storyboard */; };
-		AA1AC66620444E6F00F85FD3 /* MonPK_Moi.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = AA1AC66420444E6F00F85FD3 /* MonPK_Moi.xcdatamodeld */; };
-		AA1AC66820444E6F00F85FD3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AA1AC66720444E6F00F85FD3 /* Assets.xcassets */; };
-		AA1AC66B20444E6F00F85FD3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AA1AC66920444E6F00F85FD3 /* LaunchScreen.storyboard */; };
-		AA1AC67620444E6F00F85FD3 /* MonPK_MoiTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA1AC67520444E6F00F85FD3 /* MonPK_MoiTests.swift */; };
-		AAE38F9620447D430015C5E4 /* medical-drug-pill.png in Resources */ = {isa = PBXBuildFile; fileRef = AAE38F9520447D420015C5E4 /* medical-drug-pill.png */; };
-		AAE38F9A20447D9D0015C5E4 /* information.png in Resources */ = {isa = PBXBuildFile; fileRef = AAE38F9720447D9C0015C5E4 /* information.png */; };
-		AAE38F9B20447D9D0015C5E4 /* running.png in Resources */ = {isa = PBXBuildFile; fileRef = AAE38F9820447D9D0015C5E4 /* running.png */; };
-		AAE38F9C20447D9D0015C5E4 /* clock.png in Resources */ = {isa = PBXBuildFile; fileRef = AAE38F9920447D9D0015C5E4 /* clock.png */; };
+		AACCDBD820468EB6002112F7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AACCDBD720468EB6002112F7 /* AppDelegate.swift */; };
+		AACCDBDA20468EB6002112F7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AACCDBD920468EB6002112F7 /* ViewController.swift */; };
+		AACCDBDD20468EB6002112F7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AACCDBDB20468EB6002112F7 /* Main.storyboard */; };
+		AACCDBE020468EB6002112F7 /* MonPK_Moi.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = AACCDBDE20468EB6002112F7 /* MonPK_Moi.xcdatamodeld */; };
+		AACCDBE220468EB6002112F7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AACCDBE120468EB6002112F7 /* Assets.xcassets */; };
+		AACCDBE520468EB6002112F7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AACCDBE320468EB6002112F7 /* LaunchScreen.storyboard */; };
+		AACCDBF020468EB6002112F7 /* MonPK_MoiTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AACCDBEF20468EB6002112F7 /* MonPK_MoiTests.swift */; };
+		AACCDBFF20469122002112F7 /* clock.png in Resources */ = {isa = PBXBuildFile; fileRef = AACCDBFB20469122002112F7 /* clock.png */; };
+		AACCDC0020469122002112F7 /* information.png in Resources */ = {isa = PBXBuildFile; fileRef = AACCDBFC20469122002112F7 /* information.png */; };
+		AACCDC0120469122002112F7 /* medical-drug-pill.png in Resources */ = {isa = PBXBuildFile; fileRef = AACCDBFD20469122002112F7 /* medical-drug-pill.png */; };
+		AACCDC0220469122002112F7 /* running.png in Resources */ = {isa = PBXBuildFile; fileRef = AACCDBFE20469122002112F7 /* running.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		AA1AC67220444E6F00F85FD3 /* PBXContainerItemProxy */ = {
+		AACCDBEC20468EB6002112F7 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = AA1AC65220444E6E00F85FD3 /* Project object */;
+			containerPortal = AACCDBCC20468EB6002112F7 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = AA1AC65920444E6E00F85FD3;
+			remoteGlobalIDString = AACCDBD320468EB6002112F7;
 			remoteInfo = "MonPK&Moi";
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		AA1AC65A20444E6F00F85FD3 /* MonPK&Moi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "MonPK&Moi.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		AA1AC65D20444E6F00F85FD3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		AA1AC65F20444E6F00F85FD3 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		AA1AC66220444E6F00F85FD3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		AA1AC66520444E6F00F85FD3 /* MonPK_Moi.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MonPK_Moi.xcdatamodel; sourceTree = "<group>"; };
-		AA1AC66720444E6F00F85FD3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		AA1AC66A20444E6F00F85FD3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		AA1AC66C20444E6F00F85FD3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		AA1AC67120444E6F00F85FD3 /* MonPK&MoiTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "MonPK&MoiTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		AA1AC67520444E6F00F85FD3 /* MonPK_MoiTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonPK_MoiTests.swift; sourceTree = "<group>"; };
-		AA1AC67720444E6F00F85FD3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		AAE38F9520447D420015C5E4 /* medical-drug-pill.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "medical-drug-pill.png"; sourceTree = "<group>"; };
-		AAE38F9720447D9C0015C5E4 /* information.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = information.png; sourceTree = "<group>"; };
-		AAE38F9820447D9D0015C5E4 /* running.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = running.png; sourceTree = "<group>"; };
-		AAE38F9920447D9D0015C5E4 /* clock.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = clock.png; sourceTree = "<group>"; };
+		AACCDBD420468EB6002112F7 /* MonPK&Moi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "MonPK&Moi.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		AACCDBD720468EB6002112F7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		AACCDBD920468EB6002112F7 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		AACCDBDC20468EB6002112F7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		AACCDBDF20468EB6002112F7 /* MonPK_Moi.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MonPK_Moi.xcdatamodel; sourceTree = "<group>"; };
+		AACCDBE120468EB6002112F7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		AACCDBE420468EB6002112F7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		AACCDBE620468EB6002112F7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AACCDBEB20468EB6002112F7 /* MonPK&MoiTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "MonPK&MoiTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		AACCDBEF20468EB6002112F7 /* MonPK_MoiTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonPK_MoiTests.swift; sourceTree = "<group>"; };
+		AACCDBF120468EB6002112F7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AACCDBFB20469122002112F7 /* clock.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = clock.png; path = ../Image/clock.png; sourceTree = "<group>"; };
+		AACCDBFC20469122002112F7 /* information.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = information.png; path = ../Image/information.png; sourceTree = "<group>"; };
+		AACCDBFD20469122002112F7 /* medical-drug-pill.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "medical-drug-pill.png"; path = "../Image/medical-drug-pill.png"; sourceTree = "<group>"; };
+		AACCDBFE20469122002112F7 /* running.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = running.png; path = ../Image/running.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		AA1AC65720444E6E00F85FD3 /* Frameworks */ = {
+		AACCDBD120468EB6002112F7 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		AA1AC66E20444E6F00F85FD3 /* Frameworks */ = {
+		AACCDBE820468EB6002112F7 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -66,69 +66,69 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		AA1AC65120444E6E00F85FD3 = {
+		AACCDBCB20468EB6002112F7 = {
 			isa = PBXGroup;
 			children = (
-				AAE38F7C204471770015C5E4 /* Image */,
-				AA1AC65C20444E6F00F85FD3 /* MonPK&Moi */,
-				AA1AC67420444E6F00F85FD3 /* MonPK&MoiTests */,
-				AA1AC65B20444E6F00F85FD3 /* Products */,
+				AACCDBFA204690FF002112F7 /* Images */,
+				AACCDBD620468EB6002112F7 /* MonPK&Moi */,
+				AACCDBEE20468EB6002112F7 /* MonPK&MoiTests */,
+				AACCDBD520468EB6002112F7 /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		AA1AC65B20444E6F00F85FD3 /* Products */ = {
+		AACCDBD520468EB6002112F7 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				AA1AC65A20444E6F00F85FD3 /* MonPK&Moi.app */,
-				AA1AC67120444E6F00F85FD3 /* MonPK&MoiTests.xctest */,
+				AACCDBD420468EB6002112F7 /* MonPK&Moi.app */,
+				AACCDBEB20468EB6002112F7 /* MonPK&MoiTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		AA1AC65C20444E6F00F85FD3 /* MonPK&Moi */ = {
+		AACCDBD620468EB6002112F7 /* MonPK&Moi */ = {
 			isa = PBXGroup;
 			children = (
-				AA1AC65D20444E6F00F85FD3 /* AppDelegate.swift */,
-				AA1AC65F20444E6F00F85FD3 /* ViewController.swift */,
-				AA1AC66120444E6F00F85FD3 /* Main.storyboard */,
-				AA1AC66720444E6F00F85FD3 /* Assets.xcassets */,
-				AA1AC66920444E6F00F85FD3 /* LaunchScreen.storyboard */,
-				AA1AC66C20444E6F00F85FD3 /* Info.plist */,
-				AA1AC66420444E6F00F85FD3 /* MonPK_Moi.xcdatamodeld */,
+				AACCDBD720468EB6002112F7 /* AppDelegate.swift */,
+				AACCDBD920468EB6002112F7 /* ViewController.swift */,
+				AACCDBDB20468EB6002112F7 /* Main.storyboard */,
+				AACCDBE120468EB6002112F7 /* Assets.xcassets */,
+				AACCDBE320468EB6002112F7 /* LaunchScreen.storyboard */,
+				AACCDBE620468EB6002112F7 /* Info.plist */,
+				AACCDBDE20468EB6002112F7 /* MonPK_Moi.xcdatamodeld */,
 			);
 			path = "MonPK&Moi";
 			sourceTree = "<group>";
 		};
-		AA1AC67420444E6F00F85FD3 /* MonPK&MoiTests */ = {
+		AACCDBEE20468EB6002112F7 /* MonPK&MoiTests */ = {
 			isa = PBXGroup;
 			children = (
-				AA1AC67520444E6F00F85FD3 /* MonPK_MoiTests.swift */,
-				AA1AC67720444E6F00F85FD3 /* Info.plist */,
+				AACCDBEF20468EB6002112F7 /* MonPK_MoiTests.swift */,
+				AACCDBF120468EB6002112F7 /* Info.plist */,
 			);
 			path = "MonPK&MoiTests";
 			sourceTree = "<group>";
 		};
-		AAE38F7C204471770015C5E4 /* Image */ = {
+		AACCDBFA204690FF002112F7 /* Images */ = {
 			isa = PBXGroup;
 			children = (
-				AAE38F9920447D9D0015C5E4 /* clock.png */,
-				AAE38F9720447D9C0015C5E4 /* information.png */,
-				AAE38F9820447D9D0015C5E4 /* running.png */,
-				AAE38F9520447D420015C5E4 /* medical-drug-pill.png */,
+				AACCDBFB20469122002112F7 /* clock.png */,
+				AACCDBFC20469122002112F7 /* information.png */,
+				AACCDBFD20469122002112F7 /* medical-drug-pill.png */,
+				AACCDBFE20469122002112F7 /* running.png */,
 			);
-			path = Image;
+			name = Images;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		AA1AC65920444E6E00F85FD3 /* MonPK&Moi */ = {
+		AACCDBD320468EB6002112F7 /* MonPK&Moi */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = AA1AC67A20444E6F00F85FD3 /* Build configuration list for PBXNativeTarget "MonPK&Moi" */;
+			buildConfigurationList = AACCDBF420468EB6002112F7 /* Build configuration list for PBXNativeTarget "MonPK&Moi" */;
 			buildPhases = (
-				AA1AC65620444E6E00F85FD3 /* Sources */,
-				AA1AC65720444E6E00F85FD3 /* Frameworks */,
-				AA1AC65820444E6E00F85FD3 /* Resources */,
+				AACCDBD020468EB6002112F7 /* Sources */,
+				AACCDBD120468EB6002112F7 /* Frameworks */,
+				AACCDBD220468EB6002112F7 /* Resources */,
 			);
 			buildRules = (
 			);
@@ -136,83 +136,83 @@
 			);
 			name = "MonPK&Moi";
 			productName = "MonPK&Moi";
-			productReference = AA1AC65A20444E6F00F85FD3 /* MonPK&Moi.app */;
+			productReference = AACCDBD420468EB6002112F7 /* MonPK&Moi.app */;
 			productType = "com.apple.product-type.application";
 		};
-		AA1AC67020444E6F00F85FD3 /* MonPK&MoiTests */ = {
+		AACCDBEA20468EB6002112F7 /* MonPK&MoiTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = AA1AC67D20444E6F00F85FD3 /* Build configuration list for PBXNativeTarget "MonPK&MoiTests" */;
+			buildConfigurationList = AACCDBF720468EB6002112F7 /* Build configuration list for PBXNativeTarget "MonPK&MoiTests" */;
 			buildPhases = (
-				AA1AC66D20444E6F00F85FD3 /* Sources */,
-				AA1AC66E20444E6F00F85FD3 /* Frameworks */,
-				AA1AC66F20444E6F00F85FD3 /* Resources */,
+				AACCDBE720468EB6002112F7 /* Sources */,
+				AACCDBE820468EB6002112F7 /* Frameworks */,
+				AACCDBE920468EB6002112F7 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				AA1AC67320444E6F00F85FD3 /* PBXTargetDependency */,
+				AACCDBED20468EB6002112F7 /* PBXTargetDependency */,
 			);
 			name = "MonPK&MoiTests";
 			productName = "MonPK&MoiTests";
-			productReference = AA1AC67120444E6F00F85FD3 /* MonPK&MoiTests.xctest */;
+			productReference = AACCDBEB20468EB6002112F7 /* MonPK&MoiTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		AA1AC65220444E6E00F85FD3 /* Project object */ = {
+		AACCDBCC20468EB6002112F7 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0920;
-				LastUpgradeCheck = 0920;
-				ORGANIZATIONNAME = "Joris Justin";
+				LastSwiftUpdateCheck = 0830;
+				LastUpgradeCheck = 0830;
+				ORGANIZATIONNAME = "Joris GRANEL";
 				TargetAttributes = {
-					AA1AC65920444E6E00F85FD3 = {
-						CreatedOnToolsVersion = 9.2;
+					AACCDBD320468EB6002112F7 = {
+						CreatedOnToolsVersion = 8.3.3;
 						ProvisioningStyle = Automatic;
 					};
-					AA1AC67020444E6F00F85FD3 = {
-						CreatedOnToolsVersion = 9.2;
+					AACCDBEA20468EB6002112F7 = {
+						CreatedOnToolsVersion = 8.3.3;
 						ProvisioningStyle = Automatic;
-						TestTargetID = AA1AC65920444E6E00F85FD3;
+						TestTargetID = AACCDBD320468EB6002112F7;
 					};
 				};
 			};
-			buildConfigurationList = AA1AC65520444E6E00F85FD3 /* Build configuration list for PBXProject "MonPK&Moi" */;
-			compatibilityVersion = "Xcode 8.0";
-			developmentRegion = en;
+			buildConfigurationList = AACCDBCF20468EB6002112F7 /* Build configuration list for PBXProject "MonPK&Moi" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
 				Base,
 			);
-			mainGroup = AA1AC65120444E6E00F85FD3;
-			productRefGroup = AA1AC65B20444E6F00F85FD3 /* Products */;
+			mainGroup = AACCDBCB20468EB6002112F7;
+			productRefGroup = AACCDBD520468EB6002112F7 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				AA1AC65920444E6E00F85FD3 /* MonPK&Moi */,
-				AA1AC67020444E6F00F85FD3 /* MonPK&MoiTests */,
+				AACCDBD320468EB6002112F7 /* MonPK&Moi */,
+				AACCDBEA20468EB6002112F7 /* MonPK&MoiTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		AA1AC65820444E6E00F85FD3 /* Resources */ = {
+		AACCDBD220468EB6002112F7 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AAE38F9A20447D9D0015C5E4 /* information.png in Resources */,
-				AA1AC66B20444E6F00F85FD3 /* LaunchScreen.storyboard in Resources */,
-				AA1AC66820444E6F00F85FD3 /* Assets.xcassets in Resources */,
-				AAE38F9B20447D9D0015C5E4 /* running.png in Resources */,
-				AAE38F9620447D430015C5E4 /* medical-drug-pill.png in Resources */,
-				AAE38F9C20447D9D0015C5E4 /* clock.png in Resources */,
-				AA1AC66320444E6F00F85FD3 /* Main.storyboard in Resources */,
+				AACCDC0220469122002112F7 /* running.png in Resources */,
+				AACCDC0020469122002112F7 /* information.png in Resources */,
+				AACCDBFF20469122002112F7 /* clock.png in Resources */,
+				AACCDBE520468EB6002112F7 /* LaunchScreen.storyboard in Resources */,
+				AACCDBE220468EB6002112F7 /* Assets.xcassets in Resources */,
+				AACCDC0120469122002112F7 /* medical-drug-pill.png in Resources */,
+				AACCDBDD20468EB6002112F7 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		AA1AC66F20444E6F00F85FD3 /* Resources */ = {
+		AACCDBE920468EB6002112F7 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -222,47 +222,47 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		AA1AC65620444E6E00F85FD3 /* Sources */ = {
+		AACCDBD020468EB6002112F7 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AA1AC66020444E6F00F85FD3 /* ViewController.swift in Sources */,
-				AA1AC65E20444E6F00F85FD3 /* AppDelegate.swift in Sources */,
-				AA1AC66620444E6F00F85FD3 /* MonPK_Moi.xcdatamodeld in Sources */,
+				AACCDBDA20468EB6002112F7 /* ViewController.swift in Sources */,
+				AACCDBD820468EB6002112F7 /* AppDelegate.swift in Sources */,
+				AACCDBE020468EB6002112F7 /* MonPK_Moi.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		AA1AC66D20444E6F00F85FD3 /* Sources */ = {
+		AACCDBE720468EB6002112F7 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AA1AC67620444E6F00F85FD3 /* MonPK_MoiTests.swift in Sources */,
+				AACCDBF020468EB6002112F7 /* MonPK_MoiTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		AA1AC67320444E6F00F85FD3 /* PBXTargetDependency */ = {
+		AACCDBED20468EB6002112F7 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = AA1AC65920444E6E00F85FD3 /* MonPK&Moi */;
-			targetProxy = AA1AC67220444E6F00F85FD3 /* PBXContainerItemProxy */;
+			target = AACCDBD320468EB6002112F7 /* MonPK&Moi */;
+			targetProxy = AACCDBEC20468EB6002112F7 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		AA1AC66120444E6F00F85FD3 /* Main.storyboard */ = {
+		AACCDBDB20468EB6002112F7 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				AA1AC66220444E6F00F85FD3 /* Base */,
+				AACCDBDC20468EB6002112F7 /* Base */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
-		AA1AC66920444E6F00F85FD3 /* LaunchScreen.storyboard */ = {
+		AACCDBE320468EB6002112F7 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				AA1AC66A20444E6F00F85FD3 /* Base */,
+				AACCDBE420468EB6002112F7 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -270,19 +270,17 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		AA1AC67820444E6F00F85FD3 /* Debug */ = {
+		AACCDBF220468EB6002112F7 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
-				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
-				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
@@ -290,21 +288,16 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
-				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
-				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
-				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
-				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
-				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
-				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -318,28 +311,27 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
-		AA1AC67920444E6F00F85FD3 /* Release */ = {
+		AACCDBF320468EB6002112F7 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
-				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
-				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
@@ -347,21 +339,16 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
-				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
-				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
-				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
-				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
-				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
@@ -369,70 +356,63 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
 		};
-		AA1AC67B20444E6F00F85FD3 /* Debug */ = {
+		AACCDBF520468EB6002112F7 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = "MonPK&Moi/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "polytech.MonPK-Moi";
+				PRODUCT_BUNDLE_IDENTIFIER = "Justin-Joris.MonPK-Moi";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
-		AA1AC67C20444E6F00F85FD3 /* Release */ = {
+		AACCDBF620468EB6002112F7 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = "MonPK&Moi/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "polytech.MonPK-Moi";
+				PRODUCT_BUNDLE_IDENTIFIER = "Justin-Joris.MonPK-Moi";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
-		AA1AC67E20444E6F00F85FD3 /* Debug */ = {
+		AACCDBF820468EB6002112F7 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = "MonPK&MoiTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "polytech.MonPK-MoiTests";
+				PRODUCT_BUNDLE_IDENTIFIER = "Justin-Joris.MonPK-MoiTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MonPK&Moi.app/MonPK&Moi";
 			};
 			name = Debug;
 		};
-		AA1AC67F20444E6F00F85FD3 /* Release */ = {
+		AACCDBF920468EB6002112F7 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = "MonPK&MoiTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "polytech.MonPK-MoiTests";
+				PRODUCT_BUNDLE_IDENTIFIER = "Justin-Joris.MonPK-MoiTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MonPK&Moi.app/MonPK&Moi";
 			};
 			name = Release;
@@ -440,47 +420,45 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		AA1AC65520444E6E00F85FD3 /* Build configuration list for PBXProject "MonPK&Moi" */ = {
+		AACCDBCF20468EB6002112F7 /* Build configuration list for PBXProject "MonPK&Moi" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				AA1AC67820444E6F00F85FD3 /* Debug */,
-				AA1AC67920444E6F00F85FD3 /* Release */,
+				AACCDBF220468EB6002112F7 /* Debug */,
+				AACCDBF320468EB6002112F7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		AA1AC67A20444E6F00F85FD3 /* Build configuration list for PBXNativeTarget "MonPK&Moi" */ = {
+		AACCDBF420468EB6002112F7 /* Build configuration list for PBXNativeTarget "MonPK&Moi" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				AA1AC67B20444E6F00F85FD3 /* Debug */,
-				AA1AC67C20444E6F00F85FD3 /* Release */,
+				AACCDBF520468EB6002112F7 /* Debug */,
+				AACCDBF620468EB6002112F7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
 		};
-		AA1AC67D20444E6F00F85FD3 /* Build configuration list for PBXNativeTarget "MonPK&MoiTests" */ = {
+		AACCDBF720468EB6002112F7 /* Build configuration list for PBXNativeTarget "MonPK&MoiTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				AA1AC67E20444E6F00F85FD3 /* Debug */,
-				AA1AC67F20444E6F00F85FD3 /* Release */,
+				AACCDBF820468EB6002112F7 /* Debug */,
+				AACCDBF920468EB6002112F7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		AA1AC66420444E6F00F85FD3 /* MonPK_Moi.xcdatamodeld */ = {
+		AACCDBDE20468EB6002112F7 /* MonPK_Moi.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				AA1AC66520444E6F00F85FD3 /* MonPK_Moi.xcdatamodel */,
+				AACCDBDF20468EB6002112F7 /* MonPK_Moi.xcdatamodel */,
 			);
-			currentVersion = AA1AC66520444E6F00F85FD3 /* MonPK_Moi.xcdatamodel */;
+			currentVersion = AACCDBDF20468EB6002112F7 /* MonPK_Moi.xcdatamodel */;
 			path = MonPK_Moi.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};
 /* End XCVersionGroup section */
 	};
-	rootObject = AA1AC65220444E6E00F85FD3 /* Project object */;
+	rootObject = AACCDBCC20468EB6002112F7 /* Project object */;
 }

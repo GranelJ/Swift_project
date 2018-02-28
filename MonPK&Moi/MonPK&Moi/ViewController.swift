@@ -2,8 +2,8 @@
 //  ViewController.swift
 //  MonPK&Moi
 //
-//  Created by ig_2014 on 26/02/2018.
-//  Copyright © 2018 Joris Justin. All rights reserved.
+//  Created by Joris GRANEL on 28/02/2018.
+//  Copyright © 2018 Joris GRANEL. All rights reserved.
 //
 
 import UIKit
