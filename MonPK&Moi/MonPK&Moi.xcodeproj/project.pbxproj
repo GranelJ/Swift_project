@@ -18,6 +18,7 @@
 		AACCDC0020469122002112F7 /* information.png in Resources */ = {isa = PBXBuildFile; fileRef = AACCDBFC20469122002112F7 /* information.png */; };
 		AACCDC0120469122002112F7 /* medical-drug-pill.png in Resources */ = {isa = PBXBuildFile; fileRef = AACCDBFD20469122002112F7 /* medical-drug-pill.png */; };
 		AACCDC0220469122002112F7 /* running.png in Resources */ = {isa = PBXBuildFile; fileRef = AACCDBFE20469122002112F7 /* running.png */; };
+		AACCDC042046B666002112F7 /* MedicamentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AACCDC032046B666002112F7 /* MedicamentTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,6 +47,7 @@
 		AACCDBFC20469122002112F7 /* information.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = information.png; path = ../Image/information.png; sourceTree = "<group>"; };
 		AACCDBFD20469122002112F7 /* medical-drug-pill.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "medical-drug-pill.png"; path = "../Image/medical-drug-pill.png"; sourceTree = "<group>"; };
 		AACCDBFE20469122002112F7 /* running.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = running.png; path = ../Image/running.png; sourceTree = "<group>"; };
+		AACCDC032046B666002112F7 /* MedicamentTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MedicamentTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,6 +97,7 @@
 				AACCDBE320468EB6002112F7 /* LaunchScreen.storyboard */,
 				AACCDBE620468EB6002112F7 /* Info.plist */,
 				AACCDBDE20468EB6002112F7 /* MonPK_Moi.xcdatamodeld */,
+				AACCDC032046B666002112F7 /* MedicamentTableViewCell.swift */,
 			);
 			path = "MonPK&Moi";
 			sourceTree = "<group>";
@@ -228,6 +231,7 @@
 			files = (
 				AACCDBDA20468EB6002112F7 /* ViewController.swift in Sources */,
 				AACCDBD820468EB6002112F7 /* AppDelegate.swift in Sources */,
+				AACCDC042046B666002112F7 /* MedicamentTableViewCell.swift in Sources */,
 				AACCDBE020468EB6002112F7 /* MonPK_Moi.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
