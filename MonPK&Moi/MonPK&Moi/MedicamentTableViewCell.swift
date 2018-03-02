@@ -9,7 +9,9 @@
 import UIKit
 
 class MedicamentTableViewCell: UITableViewCell {
-
+    @IBOutlet weak var period: UILabel! // labels in the cell
+    @IBOutlet weak var drug: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -20,5 +22,6 @@ class MedicamentTableViewCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
+    
 
 }
