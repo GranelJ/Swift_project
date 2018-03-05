@@ -12,6 +12,7 @@
 		AA5E19BC204D979900C25FC1 /* CoachViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA5E19BB204D979900C25FC1 /* CoachViewController.swift */; };
 		AA5E19BE204D97B500C25FC1 /* ContactViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA5E19BD204D97B500C25FC1 /* ContactViewController.swift */; };
 		AA5E19C0204D97F700C25FC1 /* EditInformationPersoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA5E19BF204D97F700C25FC1 /* EditInformationPersoViewController.swift */; };
+		AAC3C386204D9E86006C5B14 /* AjoutContactMedicalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAC3C385204D9E86006C5B14 /* AjoutContactMedicalViewController.swift */; };
 		AACCDBD820468EB6002112F7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AACCDBD720468EB6002112F7 /* AppDelegate.swift */; };
 		AACCDBDA20468EB6002112F7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AACCDBD920468EB6002112F7 /* ViewController.swift */; };
 		AACCDBDD20468EB6002112F7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AACCDBDB20468EB6002112F7 /* Main.storyboard */; };
@@ -38,6 +39,7 @@
 		AA5E19BB204D979900C25FC1 /* CoachViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoachViewController.swift; sourceTree = "<group>"; };
 		AA5E19BD204D97B500C25FC1 /* ContactViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactViewController.swift; sourceTree = "<group>"; };
 		AA5E19BF204D97F700C25FC1 /* EditInformationPersoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditInformationPersoViewController.swift; sourceTree = "<group>"; };
+		AAC3C385204D9E86006C5B14 /* AjoutContactMedicalViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AjoutContactMedicalViewController.swift; sourceTree = "<group>"; };
 		AACCDBD420468EB6002112F7 /* MonPK&Moi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "MonPK&Moi.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AACCDBD720468EB6002112F7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AACCDBD920468EB6002112F7 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -79,6 +81,7 @@
 				AA5E19AC204D6CEC00C25FC1 /* PilulierViewController.swift */,
 				AACCDC032046B666002112F7 /* MedicamentTableViewCell.swift */,
 				AA5E19BF204D97F700C25FC1 /* EditInformationPersoViewController.swift */,
+				AAC3C385204D9E86006C5B14 /* AjoutContactMedicalViewController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -231,6 +234,7 @@
 				AACCDBDA20468EB6002112F7 /* ViewController.swift in Sources */,
 				AACCDBD820468EB6002112F7 /* AppDelegate.swift in Sources */,
 				AA5E19C0204D97F700C25FC1 /* EditInformationPersoViewController.swift in Sources */,
+				AAC3C386204D9E86006C5B14 /* AjoutContactMedicalViewController.swift in Sources */,
 				AACCDC042046B666002112F7 /* MedicamentTableViewCell.swift in Sources */,
 				AACCDBE020468EB6002112F7 /* MonPK_Moi.xcdatamodeld in Sources */,
 				AA5E19BC204D979900C25FC1 /* CoachViewController.swift in Sources */,
