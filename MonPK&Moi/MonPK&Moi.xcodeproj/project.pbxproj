@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AA5E19AD204D6CEC00C25FC1 /* PilulierViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA5E19AC204D6CEC00C25FC1 /* PilulierViewController.swift */; };
 		AACCDBD820468EB6002112F7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AACCDBD720468EB6002112F7 /* AppDelegate.swift */; };
 		AACCDBDA20468EB6002112F7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AACCDBD920468EB6002112F7 /* ViewController.swift */; };
 		AACCDBDD20468EB6002112F7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AACCDBDB20468EB6002112F7 /* Main.storyboard */; };
@@ -32,6 +33,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		AA5E19AC204D6CEC00C25FC1 /* PilulierViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PilulierViewController.swift; sourceTree = "<group>"; };
 		AACCDBD420468EB6002112F7 /* MonPK&Moi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "MonPK&Moi.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AACCDBD720468EB6002112F7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AACCDBD920468EB6002112F7 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -93,6 +95,7 @@
 				AACCDBD720468EB6002112F7 /* AppDelegate.swift */,
 				AACCDBD920468EB6002112F7 /* ViewController.swift */,
 				AACCDBDB20468EB6002112F7 /* Main.storyboard */,
+				AA5E19AC204D6CEC00C25FC1 /* PilulierViewController.swift */,
 				AACCDBE120468EB6002112F7 /* Assets.xcassets */,
 				AACCDBE320468EB6002112F7 /* LaunchScreen.storyboard */,
 				AACCDBE620468EB6002112F7 /* Info.plist */,
@@ -233,6 +236,7 @@
 				AACCDBD820468EB6002112F7 /* AppDelegate.swift in Sources */,
 				AACCDC042046B666002112F7 /* MedicamentTableViewCell.swift in Sources */,
 				AACCDBE020468EB6002112F7 /* MonPK_Moi.xcdatamodeld in Sources */,
+				AA5E19AD204D6CEC00C25FC1 /* PilulierViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -440,6 +444,7 @@
 				AACCDBF620468EB6002112F7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		AACCDBF720468EB6002112F7 /* Build configuration list for PBXNativeTarget "MonPK&MoiTests" */ = {
 			isa = XCConfigurationList;
@@ -448,6 +453,7 @@
 				AACCDBF920468EB6002112F7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

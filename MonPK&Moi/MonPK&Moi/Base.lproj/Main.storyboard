@@ -372,7 +372,7 @@
         <!--Pilulier-->
         <scene sceneID="HIb-g7-XJz">
             <objects>
-                <viewController id="rXb-id-NpP" customClass="ViewController" customModule="MonPK_Moi" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="rXb-id-NpP" customClass="PilulierViewController" customModule="MonPK_Moi" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="UCh-1P-TEv"/>
                         <viewControllerLayoutGuide type="bottom" id="JeY-Xb-OlH"/>
@@ -414,10 +414,6 @@
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
-                                <connections>
-                                    <outlet property="dataSource" destination="rXb-id-NpP" id="Ww1-BT-WL1"/>
-                                    <outlet property="delegate" destination="rXb-id-NpP" id="VB8-Bm-S9A"/>
-                                </connections>
                             </tableView>
                             <tabBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QPr-YK-PvM">
                                 <rect key="frame" x="0.0" y="618" width="375" height="49"/>
@@ -451,7 +447,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="PriseMedicamentTable" destination="V5S-z2-pxf" id="xv7-g9-nye"/>
+                        <outlet property="PriseMedicamentTable" destination="V5S-z2-pxf" id="XNj-7N-oKl"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HRz-4q-3zR" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -640,16 +636,19 @@
                                 </subviews>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XD4-kA-AKy">
-                                <rect key="frame" x="16" y="144" width="343" height="30"/>
+                                <rect key="frame" x="16" y="144" width="343" height="175"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description : " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lTz-hI-ltA">
-                                        <rect key="frame" x="0.0" y="0.0" width="101.5" height="30"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="101.5" height="175"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zvj-Qa-3MO">
-                                        <rect key="frame" x="101.5" y="0.0" width="241.5" height="30"/>
+                                        <rect key="frame" x="101.5" y="0.0" width="241.5" height="175"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="175" id="kgk-Ld-cWE"/>
+                                        </constraints>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
