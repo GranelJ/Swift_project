@@ -14,7 +14,6 @@
         <!--Navigation Controller-->
         <scene sceneID="0H7-tQ-VLT">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="5OQ-qf-7Xu" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="0jM-M5-Nif" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="LZu-Qv-PWv">
@@ -26,6 +25,7 @@
                         <segue destination="MVc-vM-gS0" kind="relationship" relationship="rootViewController" id="QfV-Gl-HOI"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5OQ-qf-7Xu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-706" y="322"/>
         </scene>
@@ -307,7 +307,6 @@
         <!--Tab Bar Controller-->
         <scene sceneID="NqP-5o-gSa">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="PyB-DU-Xuz" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <tabBarController id="MVc-vM-gS0" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="pp5-oa-1iG"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="CNK-Kd-tlJ">
@@ -319,6 +318,7 @@
                         <segue destination="g5E-ZL-yjZ" kind="relationship" relationship="viewControllers" id="DJK-oA-rKO"/>
                     </connections>
                 </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="PyB-DU-Xuz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="239" y="320"/>
         </scene>
