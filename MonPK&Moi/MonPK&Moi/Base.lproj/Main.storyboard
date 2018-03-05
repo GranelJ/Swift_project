@@ -667,10 +667,10 @@
             </objects>
             <point key="canvasLocation" x="2282.608695652174" y="319.56521739130437"/>
         </scene>
-        <!--Ajout prise de médicament-->
+        <!--Ajout traitement-->
         <scene sceneID="jCX-Pf-KR5">
             <objects>
-                <viewController id="X3u-VF-c7M" sceneMemberID="viewController">
+                <viewController id="X3u-VF-c7M" customClass="AjoutTraitementViewController" customModule="MonPK_Moi" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="N8X-uj-1mH"/>
                         <viewControllerLayoutGuide type="bottom" id="vfN-mr-Upk"/>
@@ -743,7 +743,7 @@
                             <constraint firstItem="Kwc-ma-1NX" firstAttribute="leading" secondItem="cOD-NO-wnW" secondAttribute="trailing" constant="15" id="tmm-gn-g3J"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Ajout prise de médicament" id="xkO-UP-bHb"/>
+                    <navigationItem key="navigationItem" title="Ajout traitement" id="xkO-UP-bHb"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sxb-nP-zf2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -951,7 +951,7 @@
         <!--Ajout exercice-->
         <scene sceneID="7gj-zJ-h1V">
             <objects>
-                <viewController id="Egn-jw-3Og" sceneMemberID="viewController">
+                <viewController id="Egn-jw-3Og" customClass="AjoutExerciceViewController" customModule="MonPK_Moi" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Oww-s0-qv4"/>
                         <viewControllerLayoutGuide type="bottom" id="EgB-BL-dOI"/>
@@ -1015,23 +1015,23 @@
                                 </subviews>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="E6J-E6-6Lo">
-                                <rect key="frame" x="183.66666666666666" y="627" width="47" height="30"/>
-                                <state key="normal" title="Valider"/>
+                                <rect key="frame" x="184" y="627" width="46" height="30"/>
+                                <state key="normal" title="Button"/>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="e9X-Pq-qJ3" firstAttribute="leading" secondItem="hxW-Zp-7ST" secondAttribute="leading" constant="20" id="1I7-dZ-WWS"/>
                             <constraint firstItem="e9X-Pq-qJ3" firstAttribute="top" secondItem="K53-6j-XVY" secondAttribute="bottom" constant="50" id="3uw-sF-a9r"/>
-                            <constraint firstItem="AsG-Fr-2n4" firstAttribute="leading" secondItem="hxW-Zp-7ST" secondAttribute="leadingMargin" id="6qf-R9-ldp"/>
                             <constraint firstItem="K53-6j-XVY" firstAttribute="top" secondItem="Oww-s0-qv4" secondAttribute="bottom" constant="20" id="UCB-ga-eih"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="AsG-Fr-2n4" secondAttribute="trailing" id="Z74-k2-RkB"/>
                             <constraint firstItem="AsG-Fr-2n4" firstAttribute="top" secondItem="e9X-Pq-qJ3" secondAttribute="bottom" constant="50" id="aMy-J0-MP9"/>
                             <constraint firstItem="EgB-BL-dOI" firstAttribute="top" secondItem="E6J-E6-6Lo" secondAttribute="bottom" constant="30" id="gow-67-k9c"/>
                             <constraint firstAttribute="trailing" secondItem="e9X-Pq-qJ3" secondAttribute="trailing" constant="20" id="jRp-5a-EzY"/>
                             <constraint firstItem="E6J-E6-6Lo" firstAttribute="centerX" secondItem="hxW-Zp-7ST" secondAttribute="centerX" id="kPK-O5-joc"/>
+                            <constraint firstItem="AsG-Fr-2n4" firstAttribute="leading" secondItem="hxW-Zp-7ST" secondAttribute="leadingMargin" id="kbQ-tN-27J"/>
                             <constraint firstItem="K53-6j-XVY" firstAttribute="leading" secondItem="hxW-Zp-7ST" secondAttribute="leadingMargin" id="lJM-jn-C63"/>
                             <constraint firstAttribute="trailingMargin" secondItem="K53-6j-XVY" secondAttribute="trailing" id="w4h-0d-KKH"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="AsG-Fr-2n4" secondAttribute="trailing" id="yni-Wt-xGc"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Ajout exercice" id="iWC-D1-M7Z"/>
