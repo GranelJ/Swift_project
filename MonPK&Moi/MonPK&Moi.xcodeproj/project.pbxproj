@@ -15,6 +15,7 @@
 		AAC3C386204D9E86006C5B14 /* AjoutContactMedicalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAC3C385204D9E86006C5B14 /* AjoutContactMedicalViewController.swift */; };
 		AAC3C388204DA1B8006C5B14 /* AjoutExerciceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAC3C387204DA1B8006C5B14 /* AjoutExerciceViewController.swift */; };
 		AAC3C38A204DA1EB006C5B14 /* AjoutTraitementViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAC3C389204DA1EB006C5B14 /* AjoutTraitementViewController.swift */; };
+		AAC3C38C204DAA83006C5B14 /* AjoutMedicamentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAC3C38B204DAA83006C5B14 /* AjoutMedicamentViewController.swift */; };
 		AACCDBD820468EB6002112F7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AACCDBD720468EB6002112F7 /* AppDelegate.swift */; };
 		AACCDBDA20468EB6002112F7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AACCDBD920468EB6002112F7 /* ViewController.swift */; };
 		AACCDBDD20468EB6002112F7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AACCDBDB20468EB6002112F7 /* Main.storyboard */; };
@@ -44,6 +45,7 @@
 		AAC3C385204D9E86006C5B14 /* AjoutContactMedicalViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AjoutContactMedicalViewController.swift; sourceTree = "<group>"; };
 		AAC3C387204DA1B8006C5B14 /* AjoutExerciceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AjoutExerciceViewController.swift; sourceTree = "<group>"; };
 		AAC3C389204DA1EB006C5B14 /* AjoutTraitementViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AjoutTraitementViewController.swift; sourceTree = "<group>"; };
+		AAC3C38B204DAA83006C5B14 /* AjoutMedicamentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AjoutMedicamentViewController.swift; sourceTree = "<group>"; };
 		AACCDBD420468EB6002112F7 /* MonPK&Moi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "MonPK&Moi.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AACCDBD720468EB6002112F7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AACCDBD920468EB6002112F7 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -88,6 +90,7 @@
 				AAC3C385204D9E86006C5B14 /* AjoutContactMedicalViewController.swift */,
 				AAC3C387204DA1B8006C5B14 /* AjoutExerciceViewController.swift */,
 				AAC3C389204DA1EB006C5B14 /* AjoutTraitementViewController.swift */,
+				AAC3C38B204DAA83006C5B14 /* AjoutMedicamentViewController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -249,6 +252,7 @@
 				AA5E19AD204D6CEC00C25FC1 /* PilulierViewController.swift in Sources */,
 				AA5E19BA204D973F00C25FC1 /* AjoutContactPersoViewController.swift in Sources */,
 				AAC3C388204DA1B8006C5B14 /* AjoutExerciceViewController.swift in Sources */,
+				AAC3C38C204DAA83006C5B14 /* AjoutMedicamentViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

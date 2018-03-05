@@ -813,7 +813,7 @@
         <!--Ajout d'un médicament-->
         <scene sceneID="F9g-cr-Z1l">
             <objects>
-                <viewController id="OBT-aJ-jbs" sceneMemberID="viewController">
+                <viewController id="OBT-aJ-jbs" customClass="AjoutMedicamentViewController" customModule="MonPK_Moi" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="lgp-EL-w2X"/>
                         <viewControllerLayoutGuide type="bottom" id="R2s-sL-nqK"/>
