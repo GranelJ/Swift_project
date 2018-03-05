@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		AA5E19AD204D6CEC00C25FC1 /* PilulierViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA5E19AC204D6CEC00C25FC1 /* PilulierViewController.swift */; };
+		AA5E19AF204D7A9000C25FC1 /* AjoutContactPersoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA5E19AE204D7A9000C25FC1 /* AjoutContactPersoViewController.swift */; };
+		AA5E19B1204D7AB600C25FC1 /* ContactViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA5E19B0204D7AB600C25FC1 /* ContactViewController.swift */; };
+		AA5E19B3204D7B3300C25FC1 /* EditInformationPersoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA5E19B2204D7B3300C25FC1 /* EditInformationPersoViewController.swift */; };
 		AACCDBD820468EB6002112F7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AACCDBD720468EB6002112F7 /* AppDelegate.swift */; };
 		AACCDBDA20468EB6002112F7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AACCDBD920468EB6002112F7 /* ViewController.swift */; };
 		AACCDBDD20468EB6002112F7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AACCDBDB20468EB6002112F7 /* Main.storyboard */; };
@@ -15,10 +18,6 @@
 		AACCDBE220468EB6002112F7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AACCDBE120468EB6002112F7 /* Assets.xcassets */; };
 		AACCDBE520468EB6002112F7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AACCDBE320468EB6002112F7 /* LaunchScreen.storyboard */; };
 		AACCDBF020468EB6002112F7 /* MonPK_MoiTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AACCDBEF20468EB6002112F7 /* MonPK_MoiTests.swift */; };
-		AACCDBFF20469122002112F7 /* clock.png in Resources */ = {isa = PBXBuildFile; fileRef = AACCDBFB20469122002112F7 /* clock.png */; };
-		AACCDC0020469122002112F7 /* information.png in Resources */ = {isa = PBXBuildFile; fileRef = AACCDBFC20469122002112F7 /* information.png */; };
-		AACCDC0120469122002112F7 /* medical-drug-pill.png in Resources */ = {isa = PBXBuildFile; fileRef = AACCDBFD20469122002112F7 /* medical-drug-pill.png */; };
-		AACCDC0220469122002112F7 /* running.png in Resources */ = {isa = PBXBuildFile; fileRef = AACCDBFE20469122002112F7 /* running.png */; };
 		AACCDC042046B666002112F7 /* MedicamentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AACCDC032046B666002112F7 /* MedicamentTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
@@ -34,6 +33,9 @@
 
 /* Begin PBXFileReference section */
 		AA5E19AC204D6CEC00C25FC1 /* PilulierViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PilulierViewController.swift; sourceTree = "<group>"; };
+		AA5E19AE204D7A9000C25FC1 /* AjoutContactPersoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AjoutContactPersoViewController.swift; sourceTree = "<group>"; };
+		AA5E19B0204D7AB600C25FC1 /* ContactViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactViewController.swift; sourceTree = "<group>"; };
+		AA5E19B2204D7B3300C25FC1 /* EditInformationPersoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditInformationPersoViewController.swift; sourceTree = "<group>"; };
 		AACCDBD420468EB6002112F7 /* MonPK&Moi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "MonPK&Moi.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AACCDBD720468EB6002112F7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AACCDBD920468EB6002112F7 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -45,10 +47,6 @@
 		AACCDBEB20468EB6002112F7 /* MonPK&MoiTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "MonPK&MoiTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AACCDBEF20468EB6002112F7 /* MonPK_MoiTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonPK_MoiTests.swift; sourceTree = "<group>"; };
 		AACCDBF120468EB6002112F7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		AACCDBFB20469122002112F7 /* clock.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = clock.png; path = ../Image/clock.png; sourceTree = "<group>"; };
-		AACCDBFC20469122002112F7 /* information.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = information.png; path = ../Image/information.png; sourceTree = "<group>"; };
-		AACCDBFD20469122002112F7 /* medical-drug-pill.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "medical-drug-pill.png"; path = "../Image/medical-drug-pill.png"; sourceTree = "<group>"; };
-		AACCDBFE20469122002112F7 /* running.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = running.png; path = ../Image/running.png; sourceTree = "<group>"; };
 		AACCDC032046B666002112F7 /* MedicamentTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MedicamentTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -73,7 +71,6 @@
 		AACCDBCB20468EB6002112F7 = {
 			isa = PBXGroup;
 			children = (
-				AACCDBFA204690FF002112F7 /* Images */,
 				AACCDBD620468EB6002112F7 /* MonPK&Moi */,
 				AACCDBEE20468EB6002112F7 /* MonPK&MoiTests */,
 				AACCDBD520468EB6002112F7 /* Products */,
@@ -92,9 +89,12 @@
 		AACCDBD620468EB6002112F7 /* MonPK&Moi */ = {
 			isa = PBXGroup;
 			children = (
+				AA5E19AE204D7A9000C25FC1 /* AjoutContactPersoViewController.swift */,
 				AACCDBD720468EB6002112F7 /* AppDelegate.swift */,
 				AACCDBD920468EB6002112F7 /* ViewController.swift */,
 				AACCDBDB20468EB6002112F7 /* Main.storyboard */,
+				AA5E19B2204D7B3300C25FC1 /* EditInformationPersoViewController.swift */,
+				AA5E19B0204D7AB600C25FC1 /* ContactViewController.swift */,
 				AA5E19AC204D6CEC00C25FC1 /* PilulierViewController.swift */,
 				AACCDBE120468EB6002112F7 /* Assets.xcassets */,
 				AACCDBE320468EB6002112F7 /* LaunchScreen.storyboard */,
@@ -112,17 +112,6 @@
 				AACCDBF120468EB6002112F7 /* Info.plist */,
 			);
 			path = "MonPK&MoiTests";
-			sourceTree = "<group>";
-		};
-		AACCDBFA204690FF002112F7 /* Images */ = {
-			isa = PBXGroup;
-			children = (
-				AACCDBFB20469122002112F7 /* clock.png */,
-				AACCDBFC20469122002112F7 /* information.png */,
-				AACCDBFD20469122002112F7 /* medical-drug-pill.png */,
-				AACCDBFE20469122002112F7 /* running.png */,
-			);
-			name = Images;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -208,12 +197,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AACCDC0220469122002112F7 /* running.png in Resources */,
-				AACCDC0020469122002112F7 /* information.png in Resources */,
-				AACCDBFF20469122002112F7 /* clock.png in Resources */,
 				AACCDBE520468EB6002112F7 /* LaunchScreen.storyboard in Resources */,
 				AACCDBE220468EB6002112F7 /* Assets.xcassets in Resources */,
-				AACCDC0120469122002112F7 /* medical-drug-pill.png in Resources */,
 				AACCDBDD20468EB6002112F7 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -233,10 +218,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				AACCDBDA20468EB6002112F7 /* ViewController.swift in Sources */,
+				AA5E19B1204D7AB600C25FC1 /* ContactViewController.swift in Sources */,
+				AA5E19AF204D7A9000C25FC1 /* AjoutContactPersoViewController.swift in Sources */,
 				AACCDBD820468EB6002112F7 /* AppDelegate.swift in Sources */,
 				AACCDC042046B666002112F7 /* MedicamentTableViewCell.swift in Sources */,
 				AACCDBE020468EB6002112F7 /* MonPK_Moi.xcdatamodeld in Sources */,
 				AA5E19AD204D6CEC00C25FC1 /* PilulierViewController.swift in Sources */,
+				AA5E19B3204D7B3300C25FC1 /* EditInformationPersoViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
