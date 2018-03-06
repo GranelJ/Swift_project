@@ -555,7 +555,7 @@
                                         <rect key="frame" x="0.0" y="28" width="374" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Gk8-mA-Xms" id="jGD-eu-XYD">
-                                            <rect key="frame" x="0.0" y="0.0" width="374" height="43.666666666666664"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="374" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Date et heure" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4px-vz-A9e">
@@ -618,7 +618,7 @@
         <!--Ajout d'un rendez-vous-->
         <scene sceneID="mDm-L6-n6n">
             <objects>
-                <viewController id="W2t-qa-4jT" sceneMemberID="viewController">
+                <viewController id="W2t-qa-4jT" customClass="AjouterRendezVousViewController" customModule="MonPK_Moi" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="9Pq-iv-ss5"/>
                         <viewControllerLayoutGuide type="bottom" id="9eL-bp-a3u"/>
