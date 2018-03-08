@@ -10,7 +10,7 @@ import UIKit
 
 class PilulierViewController: UIViewController, UITableViewDataSource, UITableViewDelegate{
 
-    var priseMedicament : [String] = [] //changer string par Medicament lorsque type medicmanet cree
+    var traitement : [String] = [] //changer string par Medicament lorsque type medicament cree
     @IBOutlet weak var PriseMedicamentTable: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,13 +24,13 @@ class PilulierViewController: UIViewController, UITableViewDataSource, UITableVi
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.priseMedicament.count
+        return self.traitement.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = self.PriseMedicamentTable.dequeueReusableCell(withIdentifier: "MedicamentCell", for: indexPath) as! MedicamentTableViewCell
-        cell.period.text = self.priseMedicament[indexPath.row]
-        cell.drug.text = self.priseMedicament[indexPath.row]
+        cell.period.text = self.traitement[indexPath.row]
+        cell.drug.text = self.traitement[indexPath.row]
         return cell
     }
 
