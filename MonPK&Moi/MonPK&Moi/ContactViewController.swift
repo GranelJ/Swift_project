@@ -10,6 +10,11 @@ import UIKit
 
 class ContactViewController: UIViewController {
 
+    @IBOutlet weak var NomLabel: UILabel!
+    @IBOutlet weak var PrenomLabel: UILabel!
+    @IBOutlet weak var AgeLabel: UILabel!
+    @IBOutlet weak var TpsPrepLabel: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
