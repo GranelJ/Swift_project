@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreData
 
 class ContactViewController: UIViewController {
 
@@ -17,7 +18,9 @@ class ContactViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        var patient : [Patient] = []
+        
+        NomLabel.text = patient[0].nom
         // Do any additional setup after loading the view.
     }
 
@@ -26,7 +29,7 @@ class ContactViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
+    
     /*
     // MARK: - Navigation
 
