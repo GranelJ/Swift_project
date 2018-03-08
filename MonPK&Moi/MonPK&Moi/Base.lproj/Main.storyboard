@@ -212,6 +212,9 @@
                                 <rect key="frame" x="176" y="640" width="62" height="36"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <state key="normal" title="Valider"/>
+                                <connections>
+                                    <action selector="ValidateButton:" destination="TGX-K9-fLL" eventType="touchUpInside" id="iUs-cB-8hq"/>
+                                </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Lieu de travail" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Dnd-Za-97d">
                                 <rect key="frame" x="20" y="580" width="374" height="30"/>
@@ -261,6 +264,14 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Ajout contact médical" id="iJA-0m-Cur"/>
+                    <connections>
+                        <outlet property="textLieu" destination="Dnd-Za-97d" id="wUK-CR-zRQ"/>
+                        <outlet property="textMail" destination="ORo-rk-j52" id="54O-sa-9bN"/>
+                        <outlet property="textMetier" destination="euS-Dy-wVf" id="0cG-Kr-O4j"/>
+                        <outlet property="textNom" destination="jGM-65-JkT" id="2A7-TX-k9N"/>
+                        <outlet property="textNum" destination="6jR-0g-eos" id="1jU-m7-7SF"/>
+                        <outlet property="textPrenom" destination="50I-54-uak" id="kx9-zx-JSL"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PSQ-so-oRd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1072,7 +1083,7 @@
                                 </subviews>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dYd-hp-UUb">
-                                <rect key="frame" x="20" y="507" width="155.33333333333334" height="30"/>
+                                <rect key="frame" x="20" y="556" width="155.33333333333334" height="30"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dosage : " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O7H-iU-6Cl">
                                         <rect key="frame" x="0.0" y="0.0" width="84.666666666666671" height="30"/>
@@ -1089,7 +1100,7 @@
                                 </subviews>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qRx-Nx-UUZ">
-                                <rect key="frame" x="160" y="592" width="94" height="36"/>
+                                <rect key="frame" x="160" y="641" width="94" height="36"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <state key="normal" title="Valider"/>
                             </button>

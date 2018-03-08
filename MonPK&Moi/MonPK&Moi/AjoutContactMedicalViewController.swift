@@ -7,9 +7,21 @@
 //
 
 import UIKit
+import CoreData
 
 class AjoutContactMedicalViewController: UIViewController {
-
+    
+    @IBOutlet weak var textNom: UITextField!
+    @IBOutlet weak var textNum: UITextField!
+    @IBOutlet weak var textMail: UITextField!
+    @IBOutlet weak var textPrenom: UITextField!
+    @IBOutlet weak var textMetier: UITextField!
+    @IBOutlet weak var textLieu: UITextField!
+    
+    @IBAction func ValidateButton(_ sender: Any) {
+        
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
