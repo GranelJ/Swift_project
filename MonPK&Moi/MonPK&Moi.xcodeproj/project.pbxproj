@@ -12,6 +12,9 @@
 		AA5E19BC204D979900C25FC1 /* CoachViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA5E19BB204D979900C25FC1 /* CoachViewController.swift */; };
 		AA5E19BE204D97B500C25FC1 /* ContactViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA5E19BD204D97B500C25FC1 /* ContactViewController.swift */; };
 		AA5E19C0204D97F700C25FC1 /* EditInformationPersoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA5E19BF204D97F700C25FC1 /* EditInformationPersoViewController.swift */; };
+		AA81A81F20517C7A0056CFA8 /* TraceurViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA81A81E20517C7A0056CFA8 /* TraceurViewController.swift */; };
+		AA81A82120517CA20056CFA8 /* QuestionnaireViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA81A82020517CA20056CFA8 /* QuestionnaireViewController.swift */; };
+		AA81A823205180B00056CFA8 /* SignalEvenementViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA81A822205180B00056CFA8 /* SignalEvenementViewController.swift */; };
 		AAAC5A49204E786700D4DD99 /* AgendaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAAC5A48204E786700D4DD99 /* AgendaViewController.swift */; };
 		AAAC5A4B204E7D2700D4DD99 /* AjouterRendezVousViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAAC5A4A204E7D2700D4DD99 /* AjouterRendezVousViewController.swift */; };
 		AAC3C386204D9E86006C5B14 /* AjoutContactMedicalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAC3C385204D9E86006C5B14 /* AjoutContactMedicalViewController.swift */; };
@@ -44,6 +47,9 @@
 		AA5E19BB204D979900C25FC1 /* CoachViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoachViewController.swift; sourceTree = "<group>"; };
 		AA5E19BD204D97B500C25FC1 /* ContactViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactViewController.swift; sourceTree = "<group>"; };
 		AA5E19BF204D97F700C25FC1 /* EditInformationPersoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditInformationPersoViewController.swift; sourceTree = "<group>"; };
+		AA81A81E20517C7A0056CFA8 /* TraceurViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TraceurViewController.swift; sourceTree = "<group>"; };
+		AA81A82020517CA20056CFA8 /* QuestionnaireViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuestionnaireViewController.swift; sourceTree = "<group>"; };
+		AA81A822205180B00056CFA8 /* SignalEvenementViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignalEvenementViewController.swift; sourceTree = "<group>"; };
 		AAAC5A48204E786700D4DD99 /* AgendaViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AgendaViewController.swift; sourceTree = "<group>"; };
 		AAAC5A4A204E7D2700D4DD99 /* AjouterRendezVousViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AjouterRendezVousViewController.swift; sourceTree = "<group>"; };
 		AAC3C385204D9E86006C5B14 /* AjoutContactMedicalViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AjoutContactMedicalViewController.swift; sourceTree = "<group>"; };
@@ -97,6 +103,9 @@
 				AAC3C38B204DAA83006C5B14 /* AjoutMedicamentViewController.swift */,
 				AAAC5A48204E786700D4DD99 /* AgendaViewController.swift */,
 				AAAC5A4A204E7D2700D4DD99 /* AjouterRendezVousViewController.swift */,
+				AA81A81E20517C7A0056CFA8 /* TraceurViewController.swift */,
+				AA81A82020517CA20056CFA8 /* QuestionnaireViewController.swift */,
+				AA81A822205180B00056CFA8 /* SignalEvenementViewController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -250,13 +259,16 @@
 				AACCDBD820468EB6002112F7 /* AppDelegate.swift in Sources */,
 				AA5E19C0204D97F700C25FC1 /* EditInformationPersoViewController.swift in Sources */,
 				AAC3C386204D9E86006C5B14 /* AjoutContactMedicalViewController.swift in Sources */,
+				AA81A82120517CA20056CFA8 /* QuestionnaireViewController.swift in Sources */,
 				AACCDC042046B666002112F7 /* MedicamentTableViewCell.swift in Sources */,
 				AAC3C38A204DA1EB006C5B14 /* AjoutTraitementViewController.swift in Sources */,
 				AACCDBE020468EB6002112F7 /* MonPK_Moi.xcdatamodeld in Sources */,
 				AA5E19BC204D979900C25FC1 /* CoachViewController.swift in Sources */,
 				AA5E19BE204D97B500C25FC1 /* ContactViewController.swift in Sources */,
+				AA81A823205180B00056CFA8 /* SignalEvenementViewController.swift in Sources */,
 				AA5E19AD204D6CEC00C25FC1 /* PilulierViewController.swift in Sources */,
 				AAAC5A4B204E7D2700D4DD99 /* AjouterRendezVousViewController.swift in Sources */,
+				AA81A81F20517C7A0056CFA8 /* TraceurViewController.swift in Sources */,
 				AA5E19BA204D973F00C25FC1 /* AjoutContactPersoViewController.swift in Sources */,
 				AAC3C388204DA1B8006C5B14 /* AjoutExerciceViewController.swift in Sources */,
 				AAAC5A49204E786700D4DD99 /* AgendaViewController.swift in Sources */,
