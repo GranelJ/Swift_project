@@ -20,13 +20,16 @@ class ContactViewController: UIViewController {
         super.viewDidLoad()
         var patient : [Patient] = []
         
-        NomLabel.text = patient[0].nom
-        PrenomLabel.text = patient[0].prenom
-        TpsPrepLabel.text = patient[0].temps_preparation.description
+        guard let nom = patient[0].nom else{
+            return
+        }
+        NomLabel.text = nom
+        //PrenomLabel.text = patient[0].prenom
+        //TpsPrepLabel.text = patient[0].temps_preparation.description
         guard let date_naissance = patient[0].date_naissance else{
             return
         }
-        let age = NSDate.init() - date_naissance
+        //let age = NSDate.init() - date_naissance
         // Do any additional setup after loading the view.
     }
 
