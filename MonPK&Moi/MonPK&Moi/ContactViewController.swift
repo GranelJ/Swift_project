@@ -7,13 +7,29 @@
 //
 
 import UIKit
+import CoreData
 
 class ContactViewController: UIViewController {
     
+    @IBOutlet weak var medecinsTable: UITableView!
+    var medecins : [Medecin] = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
+            self.alertError(errorMsg: "Could not load data", userInfo: "reason unknow")
+            return
+        }
+        let context = appDelegate.persistentContainer.viewContext
+        
+        let request : NSFetchRequest<Medecin> = Medecin.fetchRequest()
+        do{
+            try self.medecins = context.fetch(request)
+        }
+        catch let error as NSError{
+            self.alertError(errorMsg: "\(error)", userInfo: "\(error.userInfo)")
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -21,6 +37,12 @@ class ContactViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    func alertError(errorMsg error: String, userInfo user: String=""){
+        let alert=UIAlertController(title: error, message: user, preferredStyle: .alert)
+        let cancelAction = UIAlertAction(title: "Ok", style: .default)
+        alert.addAction(cancelAction)
+        present(alert,animated: true)
+    }
 
     /*
     // MARK: - Navigation

@@ -382,6 +382,55 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="180" id="fN4-hq-czT"/>
                                 </constraints>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="left" semanticContentAttribute="forceLeftToRight" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="medecinCell" id="ScQ-Ay-dik" customClass="MedecinTableViewCell" customModule="MonPK_Moi" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="374" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ScQ-Ay-dik" id="uaq-rZ-1S4">
+                                            <rect key="frame" x="0.0" y="0.0" width="374" height="44"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MvL-A3-sq4">
+                                                    <rect key="frame" x="0.0" y="0.0" width="41.666666666666664" height="44"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D3L-XP-pWn">
+                                                    <rect key="frame" x="332.33333333333326" y="0.0" width="41.666666666666686" height="44"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8UG-F2-01Z">
+                                                    <rect key="frame" x="49.666666666666671" y="0.0" width="41.666666666666671" height="44"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="D3L-XP-pWn" firstAttribute="top" secondItem="uaq-rZ-1S4" secondAttribute="top" id="0A2-nC-UaS"/>
+                                                <constraint firstItem="8UG-F2-01Z" firstAttribute="leading" secondItem="MvL-A3-sq4" secondAttribute="trailing" constant="8" id="2DV-cr-tzb"/>
+                                                <constraint firstAttribute="bottom" secondItem="MvL-A3-sq4" secondAttribute="bottom" id="Eky-FU-xwG"/>
+                                                <constraint firstAttribute="bottom" secondItem="D3L-XP-pWn" secondAttribute="bottom" id="Gtm-Xw-a3e"/>
+                                                <constraint firstAttribute="trailing" secondItem="D3L-XP-pWn" secondAttribute="trailing" id="XEF-YO-S0i"/>
+                                                <constraint firstAttribute="bottom" secondItem="8UG-F2-01Z" secondAttribute="bottom" id="fwn-jR-c3z"/>
+                                                <constraint firstItem="8UG-F2-01Z" firstAttribute="top" secondItem="uaq-rZ-1S4" secondAttribute="top" id="nOi-kz-Yaj"/>
+                                                <constraint firstItem="MvL-A3-sq4" firstAttribute="top" secondItem="uaq-rZ-1S4" secondAttribute="top" id="qBG-1S-Pv7"/>
+                                                <constraint firstItem="MvL-A3-sq4" firstAttribute="leading" secondItem="uaq-rZ-1S4" secondAttribute="leading" id="rHW-4k-xhT"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="firstNameLabel" destination="MvL-A3-sq4" id="Hd1-W0-i6N"/>
+                                            <outlet property="lastNameLabel" destination="8UG-F2-01Z" id="WK0-tO-7n9"/>
+                                            <outlet property="professionLabel" destination="D3L-XP-pWn" id="IFC-aT-ZQC"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="delegate" destination="DHt-HA-Mec" id="p4W-du-hbK"/>
+                                </connections>
                             </tableView>
                             <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jki-ID-KzQ">
                                 <rect key="frame" x="319.66666666666669" y="233.33333333333331" width="65" height="35.999999999999943"/>
@@ -434,10 +483,13 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="medecinsTable" destination="fvb-9D-bAi" id="q3u-ju-TtZ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="B4q-4k-kTf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="416" y="-486"/>
+            <point key="canvasLocation" x="415.94202898550731" y="-486.68478260869568"/>
         </scene>
         <!--Information personnelle-->
         <scene sceneID="vwo-4w-jQ7">

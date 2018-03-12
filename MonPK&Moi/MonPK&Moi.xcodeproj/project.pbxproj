@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2C5CD4642056D4CE0084F0D6 /* MedecinTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C5CD4632056D4CE0084F0D6 /* MedecinTableViewCell.swift */; };
 		AA5E19AD204D6CEC00C25FC1 /* PilulierViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA5E19AC204D6CEC00C25FC1 /* PilulierViewController.swift */; };
 		AA5E19BA204D973F00C25FC1 /* AjoutContactPersoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA5E19B9204D973F00C25FC1 /* AjoutContactPersoViewController.swift */; };
 		AA5E19BC204D979900C25FC1 /* CoachViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA5E19BB204D979900C25FC1 /* CoachViewController.swift */; };
@@ -42,6 +43,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2C5CD4632056D4CE0084F0D6 /* MedecinTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MedecinTableViewCell.swift; sourceTree = "<group>"; };
 		AA5E19AC204D6CEC00C25FC1 /* PilulierViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PilulierViewController.swift; sourceTree = "<group>"; };
 		AA5E19B9204D973F00C25FC1 /* AjoutContactPersoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AjoutContactPersoViewController.swift; sourceTree = "<group>"; };
 		AA5E19BB204D979900C25FC1 /* CoachViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoachViewController.swift; sourceTree = "<group>"; };
@@ -106,6 +108,7 @@
 				AA81A81E20517C7A0056CFA8 /* TraceurViewController.swift */,
 				AA81A82020517CA20056CFA8 /* QuestionnaireViewController.swift */,
 				AA81A822205180B00056CFA8 /* SignalEvenementViewController.swift */,
+				2C5CD4632056D4CE0084F0D6 /* MedecinTableViewCell.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -269,6 +272,7 @@
 				AA5E19AD204D6CEC00C25FC1 /* PilulierViewController.swift in Sources */,
 				AAAC5A4B204E7D2700D4DD99 /* AjouterRendezVousViewController.swift in Sources */,
 				AA81A81F20517C7A0056CFA8 /* TraceurViewController.swift in Sources */,
+				2C5CD4642056D4CE0084F0D6 /* MedecinTableViewCell.swift in Sources */,
 				AA5E19BA204D973F00C25FC1 /* AjoutContactPersoViewController.swift in Sources */,
 				AAC3C388204DA1B8006C5B14 /* AjoutExerciceViewController.swift in Sources */,
 				AAAC5A49204E786700D4DD99 /* AgendaViewController.swift in Sources */,
