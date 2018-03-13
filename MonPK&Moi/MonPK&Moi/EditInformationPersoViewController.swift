@@ -43,10 +43,10 @@ class EditInformationPersoViewController: UIViewController {
         }
         //create Patient managedObj
         let patient = Patient(context: context)
-        patient.nom = NomTF.text
-        patient.prenom = PrenomTF.text
-        patient.temps_preparation = Int64(TpsPrepTF.text!)!
-        patient.date_naissance = DateNaissanceDP.date as NSDate
+        patient.nom = nom
+        patient.prenom = prenom
+        patient.temps_preparation = TpsPrep
+        patient.date_naissance = dateNaissance
         do{
             try context.save()
         }
@@ -57,7 +57,11 @@ class EditInformationPersoViewController: UIViewController {
     }
     
     @IBAction func unwindToContactListAfterSavingNewPerson(segue:UIStoryboardSegue) {
-        let EditInfoController = segue.source as? EditInformationPersoViewController
+        let nom = NomTF.text ?? ""
+        let prenom = PrenomTF.text ?? ""
+        let tpsPrep = Int64(TpsPrepTF.text!)!
+        let dateNaissance = DateNaissanceDP.date as NSDate
+        self.saveNewPatient(nom: nom, prenom: prenom, dateNaissance: dateNaissance, TpsPrep: tpsPrep)
         
     }
     
@@ -77,5 +81,9 @@ class EditInformationPersoViewController: UIViewController {
         let cancelAction = UIAlertAction(title: "OK", style: .default)
         alert.addAction(cancelAction)
         present(alert,animated: true)
+    }
+    
+    func alert(error: NSError){
+        self.alert(WithTitle: "\(error)", andMessage: "\(error.userInfo)")
     }
 }
