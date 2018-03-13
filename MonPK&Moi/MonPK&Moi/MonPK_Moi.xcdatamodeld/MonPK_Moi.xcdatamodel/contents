@@ -39,7 +39,7 @@
         <attribute name="date_naissance" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
         <attribute name="nom" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="prenom" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="temps_preparation" optional="YES" attributeType="Float" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="temps_preparation" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
         <relationship name="patient_contact" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Contact_perso" inverseName="contact_patient" inverseEntity="Contact_perso" syncable="YES"/>
         <relationship name="patient_evt" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Evenement" inverseName="evt_patient" inverseEntity="Evenement" syncable="YES"/>
         <relationship name="patient_exercice" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Exercice" inverseName="exercice_patient" inverseEntity="Exercice" syncable="YES"/>
@@ -85,16 +85,16 @@
         <relationship name="traitement_patient" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Patient" inverseName="patient_traitement" inverseEntity="Patient" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Rdv" positionX="376" positionY="-144" width="128" height="118"/>
-        <element name="Medecin" positionX="-90" positionY="-279" width="128" height="163"/>
-        <element name="Medicament" positionX="-578" positionY="153" width="128" height="103"/>
-        <element name="Patient" positionX="-135" positionY="72" width="128" height="223"/>
-        <element name="Traitement" positionX="-378" positionY="225" width="128" height="133"/>
-        <element name="Test_motricite" positionX="207" positionY="81" width="128" height="103"/>
+        <element name="Contact_perso" positionX="-335" positionY="-216" width="128" height="118"/>
         <element name="Evenement" positionX="-119" positionY="374" width="128" height="103"/>
         <element name="Exercice" positionX="-452" positionY="-0" width="128" height="103"/>
-        <element name="Contact_perso" positionX="-335" positionY="-216" width="128" height="118"/>
+        <element name="Medecin" positionX="-90" positionY="-279" width="128" height="163"/>
+        <element name="Medicament" positionX="-578" positionY="153" width="128" height="103"/>
+        <element name="Patient" positionX="-135" positionY="72" width="128" height="225"/>
         <element name="Prise_medicament" positionX="70" positionY="306" width="128" height="103"/>
+        <element name="Rdv" positionX="376" positionY="-144" width="128" height="118"/>
         <element name="Synthese" positionX="387" positionY="306" width="128" height="133"/>
+        <element name="Test_motricite" positionX="207" positionY="81" width="128" height="103"/>
+        <element name="Traitement" positionX="-378" positionY="225" width="128" height="133"/>
     </elements>
 </model>

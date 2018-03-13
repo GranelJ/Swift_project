@@ -18,18 +18,6 @@ class ContactViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        var patient : [Patient] = []
-        
-        guard let nom = patient[0].nom else{
-            return
-        }
-        NomLabel.text = nom
-        //PrenomLabel.text = patient[0].prenom
-        //TpsPrepLabel.text = patient[0].temps_preparation.description
-        guard let date_naissance = patient[0].date_naissance else{
-            return
-        }
-        //let age = NSDate.init() - date_naissance
         // Do any additional setup after loading the view.
     }
 
@@ -48,5 +36,4 @@ class ContactViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
-
 }

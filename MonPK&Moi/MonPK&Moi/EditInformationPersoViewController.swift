@@ -7,9 +7,14 @@
 //
 
 import UIKit
+import CoreData
 
 class EditInformationPersoViewController: UIViewController {
 
+    @IBOutlet weak var NomTF: UITextField!
+    @IBOutlet weak var PrenomTF: UITextField!
+    @IBOutlet weak var DateNaissanceDP: UIDatePicker!
+    @IBOutlet weak var TpsPrepTF: UITextField!
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -31,5 +36,46 @@ class EditInformationPersoViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    func saveNewPatient(nom: String, prenom: String, dateNaissance: NSDate, TpsPrep: Int64){
+        //first get context
+        guard let context = self.getContext(errorMsg: "Save failed") else {
+            return
+        }
+        //create Patient managedObj
+        let patient = Patient(context: context)
+        patient.nom = NomTF.text
+        patient.prenom = PrenomTF.text
+        patient.temps_preparation = Int64(TpsPrepTF.text!)!
+        patient.date_naissance = DateNaissanceDP.date as NSDate
+        do{
+            try context.save()
+        }
+        catch let error as NSError{
+            self.alert(error: error)
+            return
+        }
+    }
+    
+    @IBAction func unwindToContactListAfterSavingNewPerson(segue:UIStoryboardSegue) {
+        let EditInfoController = segue.source as? EditInformationPersoViewController
+        
+    }
+    
+    // MARK: - helper methods
+    
+    func getContext(errorMsg: String, userInfoMsg: String = "Could not retrieve data context") -> NSManagedObjectContext?{
+        //get context of persistent data
+        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
+            self.alert(WithTitle: errorMsg, andMessage: userInfoMsg)
+            return nil
+        }
+        return appDelegate.persistentContainer.viewContext
+    }
 
+    func alert(WithTitle title: String, andMessage msg: String = ""){
+        let alert = UIAlertController(title: title, message: msg, preferredStyle: .alert)
+        let cancelAction = UIAlertAction(title: "OK", style: .default)
+        alert.addAction(cancelAction)
+        present(alert,animated: true)
+    }
 }
