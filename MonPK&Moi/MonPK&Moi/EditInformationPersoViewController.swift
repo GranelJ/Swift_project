@@ -9,7 +9,7 @@
 import UIKit
 import CoreData
 
-class EditInformationPersoViewController: UIViewController {
+class EditInformationPersoViewController: UIViewController, UITextFieldDelegate {
 
     @IBOutlet weak var NomTF: UITextField!
     @IBOutlet weak var PrenomTF: UITextField!
@@ -17,8 +17,10 @@ class EditInformationPersoViewController: UIViewController {
     @IBOutlet weak var TpsPrepTF: UITextField!
     override func viewDidLoad() {
         super.viewDidLoad()
-
         // Do any additional setup after loading the view.
+        self.NomTF.delegate = self
+        self.PrenomTF.delegate = self
+        self.TpsPrepTF.delegate = self
     }
 
     override func didReceiveMemoryWarning() {
@@ -62,10 +64,14 @@ class EditInformationPersoViewController: UIViewController {
         let tpsPrep = Int64(TpsPrepTF.text!)!
         let dateNaissance = DateNaissanceDP.date as NSDate
         self.saveNewPatient(nom: nom, prenom: prenom, dateNaissance: dateNaissance, TpsPrep: tpsPrep)
-        
     }
     
     // MARK: - helper methods
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
     
     func getContext(errorMsg: String, userInfoMsg: String = "Could not retrieve data context") -> NSManagedObjectContext?{
         //get context of persistent data
