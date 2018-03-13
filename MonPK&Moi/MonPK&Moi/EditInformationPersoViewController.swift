@@ -38,14 +38,13 @@ class EditInformationPersoViewController: UIViewController, UITextFieldDelegate 
     }
     */
 
-    
-    @IBAction func unwindToContactListAfterSavingNewPerson(segue:UIStoryboardSegue) {
+    @IBAction func unwindToContactListAfterSavingNewPerson(_ sender: Any) {
         let nom = NomTF.text ?? ""
         let prenom = PrenomTF.text ?? ""
         let tpsPrep = Int64(TpsPrepTF.text!)!
         let dateNaissance = DateNaissanceDP.date as NSDate
         self.saveNewPatient(nom: nom, prenom: prenom, dateNaissance: dateNaissance, TpsPrep: tpsPrep)
-        // TODO : fix AppDelegate issue
+        self.dismiss(animated: true)
     }
     
     // MARK: - helper methods
