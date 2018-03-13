@@ -9,9 +9,10 @@
 import UIKit
 import CoreData
 
-class ContactViewController: UIViewController {
+class ContactViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     @IBOutlet weak var medecinsTable: UITableView!
+    
     var medecins : [Medecin] = []
     
     override func viewDidLoad() {
@@ -44,14 +45,16 @@ class ContactViewController: UIViewController {
         present(alert,animated: true)
     }
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell{
+        let cell = self.medecinsTable.dequeueReusableCell(withIdentifier: "medecinCell", for: indexPath) as! MedecinTableViewCell
+        cell.lastNameLabel.text = self.medecins[indexPath.row].nom
+        cell.firstNameLabel.text = self.medecins[indexPath.row].prenom
+        cell.professionLabel.text = self.medecins[indexPath.row].profession
+        return cell
     }
-    */
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int{
+        return self.medecins.count
+    }
 
 }
