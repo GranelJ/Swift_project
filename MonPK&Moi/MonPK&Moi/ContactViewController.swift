@@ -15,6 +15,25 @@ class ContactViewController: UIViewController, UITableViewDataSource, UITableVie
     
     var medecins : [Medecin] = []
     
+    @IBAction func addButton(_ sender: Any) {
+        let alert = UIAlertController(title: "Nouveau Nom", message: "Ajouter un nom", preferredStyle: .alert)
+        let saveAction = UIAlertAction(title: "Ajouter", style: .default){
+            [unowned self] action in
+            guard let textField = alert.textFields?.first,
+                let nameToSave = textField.text else{
+                    return
+            }
+            self.saveNewMedecin(withName: nameToSave)
+            self.medecinsTable.reloadData()
+        }
+        let cancelAction = UIAlertAction(title: "Annuler", style: .default)
+        alert.addTextField()
+        alert.addAction(saveAction)
+        alert.addAction(cancelAction)
+        
+        present(alert, animated:true)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -44,12 +63,28 @@ class ContactViewController: UIViewController, UITableViewDataSource, UITableVie
         alert.addAction(cancelAction)
         present(alert,animated: true)
     }
+    
+    func saveNewMedecin(withName nom: String?){
+        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else{
+            self.alertError(errorMsg: "Le contact ne peut être ajouté", userInfo: "raison inconnu")
+            return
+        }
+        let context = appDelegate.persistentContainer.viewContext
+        let medecin = Medecin(context: context)
+        medecin.nom=nom
+        do{
+            try context.save()
+            self.medecins.append(medecin)
+        }
+        catch let error as NSError{
+            self.alertError(errorMsg: "\(error)", userInfo: "\(error.userInfo)")
+            return
+        }
+    }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell{
         let cell = self.medecinsTable.dequeueReusableCell(withIdentifier: "medecinCell", for: indexPath) as! MedecinTableViewCell
         cell.lastNameLabel.text = self.medecins[indexPath.row].nom
-        cell.firstNameLabel.text = self.medecins[indexPath.row].prenom
-        cell.professionLabel.text = self.medecins[indexPath.row].profession
         return cell
     }
     
