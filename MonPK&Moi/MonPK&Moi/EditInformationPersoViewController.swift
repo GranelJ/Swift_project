@@ -27,7 +27,6 @@ class EditInformationPersoViewController: UIViewController, UITextFieldDelegate 
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
 
     /*
     // MARK: - Navigation
@@ -38,6 +37,19 @@ class EditInformationPersoViewController: UIViewController, UITextFieldDelegate 
         // Pass the selected object to the new view controller.
     }
     */
+
+    
+    @IBAction func unwindToContactListAfterSavingNewPerson(segue:UIStoryboardSegue) {
+        let nom = NomTF.text ?? ""
+        let prenom = PrenomTF.text ?? ""
+        let tpsPrep = Int64(TpsPrepTF.text!)!
+        let dateNaissance = DateNaissanceDP.date as NSDate
+        self.saveNewPatient(nom: nom, prenom: prenom, dateNaissance: dateNaissance, TpsPrep: tpsPrep)
+        // TODO : fix AppDelegate issue
+    }
+    
+    // MARK: - helper methods
+    
     func saveNewPatient(nom: String, prenom: String, dateNaissance: NSDate, TpsPrep: Int64){
         //first get context
         guard let context = self.getContext(errorMsg: "Save failed") else {
@@ -57,16 +69,6 @@ class EditInformationPersoViewController: UIViewController, UITextFieldDelegate 
             return
         }
     }
-    
-    @IBAction func unwindToContactListAfterSavingNewPerson(segue:UIStoryboardSegue) {
-        let nom = NomTF.text ?? ""
-        let prenom = PrenomTF.text ?? ""
-        let tpsPrep = Int64(TpsPrepTF.text!)!
-        let dateNaissance = DateNaissanceDP.date as NSDate
-        self.saveNewPatient(nom: nom, prenom: prenom, dateNaissance: dateNaissance, TpsPrep: tpsPrep)
-    }
-    
-    // MARK: - helper methods
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
