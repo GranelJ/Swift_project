@@ -38,19 +38,44 @@ class EditInformationPersoViewController: UIViewController, UITextFieldDelegate 
         // Pass the selected object to the new view controller.
     }
     */
-
+    // TODO: - gerer cas patient deja existant
     @IBAction func unwindToContactListAfterSavingNewPerson(_ sender: Any) {
         let nom = NomTF.text ?? ""
         let prenom = PrenomTF.text ?? ""
         let tpsPrep = Int64(TpsPrepTF.text!)!
         let dateNaissance = DateNaissanceDP.date as NSDate
-        self.saveNewPatient(nom: nom, prenom: prenom, dateNaissance: dateNaissance, TpsPrep: tpsPrep)
-        self.navigationController?.popViewController(animated: true)
+        do{
+            let exist = try Patient.exist()
+            if exist{
+                self.editPatient(nom: nom, prenom: prenom, dateNaissance: dateNaissance, TpsPrep: tpsPrep)
+                self.navigationController?.popViewController(animated: true)
+            }else{
+                self.createNewPatient(nom: nom, prenom: prenom, dateNaissance: dateNaissance, TpsPrep: tpsPrep)
+                self.navigationController?.popViewController(animated: true)
+            }
+        }catch{
+            
+        }
     }
     
     // MARK: - helper methods
-    
-    func saveNewPatient(nom: String, prenom: String, dateNaissance: NSDate, TpsPrep: Int64){
+    func editPatient(nom: String, prenom: String, dateNaissance: NSDate, TpsPrep: Int64){
+        //create Patient managedObj
+        let patient = Patient(context: ManageCoreData.context)
+        patient.nom = nom
+        patient.prenom = prenom
+        patient.temps_preparation = TpsPrep
+        patient.date_naissance = dateNaissance
+        do{
+            try ManageCoreData.context.save()
+        }
+        catch let error as NSError{
+        ManageErrorHelper.alertError(view: self, error: error)
+            return
+        }
+    }
+
+    func createNewPatient(nom: String, prenom: String, dateNaissance: NSDate, TpsPrep: Int64){
         //create Patient managedObj
         let patient = Patient(context: ManageCoreData.context)
         patient.nom = nom
