@@ -11,9 +11,8 @@ import UIKit
 import CoreData
 
 extension Patient {
-    static func get() throws -> Patient?{
+    static func get() throws -> Patient? {
         let request : NSFetchRequest<Patient> = Patient.fetchRequest()
-       
         do {
             let patientL = try ManageCoreData.context.fetch(request)
             return patientL.first
@@ -22,7 +21,7 @@ extension Patient {
         }
     }
     
-    static func exist() throws -> Bool{
+    static func exist() throws -> Bool {
         do{
             guard try(self.get() != nil) else {
                 return false

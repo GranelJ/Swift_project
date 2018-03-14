@@ -434,6 +434,12 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="Agelabel" destination="Rei-vW-7Xh" id="ths-Vt-J8A"/>
+                        <outlet property="NomLabel" destination="wk6-6e-6HN" id="ZBJ-n0-xC9"/>
+                        <outlet property="PrenomLabel" destination="Yfc-xc-uaT" id="ukL-YM-dMe"/>
+                        <outlet property="TpsPreplabel" destination="42Y-hY-gIJ" id="Jys-aH-cKz"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="B4q-4k-kTf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

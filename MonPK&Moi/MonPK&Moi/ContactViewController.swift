@@ -13,15 +13,32 @@ class ContactViewController: UIViewController {
 
     @IBOutlet weak var NomLabel: UILabel!
     @IBOutlet weak var PrenomLabel: UILabel!
-    @IBOutlet weak var AgeLabel: UILabel!
-    @IBOutlet weak var TpsPrepLabel: UILabel!
-    
-    var patients: [Patient] = []
+    @IBOutlet weak var TpsPreplabel: UILabel!
+    @IBOutlet weak var Agelabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         // Do any additional setup after loading the view.
+        let patient: Patient?
+        do{
+            let exist: Bool = try Patient.exist()
+            if exist{
+                do{
+                    patient = try Patient.get()
+                    NomLabel.text = patient?.nom
+                    PrenomLabel.text = patient?.prenom
+                    TpsPreplabel.text = patient?.temps_preparation.description
+                    let formatter = DateFormatter()
+                    formatter.dateFormat = "dd/MM/YYYY"
+                    let dateString = formatter.string(from: patient?.date_naissance as! Date)
+                    Agelabel.text = dateString
+                }catch{
+                }
+            }
+        }catch{
+            fatalError("Application Error")
+        }
     }
 
     override func didReceiveMemoryWarning() {
