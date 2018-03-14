@@ -82,7 +82,7 @@ class ContactViewController: UIViewController, UITableViewDataSource, UITableVie
             return cellM
         }
         if(tableView == self.contactsTable){
-            let cellC = self.medecinsTable.dequeueReusableCell(withIdentifier: "contactCell", for: indexPath) as! ContactTableViewCell
+            let cellC = self.contactsTable.dequeueReusableCell(withIdentifier: "contactCell", for: indexPath) as! ContactTableViewCell
             cellC.contactLastName.text = self.contacts[indexPath.row].nom
             cellC.contactFirstName.text = self.contacts[indexPath.row].prenom
             cellC.contactNum.text = self.contacts[indexPath.row].telephone
@@ -103,6 +103,59 @@ class ContactViewController: UIViewController, UITableViewDataSource, UITableVie
             count = self.contacts.count
         }
         return count!
+    }
+    
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        if(tableView == self.contactsTable){
+            if (editingStyle==UITableViewCellEditingStyle.delete){
+                self.contactsTable.beginUpdates()
+                if(self.delete_contact(contactWithIndex: indexPath.row)){
+                    self.contactsTable.deleteRows(at: [indexPath], with: UITableViewRowAnimation.automatic)
+                }
+                self.contactsTable.endUpdates()
+            }
+        }
+        if(tableView == self.medecinsTable){
+            if (editingStyle==UITableViewCellEditingStyle.delete){
+                self.medecinsTable.beginUpdates()
+                if(self.delete_medecin(contactWithIndex: indexPath.row)){
+                    self.medecinsTable.deleteRows(at: [indexPath], with: UITableViewRowAnimation.automatic)
+                }
+                self.medecinsTable.endUpdates()
+            }
+        }
+    }
+    
+    func delete_contact(contactWithIndex index: Int) -> Bool{
+        let contact = self.contacts[index]
+        ManageCoreData.context.delete(contact)
+        do{
+            try ManageCoreData.context.save()
+            self.contacts.remove(at: index)
+            return true
+        }
+        catch let error as NSError{
+            ManageErrorHelper.alertError(view: self, error: error)
+            return false
+        }
+    }
+
+    func delete_medecin(contactWithIndex index: Int) -> Bool{
+        let medecin = self.medecins[index]
+        ManageCoreData.context.delete(medecin)
+        do{
+            try ManageCoreData.context.save()
+            self.medecins.remove(at: index)
+            return true
+        }
+        catch let error as NSError{
+            ManageErrorHelper.alertError(view: self, error: error)
+            return false
+        }
     }
     
     /*
