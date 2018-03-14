@@ -16,8 +16,11 @@ class ContactViewController: UIViewController {
     @IBOutlet weak var AgeLabel: UILabel!
     @IBOutlet weak var TpsPrepLabel: UILabel!
     
+    var patients: [Patient] = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         // Do any additional setup after loading the view.
     }
 
@@ -36,4 +39,5 @@ class ContactViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
+
 }

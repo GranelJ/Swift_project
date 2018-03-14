@@ -51,21 +51,17 @@ class EditInformationPersoViewController: UIViewController, UITextFieldDelegate 
     // MARK: - helper methods
     
     func saveNewPatient(nom: String, prenom: String, dateNaissance: NSDate, TpsPrep: Int64){
-        //first get context
-        guard let context = self.getContext(errorMsg: "Save failed") else {
-            return
-        }
         //create Patient managedObj
-        let patient = Patient(context: context)
+        let patient = Patient(context: ManageCoreData.context)
         patient.nom = nom
         patient.prenom = prenom
         patient.temps_preparation = TpsPrep
         patient.date_naissance = dateNaissance
         do{
-            try context.save()
+            try ManageCoreData.context.save()
         }
         catch let error as NSError{
-            self.alert(error: error)
+            ManageErrorHelper.alertError(view: self, error: error)
             return
         }
     }
@@ -73,25 +69,5 @@ class EditInformationPersoViewController: UIViewController, UITextFieldDelegate 
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
         return true
-    }
-    
-    func getContext(errorMsg: String, userInfoMsg: String = "Could not retrieve data context") -> NSManagedObjectContext?{
-        //get context of persistent data
-        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
-            self.alert(WithTitle: errorMsg, andMessage: userInfoMsg)
-            return nil
-        }
-        return appDelegate.persistentContainer.viewContext
-    }
-
-    func alert(WithTitle title: String, andMessage msg: String = ""){
-        let alert = UIAlertController(title: title, message: msg, preferredStyle: .alert)
-        let cancelAction = UIAlertAction(title: "OK", style: .default)
-        alert.addAction(cancelAction)
-        present(alert,animated: true)
-    }
-    
-    func alert(error: NSError){
-        self.alert(WithTitle: "\(error)", andMessage: "\(error.userInfo)")
     }
 }
