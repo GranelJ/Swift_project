@@ -2,7 +2,7 @@
 //  MedecinTableViewCell.swift
 //  MonPK&Moi
 //
-//  Created by Justin ESCALIER on 12/03/2018.
+//  Created by Justin ESCALIER on 14/03/2018.
 //  Copyright © 2018 Joris GRANEL. All rights reserved.
 //
 
@@ -11,8 +11,8 @@ import UIKit
 class MedecinTableViewCell: UITableViewCell {
 
     @IBOutlet weak var firstNameLabel: UILabel!
-    @IBOutlet weak var professionLabel: UILabel!
     @IBOutlet weak var lastNameLabel: UILabel!
+    @IBOutlet weak var professionLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()

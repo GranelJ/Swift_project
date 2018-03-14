@@ -39,7 +39,7 @@
         <attribute name="date_naissance" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
         <attribute name="nom" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="prenom" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="temps_preparation" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="temps_preparation" optional="YES" attributeType="Float" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
         <relationship name="patient_contact" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Contact_perso" inverseName="contact_patient" inverseEntity="Contact_perso" syncable="YES"/>
         <relationship name="patient_evt" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Evenement" inverseName="evt_patient" inverseEntity="Evenement" syncable="YES"/>
         <relationship name="patient_exercice" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Exercice" inverseName="exercice_patient" inverseEntity="Exercice" syncable="YES"/>

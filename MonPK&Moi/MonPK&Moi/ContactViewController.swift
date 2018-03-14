@@ -10,39 +10,46 @@ import UIKit
 import CoreData
 
 class ContactViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+
+    var medecins : [Medecin] = []
     
     @IBOutlet weak var medecinsTable: UITableView!
     
-    var medecins : [Medecin] = []
-    
-    @IBAction func addButton(_ sender: Any) {
-        let alert = UIAlertController(title: "Nouveau Nom", message: "Ajouter un nom", preferredStyle: .alert)
-        let saveAction = UIAlertAction(title: "Ajouter", style: .default){
-            [unowned self] action in
-            guard let textField = alert.textFields?.first,
-                let nameToSave = textField.text else{
-                    return
-            }
-            self.saveNewMedecin(withName: nameToSave)
-            self.medecinsTable.reloadData()
-        }
-        let cancelAction = UIAlertAction(title: "Annuler", style: .default)
-        alert.addTextField()
-        alert.addAction(saveAction)
-        alert.addAction(cancelAction)
-        
-        present(alert, animated:true)
-    }
+    @IBOutlet weak var NomLabel: UILabel!
+    @IBOutlet weak var PrenomLabel: UILabel!
+    @IBOutlet weak var TpsPreplabel: UILabel!
+    @IBOutlet weak var Agelabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        // Do any additional setup after loading the view.
+        let patient: Patient?
+        do{
+            let exist: Bool = try Patient.exist()
+            if exist{
+                do{
+                    patient = try Patient.get()
+                    NomLabel.text = patient?.nom
+                    PrenomLabel.text = patient?.prenom
+                    TpsPreplabel.text = patient?.temps_preparation.description
+                    let formatter = DateFormatter()
+                    formatter.dateFormat = "dd/MM/YYYY"
+                    let dateString = formatter.string(from: patient?.date_naissance as! Date)
+                    Agelabel.text = dateString
+                }catch{
+                }
+            }
+        }catch{
+            fatalError("Application Error")
+        }
+        
+        
         guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
-            self.alertError(errorMsg: "Could not load data", userInfo: "reason unknow")
+            self.alertError(errorMsg: "Could not load data", userInfo: "reason unknown")
             return
         }
         let context = appDelegate.persistentContainer.viewContext
-        
         let request : NSFetchRequest<Medecin> = Medecin.fetchRequest()
         do{
             try self.medecins = context.fetch(request)
@@ -64,32 +71,26 @@ class ContactViewController: UIViewController, UITableViewDataSource, UITableVie
         present(alert,animated: true)
     }
     
-    func saveNewMedecin(withName nom: String?){
-        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else{
-            self.alertError(errorMsg: "Le contact ne peut être ajouté", userInfo: "raison inconnu")
-            return
-        }
-        let context = appDelegate.persistentContainer.viewContext
-        let medecin = Medecin(context: context)
-        medecin.nom=nom
-        do{
-            try context.save()
-            self.medecins.append(medecin)
-        }
-        catch let error as NSError{
-            self.alertError(errorMsg: "\(error)", userInfo: "\(error.userInfo)")
-            return
-        }
-    }
-
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell{
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = self.medecinsTable.dequeueReusableCell(withIdentifier: "medecinCell", for: indexPath) as! MedecinTableViewCell
         cell.lastNameLabel.text = self.medecins[indexPath.row].nom
+        cell.firstNameLabel.text = self.medecins[indexPath.row].prenom
+        cell.professionLabel.text = self.medecins[indexPath.row].profession
         return cell
     }
     
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int{
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.medecins.count
     }
+    
+    /*
+    // MARK: - Navigation
+
+    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // Get the new view controller using segue.destinationViewController.
+        // Pass the selected object to the new view controller.
+    }
+    */
 
 }
