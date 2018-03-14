@@ -10,6 +10,10 @@ import UIKit
 
 class AjoutContactPersoViewController: UIViewController {
 
+    @IBOutlet weak var lastNameLabel: UITextField!
+    @IBOutlet weak var numLabel: UITextField!
+    @IBOutlet weak var mailLabel: UITextField!
+    @IBOutlet weak var firstNameLabel: UITextField!
     override func viewDidLoad() {
         super.viewDidLoad()
 

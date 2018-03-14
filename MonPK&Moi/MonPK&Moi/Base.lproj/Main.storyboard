@@ -125,6 +125,12 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Ajout contact personnel" id="Oc3-w5-0vo"/>
+                    <connections>
+                        <outlet property="firstNameLabel" destination="juk-Kp-688" id="boj-Er-FEc"/>
+                        <outlet property="lastNameLabel" destination="5HZ-c0-hWZ" id="516-nE-rLz"/>
+                        <outlet property="mailLabel" destination="71O-8W-2vB" id="G76-e0-rg8"/>
+                        <outlet property="numLabel" destination="YYA-yA-3Mg" id="mgg-5g-h1E"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="M8Z-iL-vq6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -378,6 +384,56 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="180" id="luz-d6-YYc"/>
                                 </constraints>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="contactCell" id="bvM-Nm-FnI" customClass="ContactTableViewCell" customModule="MonPK_Moi" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="374" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="bvM-Nm-FnI" id="8YV-l1-fqB">
+                                            <rect key="frame" x="0.0" y="0.0" width="374" height="44"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFit" semanticContentAttribute="forceLeftToRight" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C63-ax-Wjj">
+                                                    <rect key="frame" x="8" y="8" width="42" height="27.666666666666664"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFit" semanticContentAttribute="forceLeftToRight" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="po2-1j-Mb7">
+                                                    <rect key="frame" x="58" y="12" width="42" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFit" semanticContentAttribute="forceLeftToRight" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2x1-kb-ihg">
+                                                    <rect key="frame" x="324" y="12" width="42" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="bottomMargin" secondItem="C63-ax-Wjj" secondAttribute="bottom" id="Hdv-Kc-1P4"/>
+                                                <constraint firstItem="po2-1j-Mb7" firstAttribute="top" secondItem="8YV-l1-fqB" secondAttribute="topMargin" constant="4" id="KhT-oj-YMz"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="po2-1j-Mb7" secondAttribute="bottom" constant="3" id="Z7D-Zo-ZS7"/>
+                                                <constraint firstItem="C63-ax-Wjj" firstAttribute="top" secondItem="8YV-l1-fqB" secondAttribute="topMargin" id="bx0-wP-ob4"/>
+                                                <constraint firstItem="2x1-kb-ihg" firstAttribute="top" secondItem="8YV-l1-fqB" secondAttribute="topMargin" constant="4" id="drf-CX-lw2"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="2x1-kb-ihg" secondAttribute="bottom" constant="3" id="grj-GQ-h2j"/>
+                                                <constraint firstItem="po2-1j-Mb7" firstAttribute="leading" secondItem="C63-ax-Wjj" secondAttribute="trailing" constant="8" id="rXJ-r8-EvV"/>
+                                                <constraint firstItem="C63-ax-Wjj" firstAttribute="leading" secondItem="8YV-l1-fqB" secondAttribute="leadingMargin" id="sTj-Rh-OGz"/>
+                                                <constraint firstItem="2x1-kb-ihg" firstAttribute="trailing" secondItem="8YV-l1-fqB" secondAttribute="trailingMargin" id="xom-xH-axH"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="contactFirstName" destination="po2-1j-Mb7" id="uXG-pI-F1W"/>
+                                            <outlet property="contactLastName" destination="C63-ax-Wjj" id="hv7-WX-8Cp"/>
+                                            <outlet property="contactNum" destination="2x1-kb-ihg" id="eeH-h7-0GJ"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="DHt-HA-Mec" id="s5b-ma-4Dj"/>
+                                    <outlet property="delegate" destination="DHt-HA-Mec" id="Fpt-Jv-TVC"/>
+                                </connections>
                             </tableView>
                             <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jki-ID-KzQ">
                                 <rect key="frame" x="319.66666666666669" y="233.66666666666669" width="65" height="36.000000000000057"/>
@@ -501,6 +557,7 @@
                         <outlet property="NomLabel" destination="wk6-6e-6HN" id="ZBJ-n0-xC9"/>
                         <outlet property="PrenomLabel" destination="Yfc-xc-uaT" id="ukL-YM-dMe"/>
                         <outlet property="TpsPreplabel" destination="42Y-hY-gIJ" id="Jys-aH-cKz"/>
+                        <outlet property="contactsTable" destination="DMC-pM-gfY" id="eUW-1c-cJr"/>
                         <outlet property="medecinsTable" destination="fvb-9D-bAi" id="JdZ-3A-3Cb"/>
                     </connections>
                 </viewController>

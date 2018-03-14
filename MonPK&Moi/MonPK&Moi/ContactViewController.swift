@@ -12,8 +12,10 @@ import CoreData
 class ContactViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
     var medecins : [Medecin] = []
+    var contacts : [Contact_perso] = []
     
     @IBOutlet weak var medecinsTable: UITableView!
+    @IBOutlet weak var contactsTable: UITableView!
     
     @IBOutlet weak var NomLabel: UILabel!
     @IBOutlet weak var PrenomLabel: UILabel!
@@ -44,18 +46,20 @@ class ContactViewController: UIViewController, UITableViewDataSource, UITableVie
             fatalError("Application Error")
         }
         
-        
-        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
-            self.alertError(errorMsg: "Could not load data", userInfo: "reason unknown")
-            return
-        }
-        let context = appDelegate.persistentContainer.viewContext
         let request : NSFetchRequest<Medecin> = Medecin.fetchRequest()
         do{
-            try self.medecins = context.fetch(request)
+            try self.medecins = ManageCoreData.context.fetch(request)
         }
         catch let error as NSError{
-            self.alertError(errorMsg: "\(error)", userInfo: "\(error.userInfo)")
+            ManageErrorHelper.alertError(view: self, WithTitle: "\(error)", andMessage: "\(error.userInfo)")
+        }
+        
+        let request2 : NSFetchRequest<Contact_perso> = Contact_perso.fetchRequest()
+        do{
+            try self.contacts = ManageCoreData.context.fetch(request2)
+        }
+        catch let error as NSError{
+            ManageErrorHelper.alertError(view: self, WithTitle: "\(error)", andMessage: "\(error.userInfo)")
         }
     }
 
@@ -64,23 +68,41 @@ class ContactViewController: UIViewController, UITableViewDataSource, UITableVie
         // Dispose of any resources that can be recreated.
     }
     
-    func alertError(errorMsg error: String, userInfo user: String=""){
-        let alert=UIAlertController(title: error, message: user, preferredStyle: .alert)
-        let cancelAction = UIAlertAction(title: "Ok", style: .default)
-        alert.addAction(cancelAction)
-        present(alert,animated: true)
-    }
-    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = self.medecinsTable.dequeueReusableCell(withIdentifier: "medecinCell", for: indexPath) as! MedecinTableViewCell
-        cell.lastNameLabel.text = self.medecins[indexPath.row].nom
-        cell.firstNameLabel.text = self.medecins[indexPath.row].prenom
-        cell.professionLabel.text = self.medecins[indexPath.row].profession
+        
+        let cell = UITableViewCell()
+        
+        if(tableView == self.medecinsTable){
+        
+            let cellM = self.medecinsTable.dequeueReusableCell(withIdentifier: "medecinCell", for: indexPath) as! MedecinTableViewCell
+            cellM.lastNameLabel.text = self.medecins[indexPath.row].nom
+            cellM.firstNameLabel.text = self.medecins[indexPath.row].prenom
+            cellM.professionLabel.text = self.medecins[indexPath.row].profession
+            
+            return cellM
+        }
+        if(tableView == self.contactsTable){
+            let cellC = self.medecinsTable.dequeueReusableCell(withIdentifier: "contactCell", for: indexPath) as! ContactTableViewCell
+            cellC.contactLastName.text = self.contacts[indexPath.row].nom
+            cellC.contactFirstName.text = self.contacts[indexPath.row].prenom
+            cellC.contactNum.text = self.contacts[indexPath.row].telephone
+            
+            return cellC
+        }
+        
         return cell
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.medecins.count
+        var count: Int?
+        
+        if(tableView == self.medecinsTable){
+            count = self.medecins.count
+        }
+        if(tableView == self.contactsTable){
+            count = self.contacts.count
+        }
+        return count!
     }
     
     /*
