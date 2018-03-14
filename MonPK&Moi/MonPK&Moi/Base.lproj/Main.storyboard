@@ -266,7 +266,7 @@
             </objects>
             <point key="canvasLocation" x="415.94202898550731" y="-1230.163043478261"/>
         </scene>
-        <!--Contact-->
+        <!--Information-->
         <scene sceneID="wj5-AC-NsJ">
             <objects>
                 <viewController id="DHt-HA-Mec" customClass="ContactViewController" customModule="MonPK_Moi" customModuleProvider="target" sceneMemberID="viewController">
@@ -416,7 +416,7 @@
                             <constraint firstItem="DMC-pM-gfY" firstAttribute="top" secondItem="fOl-GE-jW3" secondAttribute="bottom" constant="10" id="xTL-Vj-zgl"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Contact" id="COi-Ip-2eG">
+                    <navigationItem key="navigationItem" title="Information" id="COi-Ip-2eG">
                         <barButtonItem key="rightBarButtonItem" systemItem="edit" id="9qM-yL-j3m">
                             <connections>
                                 <segue destination="9wG-0B-gXU" kind="show" id="CEC-jS-kXL"/>

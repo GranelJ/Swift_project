@@ -44,7 +44,7 @@ class EditInformationPersoViewController: UIViewController, UITextFieldDelegate 
         let tpsPrep = Int64(TpsPrepTF.text!)!
         let dateNaissance = DateNaissanceDP.date as NSDate
         self.saveNewPatient(nom: nom, prenom: prenom, dateNaissance: dateNaissance, TpsPrep: tpsPrep)
-        self.dismiss(animated: true)
+        self.navigationController?.popViewController(animated: true)
     }
     
     // MARK: - helper methods
