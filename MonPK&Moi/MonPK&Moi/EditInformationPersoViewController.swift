@@ -7,20 +7,27 @@
 //
 
 import UIKit
+import CoreData
 
-class EditInformationPersoViewController: UIViewController {
+class EditInformationPersoViewController: UIViewController, UITextFieldDelegate {
 
+    @IBOutlet weak var NomTF: UITextField!
+    @IBOutlet weak var PrenomTF: UITextField!
+    @IBOutlet weak var DateNaissanceDP: UIDatePicker!
+    @IBOutlet weak var TpsPrepTF: UITextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
         // Do any additional setup after loading the view.
+        self.NomTF.delegate = self
+        self.PrenomTF.delegate = self
+        self.TpsPrepTF.delegate = self
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
 
     /*
     // MARK: - Navigation
@@ -31,5 +38,61 @@ class EditInformationPersoViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    // TODO: - gerer cas patient deja existant
+    @IBAction func unwindToContactListAfterSavingNewPerson(_ sender: Any) {
+        let nom = NomTF.text ?? ""
+        let prenom = PrenomTF.text ?? ""
+        let tpsPrep = Int64(TpsPrepTF.text!)!
+        let dateNaissance = DateNaissanceDP.date as NSDate
+        do{
+            let exist = try Patient.exist()
+            if exist{
+                self.editPatient(nom: nom, prenom: prenom, dateNaissance: dateNaissance, TpsPrep: tpsPrep)
+                self.navigationController?.popViewController(animated: true)
+            }else{
+                self.createNewPatient(nom: nom, prenom: prenom, dateNaissance: dateNaissance, TpsPrep: tpsPrep)
+                self.navigationController?.popViewController(animated: true)
+            }
+        }catch{
+            
+        }
+    }
+    
+    // MARK: - helper methods
+    func editPatient(nom: String, prenom: String, dateNaissance: NSDate, TpsPrep: Int64){
+        //create Patient managedObj
+        let patient = Patient(context: ManageCoreData.context)
+        patient.nom = nom
+        patient.prenom = prenom
+        patient.temps_preparation = TpsPrep
+        patient.date_naissance = dateNaissance
+        do{
+            try ManageCoreData.context.save()
+        }
+        catch let error as NSError{
+        ManageErrorHelper.alertError(view: self, error: error)
+            return
+        }
+    }
 
+    func createNewPatient(nom: String, prenom: String, dateNaissance: NSDate, TpsPrep: Int64){
+        //create Patient managedObj
+        let patient = Patient(context: ManageCoreData.context)
+        patient.nom = nom
+        patient.prenom = prenom
+        patient.temps_preparation = TpsPrep
+        patient.date_naissance = dateNaissance
+        do{
+            try ManageCoreData.context.save()
+        }
+        catch let error as NSError{
+            ManageErrorHelper.alertError(view: self, error: error)
+            return
+        }
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
 }

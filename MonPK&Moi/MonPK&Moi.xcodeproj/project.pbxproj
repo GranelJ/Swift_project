@@ -90,6 +90,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		AA4A253520591DE5001480E5 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				AA4A253620591E17001480E5 /* ManageErrorHelper.swift */,
+				AA4A253B205929D0001480E5 /* ManageCoreData.swift */,
+			);
+			name = Helper;
+			sourceTree = "<group>";
+		};
+		AA4A25382059241A001480E5 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				AA4A2539205928D4001480E5 /* PatientModel.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
 		AA5E19B6204D96DD00C25FC1 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
@@ -134,6 +151,8 @@
 		AACCDBD620468EB6002112F7 /* MonPK&Moi */ = {
 			isa = PBXGroup;
 			children = (
+				AA4A25382059241A001480E5 /* Model */,
+				AA4A253520591DE5001480E5 /* Helper */,
 				AA5E19B6204D96DD00C25FC1 /* Controller */,
 				AACCDBD720468EB6002112F7 /* AppDelegate.swift */,
 				AACCDBD920468EB6002112F7 /* ViewController.swift */,
@@ -274,9 +293,11 @@
 				AA81A81F20517C7A0056CFA8 /* TraceurViewController.swift in Sources */,
 				2C5CD4642056D4CE0084F0D6 /* MedecinTableViewCell.swift in Sources */,
 				AA5E19BA204D973F00C25FC1 /* AjoutContactPersoViewController.swift in Sources */,
+				AA4A253720591E17001480E5 /* ManageErrorHelper.swift in Sources */,
 				AAC3C388204DA1B8006C5B14 /* AjoutExerciceViewController.swift in Sources */,
 				AAAC5A49204E786700D4DD99 /* AgendaViewController.swift in Sources */,
 				AAC3C38C204DAA83006C5B14 /* AjoutMedicamentViewController.swift in Sources */,
+				AA4A253A205928D4001480E5 /* PatientModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
