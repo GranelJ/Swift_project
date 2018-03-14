@@ -15,6 +15,7 @@ class EditInformationPersoViewController: UIViewController, UITextFieldDelegate 
     @IBOutlet weak var PrenomTF: UITextField!
     @IBOutlet weak var DateNaissanceDP: UIDatePicker!
     @IBOutlet weak var TpsPrepTF: UITextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
