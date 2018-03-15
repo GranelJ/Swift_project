@@ -7,8 +7,9 @@
 //
 
 import UIKit
+import CoreData
 
-class CoachViewController: UIViewController {
+class CoachViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
     var exercices : [Exercice] = []
     
@@ -18,11 +19,7 @@ class CoachViewController: UIViewController {
 
         let cell = self.exercicesTable.dequeueReusableCell(withIdentifier: "ExerciceCell", for: indexPath) as! ExerciceTableViewCell
         cell.nomLabel.text = self.exercices[indexPath.row].libelle
-        let formatter = DateFormatter()
-        formatter.dateFormat = "dd/MM/YYYY"
-        let dateString = formatter.string(from: self.exercices[indexPath.row].date_debut as! Date)
-        cell.heureLabel.text = dateString
-            
+        cell.jourLabel.text = String(self.exercices[indexPath.row].jour)
         return cell
     }
     
@@ -33,6 +30,15 @@ class CoachViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        
+        let request : NSFetchRequest<Exercice> = Exercice.fetchRequest()
+        do{
+            try self.exercices = ManageCoreData.context.fetch(request)
+        }
+        catch let error as NSError{
+            ManageErrorHelper.alertError(view: self, WithTitle: "\(error)", andMessage: "\(error.userInfo)")
+        }
+        
         // Do any additional setup after loading the view.
     }
 
