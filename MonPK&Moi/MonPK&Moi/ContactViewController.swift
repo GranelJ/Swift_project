@@ -46,7 +46,11 @@ class ContactViewController: UIViewController, UITableViewDataSource, UITableVie
         }catch{
             fatalError("Application Error")
         }
+        //reload tableviewdata
+        self.contactsTable.reloadData()
+        self.medecinsTable.reloadData()
         
+        //Request to get Contacts
         let request : NSFetchRequest<Medecin> = Medecin.fetchRequest()
         do{
             try self.medecins = ManageCoreData.context.fetch(request)
@@ -69,6 +73,7 @@ class ContactViewController: UIViewController, UITableViewDataSource, UITableVie
         // Dispose of any resources that can be recreated.
     }
     
+    // MARK: - Table Veww Management
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = UITableViewCell()
@@ -131,6 +136,7 @@ class ContactViewController: UIViewController, UITableViewDataSource, UITableVie
         }
     }
     
+    // MARK: - Delete management
     func delete_contact(contactWithIndex index: Int) -> Bool{
         let contact = self.contacts[index]
         ManageCoreData.context.delete(contact)

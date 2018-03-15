@@ -21,6 +21,7 @@ class AjoutContactMedicalViewController: UIViewController {
     @IBAction func ValidateButton(_ sender: Any) {
         self.saveNewMedecin(withName: textNom.text, withNum: textNum.text, withMail: textMail.text, withPrenom: textPrenom.text, withMetier: textMetier.text, withLieu: textLieu.text)
         self.navigationController?.popViewController(animated: true)
+        
     }
     
     func saveNewMedecin(withName nom: String?,withNum num: String?,withMail mail: String?,withPrenom prenom: String?, withMetier metier: String?, withLieu lieu: String?){
@@ -35,17 +36,11 @@ class AjoutContactMedicalViewController: UIViewController {
             try ManageCoreData.context.save()
         }
         catch let error as NSError{
-            self.alertError(errorMsg: "\(error)", userInfo: "\(error.userInfo)")
+            ManageErrorHelper.alertError(view: self, WithTitle: "\(error)", andMessage: "\(error.userInfo)")
             return
         }
     }
-    
-    func alertError(errorMsg error: String, userInfo user: String=""){
-        let alert=UIAlertController(title: error, message: user, preferredStyle: .alert)
-        let cancelAction = UIAlertAction(title: "Ok", style: .default)
-        alert.addAction(cancelAction)
-        present(alert,animated: true)
-    }
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
