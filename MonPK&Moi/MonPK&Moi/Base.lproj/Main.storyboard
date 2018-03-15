@@ -1286,7 +1286,7 @@
                                 <rect key="frame" x="20" y="99" width="374" height="538"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ExerciceCell" id="0Dv-BM-ucn">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ExerciceCell" id="0Dv-BM-ucn" customClass="ExerciceTableViewCell" customModule="MonPK_Moi" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="374" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="0Dv-BM-ucn" id="Eou-l7-WJh">
@@ -1309,8 +1309,16 @@
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="heureLabel" destination="9hQ-F1-J1I" id="Hkr-0R-aS8"/>
+                                            <outlet property="nomLabel" destination="op6-3O-lSt" id="7pA-bc-ovC"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="LgB-fQ-55S" id="ldi-L3-6FV"/>
+                                    <outlet property="delegate" destination="LgB-fQ-55S" id="FgZ-zb-VLd"/>
+                                </connections>
                             </tableView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Liste des exercices" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PrU-ef-agE">
                                 <rect key="frame" x="122" y="69" width="170" height="24"/>
@@ -1342,6 +1350,9 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Coach" image="Coach" id="4jT-UB-Qkt"/>
                     <navigationItem key="navigationItem" title="Coach sportif" id="WYo-yy-nf5"/>
+                    <connections>
+                        <outlet property="exercicesTable" destination="yqC-yB-t0Y" id="cBs-0L-RlJ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Gmv-j1-mkL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1601,6 +1612,9 @@
                                 <rect key="frame" x="176" y="621" width="62" height="36"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <state key="normal" title="Valider"/>
+                                <connections>
+                                    <action selector="validateButton:" destination="Egn-jw-3Og" eventType="touchUpInside" id="M5A-lc-u7F"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -1619,6 +1633,11 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Ajout exercice" id="iWC-D1-M7Z"/>
+                    <connections>
+                        <outlet property="dateText" destination="aaH-g7-yci" id="7SR-m6-5Jh"/>
+                        <outlet property="nameText" destination="KzK-ly-8gy" id="2Ac-aI-U1T"/>
+                        <outlet property="periodText" destination="n0c-MK-7M8" id="sz0-es-VI2"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YAA-KZ-llp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
