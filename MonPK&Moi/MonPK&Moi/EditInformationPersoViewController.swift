@@ -64,7 +64,7 @@ class EditInformationPersoViewController: UIViewController, UITextFieldDelegate 
         let patient = Patient(context: ManageCoreData.context)
         patient.nom = nom
         patient.prenom = prenom
-        patient.temps_preparation = TpsPrep
+        patient.temps_preparation = Int64(TpsPrep)
         patient.date_naissance = dateNaissance
         do{
             try ManageCoreData.context.save()
@@ -80,7 +80,7 @@ class EditInformationPersoViewController: UIViewController, UITextFieldDelegate 
         let patient = Patient(context: ManageCoreData.context)
         patient.nom = nom
         patient.prenom = prenom
-        patient.temps_preparation = TpsPrep
+        patient.temps_preparation = Int64(TpsPrep)
         patient.date_naissance = dateNaissance
         do{
             try ManageCoreData.context.save()

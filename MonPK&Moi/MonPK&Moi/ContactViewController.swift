@@ -9,8 +9,14 @@
 import UIKit
 import CoreData
 
-class ContactViewController: UIViewController {
+class ContactViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
+    var medecins : [Medecin] = []
+    var contacts : [Contact_perso] = []
+    
+    @IBOutlet weak var medecinsTable: UITableView!
+    @IBOutlet weak var contactsTable: UITableView!
+    
     @IBOutlet weak var NomLabel: UILabel!
     @IBOutlet weak var PrenomLabel: UILabel!
     @IBOutlet weak var TpsPreplabel: UILabel!
@@ -40,6 +46,22 @@ class ContactViewController: UIViewController {
         }catch{
             fatalError("Application Error")
         }
+        
+        let request : NSFetchRequest<Medecin> = Medecin.fetchRequest()
+        do{
+            try self.medecins = ManageCoreData.context.fetch(request)
+        }
+        catch let error as NSError{
+            ManageErrorHelper.alertError(view: self, WithTitle: "\(error)", andMessage: "\(error.userInfo)")
+        }
+        
+        let request2 : NSFetchRequest<Contact_perso> = Contact_perso.fetchRequest()
+        do{
+            try self.contacts = ManageCoreData.context.fetch(request2)
+        }
+        catch let error as NSError{
+            ManageErrorHelper.alertError(view: self, WithTitle: "\(error)", andMessage: "\(error.userInfo)")
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -47,6 +69,95 @@ class ContactViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        let cell = UITableViewCell()
+        
+        if(tableView == self.medecinsTable){
+        
+            let cellM = self.medecinsTable.dequeueReusableCell(withIdentifier: "medecinCell", for: indexPath) as! MedecinTableViewCell
+            cellM.lastNameLabel.text = self.medecins[indexPath.row].nom
+            cellM.firstNameLabel.text = self.medecins[indexPath.row].prenom
+            cellM.professionLabel.text = self.medecins[indexPath.row].profession
+            
+            return cellM
+        }
+        if(tableView == self.contactsTable){
+            let cellC = self.contactsTable.dequeueReusableCell(withIdentifier: "contactCell", for: indexPath) as! ContactTableViewCell
+            cellC.contactLastName.text = self.contacts[indexPath.row].nom
+            cellC.contactFirstName.text = self.contacts[indexPath.row].prenom
+            cellC.contactNum.text = self.contacts[indexPath.row].telephone
+            
+            return cellC
+        }
+        
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        var count: Int?
+        
+        if(tableView == self.medecinsTable){
+            count = self.medecins.count
+        }
+        if(tableView == self.contactsTable){
+            count = self.contacts.count
+        }
+        return count!
+    }
+    
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        if(tableView == self.contactsTable){
+            if (editingStyle==UITableViewCellEditingStyle.delete){
+                self.contactsTable.beginUpdates()
+                if(self.delete_contact(contactWithIndex: indexPath.row)){
+                    self.contactsTable.deleteRows(at: [indexPath], with: UITableViewRowAnimation.automatic)
+                }
+                self.contactsTable.endUpdates()
+            }
+        }
+        if(tableView == self.medecinsTable){
+            if (editingStyle==UITableViewCellEditingStyle.delete){
+                self.medecinsTable.beginUpdates()
+                if(self.delete_medecin(contactWithIndex: indexPath.row)){
+                    self.medecinsTable.deleteRows(at: [indexPath], with: UITableViewRowAnimation.automatic)
+                }
+                self.medecinsTable.endUpdates()
+            }
+        }
+    }
+    
+    func delete_contact(contactWithIndex index: Int) -> Bool{
+        let contact = self.contacts[index]
+        ManageCoreData.context.delete(contact)
+        do{
+            try ManageCoreData.context.save()
+            self.contacts.remove(at: index)
+            return true
+        }
+        catch let error as NSError{
+            ManageErrorHelper.alertError(view: self, error: error)
+            return false
+        }
+    }
+
+    func delete_medecin(contactWithIndex index: Int) -> Bool{
+        let medecin = self.medecins[index]
+        ManageCoreData.context.delete(medecin)
+        do{
+            try ManageCoreData.context.save()
+            self.medecins.remove(at: index)
+            return true
+        }
+        catch let error as NSError{
+            ManageErrorHelper.alertError(view: self, error: error)
+            return false
+        }
+    }
     
     /*
     // MARK: - Navigation
