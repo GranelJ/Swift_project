@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		2C20C91E2059798400BF6D46 /* MedecinTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C20C91D2059798400BF6D46 /* MedecinTableViewCell.swift */; };
 		2C20C920205980A900BF6D46 /* ContactTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C20C91F205980A900BF6D46 /* ContactTableViewCell.swift */; };
+		2C5050FB205AB97E00850AE7 /* ExerciceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C5050FA205AB97E00850AE7 /* ExerciceModel.swift */; };
 		2C827B16205A62F100376D55 /* ExerciceTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C827B15205A62F100376D55 /* ExerciceTableViewCell.swift */; };
 		AA4A253720591E17001480E5 /* ManageErrorHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA4A253620591E17001480E5 /* ManageErrorHelper.swift */; };
 		AA4A253A205928D4001480E5 /* PatientModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA4A2539205928D4001480E5 /* PatientModel.swift */; };
@@ -50,6 +51,7 @@
 /* Begin PBXFileReference section */
 		2C20C91D2059798400BF6D46 /* MedecinTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MedecinTableViewCell.swift; sourceTree = "<group>"; };
 		2C20C91F205980A900BF6D46 /* ContactTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactTableViewCell.swift; sourceTree = "<group>"; };
+		2C5050FA205AB97E00850AE7 /* ExerciceModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExerciceModel.swift; sourceTree = "<group>"; };
 		2C827B15205A62F100376D55 /* ExerciceTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExerciceTableViewCell.swift; sourceTree = "<group>"; };
 		AA4A253620591E17001480E5 /* ManageErrorHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ManageErrorHelper.swift; sourceTree = "<group>"; };
 		AA4A2539205928D4001480E5 /* PatientModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PatientModel.swift; sourceTree = "<group>"; };
@@ -113,6 +115,7 @@
 			isa = PBXGroup;
 			children = (
 				AA4A2539205928D4001480E5 /* PatientModel.swift */,
+				2C5050FA205AB97E00850AE7 /* ExerciceModel.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -295,6 +298,7 @@
 				AAC3C386204D9E86006C5B14 /* AjoutContactMedicalViewController.swift in Sources */,
 				AA81A82120517CA20056CFA8 /* QuestionnaireViewController.swift in Sources */,
 				AACCDC042046B666002112F7 /* MedicamentTableViewCell.swift in Sources */,
+				2C5050FB205AB97E00850AE7 /* ExerciceModel.swift in Sources */,
 				AAC3C38A204DA1EB006C5B14 /* AjoutTraitementViewController.swift in Sources */,
 				AACCDBE020468EB6002112F7 /* MonPK_Moi.xcdatamodeld in Sources */,
 				AA5E19BC204D979900C25FC1 /* CoachViewController.swift in Sources */,
