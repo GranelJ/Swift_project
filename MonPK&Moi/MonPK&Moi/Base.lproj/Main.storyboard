@@ -951,7 +951,7 @@
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.92554813619999998" green="0.86786671049999997" blue="0.92267659400000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Accueil" image="Accueil" id="fmj-0M-hJh"/>
                     <navigationItem key="navigationItem" title="Mon PK &amp; Moi" id="jRV-0b-aHH"/>

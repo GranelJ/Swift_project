@@ -45,7 +45,7 @@ class EditInformationPersoViewController: UIViewController, UITextFieldDelegate 
         let tpsPrep = Int64(TpsPrepTF.text!)!
         let dateNaissance = DateNaissanceDP.date as NSDate
         do{
-            let exist = try Patient.exist()
+            let exist = try PatientDAO.exist()
             if exist{
                 self.editPatient(nom: nom, prenom: prenom, dateNaissance: dateNaissance, TpsPrep: tpsPrep)
                 self.navigationController?.popViewController(animated: true)
@@ -61,7 +61,7 @@ class EditInformationPersoViewController: UIViewController, UITextFieldDelegate 
     // MARK: - helper methods
     func editPatient(nom: String, prenom: String, dateNaissance: NSDate, TpsPrep: Int64){
         //create Patient managedObj
-        let patient = Patient(context: ManageCoreData.context)
+        let patient = editPatient(context: ManageCoreData.context)
         patient.nom = nom
         patient.prenom = prenom
         patient.temps_preparation = Int64(TpsPrep)
@@ -77,7 +77,7 @@ class EditInformationPersoViewController: UIViewController, UITextFieldDelegate 
 
     func createNewPatient(nom: String, prenom: String, dateNaissance: NSDate, TpsPrep: Int64){
         //create Patient managedObj
-        let patient = Patient(context: ManageCoreData.context)
+        let patient = editPatient(context: ManageCoreData.context)
         patient.nom = nom
         patient.prenom = prenom
         patient.temps_preparation = Int64(TpsPrep)
