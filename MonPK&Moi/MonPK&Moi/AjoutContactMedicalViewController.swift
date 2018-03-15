@@ -21,7 +21,6 @@ class AjoutContactMedicalViewController: UIViewController {
     @IBAction func ValidateButton(_ sender: Any) {
         self.saveNewMedecin(withName: textNom.text, withNum: textNum.text, withMail: textMail.text, withPrenom: textPrenom.text, withMetier: textMetier.text, withLieu: textLieu.text)
         self.navigationController?.popViewController(animated: true)
-        
     }
     
     func saveNewMedecin(withName nom: String?,withNum num: String?,withMail mail: String?,withPrenom prenom: String?, withMetier metier: String?, withLieu lieu: String?){

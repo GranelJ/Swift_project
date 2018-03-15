@@ -46,9 +46,6 @@ class ContactViewController: UIViewController, UITableViewDataSource, UITableVie
         }catch{
             fatalError("Application Error")
         }
-        //reload tableviewdata
-        self.contactsTable.reloadData()
-        self.medecinsTable.reloadData()
         
         //Request to get Contacts
         let request : NSFetchRequest<Medecin> = Medecin.fetchRequest()
@@ -73,7 +70,7 @@ class ContactViewController: UIViewController, UITableViewDataSource, UITableVie
         // Dispose of any resources that can be recreated.
     }
     
-    // MARK: - Table Veww Management
+    // MARK: - Table View Management
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = UITableViewCell()
