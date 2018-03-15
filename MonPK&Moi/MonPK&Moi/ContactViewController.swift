@@ -29,6 +29,7 @@ class ContactViewController: UIViewController {
                     NomLabel.text = patient?.nom
                     PrenomLabel.text = patient?.prenom
                     TpsPreplabel.text = patient?.temps_preparation.description
+                    // formate la date en txt
                     let formatter = DateFormatter()
                     formatter.dateFormat = "dd/MM/YYYY"
                     let dateString = formatter.string(from: patient?.date_naissance as! Date)
