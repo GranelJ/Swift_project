@@ -20,6 +20,8 @@
 		2C50510B205AE16900850AE7 /* Test_motriciteDAOext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C50510A205AE16900850AE7 /* Test_motriciteDAOext.swift */; };
 		2C50510D205AE1A600850AE7 /* TraitementDAOext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C50510C205AE1A600850AE7 /* TraitementDAOext.swift */; };
 		2C505112205AE8B900850AE7 /* Patient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C505111205AE8B900850AE7 /* Patient.swift */; };
+		2C505114205AEF8600850AE7 /* Exercice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C505113205AEF8600850AE7 /* Exercice.swift */; };
+		2C505116205AF10F00850AE7 /* Contact_perso.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C505115205AF10F00850AE7 /* Contact_perso.swift */; };
 		2C827B16205A62F100376D55 /* ExerciceTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C827B15205A62F100376D55 /* ExerciceTableViewCell.swift */; };
 		AA4A253720591E17001480E5 /* ManageErrorHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA4A253620591E17001480E5 /* ManageErrorHelper.swift */; };
 		AA4A253A205928D4001480E5 /* PatientDAOext.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA4A2539205928D4001480E5 /* PatientDAOext.swift */; };
@@ -72,6 +74,8 @@
 		2C50510A205AE16900850AE7 /* Test_motriciteDAOext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Test_motriciteDAOext.swift; sourceTree = "<group>"; };
 		2C50510C205AE1A600850AE7 /* TraitementDAOext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TraitementDAOext.swift; sourceTree = "<group>"; };
 		2C505111205AE8B900850AE7 /* Patient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Patient.swift; sourceTree = "<group>"; };
+		2C505113205AEF8600850AE7 /* Exercice.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Exercice.swift; sourceTree = "<group>"; };
+		2C505115205AF10F00850AE7 /* Contact_perso.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Contact_perso.swift; sourceTree = "<group>"; };
 		2C827B15205A62F100376D55 /* ExerciceTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExerciceTableViewCell.swift; sourceTree = "<group>"; };
 		AA4A253620591E17001480E5 /* ManageErrorHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ManageErrorHelper.swift; sourceTree = "<group>"; };
 		AA4A2539205928D4001480E5 /* PatientDAOext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PatientDAOext.swift; sourceTree = "<group>"; };
@@ -126,6 +130,8 @@
 			isa = PBXGroup;
 			children = (
 				2C505111205AE8B900850AE7 /* Patient.swift */,
+				2C505113205AEF8600850AE7 /* Exercice.swift */,
+				2C505115205AF10F00850AE7 /* Contact_perso.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -351,7 +357,9 @@
 				AA5E19AD204D6CEC00C25FC1 /* PilulierViewController.swift in Sources */,
 				AAAC5A4B204E7D2700D4DD99 /* AjouterRendezVousViewController.swift in Sources */,
 				AA81A81F20517C7A0056CFA8 /* TraceurViewController.swift in Sources */,
+				2C505114205AEF8600850AE7 /* Exercice.swift in Sources */,
 				AA4A253C205929D0001480E5 /* ManageCoreData.swift in Sources */,
+				2C505116205AF10F00850AE7 /* Contact_perso.swift in Sources */,
 				2C20C920205980A900BF6D46 /* ContactTableViewCell.swift in Sources */,
 				2C505103205ADE5D00850AE7 /* MedicamentDAOext.swift in Sources */,
 				AA5E19BA204D973F00C25FC1 /* AjoutContactPersoViewController.swift in Sources */,
