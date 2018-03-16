@@ -10,9 +10,18 @@ import Foundation
 import UIKit
 import CoreData
 
-extension Patient {
-    static func get() throws -> Patient? {
-        let request : NSFetchRequest<Patient> = Patient.fetchRequest()
+extension PatientDAO {
+    
+    static func getNewPatient() -> PatientDAO?{
+        guard let entity = NSEntityDescription.entity(forEntityName: "PatientDAO", in: ManageCoreData.context) else{
+            return nil
+        }
+        let patient = PatientDAO(entity: entity, insertInto: ManageCoreData.context)
+        return patient
+    }
+    
+    static func get() throws -> PatientDAO? {
+        let request : NSFetchRequest<PatientDAO> = PatientDAO.fetchRequest()
         do {
             let patientL = try ManageCoreData.context.fetch(request)
             return patientL.first
