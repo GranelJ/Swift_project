@@ -1,22 +1,30 @@
 //
-//  Contact_perso.swift
+//  Medecin.swift
 //  MonPK&Moi
 //
-//  Created by Justin ESCALIER on 15/03/2018.
+//  Created by Justin ESCALIER on 16/03/2018.
 //  Copyright © 2018 Joris GRANEL. All rights reserved.
 //
 
 import Foundation
 
-class Contact_perso {
+class Medecin {
     
-    private let dao : Contact_persoDAO
+    private let dao : MedecinDAO
     var email : String{
         get{
             return self.dao.email!
         }
         set{
             self.dao.email = newValue
+        }
+    }
+    var lieu_travail : String{
+        get{
+            return self.dao.lieu_travail!
+        }
+        set{
+            self.dao.lieu_travail = newValue
         }
     }
     var nom : String{
@@ -35,6 +43,14 @@ class Contact_perso {
             self.dao.prenom = newValue
         }
     }
+    var profession : String{
+        get{
+            return self.dao.profession!
+        }
+        set{
+            self.dao.profession = newValue
+        }
+    }
     var telephone : String{
         get{
             return self.dao.telephone!
@@ -44,14 +60,16 @@ class Contact_perso {
         }
     }
     
-    init(email: String, nom: String, prenom: String, telephone: String){
-        guard let dao = Contact_persoDAO.getNewContact_perso() else{
-            fatalError("impossible to get dao for contact_perso")
+    init(email: String, lieu_travail: String, nom: String, prenom: String, profession: String, telephone: String){
+        guard let dao = MedecinDAO.getNewMedecin() else{
+            fatalError("impossible to get dao for medecin")
         }
         self.dao = dao
         self.dao.email = email
+        self.dao.lieu_travail = lieu_travail
         self.dao.nom = nom
         self.dao.prenom = prenom
+        self.dao.profession = profession
         self.dao.telephone = telephone
     }
     

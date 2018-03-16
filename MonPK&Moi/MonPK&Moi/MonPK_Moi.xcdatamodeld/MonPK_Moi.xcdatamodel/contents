@@ -62,9 +62,9 @@
         <relationship name="rdv_synthese" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="SyntheseDAO" inverseName="synthese_rdv" inverseEntity="SyntheseDAO" syncable="YES"/>
     </entity>
     <entity name="SyntheseDAO" representedClassName="SyntheseDAO" syncable="YES" codeGenerationType="class">
-        <attribute name="heure_debut" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
-        <attribute name="heure_fin" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
-        <attribute name="periodicite" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="heure_debut" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="heure_fin" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="periodicite" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
         <relationship name="synthese_motricite" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Test_motriciteDAO" inverseName="motricite_synthese" inverseEntity="Test_motriciteDAO" syncable="YES"/>
         <relationship name="synthese_prise_medicament" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Prise_medicamentDAO" inverseName="prise_medicament_synthese" inverseEntity="Prise_medicamentDAO" syncable="YES"/>
         <relationship name="synthese_rdv" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="RdvDAO" inverseName="rdv_synthese" inverseEntity="RdvDAO" syncable="YES"/>

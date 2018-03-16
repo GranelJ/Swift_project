@@ -38,7 +38,7 @@ class Evenement {
     
     init(date_evt: Date, desc_evt: String, type: String){
         guard let dao = EvenementDAO.getNewEvenement() else{
-            fatalError("impossible to get dao for patient")
+            fatalError("impossible to get dao for evenement")
         }
         self.dao = dao
         self.dao.date_evt = date_evt as NSDate

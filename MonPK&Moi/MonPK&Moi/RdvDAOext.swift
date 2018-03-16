@@ -16,7 +16,7 @@ extension RdvDAO {
         guard let entity = NSEntityDescription.entity(forEntityName: "RdvDAO", in: ManageCoreData.context) else{
             return nil
         }
-        let rdv= RdvDAO(entity: entity, insertInto: ManageCoreData.context)
+        let rdv = RdvDAO(entity: entity, insertInto: ManageCoreData.context)
         return rdv
     }
     

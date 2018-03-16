@@ -30,7 +30,7 @@ class Exercice {
     
     init(jour: Int64, libelle: String){
         guard let dao = ExerciceDAO.getNewExercice() else{
-            fatalError("impossible to get dao for patient")
+            fatalError("impossible to get dao for exercice")
         }
         self.dao = dao
         self.dao.jour = jour
