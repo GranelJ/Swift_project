@@ -55,4 +55,15 @@ class Traitement {
         self.dao.moment_de_prise = moment_de_prise
     }
     
+    func getAll() throws -> [TraitementDAO]{
+        do{
+            let traitementL = try TraitementDAO.getAll()
+            return traitementL
+        }
+        catch let error as NSError{
+            throw error
+        }
+        
+    }
+    
 }
