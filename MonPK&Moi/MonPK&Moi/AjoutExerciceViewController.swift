@@ -25,7 +25,7 @@ class AjoutExerciceViewController: UIViewController {
         
         for nbDeLignes in 0...6 {
             if(days[nbDeLignes].isOn){
-                let exercice = Exercice(context: ManageCoreData.context)
+                let exercice = ExerciceDAO(context: ManageCoreData.context)
                 exercice.libelle=name
                 exercice.jour=Int64(nbDeLignes)
                 do{

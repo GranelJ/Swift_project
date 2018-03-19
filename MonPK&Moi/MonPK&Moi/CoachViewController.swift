@@ -11,7 +11,7 @@ import CoreData
 
 class CoachViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
-    var exercices : [Exercice] = []
+    var exercices : [ExerciceDAO] = []
     
     var nbJour: Int64 = -1
     
@@ -54,7 +54,7 @@ class CoachViewController: UIViewController, UITableViewDataSource, UITableViewD
         super.viewDidLoad()
 
         do{
-            try self.exercices = Exercice.getAllOrdered()
+            try self.exercices = ExerciceDAO.getAllOrdered()
         }
         catch let error as NSError{
             ManageErrorHelper.alertError(view: self, WithTitle: "\(error)", andMessage: "\(error.userInfo)")

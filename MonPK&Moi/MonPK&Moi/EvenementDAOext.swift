@@ -29,4 +29,8 @@ extension EvenementDAO {
             throw error
         }
     }
+    
+    static func save() {
+        
+    }
 }

@@ -11,8 +11,8 @@ import CoreData
 
 class ContactViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
-    var medecins : [Medecin] = []
-    var contacts : [Contact_perso] = []
+    var medecins : [MedecinDAO] = []
+    var contacts : [Contact_persoDAO] = []
     
     @IBOutlet weak var medecinsTable: UITableView!
     @IBOutlet weak var contactsTable: UITableView!
@@ -26,12 +26,12 @@ class ContactViewController: UIViewController, UITableViewDataSource, UITableVie
         super.viewDidLoad()
         
         // Do any additional setup after loading the view.
-        let patient: Patient?
+        let patient: PatientDAO?
         do{
-            let exist: Bool = try Patient.exist()
+            let exist: Bool = try PatientDAO.exist()
             if exist{
                 do{
-                    patient = try Patient.get()
+                    patient = try PatientDAO.get()
                     NomLabel.text = patient?.nom
                     PrenomLabel.text = patient?.prenom
                     TpsPreplabel.text = patient?.temps_preparation.description
@@ -48,7 +48,7 @@ class ContactViewController: UIViewController, UITableViewDataSource, UITableVie
         }
         
         //Request to get Contacts
-        let request : NSFetchRequest<Medecin> = Medecin.fetchRequest()
+        let request : NSFetchRequest<MedecinDAO> = MedecinDAO.fetchRequest()
         do{
             try self.medecins = ManageCoreData.context.fetch(request)
         }
@@ -56,7 +56,7 @@ class ContactViewController: UIViewController, UITableViewDataSource, UITableVie
             ManageErrorHelper.alertError(view: self, WithTitle: "\(error)", andMessage: "\(error.userInfo)")
         }
         
-        let request2 : NSFetchRequest<Contact_perso> = Contact_perso.fetchRequest()
+        let request2 : NSFetchRequest<Contact_persoDAO> = Contact_persoDAO.fetchRequest()
         do{
             try self.contacts = ManageCoreData.context.fetch(request2)
         }

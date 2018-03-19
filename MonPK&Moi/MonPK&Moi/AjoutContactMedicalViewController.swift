@@ -24,7 +24,7 @@ class AjoutContactMedicalViewController: UIViewController {
     }
     
     func saveNewMedecin(withName nom: String?,withNum num: String?,withMail mail: String?,withPrenom prenom: String?, withMetier metier: String?, withLieu lieu: String?){
-        let medecin = Medecin(context: ManageCoreData.context)
+        let medecin = MedecinDAO(context: ManageCoreData.context)
         medecin.nom=nom
         medecin.telephone=num
         medecin.email=mail

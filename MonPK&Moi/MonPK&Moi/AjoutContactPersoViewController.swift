@@ -21,7 +21,7 @@ class AjoutContactPersoViewController: UIViewController {
     }
     
     func saveNewContact(withName nom: String?,withNum num: String?,withMail mail: String?,withPrenom prenom: String?){
-        let contact = Contact_perso(context: ManageCoreData.context)
+        let contact = Contact_persoDAO(context: ManageCoreData.context)
         contact.nom=nom
         contact.telephone=num
         contact.email=mail
