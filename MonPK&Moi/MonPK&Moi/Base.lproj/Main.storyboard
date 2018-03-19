@@ -1074,6 +1074,10 @@
                                     </label>
                                     <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zQm-Fk-uhM">
                                         <rect key="frame" x="120" y="0.0" width="278" height="216"/>
+                                        <connections>
+                                            <outlet property="dataSource" destination="X3u-VF-c7M" id="qxx-D3-9vF"/>
+                                            <outlet property="delegate" destination="X3u-VF-c7M" id="8vR-rd-PrA"/>
+                                        </connections>
                                     </pickerView>
                                 </subviews>
                             </stackView>
@@ -1081,6 +1085,9 @@
                                 <rect key="frame" x="176" y="621" width="62" height="36"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <state key="normal" title="Valider"/>
+                                <connections>
+                                    <action selector="ValidateButton:" destination="X3u-VF-c7M" eventType="touchUpInside" id="LdZ-62-jXs"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -1098,6 +1105,7 @@
                     <navigationItem key="navigationItem" title="Ajout traitement" id="xkO-UP-bHb"/>
                     <connections>
                         <outlet property="picker" destination="OGV-kh-HWl" id="QJC-oc-nXD"/>
+                        <outlet property="timepicker" destination="zQm-Fk-uhM" id="3sK-BX-Gdv"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sxb-nP-zf2" userLabel="First Responder" sceneMemberID="firstResponder"/>

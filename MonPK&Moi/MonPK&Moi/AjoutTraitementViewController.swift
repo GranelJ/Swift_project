@@ -11,8 +11,10 @@ import UIKit
 class AjoutTraitementViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
 
     @IBOutlet weak var picker: UIPickerView!
+    @IBOutlet weak var timepicker: UIPickerView!
     
     var pickerData: [MedicamentDAO] = []
+    var timepickerData: [String] = ["8h", "12h", "16h", "20h"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,13 +40,40 @@ class AjoutTraitementViewController: UIViewController, UIPickerViewDelegate, UIP
     }
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return pickerData.count
+        if (pickerView == picker) {
+            return pickerData.count
+        }else{
+            return timepickerData.count
+        }
     }
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return pickerData[row].nom! + " " + pickerData[row].dosage!
+        if (pickerView == picker) {
+            return pickerData[row].nom! + " " + pickerData[row].dosage!
+        }else{
+            return timepickerData[row]
+        }
     }
     
+    @IBAction func ValidateButton(_ sender: Any) {
+        let medicamentrow = picker.selectedRow(inComponent: 0)
+        let medicament = pickerData[medicamentrow]
+        let heure = timepicker.description
+        saveNewTraitement(withmedicament: medicament, withheure: heure)
+        self.navigationController?.popViewController(animated: true)
+    }
+    
+    func saveNewTraitement(withmedicament medicament: MedicamentDAO, withheure heure: String) {
+        let traitement = TraitementDAO(context: ManageCoreData.context)
+        traitement.traitement_medicament = medicament
+        traitement.moment_de_prise = heure
+        do{
+            try ManageCoreData.context.save()
+        }catch let error as NSError{
+            ManageErrorHelper.alertError(view: self, error: error)
+            return
+        }
+    }
 
     /*
     // MARK: - Navigation
