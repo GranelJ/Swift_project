@@ -1077,27 +1077,6 @@
                                     </pickerView>
                                 </subviews>
                             </stackView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pendant : " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xHX-mE-HdF">
-                                <rect key="frame" x="20" y="536" width="90" height="24"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cOD-NO-wnW">
-                                <rect key="frame" x="125" y="531" width="60" height="30"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="60" id="tG5-En-iD5"/>
-                                </constraints>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="jours" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kwc-ma-1NX">
-                                <rect key="frame" x="200" y="536" width="44" height="24"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pbs-2q-ren">
                                 <rect key="frame" x="176" y="621" width="62" height="36"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
@@ -1107,19 +1086,13 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="OGV-kh-HWl" secondAttribute="trailing" id="14F-XP-sSr"/>
-                            <constraint firstItem="cOD-NO-wnW" firstAttribute="top" secondItem="bcd-p9-x9J" secondAttribute="bottom" constant="5" id="D2B-VL-2jS"/>
                             <constraint firstItem="vfN-mr-Upk" firstAttribute="top" secondItem="pbs-2q-ren" secondAttribute="bottom" constant="30" id="GZv-OV-L2v"/>
                             <constraint firstItem="bcd-p9-x9J" firstAttribute="leading" secondItem="sa1-UG-zTp" secondAttribute="leading" constant="16" id="Od6-Og-5w7"/>
                             <constraint firstItem="OGV-kh-HWl" firstAttribute="leading" secondItem="sa1-UG-zTp" secondAttribute="leading" id="Pf0-cX-3Y8"/>
                             <constraint firstItem="bcd-p9-x9J" firstAttribute="top" secondItem="OGV-kh-HWl" secondAttribute="bottom" constant="10" id="RHS-Gx-F5P"/>
                             <constraint firstItem="pbs-2q-ren" firstAttribute="centerX" secondItem="sa1-UG-zTp" secondAttribute="centerX" id="SUO-sY-tPp"/>
-                            <constraint firstItem="xHX-mE-HdF" firstAttribute="leading" secondItem="sa1-UG-zTp" secondAttribute="leadingMargin" id="Tuo-Gn-Dfg"/>
                             <constraint firstAttribute="trailing" secondItem="bcd-p9-x9J" secondAttribute="trailing" id="ZCA-QE-Vb6"/>
-                            <constraint firstItem="Kwc-ma-1NX" firstAttribute="top" secondItem="bcd-p9-x9J" secondAttribute="bottom" constant="10" id="ZuE-aA-5ja"/>
-                            <constraint firstItem="xHX-mE-HdF" firstAttribute="top" secondItem="bcd-p9-x9J" secondAttribute="bottom" constant="10" id="cv2-6T-icJ"/>
                             <constraint firstItem="OGV-kh-HWl" firstAttribute="top" secondItem="N8X-uj-1mH" secondAttribute="bottom" constant="20" id="eCS-44-Tt6"/>
-                            <constraint firstItem="cOD-NO-wnW" firstAttribute="leading" secondItem="xHX-mE-HdF" secondAttribute="trailing" constant="15" id="qOi-34-U15"/>
-                            <constraint firstItem="Kwc-ma-1NX" firstAttribute="leading" secondItem="cOD-NO-wnW" secondAttribute="trailing" constant="15" id="tmm-gn-g3J"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Ajout traitement" id="xkO-UP-bHb"/>
