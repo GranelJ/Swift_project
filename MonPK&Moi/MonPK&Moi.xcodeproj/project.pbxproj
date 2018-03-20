@@ -24,6 +24,7 @@
 		2C505116205AF10F00850AE7 /* Contact_perso.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C505115205AF10F00850AE7 /* Contact_perso.swift */; };
 		2C505118205AF23E00850AE7 /* Evenement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C505117205AF23E00850AE7 /* Evenement.swift */; };
 		2C827B16205A62F100376D55 /* ExerciceTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C827B15205A62F100376D55 /* ExerciceTableViewCell.swift */; };
+		2C9086692061758E00B440CB /* RdvTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C9086682061758E00B440CB /* RdvTableViewCell.swift */; };
 		2C9864C2205BA9B400788C91 /* Medecin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C9864C1205BA9B400788C91 /* Medecin.swift */; };
 		2C9864C4205BADAB00788C91 /* Medicament.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C9864C3205BADAB00788C91 /* Medicament.swift */; };
 		2C9864C6205BAF3900788C91 /* Prise_medicament.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C9864C5205BAF3900788C91 /* Prise_medicament.swift */; };
@@ -86,6 +87,7 @@
 		2C505115205AF10F00850AE7 /* Contact_perso.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Contact_perso.swift; sourceTree = "<group>"; };
 		2C505117205AF23E00850AE7 /* Evenement.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Evenement.swift; sourceTree = "<group>"; };
 		2C827B15205A62F100376D55 /* ExerciceTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExerciceTableViewCell.swift; sourceTree = "<group>"; };
+		2C9086682061758E00B440CB /* RdvTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RdvTableViewCell.swift; sourceTree = "<group>"; };
 		2C9864C1205BA9B400788C91 /* Medecin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Medecin.swift; sourceTree = "<group>"; };
 		2C9864C3205BADAB00788C91 /* Medicament.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Medicament.swift; sourceTree = "<group>"; };
 		2C9864C5205BAF3900788C91 /* Prise_medicament.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Prise_medicament.swift; sourceTree = "<group>"; };
@@ -208,6 +210,7 @@
 				AA81A82020517CA20056CFA8 /* QuestionnaireViewController.swift */,
 				AA81A822205180B00056CFA8 /* SignalEvenementViewController.swift */,
 				2C20C91D2059798400BF6D46 /* MedecinTableViewCell.swift */,
+				2C9086682061758E00B440CB /* RdvTableViewCell.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -402,6 +405,7 @@
 				AAC3C388204DA1B8006C5B14 /* AjoutExerciceViewController.swift in Sources */,
 				2C505101205ADE1F00850AE7 /* MedecinDAOext.swift in Sources */,
 				AAAC5A49204E786700D4DD99 /* AgendaViewController.swift in Sources */,
+				2C9086692061758E00B440CB /* RdvTableViewCell.swift in Sources */,
 				AAC3C38C204DAA83006C5B14 /* AjoutMedicamentViewController.swift in Sources */,
 				AA4A253A205928D4001480E5 /* PatientDAOext.swift in Sources */,
 				2C50510B205AE16900850AE7 /* Test_motriciteDAOext.swift in Sources */,

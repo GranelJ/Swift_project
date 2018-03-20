@@ -21,8 +21,6 @@ class AjoutExerciceViewController: UIViewController, UITextFieldDelegate {
     }
     
     func saveNewExercice(withName name: String?, weekDays days: [UISwitch]){
-        var nbDeLignes: Int
-        
         for nbDeLignes in 0...6 {
             if(days[nbDeLignes].isOn){
                 let exercice = ExerciceDAO(context: ManageCoreData.context)
