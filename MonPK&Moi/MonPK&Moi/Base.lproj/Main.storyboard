@@ -1438,6 +1438,9 @@
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <state key="normal" title="Valider"/>
+                                <connections>
+                                    <action selector="ValidateButton:" destination="ttx-bo-B3i" eventType="touchUpInside" id="R5W-6d-nxi"/>
+                                </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aLA-8W-pE0">
                                 <rect key="frame" x="47" y="451" width="320" height="150"/>
@@ -1477,6 +1480,7 @@
                     <navigationItem key="navigationItem" title="Evenement" id="ulL-0P-Nhw"/>
                     <connections>
                         <outlet property="descriptionTF" destination="qtO-kw-dDb" id="qKr-xB-VqI"/>
+                        <outlet property="eventTypePicker" destination="xYj-sr-sUz" id="iJp-fB-haf"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7x1-ff-cvS" userLabel="First Responder" sceneMemberID="firstResponder"/>

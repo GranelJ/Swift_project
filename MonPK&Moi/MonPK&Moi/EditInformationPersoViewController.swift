@@ -61,11 +61,16 @@ class EditInformationPersoViewController: UIViewController, UITextFieldDelegate 
     // MARK: - helper methods
     func editPatient(nom: String, prenom: String, dateNaissance: NSDate, TpsPrep: Int64){
         //create Patient managedObj
-        let patient = PatientDAO(context: ManageCoreData.context)
-        patient.nom = nom
-        patient.prenom = prenom
-        patient.temps_preparation = TpsPrep
-        patient.date_naissance = dateNaissance
+        
+        do{
+            let patient = try PatientDAO.get()
+            patient?.nom = nom
+            patient?.prenom = prenom
+            patient?.temps_preparation = TpsPrep
+            patient?.date_naissance = dateNaissance
+        }catch{
+            
+        }
         do{
             try ManageCoreData.context.save()
         }
