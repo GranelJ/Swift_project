@@ -607,6 +607,7 @@
                                 <date key="date" timeIntervalSinceReferenceDate="541500866.98930204">
                                     <!--2018-02-28 08:54:26 +0000-->
                                 </date>
+                                <locale key="locale" localeIdentifier="fr"/>
                             </datePicker>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date de naissance : " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cls-W8-7H6">
                                 <rect key="frame" x="117" y="193.33333333333334" width="181" height="24"/>
@@ -798,6 +799,7 @@
                                 <date key="date" timeIntervalSinceReferenceDate="542013982.713269">
                                     <!--2018-03-06 07:26:22 +0000-->
                                 </date>
+                                <locale key="locale" localeIdentifier="fr"/>
                             </datePicker>
                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cLL-IT-WDZ">
                                 <rect key="frame" x="20" y="254" width="374" height="30"/>
@@ -833,6 +835,7 @@
                                         <date key="date" timeIntervalSinceReferenceDate="542014024.99874699">
                                             <!--2018-03-06 07:27:04 +0000-->
                                         </date>
+                                        <locale key="locale" localeIdentifier="fr"/>
                                     </datePicker>
                                 </subviews>
                                 <constraints>

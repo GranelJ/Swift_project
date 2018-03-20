@@ -9,7 +9,7 @@
 import UIKit
 import CoreData
 
-class AjoutContactMedicalViewController: UIViewController {
+class AjoutContactMedicalViewController: UIViewController, UITextFieldDelegate {
     
     @IBOutlet weak var textNom: UITextField!
     @IBOutlet weak var textNum: UITextField!
@@ -43,7 +43,12 @@ class AjoutContactMedicalViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        self.textLieu.delegate = self
+        self.textMail.delegate = self
+        self.textMetier.delegate = self
+        self.textNom.delegate = self
+        self.textNum.delegate = self
+        self.textPrenom.delegate = self
         // Do any additional setup after loading the view.
     }
 
@@ -52,6 +57,10 @@ class AjoutContactMedicalViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
 
     /*
     // MARK: - Navigation

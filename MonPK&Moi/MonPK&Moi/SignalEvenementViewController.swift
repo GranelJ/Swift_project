@@ -10,6 +10,7 @@ import UIKit
 
 class SignalEvenementViewController: UIViewController {
 
+    let pickerData: [String] = ["", "", "", ""]
     override func viewDidLoad() {
         super.viewDidLoad()
 

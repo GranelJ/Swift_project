@@ -8,7 +8,7 @@
 
 import UIKit
 
-class AjoutMedicamentViewController: UIViewController {
+class AjoutMedicamentViewController: UIViewController, UITextFieldDelegate {
 
     @IBOutlet weak var nomTF: UITextField!
     @IBOutlet weak var descTF: UITextField!
@@ -16,8 +16,11 @@ class AjoutMedicamentViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
         // Do any additional setup after loading the view.
+        
+        self.descTF.delegate = self
+        self.dosageTF.delegate = self
+        self.nomTF.delegate = self
     }
 
     override func didReceiveMemoryWarning() {
@@ -45,6 +48,12 @@ class AjoutMedicamentViewController: UIViewController {
             return
         }
     }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
+    
     /*
     // MARK: - Navigation
 

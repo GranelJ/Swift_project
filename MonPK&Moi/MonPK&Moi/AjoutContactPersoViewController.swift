@@ -8,7 +8,7 @@
 
 import UIKit
 
-class AjoutContactPersoViewController: UIViewController {
+class AjoutContactPersoViewController: UIViewController, UITextFieldDelegate {
 
     @IBOutlet weak var lastNameLabel: UITextField!
     @IBOutlet weak var numLabel: UITextField!
@@ -37,7 +37,10 @@ class AjoutContactPersoViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        self.lastNameLabel.delegate = self
+        self.numLabel.delegate = self
+        self.mailLabel.delegate = self
+        self.firstNameLabel.delegate = self
         // Do any additional setup after loading the view.
     }
 
@@ -47,6 +50,10 @@ class AjoutContactPersoViewController: UIViewController {
     }
     
 
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
     /*
     // MARK: - Navigation
 

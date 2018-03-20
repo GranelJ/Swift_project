@@ -40,7 +40,6 @@ class PilulierViewController: UIViewController, UITableViewDataSource, UITableVi
         return cell
     }
 
-
     /*
     // MARK: - Navigation
 

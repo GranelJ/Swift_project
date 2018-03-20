@@ -8,7 +8,7 @@
 
 import UIKit
 
-class AjoutExerciceViewController: UIViewController {
+class AjoutExerciceViewController: UIViewController, UITextFieldDelegate {
 
     @IBOutlet weak var nameText: UITextField!
     
@@ -41,7 +41,7 @@ class AjoutExerciceViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        self.nameText.delegate = self
         // Do any additional setup after loading the view.
     }
 
@@ -50,7 +50,11 @@ class AjoutExerciceViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
+    
     /*
     // MARK: - Navigation
 
