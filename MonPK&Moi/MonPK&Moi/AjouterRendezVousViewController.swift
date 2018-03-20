@@ -8,23 +8,27 @@
 
 import UIKit
 
-class AjouterRendezVousViewController: UIViewController, UITextFieldDelegate {
+class AjouterRendezVousViewController: UIViewController, UITextFieldDelegate, UIPickerViewDelegate, UIPickerViewDataSource  {
 
+    var pickerData: [MedecinDAO] = []
     
     @IBOutlet weak var datePicker: UIDatePicker!
     @IBOutlet weak var libelleField: UITextField!
-    @IBOutlet weak var heurePicker: UIDatePicker!
     @IBOutlet weak var medecinPiker: UIPickerView!
     
     @IBAction func validateButton(_ sender: Any) {
-        self.saveNewRdv(withDate: datePicker.date, withLibelle: libelleField.text, withTime: heurePicker.date, withMedecin: medecinPiker.selectedRow(inComponent: 0))
+        let medecinrow = medecinPiker.selectedRow(inComponent: 0)
+        let medecin = pickerData[medecinrow]
+        
+        self.saveNewRdv(withDate: datePicker.date, withLibelle: libelleField.text, withMedecin: medecin)
         self.navigationController?.popViewController(animated: true)
     }
     
-    func saveNewRdv(withDate date: Date?,withLibelle libelle: String?,withTime time: Date?,withMedecin medecin: MedecinDAO?){
+    func saveNewRdv(withDate date: Date?,withLibelle libelle: String?,withMedecin medecin: MedecinDAO?){
         let rdv = RdvDAO(context: ManageCoreData.context)
-        rdv.
-        
+        rdv.date_rdv=date! as NSDate
+        rdv.libelle=libelle
+        rdv.rdv_medecin=medecin
         
         do{
             try ManageCoreData.context.save()
@@ -35,9 +39,26 @@ class AjouterRendezVousViewController: UIViewController, UITextFieldDelegate {
         }
     }
     
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return pickerData.count
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return pickerData[row].prenom! + " " + pickerData[row].nom!
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        do{
+            try pickerData = MedecinDAO.getAll()
+        }catch{
+            
+        }
     }
 
     override func didReceiveMemoryWarning() {
