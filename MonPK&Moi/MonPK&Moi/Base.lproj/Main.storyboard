@@ -1426,6 +1426,10 @@
                             </label>
                             <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xYj-sr-sUz">
                                 <rect key="frame" x="47" y="222" width="320" height="319"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="ttx-bo-B3i" id="ZM3-Vx-HTU"/>
+                                    <outlet property="delegate" destination="ttx-bo-B3i" id="pxW-mW-OkD"/>
+                                </connections>
                             </pickerView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OvH-W9-zTj">
                                 <rect key="frame" x="176" y="621" width="62" height="36"/>

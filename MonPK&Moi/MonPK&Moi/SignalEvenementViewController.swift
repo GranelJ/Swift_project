@@ -8,9 +8,9 @@
 
 import UIKit
 
-class SignalEvenementViewController: UIViewController {
+class SignalEvenementViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
 
-    let pickerData: [String] = ["", "", "", ""]
+    let pickerData: [String] = ["Somnolence", "Chute", "Hallucination", "Prise de dispersible", " Clic/bolus d'Apokinon"]
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -22,6 +22,18 @@ class SignalEvenementViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return pickerData.count
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return pickerData[row]
+    }
+
 
     /*
     // MARK: - Navigation
