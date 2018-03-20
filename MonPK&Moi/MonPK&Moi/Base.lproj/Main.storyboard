@@ -846,6 +846,9 @@
                                 <rect key="frame" x="176" y="641" width="62" height="36"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <state key="normal" title="Valider"/>
+                                <connections>
+                                    <action selector="validateButton:" destination="W2t-qa-4jT" eventType="touchUpInside" id="p7Y-PW-wey"/>
+                                </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="ilf-VV-afZ">
                                 <rect key="frame" x="20" y="444" width="374" height="175"/>
@@ -891,6 +894,12 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Ajout d'un rendez-vous" id="5Hu-YZ-J7q"/>
+                    <connections>
+                        <outlet property="datePicker" destination="4J2-Qb-fEP" id="X9z-FX-Ymy"/>
+                        <outlet property="heurePicker" destination="8aE-sp-hAL" id="dNo-Rl-z8O"/>
+                        <outlet property="libelleField" destination="RCs-TY-RLQ" id="sqT-JB-jCw"/>
+                        <outlet property="medecinPiker" destination="1uY-YR-yFp" id="679-GW-pgc"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ezy-pW-41t" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

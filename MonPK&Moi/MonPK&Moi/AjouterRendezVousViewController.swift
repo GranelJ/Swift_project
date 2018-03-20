@@ -10,6 +10,31 @@ import UIKit
 
 class AjouterRendezVousViewController: UIViewController, UITextFieldDelegate {
 
+    
+    @IBOutlet weak var datePicker: UIDatePicker!
+    @IBOutlet weak var libelleField: UITextField!
+    @IBOutlet weak var heurePicker: UIDatePicker!
+    @IBOutlet weak var medecinPiker: UIPickerView!
+    
+    @IBAction func validateButton(_ sender: Any) {
+        self.saveNewRdv(withDate: datePicker.date, withLibelle: libelleField.text, withTime: heurePicker.date, withMedecin: medecinPiker.selectedRow(inComponent: 0))
+        self.navigationController?.popViewController(animated: true)
+    }
+    
+    func saveNewRdv(withDate date: Date?,withLibelle libelle: String?,withTime time: Date?,withMedecin medecin: MedecinDAO?){
+        let rdv = RdvDAO(context: ManageCoreData.context)
+        rdv.
+        
+        
+        do{
+            try ManageCoreData.context.save()
+        }
+        catch let error as NSError{
+            ManageErrorHelper.alertError(view: self, WithTitle: "\(error)", andMessage: "\(error.userInfo)")
+            return
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
