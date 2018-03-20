@@ -8,12 +8,14 @@
 
 import UIKit
 
-class SignalEvenementViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
+class SignalEvenementViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource, UITextFieldDelegate {
 
     let pickerData: [String] = ["Somnolence", "Chute", "Hallucination", "Prise de dispersible", " Clic/bolus d'Apokinon"]
+    @IBOutlet weak var descriptionTF: UITextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        self.descriptionTF.delegate = self
         // Do any additional setup after loading the view.
     }
 
@@ -34,6 +36,10 @@ class SignalEvenementViewController: UIViewController, UIPickerViewDelegate, UIP
         return pickerData[row]
     }
 
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
 
     /*
     // MARK: - Navigation

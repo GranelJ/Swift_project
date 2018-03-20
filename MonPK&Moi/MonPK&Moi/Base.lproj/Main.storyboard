@@ -1475,6 +1475,9 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Evenement" id="ulL-0P-Nhw"/>
+                    <connections>
+                        <outlet property="descriptionTF" destination="qtO-kw-dDb" id="qKr-xB-VqI"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7x1-ff-cvS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
