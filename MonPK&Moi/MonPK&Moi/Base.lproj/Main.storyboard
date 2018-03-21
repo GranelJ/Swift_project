@@ -857,6 +857,10 @@
                                     </label>
                                     <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1uY-YR-yFp">
                                         <rect key="frame" x="75" y="0.0" width="299" height="175"/>
+                                        <connections>
+                                            <outlet property="dataSource" destination="W2t-qa-4jT" id="VQu-ky-jHa"/>
+                                            <outlet property="delegate" destination="W2t-qa-4jT" id="1Tg-9u-O8i"/>
+                                        </connections>
                                     </pickerView>
                                 </subviews>
                                 <constraints>
