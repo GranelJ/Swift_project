@@ -843,11 +843,11 @@
                                     <segue destination="8wT-SL-11J" kind="unwind" unwindAction="unwindAfterAddingRDVWithSegue:" id="hq7-Lm-3L9"/>
                                 </connections>
                             </button>
-                            <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="ilf-VV-afZ">
-                                <rect key="frame" x="20" y="444" width="374" height="175"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="ilf-VV-afZ">
+                                <rect key="frame" x="20" y="369" width="374" height="175"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Médecin : " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FTx-Ed-KAG">
-                                        <rect key="frame" x="0.0" y="77.333333333333329" width="75" height="20.333333333333329"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Médecin : " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FTx-Ed-KAG">
+                                        <rect key="frame" x="0.0" y="77.333333333333314" width="75" height="20.333333333333371"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="75" id="RCa-2o-JbN"/>
                                         </constraints>
@@ -855,7 +855,7 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <pickerView contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1uY-YR-yFp">
+                                    <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1uY-YR-yFp">
                                         <rect key="frame" x="75" y="0.0" width="299" height="175"/>
                                     </pickerView>
                                 </subviews>
@@ -870,6 +870,7 @@
                             <constraint firstItem="cLL-IT-WDZ" firstAttribute="leading" secondItem="2wk-a2-BOj" secondAttribute="leadingMargin" id="Kpi-TR-aCD"/>
                             <constraint firstAttribute="trailingMargin" secondItem="4J2-Qb-fEP" secondAttribute="trailing" id="UnB-b9-Xik"/>
                             <constraint firstItem="4J2-Qb-fEP" firstAttribute="leading" secondItem="2wk-a2-BOj" secondAttribute="leadingMargin" id="V2z-Y0-d5g"/>
+                            <constraint firstItem="ilf-VV-afZ" firstAttribute="top" secondItem="cLL-IT-WDZ" secondAttribute="bottom" constant="30" id="Yb9-x9-vQr"/>
                             <constraint firstItem="4J2-Qb-fEP" firstAttribute="top" secondItem="9Pq-iv-ss5" secondAttribute="bottom" constant="35" id="egi-Sq-aQd"/>
                             <constraint firstItem="R1R-nV-Xiw" firstAttribute="centerX" secondItem="2wk-a2-BOj" secondAttribute="centerX" id="exf-gq-Jq4"/>
                             <constraint firstAttribute="trailing" secondItem="ilf-VV-afZ" secondAttribute="trailing" constant="20" id="i44-IH-zVg"/>
