@@ -10,7 +10,7 @@ import Foundation
 
 class Medicament {
     
-    private let dao : MedicamentDAO
+    internal var dao : MedicamentDAO
     var desc_med : String{
         get{
             return self.dao.desc_med!
@@ -36,14 +36,12 @@ class Medicament {
         }
     }
     
-    init(desc_med: String, dosage: String, nom: String){
-        guard let dao = MedicamentDAO.getNewMedicament() else{
-            fatalError("impossible to get dao for medicament")
+    init(forDesc desc_med: String,forDosage dosage: String,forNom nom: String){
+        if let dao = MedicamentDAO.searchDAO(forDesc: desc_med,forDosage: dosage,forNom: nom){
+            self.dao = dao
+        }else{
+            self.dao = MedicamentDAO.createDAO(forDesc: desc_med,forDosage: dosage,forNom: nom)
         }
-        self.dao = dao
-        self.dao.desc_med = desc_med
-        self.dao.dosage = dosage
-        self.dao.nom = nom
     }
     
 }
