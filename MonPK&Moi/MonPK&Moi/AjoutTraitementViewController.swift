@@ -60,7 +60,8 @@ class AjoutTraitementViewController: UIViewController, UIPickerViewDelegate, UIP
         let medicament = pickerData[medicamentrow]
         let heure = timepicker.description
         saveNewTraitement(withmedicament: medicament, withheure: heure)
-        self.navigationController?.popViewController(animated: true)
+        let newVC = self.storyboard?.instantiateViewController(withIdentifier: "PilulierViewController") as? PilulierViewController
+        self.navigationController?.pushViewController(newVC!,animated: true)
     }
     
     func saveNewTraitement(withmedicament medicament: MedicamentDAO, withheure heure: String) {

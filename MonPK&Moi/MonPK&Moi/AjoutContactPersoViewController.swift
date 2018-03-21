@@ -17,7 +17,8 @@ class AjoutContactPersoViewController: UIViewController, UITextFieldDelegate {
     
     @IBAction func validateButton(_ sender: Any) {
         self.saveNewContact(withName: lastNameLabel.text, withNum: numLabel.text, withMail: mailLabel.text, withPrenom: firstNameLabel.text)
-        self.navigationController?.popViewController(animated: true)
+        let newVC = self.storyboard?.instantiateViewController(withIdentifier: "ContactViewController") as? ContactViewController
+        self.navigationController?.pushViewController(newVC!,animated: true)
     }
     
     func saveNewContact(withName nom: String?,withNum num: String?,withMail mail: String?,withPrenom prenom: String?){

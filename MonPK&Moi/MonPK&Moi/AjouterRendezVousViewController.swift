@@ -21,7 +21,8 @@ class AjouterRendezVousViewController: UIViewController, UITextFieldDelegate, UI
         let medecin = pickerData[medecinrow]
         
         self.saveNewRdv(withDate: datePicker.date, withLibelle: libelleField.text, withMedecin: medecin)
-        self.navigationController?.popViewController(animated: true)
+        let newVC = self.storyboard?.instantiateViewController(withIdentifier: "AgendaViewController") as? AgendaViewController
+        self.navigationController?.pushViewController(newVC!,animated: true)
     }
     
     func saveNewRdv(withDate date: Date?,withLibelle libelle: String?,withMedecin medecin: MedecinDAO?){

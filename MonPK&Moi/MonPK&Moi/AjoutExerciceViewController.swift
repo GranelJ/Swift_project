@@ -17,7 +17,7 @@ class AjoutExerciceViewController: UIViewController, UITextFieldDelegate {
     
     @IBAction func validateButton(_ sender: Any) {
         self.saveNewExercice(withName: nameText.text, weekDays: semaineSwitch)
-        self.navigationController?.popViewController(animated: true)
+        self.dismiss(animated: true, completion: nil)
     }
     
     func saveNewExercice(withName name: String?, weekDays days: [UISwitch]){

@@ -9,7 +9,7 @@
 import UIKit
 import CoreData
 
-class CoachViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class CoachViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, NSFetchedResultsControllerDelegate {
 
     var exercices : [ExerciceDAO] = []
     
@@ -49,6 +49,7 @@ class CoachViewController: UIViewController, UITableViewDataSource, UITableViewD
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.exercices.count
     }
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()

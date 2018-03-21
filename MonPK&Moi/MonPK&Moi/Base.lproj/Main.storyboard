@@ -289,7 +289,7 @@
         <!--Information-->
         <scene sceneID="wj5-AC-NsJ">
             <objects>
-                <viewController id="DHt-HA-Mec" customClass="ContactViewController" customModule="MonPK_Moi" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ContactViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="DHt-HA-Mec" customClass="ContactViewController" customModule="MonPK_Moi" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Wv4-sT-8ib"/>
                         <viewControllerLayoutGuide type="bottom" id="MVw-ir-ACX"/>
@@ -698,7 +698,7 @@
         <!--Agenda-->
         <scene sceneID="m68-1d-ctE">
             <objects>
-                <viewController id="QnD-bU-4Tv" customClass="AgendaViewController" customModule="MonPK_Moi" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="AgendaViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="QnD-bU-4Tv" customClass="AgendaViewController" customModule="MonPK_Moi" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Amk-DF-kbM"/>
                         <viewControllerLayoutGuide type="bottom" id="2RG-lg-VQX"/>
@@ -947,7 +947,7 @@
         <!--Pilulier-->
         <scene sceneID="HIb-g7-XJz">
             <objects>
-                <viewController id="rXb-id-NpP" customClass="PilulierViewController" customModule="MonPK_Moi" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="PilulierViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="rXb-id-NpP" customClass="PilulierViewController" customModule="MonPK_Moi" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="UCh-1P-TEv"/>
                         <viewControllerLayoutGuide type="bottom" id="JeY-Xb-OlH"/>
@@ -1001,7 +1001,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <state key="normal" title="Ajouter un traitement"/>
                                 <connections>
-                                    <segue destination="X3u-VF-c7M" kind="show" id="ez7-96-ZxD"/>
+                                    <segue destination="X3u-VF-c7M" kind="presentation" id="FbH-GP-YVP"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -1257,7 +1257,7 @@
         <!--Coach sportif-->
         <scene sceneID="aMW-hP-g4D">
             <objects>
-                <viewController id="LgB-fQ-55S" customClass="CoachViewController" customModule="MonPK_Moi" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CoachViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="LgB-fQ-55S" customClass="CoachViewController" customModule="MonPK_Moi" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="ODE-sb-v3I"/>
                         <viewControllerLayoutGuide type="bottom" id="9gT-bn-x8E"/>
@@ -1277,7 +1277,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <state key="normal" title="Ajouter un exercice"/>
                                 <connections>
-                                    <segue destination="Egn-jw-3Og" kind="show" id="4IV-LA-Ate"/>
+                                    <segue destination="Egn-jw-3Og" kind="presentation" id="zX4-NF-dKe"/>
                                 </connections>
                             </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="yqC-yB-t0Y">
@@ -1463,6 +1463,9 @@
                                     </label>
                                     <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="cYR-Py-Jsr">
                                         <rect key="frame" x="275" y="0.0" width="51" height="30"/>
+                                        <connections>
+                                            <action selector="ActSwitchON:" destination="Ik2-xM-2ak" eventType="valueChanged" id="6S6-PG-XIC"/>
+                                        </connections>
                                     </switch>
                                 </subviews>
                                 <constraints>
@@ -1480,6 +1483,9 @@
                                     </label>
                                     <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="cfe-L1-1M8">
                                         <rect key="frame" x="275" y="0.0" width="51" height="32.333333333333314"/>
+                                        <connections>
+                                            <action selector="ActSwitchDYS:" destination="Ik2-xM-2ak" eventType="valueChanged" id="s5D-vD-KCG"/>
+                                        </connections>
                                     </switch>
                                 </subviews>
                             </stackView>
@@ -1494,6 +1500,9 @@
                                     </label>
                                     <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="1kz-4u-OHK">
                                         <rect key="frame" x="275" y="0.0" width="51" height="32.333333333333314"/>
+                                        <connections>
+                                            <action selector="ActSwitchOFF:" destination="Ik2-xM-2ak" eventType="valueChanged" id="nhT-Gi-DqP"/>
+                                        </connections>
                                     </switch>
                                 </subviews>
                             </stackView>
@@ -1501,6 +1510,9 @@
                                 <rect key="frame" x="176" y="621" width="62" height="36"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <state key="normal" title="Valider"/>
+                                <connections>
+                                    <action selector="validateButton:" destination="Ik2-xM-2ak" eventType="touchUpInside" id="1zd-xu-CCD"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -1522,6 +1534,11 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Questionnaire" id="h71-Tr-2ry"/>
+                    <connections>
+                        <outlet property="switchDYS" destination="cfe-L1-1M8" id="bQ7-iu-HPf"/>
+                        <outlet property="switchOFF" destination="1kz-4u-OHK" id="MN8-aL-pJm"/>
+                        <outlet property="switchON" destination="cYR-Py-Jsr" id="eG6-V3-q6W"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mCI-oz-v9C" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

@@ -25,6 +25,7 @@
 		2C505118205AF23E00850AE7 /* Evenement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C505117205AF23E00850AE7 /* Evenement.swift */; };
 		2C827B16205A62F100376D55 /* ExerciceTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C827B15205A62F100376D55 /* ExerciceTableViewCell.swift */; };
 		2C9086692061758E00B440CB /* RdvTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C9086682061758E00B440CB /* RdvTableViewCell.swift */; };
+		2C9246CB2062431E002CA7AE /* ManagePopUpHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C9246CA2062431E002CA7AE /* ManagePopUpHelper.swift */; };
 		2C9864C2205BA9B400788C91 /* Medecin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C9864C1205BA9B400788C91 /* Medecin.swift */; };
 		2C9864C4205BADAB00788C91 /* Medicament.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C9864C3205BADAB00788C91 /* Medicament.swift */; };
 		2C9864C6205BAF3900788C91 /* Prise_medicament.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C9864C5205BAF3900788C91 /* Prise_medicament.swift */; };
@@ -88,6 +89,7 @@
 		2C505117205AF23E00850AE7 /* Evenement.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Evenement.swift; sourceTree = "<group>"; };
 		2C827B15205A62F100376D55 /* ExerciceTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExerciceTableViewCell.swift; sourceTree = "<group>"; };
 		2C9086682061758E00B440CB /* RdvTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RdvTableViewCell.swift; sourceTree = "<group>"; };
+		2C9246CA2062431E002CA7AE /* ManagePopUpHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ManagePopUpHelper.swift; sourceTree = "<group>"; };
 		2C9864C1205BA9B400788C91 /* Medecin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Medecin.swift; sourceTree = "<group>"; };
 		2C9864C3205BADAB00788C91 /* Medicament.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Medicament.swift; sourceTree = "<group>"; };
 		2C9864C5205BAF3900788C91 /* Prise_medicament.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Prise_medicament.swift; sourceTree = "<group>"; };
@@ -167,6 +169,7 @@
 			children = (
 				AA4A253620591E17001480E5 /* ManageErrorHelper.swift */,
 				AA4A253B205929D0001480E5 /* ManageCoreData.swift */,
+				2C9246CA2062431E002CA7AE /* ManagePopUpHelper.swift */,
 			);
 			name = Helper;
 			sourceTree = "<group>";
@@ -363,6 +366,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2C9246CB2062431E002CA7AE /* ManagePopUpHelper.swift in Sources */,
 				AACCDBDA20468EB6002112F7 /* ViewController.swift in Sources */,
 				2C505118205AF23E00850AE7 /* Evenement.swift in Sources */,
 				2C9864C4205BADAB00788C91 /* Medicament.swift in Sources */,
