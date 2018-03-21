@@ -8,12 +8,19 @@
 
 import UIKit
 
-class AgendaViewController: UIViewController {
+class AgendaViewController: UIViewController,UITableViewDataSource, UITableViewDelegate {
 
+    @IBOutlet weak var rdvsTable: UITableView!
+    var rdvs: [RdvDAO] = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
         // Do any additional setup after loading the view.
+        do{
+            try rdvs=RdvDAO.getAll()
+        }catch let error as NSError{
+            ManageErrorHelper.alertError(view: self, WithTitle: "\(error)", andMessage: "\(error.userInfo)")
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -21,25 +28,61 @@ class AgendaViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    //TODO
+    
     @IBAction func unwindAfterAddingRDV(segue: UIStoryboardSegue){
         do{
-            try traitement = TraitementDAO.getAll()
-            PriseMedicamentTable.reloadData()
+            try rdvs = RdvDAO.getAll()
+            rdvsTable.reloadData()
         }catch let error as NSError{
             ManageErrorHelper.alertError(view: self, WithTitle: "\(error)", andMessage: "\(error.userInfo)")
         }
     }
 
-    
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    // MARK: - Table View Management
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        let cell = self.rdvsTable.dequeueReusableCell(withIdentifier: "RDVCell", for: indexPath) as! RdvTableViewCell
+        let formatter = DateFormatter()
+        formatter.dateFormat = "dd/MM hh:mm"
+        let dateString = formatter.string(from: self.rdvs[indexPath.row].date_rdv! as Date)
+        cell.dateLabel.text = dateString
+        cell.libelleLabel.text = self.rdvs[indexPath.row].libelle
+        cell.medecinLabel.text = self.rdvs[indexPath.row].rdv_medecin?.nom
+        return cell
     }
-    */
-
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return self.rdvs.count
+    }
+    
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        if (editingStyle==UITableViewCellEditingStyle.delete){
+            self.rdvsTable.beginUpdates()
+            if(self.delete_rdv(rdvWithIndex: indexPath.row)){
+                self.rdvsTable.deleteRows(at: [indexPath], with:UITableViewRowAnimation.automatic)
+            }
+            self.rdvsTable.endUpdates()
+        }
+    }
+    
+    // MARK: - Delete management
+    func delete_rdv(rdvWithIndex index: Int) -> Bool{
+        let rdv = self.rdvs[index]
+        ManageCoreData.context.delete(rdv)
+        do{
+            try ManageCoreData.context.save()
+            self.rdvs.remove(at: index)
+            return true
+        }
+        catch let error as NSError{
+            ManageErrorHelper.alertError(view: self, error: error)
+            return false
+        }
+    }
+    
 }
+

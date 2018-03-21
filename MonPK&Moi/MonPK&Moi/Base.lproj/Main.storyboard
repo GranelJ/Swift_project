@@ -715,7 +715,7 @@
                                 <rect key="frame" x="20" y="99" width="374" height="538"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="RDVCell" id="Gk8-mA-Xms">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="RDVCell" id="Gk8-mA-Xms" customClass="RdvTableViewCell" customModule="MonPK_Moi" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="374" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Gk8-mA-Xms" id="jGD-eu-XYD">
@@ -745,6 +745,11 @@
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="dateLabel" destination="4px-vz-A9e" id="46N-KS-upa"/>
+                                            <outlet property="libelleLabel" destination="FH1-mm-qkl" id="LqY-y3-Et3"/>
+                                            <outlet property="medecinLabel" destination="nm0-1j-bf2" id="adc-FN-QxK"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -778,6 +783,9 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Agenda" image="Agenda" id="NdP-Fz-Cas"/>
                     <navigationItem key="navigationItem" title="Agenda" id="PZU-Ud-Cal"/>
+                    <connections>
+                        <outlet property="rdvsTable" destination="z69-mR-WcC" id="BhQ-yO-CWh"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GFN-vI-M6A" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -850,6 +858,9 @@
                                 <rect key="frame" x="176" y="641" width="62" height="36"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <state key="normal" title="Valider"/>
+                                <connections>
+                                    <segue destination="8wT-SL-11J" kind="unwind" unwindAction="unwindAfterAddingRDVWithSegue:" id="hq7-Lm-3L9"/>
+                                </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="ilf-VV-afZ">
                                 <rect key="frame" x="20" y="444" width="374" height="175"/>
@@ -897,6 +908,7 @@
                     <navigationItem key="navigationItem" title="Ajout d'un rendez-vous" id="5Hu-YZ-J7q"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ezy-pW-41t" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="8wT-SL-11J" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="3323" y="-487"/>
         </scene>
