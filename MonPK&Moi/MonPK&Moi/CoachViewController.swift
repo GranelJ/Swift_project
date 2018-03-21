@@ -52,7 +52,6 @@ class CoachViewController: UIViewController, UITableViewDataSource, UITableViewD
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
         do{
             try self.exercices = ExerciceDAO.getAllOrdered()
         }
@@ -93,6 +92,15 @@ class CoachViewController: UIViewController, UITableViewDataSource, UITableViewD
         catch let error as NSError{
             ManageErrorHelper.alertError(view: self, error: error)
             return false
+        }
+    }
+    
+    @IBAction func unwindAfterAddExercice(segue: UIStoryboardSegue){
+        do{
+            try exercices = ExerciceDAO.getAll()
+            exercicesTable.reloadData()
+        }catch let error as NSError{
+            ManageErrorHelper.alertError(view: self, WithTitle: "\(error)", andMessage: "\(error.userInfo)")
         }
     }
 
