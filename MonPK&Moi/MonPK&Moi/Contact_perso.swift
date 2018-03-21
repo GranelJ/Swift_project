@@ -10,7 +10,7 @@ import Foundation
 
 class Contact_perso {
     
-    private let dao : Contact_persoDAO
+    internal var dao : Contact_persoDAO
     var email : String{
         get{
             return self.dao.email!
@@ -44,15 +44,12 @@ class Contact_perso {
         }
     }
     
-    init(email: String, nom: String, prenom: String, telephone: String){
-        guard let dao = Contact_persoDAO.getNewContact_perso() else{
-            fatalError("impossible to get dao for contact_perso")
+    init(forEmail email: String, forNom nom: String, forPrenom prenom: String, forTelephone telephone: String){
+        if let dao = Contact_persoDAO.searchDAO(forEmail: email, forNom: nom, forPrenom: prenom, forTelephone: telephone){
+            self.dao = dao
+        }else{
+            self.dao = Contact_persoDAO.createDAO(forEmail: email, forNom: nom, forPrenom: prenom, forTelephone: telephone)
         }
-        self.dao = dao
-        self.dao.email = email
-        self.dao.nom = nom
-        self.dao.prenom = prenom
-        self.dao.telephone = telephone
     }
     
 }

@@ -10,7 +10,7 @@ import Foundation
 
 class Medecin {
     
-    private let dao : MedecinDAO
+    internal var dao : MedecinDAO
     var email : String{
         get{
             return self.dao.email!
@@ -60,17 +60,12 @@ class Medecin {
         }
     }
     
-    init(email: String, lieu_travail: String, nom: String, prenom: String, profession: String, telephone: String){
-        guard let dao = MedecinDAO.getNewMedecin() else{
-            fatalError("impossible to get dao for medecin")
+    init(forEmail email: String,forLieu lieu_travail: String,forNom nom: String,forPrenom prenom: String,forProfession profession: String,forTelephone telephone: String){
+        if let dao = MedecinDAO.searchDAO(forEmail: email,forLieu: lieu_travail,forNom: nom,forPrenom: prenom,forProfession: profession,forTelephone: telephone){
+            self.dao = dao
+        }else{
+            self.dao = MedecinDAO.createDAO(forEmail: email,forLieu: lieu_travail,forNom: nom,forPrenom: prenom,forProfession: profession,forTelephone: telephone)
         }
-        self.dao = dao
-        self.dao.email = email
-        self.dao.lieu_travail = lieu_travail
-        self.dao.nom = nom
-        self.dao.prenom = prenom
-        self.dao.profession = profession
-        self.dao.telephone = telephone
     }
     
 }

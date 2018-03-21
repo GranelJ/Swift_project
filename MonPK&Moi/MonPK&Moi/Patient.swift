@@ -10,7 +10,7 @@ import Foundation
 
 class Patient {
     
-    private let dao : PatientDAO
+    internal var dao : PatientDAO
     var date_naissance : Date{
         get{
             return self.dao.date_naissance! as Date
@@ -45,13 +45,10 @@ class Patient {
     }
     
     init(date_naissance: Date, nom: String, prenom: String, temps_preparation: Int64){
-        guard let dao = PatientDAO.getNewPatient() else{
-            fatalError("impossible to get dao for patient")
+        if let dao = PatientDAO.searchDAO(forBirthdate: date_naissance, forLastname: nom, forFirstname: prenom, forPrepareTime: temps_preparation){
+            self.dao = dao
+        }else{
+            self.dao = PatientDAO.createDAO(forBirthdate: date_naissance, forLastname: nom, forFirstname: prenom, forPrepareTime: temps_preparation)
         }
-        self.dao = dao
-        self.dao.date_naissance = date_naissance as NSDate
-        self.dao.nom = nom
-        self.dao.prenom = prenom
-        self.dao.temps_preparation = temps_preparation
     }
 }

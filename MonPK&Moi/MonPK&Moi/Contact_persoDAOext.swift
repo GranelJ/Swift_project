@@ -12,21 +12,30 @@ import CoreData
 
 extension Contact_persoDAO {
     
-    static func getNewContact_perso() -> Contact_persoDAO?{
-        guard let entity = NSEntityDescription.entity(forEntityName: "Contact_persoDAO", in: ManageCoreData.context) else{
-            return nil
-        }
-        let contact = Contact_persoDAO(entity: entity, insertInto: ManageCoreData.context)
-        return contact
+    static func createDAO() -> Contact_persoDAO{
+        return Contact_persoDAO(context: ManageCoreData.context)
     }
     
-    static func getAll() throws -> [Contact_persoDAO] {
-        let request : NSFetchRequest<Contact_persoDAO> = Contact_persoDAO.fetchRequest()
-        do {
-            let contactL = try ManageCoreData.context.fetch(request)
-            return contactL
-        } catch let error as NSError {
-            throw error
+    static func createDAO(forEmail email: String, forNom nom: String, forPrenom prenom: String, forTelephone telephone: String) -> Contact_persoDAO{
+        let dao = self.createDAO()
+        dao.email=email
+        dao.nom=nom
+        dao.prenom=prenom
+        dao.telephone=telephone
+        
+        return dao
+    }
+    
+    static func searchDAO(forEmail email: String, forNom nom: String, forPrenom prenom: String, forTelephone telephone: String) -> Contact_persoDAO?{
+        let request : NSFetchRequest<Contact_persoDAO> = NSFetchRequest<Contact_persoDAO>()
+        request.predicate = NSPredicate(format: "email == %@ AND nom == %@ AND prenom == %@ AND telephone == %@", email, nom, prenom, telephone)
+        do{
+            let result = try ManageCoreData.context.fetch(request) as [Contact_persoDAO]
+            guard result.count != 0 else { return nil }
+            return result.first
+        }
+        catch{
+            return nil
         }
     }
 }
