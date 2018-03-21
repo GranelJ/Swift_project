@@ -16,8 +16,11 @@ class AjoutContactPersoViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var firstNameLabel: UITextField!
     
     @IBAction func validateButton(_ sender: Any) {
-        self.saveNewContact(withName: lastNameLabel.text, withNum: numLabel.text, withMail: mailLabel.text, withPrenom: firstNameLabel.text)
-        self.navigationController?.popViewController(animated: true)
+        let nom = lastNameLabel.text
+        let prenom = firstNameLabel.text
+        let num = numLabel.text
+        let mail = mailLabel.text
+        self.saveNewContact(withName: nom, withNum: num, withMail: mail, withPrenom: prenom)
     }
     
     func saveNewContact(withName nom: String?,withNum num: String?,withMail mail: String?,withPrenom prenom: String?){

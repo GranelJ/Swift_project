@@ -13,6 +13,7 @@ class ContactViewController: UIViewController, UITableViewDataSource, UITableVie
 
     var medecins : [MedecinDAO] = []
     var contacts : [Contact_persoDAO] = []
+    var patient : PatientDAO?
     
     @IBOutlet weak var medecinsTable: UITableView!
     @IBOutlet weak var contactsTable: UITableView!
@@ -26,7 +27,6 @@ class ContactViewController: UIViewController, UITableViewDataSource, UITableVie
         super.viewDidLoad()
         
         // Do any additional setup after loading the view.
-        let patient: PatientDAO?
         do{
             let exist: Bool = try PatientDAO.exist()
             if exist{
@@ -71,6 +71,7 @@ class ContactViewController: UIViewController, UITableViewDataSource, UITableVie
         // Dispose of any resources that can be recreated.
     }
     
+    //refresh contactsTable
     @IBAction func unwindAfterAddContactPerso(segue: UIStoryboardSegue){
         do{
             try contacts = Contact_persoDAO.getAll()
@@ -80,6 +81,7 @@ class ContactViewController: UIViewController, UITableViewDataSource, UITableVie
         }
     }
     
+    //refresh medecinsTable
     @IBAction func unwindAfterAddContactMedical(segue: UIStoryboardSegue){
         do{
             try medecins = MedecinDAO.getAll()
@@ -88,11 +90,24 @@ class ContactViewController: UIViewController, UITableViewDataSource, UITableVie
             ManageErrorHelper.alertError(view: self, WithTitle: "\(error)", andMessage: "\(error.userInfo)")
         }
     }
-    /*
+    
+    //refresh personal info
     @IBAction func unwindAfterEditInfoPerso(segue: UIStoryboardSegue){
-            //TODO
+        do{
+            patient = try PatientDAO.get()
+            NomLabel.text = patient?.nom
+            PrenomLabel.text = patient?.prenom
+            TpsPreplabel.text = patient?.temps_preparation.description
+            // formate la date en txt
+            let formatter = DateFormatter()
+            formatter.dateFormat = "dd/MM/YYYY"
+            let dateString = formatter.string(from: patient?.date_naissance as! Date)
+            Agelabel.text = dateString
+        }catch let error as NSError{
+            ManageErrorHelper.alertError(view: self, WithTitle: "\(error)", andMessage: "\(error.userInfo)")
+        }
     }
-    */
+
     // MARK: - Table View Management
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         

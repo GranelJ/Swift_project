@@ -22,6 +22,14 @@ class AgendaViewController: UIViewController {
     }
     
     //TODO
+    @IBAction func unwindAfterAddingRDV(segue: UIStoryboardSegue){
+        do{
+            try traitement = TraitementDAO.getAll()
+            PriseMedicamentTable.reloadData()
+        }catch let error as NSError{
+            ManageErrorHelper.alertError(view: self, WithTitle: "\(error)", andMessage: "\(error.userInfo)")
+        }
+    }
 
     
     /*
