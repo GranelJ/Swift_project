@@ -88,7 +88,7 @@
                                 <state key="normal" title="Valider"/>
                                 <connections>
                                     <action selector="validateButton:" destination="RJc-4k-ZSt" eventType="touchUpInside" id="8FB-w7-VYF"/>
-                                    <segue destination="c9B-Q6-dDQ" kind="unwind" unwindAction="unwindAfterAddContactPersoWithSegue:" id="dPC-cf-38p"/>
+                                    <segue destination="c9B-Q6-dDQ" kind="unwind" identifier="AddContactPerso" unwindAction="unwindAfterAddContactPersoWithSegue:" id="dPC-cf-38p"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nom : " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qx1-3F-Azo">
@@ -225,7 +225,7 @@
                                 <state key="normal" title="Valider"/>
                                 <connections>
                                     <action selector="ValidateButton:" destination="TGX-K9-fLL" eventType="touchUpInside" id="iUs-cB-8hq"/>
-                                    <segue destination="OM4-os-4Eh" kind="unwind" unwindAction="unwindAfterAddContactMedicalWithSegue:" id="y3K-fW-p0U"/>
+                                    <segue destination="OM4-os-4Eh" kind="unwind" identifier="AddContactMedical" unwindAction="unwindAfterAddContactMedicalWithSegue:" id="y3K-fW-p0U"/>
                                 </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Lieu de travail" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Dnd-Za-97d">
