@@ -807,8 +807,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="4J2-Qb-fEP">
-                                <rect key="frame" x="20" y="69" width="374" height="180"/>
+                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="4J2-Qb-fEP">
+                                <rect key="frame" x="20" y="99" width="374" height="180"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="180" id="TZS-W6-UWF"/>
                                 </constraints>
@@ -818,7 +818,7 @@
                                 <locale key="locale" localeIdentifier="fr"/>
                             </datePicker>
                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cLL-IT-WDZ">
-                                <rect key="frame" x="20" y="254" width="374" height="30"/>
+                                <rect key="frame" x="20" y="309" width="374" height="30"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Libellé : " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZBZ-aD-NSc">
                                         <rect key="frame" x="0.0" y="0.0" width="74" height="30"/>
@@ -834,30 +834,6 @@
                                     </textField>
                                 </subviews>
                             </stackView>
-                            <stackView opaque="NO" contentMode="scaleToFill" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="dj9-mp-MDo">
-                                <rect key="frame" x="20" y="289" width="374" height="150"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Heure : " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Uw0-YR-Oyx">
-                                        <rect key="frame" x="0.0" y="0.0" width="60" height="20.333333333333314"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="60" id="1PM-7b-EoY"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="time" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="8aE-sp-hAL">
-                                        <rect key="frame" x="60" y="0.0" width="314" height="150"/>
-                                        <date key="date" timeIntervalSinceReferenceDate="542014024.99874699">
-                                            <!--2018-03-06 07:27:04 +0000-->
-                                        </date>
-                                        <locale key="locale" localeIdentifier="fr"/>
-                                    </datePicker>
-                                </subviews>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="150" id="vaH-iW-Lte"/>
-                                </constraints>
-                            </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R1R-nV-Xiw">
                                 <rect key="frame" x="176" y="641" width="62" height="36"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
@@ -867,11 +843,11 @@
                                     <segue destination="8wT-SL-11J" kind="unwind" unwindAction="unwindAfterAddingRDVWithSegue:" id="hq7-Lm-3L9"/>
                                 </connections>
                             </button>
-                            <stackView opaque="NO" contentMode="scaleToFill" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="ilf-VV-afZ">
+                            <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="ilf-VV-afZ">
                                 <rect key="frame" x="20" y="444" width="374" height="175"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Médecin : " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FTx-Ed-KAG">
-                                        <rect key="frame" x="0.0" y="77.333333333333371" width="75" height="20.333333333333258"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Médecin : " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FTx-Ed-KAG">
+                                        <rect key="frame" x="0.0" y="77.333333333333329" width="75" height="20.333333333333329"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="75" id="RCa-2o-JbN"/>
                                         </constraints>
@@ -879,7 +855,7 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1uY-YR-yFp">
+                                    <pickerView contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1uY-YR-yFp">
                                         <rect key="frame" x="75" y="0.0" width="299" height="175"/>
                                     </pickerView>
                                 </subviews>
@@ -892,28 +868,24 @@
                         <constraints>
                             <constraint firstItem="ilf-VV-afZ" firstAttribute="leading" secondItem="2wk-a2-BOj" secondAttribute="leading" constant="20" id="E0E-1H-kOm"/>
                             <constraint firstItem="cLL-IT-WDZ" firstAttribute="leading" secondItem="2wk-a2-BOj" secondAttribute="leadingMargin" id="Kpi-TR-aCD"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="dj9-mp-MDo" secondAttribute="trailing" id="T6Z-l9-mhZ"/>
                             <constraint firstAttribute="trailingMargin" secondItem="4J2-Qb-fEP" secondAttribute="trailing" id="UnB-b9-Xik"/>
                             <constraint firstItem="4J2-Qb-fEP" firstAttribute="leading" secondItem="2wk-a2-BOj" secondAttribute="leadingMargin" id="V2z-Y0-d5g"/>
-                            <constraint firstItem="4J2-Qb-fEP" firstAttribute="top" secondItem="9Pq-iv-ss5" secondAttribute="bottom" constant="5" id="XHA-Iq-D3R"/>
-                            <constraint firstItem="cLL-IT-WDZ" firstAttribute="top" secondItem="4J2-Qb-fEP" secondAttribute="bottom" constant="5" id="cvG-lI-cba"/>
+                            <constraint firstItem="4J2-Qb-fEP" firstAttribute="top" secondItem="9Pq-iv-ss5" secondAttribute="bottom" constant="35" id="egi-Sq-aQd"/>
                             <constraint firstItem="R1R-nV-Xiw" firstAttribute="centerX" secondItem="2wk-a2-BOj" secondAttribute="centerX" id="exf-gq-Jq4"/>
-                            <constraint firstItem="ilf-VV-afZ" firstAttribute="top" secondItem="dj9-mp-MDo" secondAttribute="bottom" constant="5" id="fbM-4o-YZh"/>
                             <constraint firstAttribute="trailing" secondItem="ilf-VV-afZ" secondAttribute="trailing" constant="20" id="i44-IH-zVg"/>
-                            <constraint firstItem="dj9-mp-MDo" firstAttribute="centerX" secondItem="2wk-a2-BOj" secondAttribute="centerX" id="iDK-ed-mnA"/>
                             <constraint firstItem="ilf-VV-afZ" firstAttribute="centerX" secondItem="2wk-a2-BOj" secondAttribute="centerX" id="oM3-gE-iAt"/>
                             <constraint firstItem="4J2-Qb-fEP" firstAttribute="centerX" secondItem="2wk-a2-BOj" secondAttribute="centerX" id="tK5-Br-sGk"/>
-                            <constraint firstItem="dj9-mp-MDo" firstAttribute="leading" secondItem="2wk-a2-BOj" secondAttribute="leadingMargin" id="u1k-d6-Rrf"/>
+                            <constraint firstItem="cLL-IT-WDZ" firstAttribute="top" secondItem="4J2-Qb-fEP" secondAttribute="bottom" constant="30" id="tl6-r9-Ao3"/>
                             <constraint firstItem="9eL-bp-a3u" firstAttribute="top" secondItem="R1R-nV-Xiw" secondAttribute="bottom" constant="10" id="uVa-o9-8ME"/>
                             <constraint firstItem="ilf-VV-afZ" firstAttribute="centerX" secondItem="2wk-a2-BOj" secondAttribute="centerX" id="wAK-Tj-fJj"/>
-                            <constraint firstItem="dj9-mp-MDo" firstAttribute="top" secondItem="cLL-IT-WDZ" secondAttribute="bottom" constant="5" id="yQB-4C-QSN"/>
                             <constraint firstAttribute="trailingMargin" secondItem="cLL-IT-WDZ" secondAttribute="trailing" id="ydY-pB-Ru9"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Ajout d'un rendez-vous" id="5Hu-YZ-J7q"/>
                     <connections>
-                        <outlet property="datePicker" destination="4J2-Qb-fEP" id="qHm-7u-wqL"/>
+                        <outlet property="datePicker" destination="4J2-Qb-fEP" id="usP-Gd-bCP"/>
                         <outlet property="libelleField" destination="RCs-TY-RLQ" id="BTY-DT-Nz9"/>
+                        <outlet property="medecinPiker" destination="1uY-YR-yFp" id="a5Q-v2-CfE"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ezy-pW-41t" userLabel="First Responder" sceneMemberID="firstResponder"/>
