@@ -58,10 +58,12 @@ class AjoutTraitementViewController: UIViewController, UIPickerViewDelegate, UIP
     @IBAction func ValidateButton(_ sender: Any) {
         let medicamentrow = picker.selectedRow(inComponent: 0)
         let medicament = pickerData[medicamentrow]
-        let heure = timepicker.description
+        let heurerow = timepicker.selectedRow(inComponent: 0)
+        let heure = timepickerData[heurerow]
         saveNewTraitement(withmedicament: medicament, withheure: heure)
-        self.navigationController?.popViewController(animated: true)
     }
+    
+    
     
     func saveNewTraitement(withmedicament medicament: MedicamentDAO, withheure heure: String) {
         let traitement = TraitementDAO(context: ManageCoreData.context)

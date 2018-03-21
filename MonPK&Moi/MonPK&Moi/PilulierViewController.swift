@@ -39,7 +39,15 @@ class PilulierViewController: UIViewController, UITableViewDataSource, UITableVi
         cell.drug.text = (self.traitement[indexPath.row].traitement_medicament?.nom)! + " " + (self.traitement[indexPath.row].traitement_medicament?.dosage)!
         return cell
     }
-
+    
+    @IBAction func unwindAfterAddingTraitement(segue: UIStoryboardSegue){
+        do{
+            try traitement = TraitementDAO.getAll()
+            PriseMedicamentTable.reloadData()
+        }catch let error as NSError{
+            ManageErrorHelper.alertError(view: self, WithTitle: "\(error)", andMessage: "\(error.userInfo)")
+        }
+    }
     /*
     // MARK: - Navigation
 

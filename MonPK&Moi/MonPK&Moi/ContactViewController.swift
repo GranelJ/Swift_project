@@ -40,7 +40,8 @@ class ContactViewController: UIViewController, UITableViewDataSource, UITableVie
                     formatter.dateFormat = "dd/MM/YYYY"
                     let dateString = formatter.string(from: patient?.date_naissance as! Date)
                     Agelabel.text = dateString
-                }catch{
+                }catch let error as NSError{
+                    ManageErrorHelper.alertError(view: self, WithTitle: "\(error)", andMessage: "\(error.userInfo)")
                 }
             }
         }catch{
@@ -70,6 +71,28 @@ class ContactViewController: UIViewController, UITableViewDataSource, UITableVie
         // Dispose of any resources that can be recreated.
     }
     
+    @IBAction func unwindAfterAddContactPerso(segue: UIStoryboardSegue){
+        do{
+            try contacts = Contact_persoDAO.getAll()
+            contactsTable.reloadData()
+        }catch let error as NSError{
+            ManageErrorHelper.alertError(view: self, WithTitle: "\(error)", andMessage: "\(error.userInfo)")
+        }
+    }
+    
+    @IBAction func unwindAfterAddContactMedical(segue: UIStoryboardSegue){
+        do{
+            try medecins = MedecinDAO.getAll()
+            medecinsTable.reloadData()
+        }catch let error as NSError{
+            ManageErrorHelper.alertError(view: self, WithTitle: "\(error)", andMessage: "\(error.userInfo)")
+        }
+    }
+    /*
+    @IBAction func unwindAfterEditInfoPerso(segue: UIStoryboardSegue){
+            //TODO
+    }
+    */
     // MARK: - Table View Management
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         

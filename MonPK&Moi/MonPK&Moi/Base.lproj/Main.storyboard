@@ -88,6 +88,7 @@
                                 <state key="normal" title="Valider"/>
                                 <connections>
                                     <action selector="validateButton:" destination="RJc-4k-ZSt" eventType="touchUpInside" id="8FB-w7-VYF"/>
+                                    <segue destination="c9B-Q6-dDQ" kind="unwind" unwindAction="unwindAfterAddContactPersoWithSegue:" id="Oqy-B3-dL7"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nom : " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qx1-3F-Azo">
@@ -136,6 +137,7 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="M8Z-iL-vq6" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="c9B-Q6-dDQ" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="-706" y="-486"/>
         </scene>
@@ -223,6 +225,7 @@
                                 <state key="normal" title="Valider"/>
                                 <connections>
                                     <action selector="ValidateButton:" destination="TGX-K9-fLL" eventType="touchUpInside" id="iUs-cB-8hq"/>
+                                    <segue destination="OM4-os-4Eh" kind="unwind" unwindAction="unwindAfterAddContactMedicalWithSegue:" id="y3K-fW-p0U"/>
                                 </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Lieu de travail" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Dnd-Za-97d">
@@ -283,6 +286,7 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PSQ-so-oRd" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="OM4-os-4Eh" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="415.94202898550731" y="-1230.163043478261"/>
         </scene>
@@ -621,7 +625,7 @@
                                 <state key="normal" title="Valider"/>
                                 <connections>
                                     <action selector="unwindToContactListAfterSavingNewPerson:" destination="9wG-0B-gXU" eventType="touchUpInside" id="isF-qu-dde"/>
-                                    <segue destination="gqN-mi-nEh" kind="unwind" unwindAction="unwindToContactListAfterSavingNewPersonWithSegue:" id="EPP-VJ-q1R"/>
+                                    <segue destination="gqN-mi-nEh" kind="unwind" unwindAction="unwindAfterEditInfoPersoWithSegue:" id="czx-ek-O45"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nom : " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s0o-Lg-QXC">
@@ -983,18 +987,18 @@
                                         <rect key="frame" x="0.0" y="28" width="374" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="bqs-Pd-7Hy" id="kD2-gB-Y3z">
-                                            <rect key="frame" x="0.0" y="0.0" width="374" height="43.666666666666664"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="374" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Périodicité" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AXF-iy-iGu">
-                                                    <rect key="frame" x="7" y="12" width="115" height="21"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="heure" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AXF-iy-iGu">
+                                                    <rect key="frame" x="7" y="12" width="60" height="21"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Medicament" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Nf-4F-0BX">
-                                                    <rect key="frame" x="143" y="12" width="115" height="21"/>
+                                                    <rect key="frame" x="75" y="12" width="291" height="21"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                     <nil key="textColor"/>
@@ -1024,7 +1028,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <state key="normal" title="Ajouter un traitement"/>
                                 <connections>
-                                    <segue destination="X3u-VF-c7M" kind="show" id="ez7-96-ZxD"/>
+                                    <segue destination="X3u-VF-c7M" kind="show" id="Gyb-K2-S5b"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -1043,10 +1047,13 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Pilulier" image="Pilulier" id="a4D-ze-dau"/>
                     <navigationItem key="navigationItem" title="Pilulier" id="ywQ-jv-uiQ"/>
+                    <connections>
+                        <outlet property="PriseMedicamentTable" destination="V5S-z2-pxf" id="zWX-l4-iOI"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HRz-4q-3zR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2290" y="323"/>
+            <point key="canvasLocation" x="2289.8550724637685" y="322.82608695652175"/>
         </scene>
         <!--Ajout traitement-->
         <scene sceneID="jCX-Pf-KR5">
@@ -1094,6 +1101,7 @@
                                 <state key="normal" title="Valider"/>
                                 <connections>
                                     <action selector="ValidateButton:" destination="X3u-VF-c7M" eventType="touchUpInside" id="LdZ-62-jXs"/>
+                                    <segue destination="kao-Ji-6jW" kind="unwind" unwindAction="unwindAfterAddingTraitementWithSegue:" id="vb8-Nc-xfb"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -1116,6 +1124,7 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sxb-nP-zf2" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="kao-Ji-6jW" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="3197.5999999999999" y="323.38830584707648"/>
         </scene>

@@ -48,10 +48,8 @@ class EditInformationPersoViewController: UIViewController, UITextFieldDelegate 
             let exist = try PatientDAO.exist()
             if exist{
                 self.editPatient(nom: nom, prenom: prenom, dateNaissance: dateNaissance, TpsPrep: tpsPrep)
-                self.navigationController?.popViewController(animated: true)
             }else{
                 self.createNewPatient(nom: nom, prenom: prenom, dateNaissance: dateNaissance, TpsPrep: tpsPrep)
-                self.navigationController?.popViewController(animated: true)
             }
         }catch{
             
