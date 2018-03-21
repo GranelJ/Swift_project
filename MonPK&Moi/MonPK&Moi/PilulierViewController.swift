@@ -10,7 +10,7 @@ import UIKit
 
 class PilulierViewController: UIViewController, UITableViewDataSource, UITableViewDelegate{
 
-    var traitement : [TraitementDAO] = [] //changer string par Medicament lorsque type medicament cree
+    var traitement : [TraitementDAO] = []
     @IBOutlet weak var PriseMedicamentTable: UITableView!
     
     override func viewDidLoad() {
@@ -18,8 +18,8 @@ class PilulierViewController: UIViewController, UITableViewDataSource, UITableVi
         // Do any additional setup after loading the view.
         do{
             try traitement = TraitementDAO.getAll()
-        }catch{
-            
+        }catch let error as NSError{
+            ManageErrorHelper.alertError(view: self, WithTitle: "\(error)", andMessage: "\(error.userInfo)")
         }
     }
 
@@ -33,7 +33,7 @@ class PilulierViewController: UIViewController, UITableViewDataSource, UITableVi
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        //TODO: Faire ajout dans tableview
+        
         let cell = self.PriseMedicamentTable.dequeueReusableCell(withIdentifier: "MedicamentCell", for: indexPath) as! MedicamentTableViewCell
         cell.period.text = self.traitement[indexPath.row].moment_de_prise
         cell.drug.text = (self.traitement[indexPath.row].traitement_medicament?.nom)! + " " + (self.traitement[indexPath.row].traitement_medicament?.dosage)!
