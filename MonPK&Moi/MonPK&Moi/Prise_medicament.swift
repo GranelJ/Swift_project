@@ -28,12 +28,25 @@ class Prise_medicament {
             self.dao.libelle = newValue
         }
     }
+    var synthese : Synthese?{
+        get{
+            return self.synthese
+        }
+        set{
+            self.synthese = newValue
+            self.dao.prise_medicament_synthese = newValue?.dao
+        }
+    }
     
-    init(forDate date: Date,forLibelle libelle: String){
+    init(forDate date: Date,forLibelle libelle: String, forSynthese newSynthese: Synthese?){
         if let dao = Prise_medicamentDAO.searchDAO(forDate: date,forLibelle: libelle){
             self.dao = dao
         }else{
             self.dao = Prise_medicamentDAO.createDAO(forDate: date,forLibelle: libelle)
+        }
+        if let synth = newSynthese{
+            self.synthese = synth
+            self.dao.prise_medicament_synthese = synth.dao
         }
     }
     

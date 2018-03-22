@@ -27,12 +27,37 @@ class Rdv {
             self.dao.libelle = newValue
         }
     }
+    var medecin : Medecin{
+        get{
+            return self.medecin
+        }
+        set{
+            self.medecin = newValue
+            self.dao.rdv_medecin = newValue.dao
+        }
+    }
+    var synthese : Synthese?{
+        get{
+            return self.synthese
+        }
+        set{
+            self.synthese = newValue
+            self.dao.rdv_synthese = newValue?.dao
+        }
+    }
     
-    init(forDate date: Date,forLibelle libelle: String){
+    init(forDate date: Date,forLibelle libelle: String, forMedecin newMedecin: Medecin, forSynthese newSynthese: Synthese?){
         if let dao = RdvDAO.searchDAO(forDate: date,forLibelle: libelle){
             self.dao = dao
         }else{
             self.dao = RdvDAO.createDAO(forDate: date,forLibelle: libelle)
+        }
+        self.medecin = newMedecin
+        self.dao.rdv_medecin=newMedecin.dao
+        
+        if let synth = newSynthese{
+            self.synthese = synth
+            self.dao.rdv_synthese = synth.dao
         }
     }
     

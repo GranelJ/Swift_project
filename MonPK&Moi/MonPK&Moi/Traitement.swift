@@ -43,13 +43,24 @@ class Traitement {
             self.dao.moment_de_prise = newValue
         }
     }
+    var medicament: Medicament{
+        get{
+            return self.medicament
+        }
+        set{
+            self.medicament = newValue
+            self.dao.traitement_medicament=newValue.dao
+        }
+    }
     
-    init(forDateDebut dateDebut: Date,forDateFin dateFin: Date,forFrequence frequence: Int64, forMomentPrise momentPrise: String){
+    init(forDateDebut dateDebut: Date,forDateFin dateFin: Date,forFrequence frequence: Int64, forMomentPrise momentPrise: String, forMedicament newMedicament: Medicament){
         if let dao = TraitementDAO.searchDAO(forDateDebut: dateDebut,forDateFin: dateFin,forFrequence: frequence, forMomentPrise: momentPrise){
             self.dao = dao
         }else{
             self.dao = TraitementDAO.createDAO(forDateDebut: dateDebut,forDateFin: dateFin,forFrequence: frequence, forMomentPrise: momentPrise)
         }
+        self.medicament = newMedicament
+        self.dao.traitement_medicament=newMedicament.dao
     }
     
     func delete(){
