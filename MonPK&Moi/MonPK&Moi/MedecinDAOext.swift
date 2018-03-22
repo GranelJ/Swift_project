@@ -49,4 +49,9 @@ extension MedecinDAO {
             return nil
         }
     }
+    
+    static func deleteDAO(ForMedecin medecin: MedecinDAO){
+        ManageCoreData.context.delete(medecin)
+        self.save()
+    }
 }

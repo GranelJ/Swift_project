@@ -51,4 +51,8 @@ class Patient {
             self.dao = PatientDAO.createDAO(forBirthdate: date_naissance, forLastname: nom, forFirstname: prenom, forPrepareTime: temps_preparation)
         }
     }
+    
+    func delete(){
+        PatientDAO.deleteDAO(ForPatient: self.dao)
+    }
 }

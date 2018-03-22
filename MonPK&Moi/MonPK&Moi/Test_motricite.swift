@@ -36,4 +36,8 @@ class Test_motricite {
         }
     }
     
+    func delete(){
+        Test_motriciteDAO.deleteDAO(ForTest: self.dao)
+    }
+    
 }

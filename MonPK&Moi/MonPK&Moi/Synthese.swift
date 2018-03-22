@@ -44,4 +44,8 @@ class Synthese {
         }
     }
     
+    func delete(){
+        SyntheseDAO.deleteDAO(ForSynthese: self.dao)
+    }
+    
 }

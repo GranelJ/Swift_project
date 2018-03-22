@@ -68,4 +68,8 @@ class Medecin {
         }
     }
     
+    func delete(){
+        MedecinDAO.deleteDAO(ForMedecin: self.dao)
+    }
+    
 }

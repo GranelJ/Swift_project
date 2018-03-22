@@ -44,4 +44,8 @@ class Evenement {
         }
     }
     
+    func delete(){
+        EvenementDAO.deleteDAO(ForEvenement: self.dao)
+    }
+    
 }

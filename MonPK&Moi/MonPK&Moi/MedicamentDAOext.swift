@@ -46,4 +46,9 @@ extension MedicamentDAO {
             return nil
         }
     }
+    
+    static func deleteDAO(ForMedicament medicament: MedicamentDAO){
+        ManageCoreData.context.delete(medicament)
+        self.save()
+    }
 }

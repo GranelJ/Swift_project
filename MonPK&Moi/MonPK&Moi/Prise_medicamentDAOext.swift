@@ -45,4 +45,9 @@ extension Prise_medicamentDAO {
             return nil
         }
     }
+    
+    static func deleteDAO(ForPrise prise: Prise_medicamentDAO){
+        ManageCoreData.context.delete(prise)
+        self.save()
+    }
 }

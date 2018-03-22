@@ -44,4 +44,8 @@ class Medicament {
         }
     }
     
+    func delete(){
+        MedicamentDAO.deleteDAO(ForMedicament: self.dao)
+    }
+    
 }

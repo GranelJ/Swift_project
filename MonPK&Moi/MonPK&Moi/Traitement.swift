@@ -52,4 +52,8 @@ class Traitement {
         }
     }
     
+    func delete(){
+        TraitementDAO.deleteDAO(ForTraitement: self.dao)
+    }
+    
 }

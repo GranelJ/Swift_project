@@ -35,5 +35,9 @@ class Exercice {
             self.dao = ExerciceDAO.createDAO(forJour: jour, forLibelle: libelle)
         }
     }
+    
+    func delete(){
+        ExerciceDAO.deleteDAO(ForExercice: self.dao)
+    }
 
 }

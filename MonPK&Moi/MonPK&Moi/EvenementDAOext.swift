@@ -47,4 +47,8 @@ extension EvenementDAO {
         }
     }
     
+    static func deleteDAO(ForEvenement evenement: EvenementDAO){
+        ManageCoreData.context.delete(evenement)
+        self.save()
+    }
 }

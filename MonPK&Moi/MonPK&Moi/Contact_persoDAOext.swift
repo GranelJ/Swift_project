@@ -47,5 +47,10 @@ extension Contact_persoDAO {
             return nil
         }
     }
+    
+    static func deleteDAO(ForContact contact: Contact_persoDAO){
+        ManageCoreData.context.delete(contact)
+        self.save()
+    }
 
 }

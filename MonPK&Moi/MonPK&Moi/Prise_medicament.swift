@@ -37,4 +37,8 @@ class Prise_medicament {
         }
     }
     
+    func delete(){
+        Prise_medicamentDAO.deleteDAO(ForPrise: self.dao)
+    }
+    
 }

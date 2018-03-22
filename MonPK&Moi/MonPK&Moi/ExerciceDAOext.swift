@@ -46,5 +46,10 @@ extension ExerciceDAO {
         }
     }
     
+    static func deleteDAO(ForExercice exercice: ExerciceDAO){
+        ManageCoreData.context.delete(exercice)
+        self.save()
+    }
+    
     
 }

@@ -48,4 +48,9 @@ extension PatientDAO {
         }
     }
     
+    static func deleteDAO(ForPatient patient: PatientDAO){
+        ManageCoreData.context.delete(patient)
+        self.save()
+    }
+    
 }

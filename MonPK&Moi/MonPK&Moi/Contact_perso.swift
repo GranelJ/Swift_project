@@ -52,4 +52,8 @@ class Contact_perso {
         }
     }
     
+    func delete(){
+        Contact_persoDAO.deleteDAO(ForContact: self.dao)
+    }
+    
 }

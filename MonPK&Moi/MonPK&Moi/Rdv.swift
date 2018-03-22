@@ -36,4 +36,8 @@ class Rdv {
         }
     }
     
+    func delete(){
+        RdvDAO.deleteDAO(ForRdv: self.dao)
+    }
+    
 }

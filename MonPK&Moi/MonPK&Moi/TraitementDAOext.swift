@@ -47,4 +47,9 @@ extension TraitementDAO {
             return nil
         }
     }
+    
+    static func deleteDAO(ForTraitement traitement: TraitementDAO){
+        ManageCoreData.context.delete(traitement)
+        self.save()
+    }
 }
