@@ -45,4 +45,9 @@ extension Test_motriciteDAO {
             return nil
         }
     }
+    
+    static func deleteDAO(ForTest test: TestDAO){
+        ManageCoreData.context.delete(test)
+        self.save()
+    }
 }

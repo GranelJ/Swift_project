@@ -45,4 +45,9 @@ extension RdvDAO {
             return nil
         }
     }
+    
+    static func deleteDAO(ForRdv rdv: RdvDAO){
+        ManageCoreData.context.delete(rdv)
+        self.save()
+    }
 }

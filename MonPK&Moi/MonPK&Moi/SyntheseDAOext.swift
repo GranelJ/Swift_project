@@ -46,4 +46,9 @@ extension SyntheseDAO {
             return nil
         }
     }
+    
+    static func deleteDAO(ForSynthese synthese: SyntheseDAO){
+        ManageCoreData.context.delete(synthese)
+        self.save()
+    }
 }
