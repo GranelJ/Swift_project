@@ -10,7 +10,7 @@ import Foundation
 
 class Traitement {
     
-    private let dao : TraitementDAO
+    internal var dao : TraitementDAO
     var date_debut: Date{
         get{
             return self.dao.date_debut! as Date
@@ -44,15 +44,12 @@ class Traitement {
         }
     }
     
-    init(date_debut: Date, date_fin: Date, frequence: Int64, moment_de_prise: String){
-        guard let dao = TraitementDAO.getNewTraitement() else{
-            fatalError("impossible to get dao for traitement")
+    init(forDateDebut dateDebut: Date,forDateFin dateFin: Date,forFrequence frequence: Int64, forMomentPrise momentPrise: String){
+        if let dao = TraitementDAO.searchDAO(forDateDebut: dateDebut,forDateFin: dateFin,forFrequence: frequence, forMomentPrise: momentPrise){
+            self.dao = dao
+        }else{
+            self.dao = TraitementDAO.createDAO(forDateDebut: dateDebut,forDateFin: dateFin,forFrequence: frequence, forMomentPrise: momentPrise)
         }
-        self.dao = dao
-        self.dao.date_debut = date_debut as NSDate
-        self.dao.date_fin = date_fin as NSDate
-        self.dao.frequence = frequence
-        self.dao.moment_de_prise = moment_de_prise
     }
     
 }

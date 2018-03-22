@@ -12,21 +12,30 @@ import CoreData
 
 extension TraitementDAO {
     
-    static func getNewTraitement() -> TraitementDAO?{
-        guard let entity = NSEntityDescription.entity(forEntityName: "TraitementDAO", in: ManageCoreData.context) else{
-            return nil
-        }
-        let traitement = TraitementDAO(entity: entity, insertInto: ManageCoreData.context)
-        return traitement
+    static func createDAO() -> TraitementDAO{
+        return TraitementDAO(context: ManageCoreData.context)
     }
     
-    static func getAll() throws -> [TraitementDAO] {
-        let request : NSFetchRequest<TraitementDAO> = TraitementDAO.fetchRequest()
-        do {
-            let traitementL = try ManageCoreData.context.fetch(request)
-            return traitementL
-        } catch let error as NSError {
-            throw error
+    static func createDAO(forDateDebut dateDebut: Date,forDateFin dateFin: Date,forFrequence frequence: Int64, forMomentPrise momentPrise: String) -> TraitementDAO{
+        let dao = self.createDAO()
+        dao.date_debut=dateDebut as NSDate
+        dao.date_fin=dateFin as NSDate
+        dao.frequence=frequence
+        dao.moment_de_prise=momentPrise
+        
+        return dao
+    }
+    
+    static func searchDAO(forDateDebut dateDebut: Date,forDateFin dateFin: Date,forFrequence frequence: Int64, forMomentPrise momentPrise: String) -> TraitementDAO?{
+        let request : NSFetchRequest<TraitementDAO> = NSFetchRequest<TraitementDAO>()
+        request.predicate = NSPredicate(format: "date_debut == %@ AND date_fin == %@ AND frequence == %@ AND moment_de_prise == %@", dateDebut as CVarArg, dateFin as CVarArg, frequence, momentPrise)
+        do{
+            let result = try ManageCoreData.context.fetch(request) as [TraitementDAO]
+            guard result.count != 0 else { return nil }
+            return result.first
+        }
+        catch{
+            return nil
         }
     }
 }

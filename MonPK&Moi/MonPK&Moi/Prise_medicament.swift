@@ -11,7 +11,7 @@ import Foundation
 
 class Prise_medicament {
     
-    private let dao : Prise_medicamentDAO
+    internal var dao : Prise_medicamentDAO
     var date : Date{
         get{
             return self.dao.date! as Date
@@ -29,13 +29,12 @@ class Prise_medicament {
         }
     }
     
-    init(date: Date, libelle: String){
-        guard let dao = Prise_medicamentDAO.getNewPrise_medicament() else{
-            fatalError("impossible to get dao for prise_medicament")
+    init(forDate date: Date,forLibelle libelle: String){
+        if let dao = Prise_medicamentDAO.searchDAO(forDate: date,forLibelle: libelle){
+            self.dao = dao
+        }else{
+            self.dao = Prise_medicamentDAO.createDAO(forDate: date,forLibelle: libelle)
         }
-        self.dao = dao
-        self.dao.date = date as NSDate
-        self.dao.libelle = libelle
     }
     
 }

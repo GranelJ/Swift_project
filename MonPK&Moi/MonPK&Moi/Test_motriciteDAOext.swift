@@ -12,21 +12,28 @@ import CoreData
 
 extension Test_motriciteDAO {
     
-    static func getNewTest_motricite() -> Test_motriciteDAO?{
-        guard let entity = NSEntityDescription.entity(forEntityName: "Test_motriciteDAO", in: ManageCoreData.context) else{
-            return nil
-        }
-        let test = Test_motriciteDAO(entity: entity, insertInto: ManageCoreData.context)
-        return test
+    static func createDAO() -> Test_motriciteDAO{
+        return Test_motriciteDAO(context: ManageCoreData.context)
     }
     
-    static func getAll() throws -> [Test_motriciteDAO] {
-        let request : NSFetchRequest<Test_motriciteDAO> = Test_motriciteDAO.fetchRequest()
-        do {
-            let testL = try ManageCoreData.context.fetch(request)
-            return testL
-        } catch let error as NSError {
-            throw error
+    static func createDAO(forDate date: Date,forReponse reponse: String) -> Test_motriciteDAO{
+        let dao = self.createDAO()
+        dao.date_test=date as NSDate
+        dao.reponse=reponse
+        
+        return dao
+    }
+    
+    static func searchDAO(forDate date: Date,forReponse reponse: String) -> Test_motriciteDAO?{
+        let request : NSFetchRequest<Test_motriciteDAO> = NSFetchRequest<Test_motriciteDAO>()
+        request.predicate = NSPredicate(format: "date_test == %@ AND reponse == %@", date as CVarArg, reponse)
+        do{
+            let result = try ManageCoreData.context.fetch(request) as [Test_motriciteDAO]
+            guard result.count != 0 else { return nil }
+            return result.first
+        }
+        catch{
+            return nil
         }
     }
 }

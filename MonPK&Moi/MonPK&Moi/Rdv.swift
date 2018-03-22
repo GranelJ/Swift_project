@@ -10,7 +10,7 @@ import Foundation
 
 class Rdv {
     
-    private let dao : RdvDAO
+    internal var dao : RdvDAO
     var date_rdv : Date{
         get{
             return self.dao.date_rdv! as Date
@@ -28,13 +28,12 @@ class Rdv {
         }
     }
     
-    init(date_rdv: Date, libelle: String){
-        guard let dao = RdvDAO.getNewRdv() else{
-            fatalError("impossible to get dao for rdv")
+    init(forDate date: Date,forLibelle libelle: String){
+        if let dao = RdvDAO.searchDAO(forDate: date,forLibelle: libelle){
+            self.dao = dao
+        }else{
+            self.dao = RdvDAO.createDAO(forDate: date,forLibelle: libelle)
         }
-        self.dao = dao
-        self.dao.date_rdv = date_rdv as NSDate
-        self.dao.libelle = libelle
     }
     
 }

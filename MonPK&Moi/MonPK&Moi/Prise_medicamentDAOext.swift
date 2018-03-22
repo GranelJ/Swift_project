@@ -12,21 +12,28 @@ import CoreData
 
 extension Prise_medicamentDAO {
     
-    static func getNewPrise_medicament() -> Prise_medicamentDAO?{
-        guard let entity = NSEntityDescription.entity(forEntityName: "Prise_medicamentDAO", in: ManageCoreData.context) else{
-            return nil
-        }
-        let prise = Prise_medicamentDAO(entity: entity, insertInto: ManageCoreData.context)
-        return prise
+    static func createDAO() -> Prise_medicamentDAO{
+        return Prise_medicamentDAO(context: ManageCoreData.context)
     }
     
-    static func getAll() throws -> [Prise_medicamentDAO] {
-        let request : NSFetchRequest<Prise_medicamentDAO> = Prise_medicamentDAO.fetchRequest()
-        do {
-            let priseL = try ManageCoreData.context.fetch(request)
-            return priseL
-        } catch let error as NSError {
-            throw error
+    static func createDAO(forDate date: Date,forLibelle libelle: String) -> Prise_medicamentDAO{
+        let dao = self.createDAO()
+        dao.date=date as NSDate
+        dao.libelle=libelle
+        
+        return dao
+    }
+    
+    static func searchDAO(forDate date: Date,forLibelle libelle: String) -> Prise_medicamentDAO?{
+        let request : NSFetchRequest<Prise_medicamentDAO> = NSFetchRequest<Prise_medicamentDAO>()
+        request.predicate = NSPredicate(format: "date == %@ AND libelle == %@", date as CVarArg, libelle)
+        do{
+            let result = try ManageCoreData.context.fetch(request) as [Prise_medicamentDAO]
+            guard result.count != 0 else { return nil }
+            return result.first
+        }
+        catch{
+            return nil
         }
     }
 }
