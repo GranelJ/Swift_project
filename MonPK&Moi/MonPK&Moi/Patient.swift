@@ -44,7 +44,7 @@ class Patient {
         }
     }
     
-    init(date_naissance: Date, nom: String, prenom: String, temps_preparation: Int64){
+    init(forDate date_naissance: Date,forNom nom: String,forPrenom prenom: String,forTempsPreparation temps_preparation: Int64){
         if let dao = PatientDAO.searchDAO(forBirthdate: date_naissance, forLastname: nom, forFirstname: prenom, forPrepareTime: temps_preparation){
             self.dao = dao
         }else{

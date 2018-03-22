@@ -12,6 +12,13 @@ import CoreData
 
 extension SyntheseDAO {
     
+    static func save(){
+        do{
+            try ManageCoreData.context.save()
+        }catch{
+        }
+    }
+    
     static func createDAO() -> SyntheseDAO{
         return SyntheseDAO(context: ManageCoreData.context)
     }
@@ -21,6 +28,8 @@ extension SyntheseDAO {
         dao.heure_debut=heure_debut
         dao.heure_fin=heure_fin
         dao.periodicite=periodicite
+        
+        self.save()
         
         return dao
     }

@@ -12,6 +12,13 @@ import CoreData
 
 extension RdvDAO {
     
+    static func save(){
+        do{
+            try ManageCoreData.context.save()
+        }catch{
+        }
+    }
+    
     static func createDAO() -> RdvDAO{
         return RdvDAO(context: ManageCoreData.context)
     }
@@ -20,6 +27,8 @@ extension RdvDAO {
         let dao = self.createDAO()
         dao.date_rdv=date as NSDate
         dao.libelle=libelle
+        
+        self.save()
         
         return dao
     }

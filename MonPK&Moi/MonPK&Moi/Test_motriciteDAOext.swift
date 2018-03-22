@@ -12,6 +12,13 @@ import CoreData
 
 extension Test_motriciteDAO {
     
+    static func save(){
+        do{
+            try ManageCoreData.context.save()
+        }catch{
+        }
+    }
+    
     static func createDAO() -> Test_motriciteDAO{
         return Test_motriciteDAO(context: ManageCoreData.context)
     }
@@ -20,6 +27,8 @@ extension Test_motriciteDAO {
         let dao = self.createDAO()
         dao.date_test=date as NSDate
         dao.reponse=reponse
+        
+        self.save()
         
         return dao
     }

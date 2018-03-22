@@ -12,6 +12,13 @@ import CoreData
 
 extension EvenementDAO {
     
+    static func save(){
+        do{
+            try ManageCoreData.context.save()
+        }catch{
+        }
+    }
+    
     static func createDAO() -> EvenementDAO{
         return EvenementDAO(context: ManageCoreData.context)
     }
@@ -21,6 +28,8 @@ extension EvenementDAO {
         dao.date_evt=date_evt as NSDate
         dao.desc_evt=desc_evt
         dao.type=type
+        
+        self.save()
         
         return dao
     }
@@ -37,4 +46,5 @@ extension EvenementDAO {
             return nil
         }
     }
+    
 }

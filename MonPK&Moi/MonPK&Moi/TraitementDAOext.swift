@@ -12,6 +12,13 @@ import CoreData
 
 extension TraitementDAO {
     
+    static func save(){
+        do{
+            try ManageCoreData.context.save()
+        }catch{
+        }
+    }
+    
     static func createDAO() -> TraitementDAO{
         return TraitementDAO(context: ManageCoreData.context)
     }
@@ -22,6 +29,8 @@ extension TraitementDAO {
         dao.date_fin=dateFin as NSDate
         dao.frequence=frequence
         dao.moment_de_prise=momentPrise
+        
+        self.save()
         
         return dao
     }

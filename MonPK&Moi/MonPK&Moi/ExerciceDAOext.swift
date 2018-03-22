@@ -12,6 +12,13 @@ import CoreData
 
 extension ExerciceDAO {
     
+    static func save(){
+        do{
+            try ManageCoreData.context.save()
+        }catch{
+        }
+    }
+    
     static func createDAO() -> ExerciceDAO{
         return ExerciceDAO(context: ManageCoreData.context)
     }
@@ -20,6 +27,8 @@ extension ExerciceDAO {
         let dao = self.createDAO()
         dao.jour=jour
         dao.libelle=libelle
+        
+        self.save()
         
         return dao
     }

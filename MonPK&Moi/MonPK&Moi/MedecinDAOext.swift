@@ -12,6 +12,13 @@ import CoreData
 
 extension MedecinDAO {
     
+    static func save(){
+        do{
+            try ManageCoreData.context.save()
+        }catch{
+        }
+    }
+    
     static func createDAO() -> MedecinDAO{
         return MedecinDAO(context: ManageCoreData.context)
     }
@@ -24,6 +31,8 @@ extension MedecinDAO {
         dao.prenom=prenom
         dao.profession=profession
         dao.telephone=telephone
+        
+        self.save()
         
         return dao
     }

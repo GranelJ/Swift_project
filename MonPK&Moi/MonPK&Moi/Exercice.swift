@@ -28,7 +28,7 @@ class Exercice {
         }
     }
     
-    init(jour: Int64, libelle: String){
+    init(forJour jour: Int64,forLibelle libelle: String){
         if let dao = ExerciceDAO.searchDAO(forJour: jour, forLibelle: libelle){
             self.dao = dao
         }else{

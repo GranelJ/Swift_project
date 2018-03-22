@@ -12,6 +12,13 @@ import CoreData
 
 extension Prise_medicamentDAO {
     
+    static func save(){
+        do{
+            try ManageCoreData.context.save()
+        }catch{
+        }
+    }
+    
     static func createDAO() -> Prise_medicamentDAO{
         return Prise_medicamentDAO(context: ManageCoreData.context)
     }
@@ -20,6 +27,8 @@ extension Prise_medicamentDAO {
         let dao = self.createDAO()
         dao.date=date as NSDate
         dao.libelle=libelle
+        
+        self.save()
         
         return dao
     }
