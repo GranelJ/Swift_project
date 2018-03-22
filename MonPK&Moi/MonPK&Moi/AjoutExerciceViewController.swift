@@ -35,6 +35,7 @@ class AjoutExerciceViewController: UIViewController, UITextFieldDelegate {
                 }
             }
         }
+        self.performSegue(withIdentifier: "AddExercice", sender: self)
     }
     
     override func viewDidLoad() {

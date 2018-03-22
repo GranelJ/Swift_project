@@ -71,21 +71,21 @@ class ContactViewController: UIViewController, UITableViewDataSource, UITableVie
         // Dispose of any resources that can be recreated.
     }
     
-    //refresh contactsTable
-    @IBAction func unwindAfterAddContactPerso(segue: UIStoryboardSegue){
+    //refresh medecinsTable
+    @IBAction func unwindAfterAddContactMedical(segue: UIStoryboardSegue){
         do{
-            try contacts = Contact_persoDAO.getAll()
-            contactsTable.reloadData()
+            try self.medecins = MedecinDAO.getAll()
+            medecinsTable.reloadData()
         }catch let error as NSError{
             ManageErrorHelper.alertError(view: self, WithTitle: "\(error)", andMessage: "\(error.userInfo)")
         }
     }
     
-    //refresh medecinsTable
-    @IBAction func unwindAfterAddContactMedical(segue: UIStoryboardSegue){
+    //refresh contactsTable
+    @IBAction func unwindAfterAddContactPerso(segue: UIStoryboardSegue){
         do{
-            try medecins = MedecinDAO.getAll()
-            medecinsTable.reloadData()
+            try self.contacts = Contact_persoDAO.getAll()
+            contactsTable.reloadData()
         }catch let error as NSError{
             ManageErrorHelper.alertError(view: self, WithTitle: "\(error)", andMessage: "\(error.userInfo)")
         }

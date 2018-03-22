@@ -88,7 +88,6 @@
                                 <state key="normal" title="Valider"/>
                                 <connections>
                                     <action selector="validateButton:" destination="RJc-4k-ZSt" eventType="touchUpInside" id="8FB-w7-VYF"/>
-                                    <segue destination="c9B-Q6-dDQ" kind="unwind" identifier="AddContactPerso" unwindAction="unwindAfterAddContactPersoWithSegue:" id="dPC-cf-38p"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nom : " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qx1-3F-Azo">
@@ -134,6 +133,7 @@
                         <outlet property="lastNameLabel" destination="5HZ-c0-hWZ" id="516-nE-rLz"/>
                         <outlet property="mailLabel" destination="71O-8W-2vB" id="G76-e0-rg8"/>
                         <outlet property="numLabel" destination="YYA-yA-3Mg" id="mgg-5g-h1E"/>
+                        <segue destination="c9B-Q6-dDQ" kind="unwind" identifier="AddContactPerso" unwindAction="unwindAfterAddContactPersoWithSegue:" id="Oi9-N1-oB0"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="M8Z-iL-vq6" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -225,7 +225,6 @@
                                 <state key="normal" title="Valider"/>
                                 <connections>
                                     <action selector="ValidateButton:" destination="TGX-K9-fLL" eventType="touchUpInside" id="iUs-cB-8hq"/>
-                                    <segue destination="OM4-os-4Eh" kind="unwind" identifier="AddContactMedical" unwindAction="unwindAfterAddContactMedicalWithSegue:" id="y3K-fW-p0U"/>
                                 </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Lieu de travail" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Dnd-Za-97d">
@@ -283,6 +282,7 @@
                         <outlet property="textNom" destination="jGM-65-JkT" id="2A7-TX-k9N"/>
                         <outlet property="textNum" destination="6jR-0g-eos" id="1jU-m7-7SF"/>
                         <outlet property="textPrenom" destination="50I-54-uak" id="kx9-zx-JSL"/>
+                        <segue destination="OM4-os-4Eh" kind="unwind" identifier="AddContactMedical" unwindAction="unwindAfterAddContactMedicalWithSegue:" id="CtR-lK-9l8"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PSQ-so-oRd" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -625,7 +625,6 @@
                                 <state key="normal" title="Valider"/>
                                 <connections>
                                     <action selector="unwindToContactListAfterSavingNewPerson:" destination="9wG-0B-gXU" eventType="touchUpInside" id="isF-qu-dde"/>
-                                    <segue destination="gqN-mi-nEh" kind="unwind" unwindAction="unwindAfterEditInfoPersoWithSegue:" id="czx-ek-O45"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nom : " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s0o-Lg-QXC">
@@ -692,6 +691,7 @@
                         <outlet property="NomTF" destination="165-Mp-uf7" id="Pqe-V8-gVH"/>
                         <outlet property="PrenomTF" destination="iUv-kL-wBU" id="ihg-uO-uTV"/>
                         <outlet property="TpsPrepTF" destination="pxd-wt-ZZN" id="rJ2-Ax-jpO"/>
+                        <segue destination="gqN-mi-nEh" kind="unwind" identifier="EditInfoPerso" unwindAction="unwindAfterEditInfoPersoWithSegue:" id="5xd-yF-ILY"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="haQ-Zh-rNl" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -845,7 +845,6 @@
                                 <state key="normal" title="Valider"/>
                                 <connections>
                                     <action selector="ValidateButton:" destination="W2t-qa-4jT" eventType="touchUpInside" id="vHX-wo-CMh"/>
-                                    <segue destination="8wT-SL-11J" kind="unwind" unwindAction="unwindAfterAddingRDVWithSegue:" id="hq7-Lm-3L9"/>
                                 </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="ilf-VV-afZ">
@@ -896,6 +895,7 @@
                         <outlet property="datePicker" destination="4J2-Qb-fEP" id="usP-Gd-bCP"/>
                         <outlet property="libelleField" destination="RCs-TY-RLQ" id="BTY-DT-Nz9"/>
                         <outlet property="medecinPiker" destination="1uY-YR-yFp" id="a5Q-v2-CfE"/>
+                        <segue destination="8wT-SL-11J" kind="unwind" identifier="AddRDV" unwindAction="unwindAfterAddingRDVWithSegue:" id="KXf-dd-Jni"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ezy-pW-41t" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1104,7 +1104,6 @@
                                 <state key="normal" title="Valider"/>
                                 <connections>
                                     <action selector="ValidateButton:" destination="X3u-VF-c7M" eventType="touchUpInside" id="LdZ-62-jXs"/>
-                                    <segue destination="kao-Ji-6jW" kind="unwind" unwindAction="unwindAfterAddingTraitementWithSegue:" id="vb8-Nc-xfb"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -1124,6 +1123,7 @@
                     <connections>
                         <outlet property="picker" destination="OGV-kh-HWl" id="QJC-oc-nXD"/>
                         <outlet property="timepicker" destination="zQm-Fk-uhM" id="3sK-BX-Gdv"/>
+                        <segue destination="kao-Ji-6jW" kind="unwind" identifier="AddTraitement" unwindAction="unwindAfterAddingTraitementWithSegue:" id="EbU-h1-SdW"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sxb-nP-zf2" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1631,7 +1631,6 @@
                                 <state key="normal" title="Valider"/>
                                 <connections>
                                     <action selector="validateButton:" destination="Egn-jw-3Og" eventType="touchUpInside" id="M5A-lc-u7F"/>
-                                    <segue destination="Tnj-KT-auG" kind="unwind" unwindAction="unwindAfterAddExerciceWithSegue:" id="ZHK-hb-3OU"/>
                                 </connections>
                             </button>
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="LMz-nZ-eRf">
@@ -1731,6 +1730,7 @@
                         <outletCollection property="semaineSwitch" destination="DOc-8S-vbV" collectionClass="NSMutableArray" id="jJA-AD-6YH"/>
                         <outletCollection property="semaineSwitch" destination="Zxc-KZ-X87" collectionClass="NSMutableArray" id="qCW-TA-qJU"/>
                         <outletCollection property="semaineSwitch" destination="crY-Xo-OZj" collectionClass="NSMutableArray" id="g9Z-MI-FFX"/>
+                        <segue destination="Tnj-KT-auG" kind="unwind" identifier="AddExercice" unwindAction="unwindAfterAddExerciceWithSegue:" id="b01-XS-2wk"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YAA-KZ-llp" userLabel="First Responder" sceneMemberID="firstResponder"/>

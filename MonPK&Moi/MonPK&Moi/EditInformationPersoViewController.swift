@@ -38,7 +38,6 @@ class EditInformationPersoViewController: UIViewController, UITextFieldDelegate 
         // Pass the selected object to the new view controller.
     }
     */
-    // TODO: - gerer cas patient deja existant
     @IBAction func unwindToContactListAfterSavingNewPerson(_ sender: Any) {
         let nom = NomTF.text ?? ""
         let prenom = PrenomTF.text ?? ""
@@ -54,6 +53,7 @@ class EditInformationPersoViewController: UIViewController, UITextFieldDelegate 
         }catch{
             
         }
+        performSegue(withIdentifier: "EditInfoPerso", sender: self)
     }
     
     // MARK: - helper methods

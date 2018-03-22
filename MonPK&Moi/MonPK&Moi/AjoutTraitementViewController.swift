@@ -61,6 +61,7 @@ class AjoutTraitementViewController: UIViewController, UIPickerViewDelegate, UIP
         let heurerow = timepicker.selectedRow(inComponent: 0)
         let heure = timepickerData[heurerow]
         saveNewTraitement(withmedicament: medicament, withheure: heure)
+        self.performSegue(withIdentifier: "AddTraitement", sender: self)
     }
     
     

@@ -21,6 +21,7 @@ class AjoutContactPersoViewController: UIViewController, UITextFieldDelegate {
         let num = numLabel.text
         let mail = mailLabel.text
         self.saveNewContact(withName: nom, withNum: num, withMail: mail, withPrenom: prenom)
+        performSegue(withIdentifier: "AddContactPerso", sender: self)
     }
     
     func saveNewContact(withName nom: String?,withNum num: String?,withMail mail: String?,withPrenom prenom: String?){

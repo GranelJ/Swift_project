@@ -41,6 +41,7 @@ class AjouterRendezVousViewController: UIViewController, UITextFieldDelegate, UI
         let medecin = pickerData[medecinrow]
         
         self.saveNewRdv(withDate: datePicker.date, withLibelle: libelleField.text, withMedecin: medecin)
+        self.performSegue(withIdentifier: "AddRDV", sender: self)
         }
     
     func saveNewRdv(withDate date: Date?,withLibelle libelle: String?,withMedecin medecin: MedecinDAO?){
