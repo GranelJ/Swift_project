@@ -1532,6 +1532,9 @@
                                     </label>
                                     <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="cYR-Py-Jsr">
                                         <rect key="frame" x="275" y="0.0" width="51" height="30"/>
+                                        <connections>
+                                            <action selector="ActSwitchON:" destination="Ik2-xM-2ak" eventType="valueChanged" id="tBM-U8-n5j"/>
+                                        </connections>
                                     </switch>
                                 </subviews>
                                 <constraints>
@@ -1549,6 +1552,9 @@
                                     </label>
                                     <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="cfe-L1-1M8">
                                         <rect key="frame" x="275" y="0.0" width="51" height="32.333333333333314"/>
+                                        <connections>
+                                            <action selector="ActSwitchDYS:" destination="Ik2-xM-2ak" eventType="valueChanged" id="IgY-rA-w0f"/>
+                                        </connections>
                                     </switch>
                                 </subviews>
                             </stackView>
@@ -1563,6 +1569,9 @@
                                     </label>
                                     <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="1kz-4u-OHK">
                                         <rect key="frame" x="275" y="0.0" width="51" height="32.333333333333314"/>
+                                        <connections>
+                                            <action selector="ActSwitchOFF:" destination="Ik2-xM-2ak" eventType="valueChanged" id="eQb-Sy-DgR"/>
+                                        </connections>
                                     </switch>
                                 </subviews>
                             </stackView>
@@ -1570,6 +1579,9 @@
                                 <rect key="frame" x="176" y="621" width="62" height="36"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <state key="normal" title="Valider"/>
+                                <connections>
+                                    <action selector="validateButton:" destination="Ik2-xM-2ak" eventType="touchUpInside" id="VsK-4E-qYj"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -1591,6 +1603,11 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Questionnaire" id="h71-Tr-2ry"/>
+                    <connections>
+                        <outlet property="switchDYS" destination="cfe-L1-1M8" id="xnN-EM-tft"/>
+                        <outlet property="switchOFF" destination="1kz-4u-OHK" id="slx-Qb-SiZ"/>
+                        <outlet property="switchON" destination="cYR-Py-Jsr" id="L6D-c7-Hup"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mCI-oz-v9C" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
