@@ -54,4 +54,14 @@ extension MedecinDAO {
         ManageCoreData.context.delete(medecin)
         self.save()
     }
+    
+    static func getAll() throws -> [MedecinDAO]{
+        let request : NSFetchRequest<MedecinDAO> = NSFetchRequest<MedecinDAO>()
+        do{
+            let result = try ManageCoreData.context.fetch(request) as [MedecinDAO]
+            return result
+        }catch {
+            throw error
+        }
+    }
 }

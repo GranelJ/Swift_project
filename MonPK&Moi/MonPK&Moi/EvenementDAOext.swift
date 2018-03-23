@@ -51,8 +51,5 @@ extension EvenementDAO {
         ManageCoreData.context.delete(evenement)
         self.save()
     }
-    
-    static func save() {
-        
-    }
+
 }

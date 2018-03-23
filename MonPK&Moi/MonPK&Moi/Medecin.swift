@@ -72,4 +72,14 @@ class Medecin {
         MedecinDAO.deleteDAO(ForMedecin: self.dao)
     }
     
+    func getAll() throws -> [Medecin]{
+        do{
+            let result = try MedecinDAO.getAll()
+            return result
+        }catch{
+            throw error
+        }
+        
+    }
+    
 }

@@ -55,4 +55,12 @@ class Patient {
     func delete(){
         PatientDAO.deleteDAO(ForPatient: self.dao)
     }
+    
+    func edit(forDate Ndate_naissance: Date,forNom Nnom: String,forPrenom Nprenom: String,forTempsPreparation Ntemps_preparation: Int64){
+        self.date_naissance = Ndate_naissance
+        self.nom = Nnom
+        self.prenom = Nprenom
+        self.temps_preparation = Ntemps_preparation
+        PatientDAO.save()
+    }
 }
