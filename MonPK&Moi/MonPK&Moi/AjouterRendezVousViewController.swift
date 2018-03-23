@@ -39,8 +39,12 @@ class AjouterRendezVousViewController: UIViewController, UITextFieldDelegate, UI
     @IBAction func ValidateButton(_ sender: Any) {
         let medecinrow = medecinPiker.selectedRow(inComponent: 0)
         let medecin = pickerData[medecinrow]
-        
-        self.saveNewRdv(withDate: datePicker.date, withLibelle: libelleField.text, withMedecin: medecin)
+        let libelle = libelleField.text ?? ""
+        guard ((libelle != "")) else{
+            ManageErrorHelper.alertError(view: self, WithTitle: "Champ(s) Manquant(s)", andMessage: "Veuillez remplir tous les champs du formulaire")
+            return
+        }
+        self.saveNewRdv(withDate: datePicker.date, withLibelle: libelle, withMedecin: medecin)
         self.performSegue(withIdentifier: "AddRDV", sender: self)
         }
     

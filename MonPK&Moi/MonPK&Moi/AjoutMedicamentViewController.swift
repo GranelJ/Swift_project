@@ -29,10 +29,14 @@ class AjoutMedicamentViewController: UIViewController, UITextFieldDelegate {
     }
     
     @IBAction func ValidateButton(_ sender: Any) {
-        let nom = self.nomTF.text
-        let desc = self.descTF.text
-        let dosage = self.dosageTF.text
-        self.saveNewMedicament(withname: nom!, withdesc: desc!, withdosage: dosage!)
+        let nom = self.nomTF.text ?? ""
+        let desc = self.descTF.text ?? ""
+        let dosage = self.dosageTF.text ?? ""
+        guard ((nom != "") && (desc != "") && (dosage != "")) else{
+            ManageErrorHelper.alertError(view: self, WithTitle: "Champ(s) Manquant(s)", andMessage: "Veuillez remplir tous les champs du formulaire")
+            return
+        }
+        self.saveNewMedicament(withname: nom, withdesc: desc, withdosage: dosage)
         self.navigationController?.popViewController(animated: true)
     }
 

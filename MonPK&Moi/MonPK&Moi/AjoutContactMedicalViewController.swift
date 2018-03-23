@@ -19,7 +19,17 @@ class AjoutContactMedicalViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var textLieu: UITextField!
     
     @IBAction func ValidateButton(_ sender: Any) {
-        self.saveNewMedecin(withName: textNom.text, withNum: textNum.text, withMail: textMail.text, withPrenom: textPrenom.text, withMetier: textMetier.text, withLieu: textLieu.text)
+        let nom = textNom.text ?? ""
+        let num = textNum.text ?? ""
+        let mail = textMail.text ?? ""
+        let prenom = textPrenom.text ?? ""
+        let metier = textMetier.text ?? ""
+        let lieu = textLieu.text ?? ""
+        guard ((nom != "") && (prenom != "") && (num != "") && (mail != "") && (metier != "") && (lieu != "")) else{
+            ManageErrorHelper.alertError(view: self, WithTitle: "Champ(s) Manquant(s)", andMessage: "Veuillez remplir tous les champs du formulaire")
+            return
+        }
+        self.saveNewMedecin(withName: nom, withNum: num, withMail: mail, withPrenom: prenom, withMetier: metier, withLieu: lieu)
         performSegue(withIdentifier: "AddContactMedical", sender: self)
     }
     

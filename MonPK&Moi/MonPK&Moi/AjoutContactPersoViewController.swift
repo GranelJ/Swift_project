@@ -16,12 +16,16 @@ class AjoutContactPersoViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var firstNameLabel: UITextField!
     
     @IBAction func validateButton(_ sender: Any) {
-        let nom = lastNameLabel.text
-        let prenom = firstNameLabel.text
-        let num = numLabel.text
-        let mail = mailLabel.text
-        self.saveNewContact(withName: nom, withNum: num, withMail: mail, withPrenom: prenom)
-        performSegue(withIdentifier: "AddContactPerso", sender: self)
+        let nom = lastNameLabel.text ?? ""
+        let prenom = firstNameLabel.text ?? ""
+        let num = numLabel.text ?? ""
+        let mail = mailLabel.text ?? ""
+        guard ((nom != "") && (prenom != "") && (num != "") && (mail != "")) else{
+            ManageErrorHelper.alertError(view: self, WithTitle: "Champ(s) Manquant(s)", andMessage: "Veuillez remplir tous les champs du formulaire")
+            return
+        }
+            self.saveNewContact(withName: nom, withNum: num, withMail: mail, withPrenom: prenom)
+            performSegue(withIdentifier: "AddContactPerso", sender: self)
     }
     
     func saveNewContact(withName nom: String?,withNum num: String?,withMail mail: String?,withPrenom prenom: String?){

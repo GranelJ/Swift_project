@@ -41,14 +41,19 @@ class EditInformationPersoViewController: UIViewController, UITextFieldDelegate 
     @IBAction func unwindToContactListAfterSavingNewPerson(_ sender: Any) {
         let nom = NomTF.text ?? ""
         let prenom = PrenomTF.text ?? ""
-        let tpsPrep = Int64(TpsPrepTF.text!)!
+        let tpsPrep = TpsPrepTF.text ?? ""
         let dateNaissance = DateNaissanceDP.date as NSDate
+        guard ((nom != "") && (prenom != "") && (tpsPrep != "")) else{
+            ManageErrorHelper.alertError(view: self, WithTitle: "Champ(s) Manquant(s)", andMessage: "Veuillez remplir tous les champs du formulaire")
+            return
+        }
+        let tpsPrepInt = Int64(tpsPrep)!
         do{
             let exist = try PatientDAO.exist()
             if exist{
-                self.editPatient(nom: nom, prenom: prenom, dateNaissance: dateNaissance, TpsPrep: tpsPrep)
+                self.editPatient(nom: nom, prenom: prenom, dateNaissance: dateNaissance, TpsPrep: tpsPrepInt)
             }else{
-                self.createNewPatient(nom: nom, prenom: prenom, dateNaissance: dateNaissance, TpsPrep: tpsPrep)
+                self.createNewPatient(nom: nom, prenom: prenom, dateNaissance: dateNaissance, TpsPrep: tpsPrepInt)
             }
         }catch{
             
