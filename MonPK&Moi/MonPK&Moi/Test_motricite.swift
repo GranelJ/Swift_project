@@ -10,7 +10,7 @@ import Foundation
 
 class Test_motricite {
     
-    private let dao : Test_motriciteDAO
+    internal var dao : Test_motriciteDAO
     var date_test : Date{
         get{
             return self.dao.date_test! as Date
@@ -27,14 +27,30 @@ class Test_motricite {
             self.dao.reponse = newValue
         }
     }
-    
-    init(date_test: Date, reponse: String){
-        guard let dao = Test_motriciteDAO.getNewTest_motricite() else{
-            fatalError("impossible to get dao for test_motricite")
+    var synthese : Synthese?{
+        get{
+            return self.synthese
         }
-        self.dao = dao
-        self.dao.date_test = date_test as NSDate
-        self.dao.reponse = reponse
+        set{
+            self.synthese = newValue
+            self.dao.motricite_synthese = newValue?.dao
+        }
+    }
+    
+    init(forDate date: Date,forReponse reponse: String, forSynthese newSynthese: Synthese?){
+        if let dao = Test_motriciteDAO.searchDAO(forDate: date,forReponse: reponse){
+            self.dao = dao
+        }else{
+            self.dao = Test_motriciteDAO.createDAO(forDate: date,forReponse: reponse)
+        }
+        if let synth = newSynthese{
+            self.synthese = synth
+            self.dao.motricite_synthese = synth.dao
+        }
+    }
+    
+    func delete(){
+        Test_motriciteDAO.deleteDAO(ForTest: self.dao)
     }
     
 }

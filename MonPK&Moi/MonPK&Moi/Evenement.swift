@@ -10,7 +10,7 @@ import Foundation
 
 class Evenement {
     
-    private let dao : EvenementDAO
+    internal var dao : EvenementDAO
     var date_evt : Date{
         get{
             return self.dao.date_evt! as Date
@@ -36,14 +36,16 @@ class Evenement {
         }
     }
     
-    init(date_evt: Date, desc_evt: String, type: String){
-        guard let dao = EvenementDAO.getNewEvenement() else{
-            fatalError("impossible to get dao for evenement")
+    init(forDate date_evt: Date,forDesc desc_evt: String,forType type: String){
+        if let dao = EvenementDAO.searchDAO(forDate: date_evt,forDesc: desc_evt,forType: type){
+            self.dao = dao
+        }else{
+            self.dao = EvenementDAO.createDAO(forDate: date_evt,forDesc: desc_evt,forType: type)
         }
-        self.dao = dao
-        self.dao.date_evt = date_evt as NSDate
-        self.dao.desc_evt = desc_evt
-        self.dao.type = type
+    }
+    
+    func delete(){
+        EvenementDAO.deleteDAO(ForEvenement: self.dao)
     }
     
 }

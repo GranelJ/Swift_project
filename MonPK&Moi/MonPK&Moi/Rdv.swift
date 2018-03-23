@@ -10,7 +10,7 @@ import Foundation
 
 class Rdv {
     
-    private let dao : RdvDAO
+    internal var dao : RdvDAO
     var date_rdv : Date{
         get{
             return self.dao.date_rdv! as Date
@@ -27,14 +27,42 @@ class Rdv {
             self.dao.libelle = newValue
         }
     }
-    
-    init(date_rdv: Date, libelle: String){
-        guard let dao = RdvDAO.getNewRdv() else{
-            fatalError("impossible to get dao for rdv")
+    var medecin : Medecin{
+        get{
+            return self.medecin
         }
-        self.dao = dao
-        self.dao.date_rdv = date_rdv as NSDate
-        self.dao.libelle = libelle
+        set{
+            self.medecin = newValue
+            self.dao.rdv_medecin = newValue.dao
+        }
+    }
+    var synthese : Synthese?{
+        get{
+            return self.synthese
+        }
+        set{
+            self.synthese = newValue
+            self.dao.rdv_synthese = newValue?.dao
+        }
+    }
+    
+    init(forDate date: Date,forLibelle libelle: String, forMedecin newMedecin: Medecin, forSynthese newSynthese: Synthese?){
+        if let dao = RdvDAO.searchDAO(forDate: date,forLibelle: libelle){
+            self.dao = dao
+        }else{
+            self.dao = RdvDAO.createDAO(forDate: date,forLibelle: libelle)
+        }
+        self.medecin = newMedecin
+        self.dao.rdv_medecin=newMedecin.dao
+        
+        if let synth = newSynthese{
+            self.synthese = synth
+            self.dao.rdv_synthese = synth.dao
+        }
+    }
+    
+    func delete(){
+        RdvDAO.deleteDAO(ForRdv: self.dao)
     }
     
 }

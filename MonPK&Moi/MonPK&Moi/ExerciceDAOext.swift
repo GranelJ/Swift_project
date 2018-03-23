@@ -12,33 +12,43 @@ import CoreData
 
 extension ExerciceDAO {
     
-    static func getNewExercice() -> ExerciceDAO?{
-        guard let entity = NSEntityDescription.entity(forEntityName: "ExerciceDAO", in: ManageCoreData.context) else{
+    static func save(){
+        do{
+            try ManageCoreData.context.save()
+        }catch{
+        }
+    }
+    
+    static func createDAO() -> ExerciceDAO{
+        return ExerciceDAO(context: ManageCoreData.context)
+    }
+    
+    static func createDAO(forJour jour: Int64, forLibelle libelle: String) -> ExerciceDAO{
+        let dao = self.createDAO()
+        dao.jour=jour
+        dao.libelle=libelle
+        
+        self.save()
+        
+        return dao
+    }
+    
+    static func searchDAO(forJour jour: Int64, forLibelle libelle: String) -> ExerciceDAO?{
+        let request : NSFetchRequest<ExerciceDAO> = NSFetchRequest<ExerciceDAO>()
+        request.predicate = NSPredicate(format: "jour == %@ AND libelle == %@", jour, libelle)
+        do{
+            let result = try ManageCoreData.context.fetch(request) as [ExerciceDAO]
+            guard result.count != 0 else { return nil }
+            return result.first
+        }
+        catch{
             return nil
         }
-        let exercice = ExerciceDAO(entity: entity, insertInto: ManageCoreData.context)
-        return exercice
     }
     
-    static func getAll() throws -> [ExerciceDAO] {
-        let request : NSFetchRequest<ExerciceDAO> = ExerciceDAO.fetchRequest()
-        do {
-            let exerciceL = try ManageCoreData.context.fetch(request)
-            return exerciceL
-        } catch let error as NSError {
-            throw error
-        }
-    }
-    
-    static func getAllOrdered() throws -> [ExerciceDAO] {
-        let request : NSFetchRequest<ExerciceDAO> = ExerciceDAO.fetchRequest()
-        request.sortDescriptors = [NSSortDescriptor(key: "jour", ascending: true)]
-        do {
-            let exerciceL = try ManageCoreData.context.fetch(request)
-            return exerciceL
-        } catch let error as NSError {
-            throw error
-        }
+    static func deleteDAO(ForExercice exercice: ExerciceDAO){
+        ManageCoreData.context.delete(exercice)
+        self.save()
     }
     
     

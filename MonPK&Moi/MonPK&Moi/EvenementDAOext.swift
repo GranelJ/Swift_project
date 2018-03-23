@@ -12,22 +12,44 @@ import CoreData
 
 extension EvenementDAO {
     
-    static func getNewEvenement() -> EvenementDAO?{
-        guard let entity = NSEntityDescription.entity(forEntityName: "EvenementDAO", in: ManageCoreData.context) else{
-            return nil
+    static func save(){
+        do{
+            try ManageCoreData.context.save()
+        }catch{
         }
-        let evenement = EvenementDAO(entity: entity, insertInto: ManageCoreData.context)
-        return evenement
     }
     
-    static func getAll() throws -> [EvenementDAO] {
-        let request : NSFetchRequest<EvenementDAO> = EvenementDAO.fetchRequest()
-        do {
-            let evenementL = try ManageCoreData.context.fetch(request)
-            return evenementL
-        } catch let error as NSError {
-            throw error
+    static func createDAO() -> EvenementDAO{
+        return EvenementDAO(context: ManageCoreData.context)
+    }
+    
+    static func createDAO(forDate date_evt: Date,forDesc desc_evt: String,forType type: String) -> EvenementDAO{
+        let dao = self.createDAO()
+        dao.date_evt=date_evt as NSDate
+        dao.desc_evt=desc_evt
+        dao.type=type
+        
+        self.save()
+        
+        return dao
+    }
+    
+    static func searchDAO(forDate date_evt: Date,forDesc desc_evt: String,forType type: String) -> EvenementDAO?{
+        let request : NSFetchRequest<EvenementDAO> = NSFetchRequest<EvenementDAO>()
+        request.predicate = NSPredicate(format: "date_evt == %@ AND desc_evt == %@ AND type == %@", date_evt as CVarArg, desc_evt, type)
+        do{
+            let result = try ManageCoreData.context.fetch(request) as [EvenementDAO]
+            guard result.count != 0 else { return nil }
+            return result.first
         }
+        catch{
+            return nil
+        }
+    }
+    
+    static func deleteDAO(ForEvenement evenement: EvenementDAO){
+        ManageCoreData.context.delete(evenement)
+        self.save()
     }
     
     static func save() {

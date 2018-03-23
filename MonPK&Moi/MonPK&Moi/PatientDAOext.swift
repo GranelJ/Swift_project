@@ -12,33 +12,45 @@ import CoreData
 
 extension PatientDAO {
     
-    static func getNewPatient() -> PatientDAO?{
-        guard let entity = NSEntityDescription.entity(forEntityName: "PatientDAO", in: ManageCoreData.context) else{
+    static func save(){
+        do{
+            try ManageCoreData.context.save()
+        }catch{
+        }
+    }
+    
+    static func createDAO() -> PatientDAO{
+        return PatientDAO(context: ManageCoreData.context)
+    }
+    
+    static func createDAO(forBirthdate birthdate: Date, forLastname lastname: String, forFirstname firstname: String, forPrepareTime prepareTime: Int64) -> PatientDAO{
+        let dao = self.createDAO()
+        dao.nom=lastname
+        dao.prenom=firstname
+        dao.date_naissance=birthdate as NSDate
+        dao.temps_preparation=prepareTime
+        
+        self.save()
+        
+        return dao
+    }
+    
+    static func searchDAO(forBirthdate birthdate: Date, forLastname lastname: String, forFirstname firstname: String, forPrepareTime prepareTime: Int64) -> PatientDAO?{
+        let request : NSFetchRequest<PatientDAO> = NSFetchRequest<PatientDAO>()
+        request.predicate = NSPredicate(format: "nom == %@ AND prenom == %@ AND date_naissance == %@ AND temps_preparation == %@", firstname, lastname, birthdate as CVarArg, prepareTime)
+        do{
+            let result = try ManageCoreData.context.fetch(request) as [PatientDAO]
+            guard result.count != 0 else { return nil }
+            return result.first
+        }
+        catch{
             return nil
         }
-        let patient = PatientDAO(entity: entity, insertInto: ManageCoreData.context)
-        return patient
     }
     
-    static func get() throws -> PatientDAO? {
-        let request : NSFetchRequest<PatientDAO> = PatientDAO.fetchRequest()
-        do {
-            let patientL = try ManageCoreData.context.fetch(request)
-            return patientL.first
-        } catch let error as NSError {
-            throw error
-        }
-    }
-    
-    static func exist() throws -> Bool {
-        do{
-            guard try(self.get() != nil) else {
-                return false
-            }
-            return true
-        }catch let error as NSError{
-            throw error
-        }
+    static func deleteDAO(ForPatient patient: PatientDAO){
+        ManageCoreData.context.delete(patient)
+        self.save()
     }
     
 }

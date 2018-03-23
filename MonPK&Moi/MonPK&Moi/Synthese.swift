@@ -10,7 +10,7 @@ import Foundation
 
 class Synthese {
     
-    private let dao : SyntheseDAO
+    internal var dao : SyntheseDAO
     var heure_debut : Int64{
         get{
             return self.dao.heure_debut
@@ -36,14 +36,16 @@ class Synthese {
         }
     }
     
-    init(heure_debut: Int64, heure_fin: Int64, periodicite: Int64){
-        guard let dao = SyntheseDAO.getNewSynthese() else{
-            fatalError("impossible to get dao for synthese")
+    init(forHeureDebut heure_debut: Int64,forHeureFin heure_fin: Int64,forPeriodicite periodicite: Int64){
+        if let dao = SyntheseDAO.searchDAO(forHeureDebut: heure_debut,forHeureFin: heure_fin,forPeriodicite: periodicite){
+            self.dao = dao
+        }else{
+            self.dao = SyntheseDAO.createDAO(forHeureDebut: heure_debut,forHeureFin: heure_fin,forPeriodicite: periodicite)
         }
-        self.dao = dao
-        self.dao.heure_debut = heure_debut
-        self.dao.heure_fin = heure_fin
-        self.dao.periodicite = periodicite
+    }
+    
+    func delete(){
+        SyntheseDAO.deleteDAO(ForSynthese: self.dao)
     }
     
 }

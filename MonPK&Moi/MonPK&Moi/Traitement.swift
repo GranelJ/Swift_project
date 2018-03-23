@@ -10,7 +10,7 @@ import Foundation
 
 class Traitement {
     
-    private let dao : TraitementDAO
+    internal var dao : TraitementDAO
     var date_debut: Date{
         get{
             return self.dao.date_debut! as Date
@@ -43,16 +43,28 @@ class Traitement {
             self.dao.moment_de_prise = newValue
         }
     }
-    
-    init(date_debut: Date, date_fin: Date, frequence: Int64, moment_de_prise: String){
-        guard let dao = TraitementDAO.getNewTraitement() else{
-            fatalError("impossible to get dao for traitement")
+    var medicament: Medicament{
+        get{
+            return self.medicament
         }
-        self.dao = dao
-        self.dao.date_debut = date_debut as NSDate
-        self.dao.date_fin = date_fin as NSDate
-        self.dao.frequence = frequence
-        self.dao.moment_de_prise = moment_de_prise
+        set{
+            self.medicament = newValue
+            self.dao.traitement_medicament=newValue.dao
+        }
+    }
+    
+    init(forDateDebut dateDebut: Date,forDateFin dateFin: Date,forFrequence frequence: Int64, forMomentPrise momentPrise: String, forMedicament newMedicament: Medicament){
+        if let dao = TraitementDAO.searchDAO(forDateDebut: dateDebut,forDateFin: dateFin,forFrequence: frequence, forMomentPrise: momentPrise){
+            self.dao = dao
+        }else{
+            self.dao = TraitementDAO.createDAO(forDateDebut: dateDebut,forDateFin: dateFin,forFrequence: frequence, forMomentPrise: momentPrise)
+        }
+        self.medicament = newMedicament
+        self.dao.traitement_medicament=newMedicament.dao
+    }
+    
+    func delete(){
+        TraitementDAO.deleteDAO(ForTraitement: self.dao)
     }
     
     func getAll() throws -> [TraitementDAO]{

@@ -12,21 +12,42 @@ import CoreData
 
 extension RdvDAO {
     
-    static func getNewRdv() -> RdvDAO?{
-        guard let entity = NSEntityDescription.entity(forEntityName: "RdvDAO", in: ManageCoreData.context) else{
-            return nil
+    static func save(){
+        do{
+            try ManageCoreData.context.save()
+        }catch{
         }
-        let rdv = RdvDAO(entity: entity, insertInto: ManageCoreData.context)
-        return rdv
     }
     
-    static func getAll() throws -> [RdvDAO] {
-        let request : NSFetchRequest<RdvDAO> = RdvDAO.fetchRequest()
-        do {
-            let rdvL = try ManageCoreData.context.fetch(request)
-            return rdvL
-        } catch let error as NSError {
-            throw error
+    static func createDAO() -> RdvDAO{
+        return RdvDAO(context: ManageCoreData.context)
+    }
+    
+    static func createDAO(forDate date: Date,forLibelle libelle: String) -> RdvDAO{
+        let dao = self.createDAO()
+        dao.date_rdv=date as NSDate
+        dao.libelle=libelle
+        
+        self.save()
+        
+        return dao
+    }
+    
+    static func searchDAO(forDate date: Date,forLibelle libelle: String) -> RdvDAO?{
+        let request : NSFetchRequest<RdvDAO> = NSFetchRequest<RdvDAO>()
+        request.predicate = NSPredicate(format: "date_rdv == %@ AND libelle == %@", date as CVarArg, libelle)
+        do{
+            let result = try ManageCoreData.context.fetch(request) as [RdvDAO]
+            guard result.count != 0 else { return nil }
+            return result.first
         }
+        catch{
+            return nil
+        }
+    }
+    
+    static func deleteDAO(ForRdv rdv: RdvDAO){
+        ManageCoreData.context.delete(rdv)
+        self.save()
     }
 }

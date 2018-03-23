@@ -10,7 +10,7 @@ import Foundation
 
 class Exercice {
     
-    private let dao : ExerciceDAO
+    internal var dao : ExerciceDAO
     var jour : Int64{
         get{
             return self.dao.jour
@@ -28,13 +28,16 @@ class Exercice {
         }
     }
     
-    init(jour: Int64, libelle: String){
-        guard let dao = ExerciceDAO.getNewExercice() else{
-            fatalError("impossible to get dao for exercice")
+    init(forJour jour: Int64,forLibelle libelle: String){
+        if let dao = ExerciceDAO.searchDAO(forJour: jour, forLibelle: libelle){
+            self.dao = dao
+        }else{
+            self.dao = ExerciceDAO.createDAO(forJour: jour, forLibelle: libelle)
         }
-        self.dao = dao
-        self.dao.jour = jour
-        self.dao.libelle = libelle
+    }
+    
+    func delete(){
+        ExerciceDAO.deleteDAO(ForExercice: self.dao)
     }
 
 }
