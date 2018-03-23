@@ -65,4 +65,12 @@ class Rdv {
         RdvDAO.deleteDAO(ForRdv: self.dao)
     }
     
+    func getAll() throws -> [Rdv]{
+        do{
+            return try RdvDAO.getAll()
+        }catch{
+            throw error
+        }
+    }
+    
 }

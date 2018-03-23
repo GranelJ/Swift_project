@@ -51,4 +51,20 @@ extension SyntheseDAO {
         ManageCoreData.context.delete(synthese)
         self.save()
     }
+    
+    static func getAll() throws -> [Synthese]{
+        var list: [Synthese] = []
+        let request : NSFetchRequest<SyntheseDAO> = NSFetchRequest<SyntheseDAO>()
+        do{
+            let result = try ManageCoreData.context.fetch(request) as [SyntheseDAO]
+            for nb in 1...result.count{
+                let synth = Synthese(forHeureDebut: result[nb].heure_debut,forHeureFin: result[nb].heure_fin,forPeriodicite: result[nb].periodicite)
+                list.append(synth)
+            }
+        }
+        catch{
+            throw error
+        }
+        return list
+    }
 }

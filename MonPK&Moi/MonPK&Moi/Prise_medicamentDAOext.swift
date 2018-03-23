@@ -50,4 +50,21 @@ extension Prise_medicamentDAO {
         ManageCoreData.context.delete(prise)
         self.save()
     }
+    
+    static func getAll() throws -> [Prise_medicament]{
+        var list: [Prise_medicament] = []
+        let request : NSFetchRequest<Prise_medicamentDAO> = NSFetchRequest<Prise_medicamentDAO>()
+        do{
+            let result = try ManageCoreData.context.fetch(request) as [Prise_medicamentDAO]
+            for nb in 1...result.count{
+                let synthese = Synthese(forHeureDebut: (result[nb].prise_medicament_synthese?.heure_debut)!, forHeureFin: (result[nb].prise_medicament_synthese?.heure_fin)!, forPeriodicite: (result[nb].prise_medicament_synthese?.periodicite)!)
+                let prise = Prise_medicament(forDate: (result[nb].date!) as Date,forLibelle: result[nb].libelle!,forSynthese: synthese)
+                list.append(prise)
+            }
+        }
+        catch{
+            throw error
+        }
+        return list
+    }
 }

@@ -39,5 +39,13 @@ class Exercice {
     func delete(){
         ExerciceDAO.deleteDAO(ForExercice: self.dao)
     }
+    
+    func getAll() throws -> [Exercice]{
+        do{
+            return try ExerciceDAO.getAll()
+        }catch{
+            throw error
+        }
+    }
 
 }

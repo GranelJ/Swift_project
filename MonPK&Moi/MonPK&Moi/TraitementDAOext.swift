@@ -52,4 +52,21 @@ extension TraitementDAO {
         ManageCoreData.context.delete(traitement)
         self.save()
     }
+    
+    static func getAll() throws -> [Traitement]{
+        var list: [Traitement] = []
+        let request : NSFetchRequest<TraitementDAO> = NSFetchRequest<TraitementDAO>()
+        do{
+            let result = try ManageCoreData.context.fetch(request) as [TraitementDAO]
+            for nb in 1...result.count{
+                let medicament = Medicament(forDesc: (result[nb].traitement_medicament?.desc_med)!, forDosage: (result[nb].traitement_medicament?.dosage)!, forNom: (result[nb].traitement_medicament?.nom)!)
+                let prise = Traitement(forDateDebut: (result[nb].date_debut!) as Date,forDateFin: (result[nb].date_fin!) as Date,forFrequence: result[nb].frequence, forMomentPrise: result[nb].moment_de_prise!, forMedicament: medicament)
+                list.append(prise)
+            }
+        }
+        catch{
+            throw error
+        }
+        return list
+    }
 }

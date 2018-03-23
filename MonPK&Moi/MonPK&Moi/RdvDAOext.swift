@@ -50,4 +50,22 @@ extension RdvDAO {
         ManageCoreData.context.delete(rdv)
         self.save()
     }
+    
+    static func getAll() throws -> [Rdv]{
+        var list: [Rdv] = []
+        let request : NSFetchRequest<RdvDAO> = NSFetchRequest<RdvDAO>()
+        do{
+            let result = try ManageCoreData.context.fetch(request) as [RdvDAO]
+            for nb in 1...result.count{
+                let synthese = Synthese(forHeureDebut: (result[nb].rdv_synthese?.heure_debut)!, forHeureFin: (result[nb].rdv_synthese?.heure_fin)!, forPeriodicite: (result[nb].rdv_synthese?.periodicite)!)
+                let medecin = Medecin(forEmail: (result[nb].rdv_medecin?.email)!, forLieu: (result[nb].rdv_medecin?.lieu_travail)!, forNom: (result[nb].rdv_medecin?.nom)!, forPrenom: (result[nb].rdv_medecin?.prenom)!, forProfession: (result[nb].rdv_medecin?.profession)!, forTelephone: (result[nb].rdv_medecin?.telephone)!)
+                let rdv = Rdv(forDate: (result[nb].date_rdv!) as Date,forLibelle: result[nb].libelle!,forMedecin: medecin ,forSynthese: synthese)
+                list.append(rdv)
+            }
+        }
+        catch{
+            throw error
+        }
+        return list
+    }
 }

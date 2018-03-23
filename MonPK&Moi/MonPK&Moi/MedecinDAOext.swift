@@ -54,4 +54,20 @@ extension MedecinDAO {
         ManageCoreData.context.delete(medecin)
         self.save()
     }
+    
+    static func getAll() throws -> [Medecin]{
+        var list: [Medecin] = []
+        let request : NSFetchRequest<MedecinDAO> = NSFetchRequest<MedecinDAO>()
+        do{
+            let result = try ManageCoreData.context.fetch(request) as [MedecinDAO]
+            for nb in 1...result.count{
+                let med = Medecin(forEmail: result[nb].email!,forLieu: result[nb].lieu_travail!,forNom: result[nb].nom!,forPrenom: result[nb].prenom!,forProfession: result[nb].profession!,forTelephone: result[nb].telephone!)
+                list.append(med)
+            }
+        }
+        catch{
+            throw error
+        }
+        return list
+    }
 }

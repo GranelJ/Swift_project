@@ -51,4 +51,20 @@ extension MedicamentDAO {
         ManageCoreData.context.delete(medicament)
         self.save()
     }
+    
+    static func getAll() throws -> [Medicament]{
+        var list: [Medicament] = []
+        let request : NSFetchRequest<MedicamentDAO> = NSFetchRequest<MedicamentDAO>()
+        do{
+            let result = try ManageCoreData.context.fetch(request) as [MedicamentDAO]
+            for nb in 1...result.count{
+                let med = Medicament(forDesc: result[nb].desc_med!,forDosage: result[nb].dosage!,forNom: result[nb].nom!)
+                list.append(med)
+            }
+        }
+        catch{
+            throw error
+        }
+        return list
+    }
 }
