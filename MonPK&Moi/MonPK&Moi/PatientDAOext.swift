@@ -53,4 +53,17 @@ extension PatientDAO {
         self.save()
     }
     
+    static func getAll(){
+        let request : NSFetchRequest<PatientDAO> = NSFetchRequest<PatientDAO>()
+        request.predicate = NSPredicate(format: "nom == %@ AND prenom == %@ AND date_naissance == %@ AND temps_preparation == %@", firstname, lastname, birthdate as CVarArg, prepareTime)
+        do{
+            let result = try ManageCoreData.context.fetch(request) as [PatientDAO]
+            guard result.count != 0 else { return nil }
+            return result.first
+        }
+        catch{
+            return nil
+        }
+    }
+    
 }

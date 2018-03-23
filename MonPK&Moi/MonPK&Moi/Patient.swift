@@ -55,4 +55,8 @@ class Patient {
     func delete(){
         PatientDAO.deleteDAO(ForPatient: self.dao)
     }
+    
+    func getAll() -> [Patient]{
+        return PatientDAO.getAll()
+    }
 }
