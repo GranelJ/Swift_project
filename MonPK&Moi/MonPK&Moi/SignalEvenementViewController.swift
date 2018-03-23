@@ -26,9 +26,13 @@ class SignalEvenementViewController: UIViewController, UIPickerViewDelegate, UIP
     }
     
     @IBAction func ValidateButton(_ sender: Any) {
-        let desc = descriptionTF.text
+        let desc = descriptionTF.text ?? ""
         let evtType = eventTypePicker.description
-        saveNewEvenement(withdesc: desc!, witheventtype: evtType)
+        guard (desc != "") else{
+            ManageErrorHelper.alertError(view: self, WithTitle: "Champ(s) Manquant(s)", andMessage: "Veuillez remplir tous les champs du formulaire")
+            return
+        }
+        saveNewEvenement(withdesc: desc, witheventtype: evtType)
         self.navigationController?.popViewController(animated: true)
     }
     
