@@ -14,9 +14,14 @@ class AjoutExerciceViewController: UIViewController, UITextFieldDelegate {
     
     @IBOutlet var semaineSwitch: [UISwitch]!
     
-    
     @IBAction func validateButton(_ sender: Any) {
+        let name = nameText.text ?? ""
+        guard (name != "") else{
+            ManageErrorHelper.alertError(view: self, WithTitle: "Champ(s) Manquant(s)", andMessage: "Veuillez remplir tous les champs du formulaire")
+            return
+        }
         self.saveNewExercice(withName: nameText.text, weekDays: semaineSwitch)
+        self.performSegue(withIdentifier: "AddExercice", sender: self)
     }
     
     func saveNewExercice(withName name: String?, weekDays days: [UISwitch]){
@@ -35,7 +40,6 @@ class AjoutExerciceViewController: UIViewController, UITextFieldDelegate {
                 }
             }
         }
-        self.performSegue(withIdentifier: "AddExercice", sender: self)
     }
     
     override func viewDidLoad() {
