@@ -76,9 +76,6 @@
         <relationship name="motricite_synthese" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="SyntheseDAO" inverseName="synthese_motricite" inverseEntity="SyntheseDAO" syncable="YES"/>
     </entity>
     <entity name="TraitementDAO" representedClassName="TraitementDAO" syncable="YES" codeGenerationType="class">
-        <attribute name="date_debut" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
-        <attribute name="date_fin" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
-        <attribute name="frequence" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="moment_de_prise" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="traitement_medicament" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="MedicamentDAO" inverseName="medicament_traitement" inverseEntity="MedicamentDAO" syncable="YES"/>
         <relationship name="traitement_patient" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="PatientDAO" inverseName="patient_traitement" inverseEntity="PatientDAO" syncable="YES"/>
@@ -94,6 +91,6 @@
         <element name="RdvDAO" positionX="376" positionY="-144" width="128" height="120"/>
         <element name="SyntheseDAO" positionX="387" positionY="306" width="128" height="135"/>
         <element name="Test_motriciteDAO" positionX="207" positionY="81" width="128" height="105"/>
-        <element name="TraitementDAO" positionX="-378" positionY="225" width="128" height="135"/>
+        <element name="TraitementDAO" positionX="-378" positionY="225" width="128" height="90"/>
     </elements>
 </model>
