@@ -48,7 +48,7 @@ class Evenement {
         EvenementDAO.deleteDAO(ForEvenement: self.dao)
     }
     
-    func getAll() throws -> [Evenement]{
+    static func getAll() throws -> [Evenement]{
         do{
             return try EvenementDAO.getAll()
         }catch{

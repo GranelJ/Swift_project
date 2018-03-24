@@ -54,7 +54,7 @@ class Prise_medicament {
         Prise_medicamentDAO.deleteDAO(ForPrise: self.dao)
     }
     
-    func getAll() throws -> [Prise_medicament]{
+    static func getAll() throws -> [Prise_medicament]{
         do{
             return try Prise_medicamentDAO.getAll()
         }catch{

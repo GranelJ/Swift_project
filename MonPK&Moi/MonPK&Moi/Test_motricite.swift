@@ -53,7 +53,7 @@ class Test_motricite {
         Test_motriciteDAO.deleteDAO(ForTest: self.dao)
     }
     
-    func getAll() throws -> [Test_motricite]{
+    static func getAll() throws -> [Test_motricite]{
         do{
             return try Test_motriciteDAO.getAll()
         }catch{

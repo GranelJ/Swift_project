@@ -83,9 +83,8 @@ class CoachViewController: UIViewController, UITableViewDataSource, UITableViewD
     
     func delete_exercice(contactWithIndex index: Int) -> Bool{
         let exercice = self.exercices[index]
-        ManageCoreData.context.delete(exercice)
+        exercice.delete()
         do{
-            try ManageCoreData.context.save()
             self.exercices.remove(at: index)
             return true
         }

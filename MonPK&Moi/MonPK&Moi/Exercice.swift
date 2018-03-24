@@ -40,7 +40,7 @@ class Exercice {
         ExerciceDAO.deleteDAO(ForExercice: self.dao)
     }
     
-    func getAll() throws -> [Exercice]{
+    static func getAll() throws -> [Exercice]{
         do{
             return try ExerciceDAO.getAll()
         }catch{
@@ -48,7 +48,7 @@ class Exercice {
         }
     }
     
-    func getAllOrdered() throws -> [Exercice]{
+    static func getAllOrdered() throws -> [Exercice]{
         do{
             return try ExerciceDAO.getAllOrdered()
         }catch{

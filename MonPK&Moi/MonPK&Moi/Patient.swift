@@ -56,7 +56,7 @@ class Patient {
         PatientDAO.deleteDAO(ForPatient: self.dao)
     }
     
-    func getAll() throws -> [Patient]{
+    static func getAll() throws -> [Patient]{
         do{
             return try PatientDAO.getAll()
         }catch{
@@ -64,7 +64,7 @@ class Patient {
         }
     }
     
-    func get() throws -> Patient?{
+    static func get() throws -> Patient?{
         do{
             return try PatientDAO.get()
         }catch{
