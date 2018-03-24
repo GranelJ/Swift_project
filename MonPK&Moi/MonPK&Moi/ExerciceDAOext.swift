@@ -34,8 +34,8 @@ extension ExerciceDAO {
     }
     
     static func searchDAO(forJour jour: Int64, forLibelle libelle: String) -> ExerciceDAO?{
-        let request : NSFetchRequest<ExerciceDAO> = NSFetchRequest<ExerciceDAO>()
-        request.predicate = NSPredicate(format: "jour == %@ AND libelle == %@", jour, libelle)
+        let request : NSFetchRequest<ExerciceDAO> = NSFetchRequest<ExerciceDAO>(entityName: "ExerciceDAO")
+        request.predicate = NSPredicate(format: "jour == %d AND libelle == %@", jour, libelle)
         do{
             let result = try ManageCoreData.context.fetch(request) as [ExerciceDAO]
             guard result.count != 0 else { return nil }
@@ -53,7 +53,7 @@ extension ExerciceDAO {
     
     static func getAll() throws -> [Exercice]{
         var list: [Exercice] = []
-        let request : NSFetchRequest<ExerciceDAO> = NSFetchRequest<ExerciceDAO>()
+        let request : NSFetchRequest<ExerciceDAO> = NSFetchRequest<ExerciceDAO>(entityName: "ExerciceDAO")
         do{
             let result = try ManageCoreData.context.fetch(request) as [ExerciceDAO]
             for nb in 1...result.count{
@@ -69,13 +69,15 @@ extension ExerciceDAO {
     
     static func getAllOrdered() throws -> [Exercice]{
         var list: [Exercice] = []
-        let request : NSFetchRequest<ExerciceDAO> = NSFetchRequest<ExerciceDAO>()
+        let request : NSFetchRequest<ExerciceDAO> = NSFetchRequest<ExerciceDAO>(entityName: "ExerciceDAO")
         request.sortDescriptors = [NSSortDescriptor(key:"jour", ascending: true)]
         do{
             let result = try ManageCoreData.context.fetch(request)
-            for nb in 1...result.count{
-                let ex = Exercice(forJour: result[nb].jour,forLibelle: result[nb].libelle!)
-                list.append(ex)
+            if (result.count>0){
+                for nb in 1...result.count{
+                    let ex = Exercice(forJour: result[nb-1].jour,forLibelle: result[nb-1].libelle!)
+                    list.append(ex)
+                }
             }
         }
         catch{

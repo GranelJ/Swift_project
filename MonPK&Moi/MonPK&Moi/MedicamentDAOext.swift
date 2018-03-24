@@ -35,7 +35,7 @@ extension MedicamentDAO {
     }
     
     static func searchDAO(forDesc desc_med: String,forDosage dosage: String,forNom nom: String) -> MedicamentDAO?{
-        let request : NSFetchRequest<MedicamentDAO> = NSFetchRequest<MedicamentDAO>()
+        let request : NSFetchRequest<MedicamentDAO> = NSFetchRequest<MedicamentDAO>(entityName: "MedicamentDAO")
         request.predicate = NSPredicate(format: "desc_med == %@ AND dosage == %@ AND nom == %@", desc_med, dosage, nom)
         do{
             let result = try ManageCoreData.context.fetch(request) as [MedicamentDAO]
@@ -54,12 +54,14 @@ extension MedicamentDAO {
     
     static func getAll() throws -> [Medicament]{
         var list: [Medicament] = []
-        let request : NSFetchRequest<MedicamentDAO> = NSFetchRequest<MedicamentDAO>()
+        let request : NSFetchRequest<MedicamentDAO> = NSFetchRequest<MedicamentDAO>(entityName: "MedicamentDAO")
         do{
             let result = try ManageCoreData.context.fetch(request) as [MedicamentDAO]
-            for nb in 1...result.count{
-                let med = Medicament(forDesc: result[nb].desc_med!,forDosage: result[nb].dosage!,forNom: result[nb].nom!)
-                list.append(med)
+            if (result.count>0) {
+                for nb in 1...result.count{
+                    let med = Medicament(forDesc: result[nb-1].desc_med!,forDosage: result[nb-1].dosage!,forNom: result[nb-1].nom!)
+                    list.append(med)
+                }
             }
         }
         catch{

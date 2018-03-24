@@ -20,15 +20,6 @@ class Traitement {
             self.dao.moment_de_prise = newValue
         }
     }
-    var medicament: Medicament{
-        get{
-            return self.medicament
-        }
-        set{
-            self.medicament = newValue
-            self.dao.traitement_medicament=newValue.dao
-        }
-    }
     
     init(forMomentPrise momentPrise: String, forMedicament newMedicament: Medicament){
         if let dao = TraitementDAO.searchDAO(forMomentPrise: momentPrise){
@@ -36,7 +27,7 @@ class Traitement {
         }else{
             self.dao = TraitementDAO.createDAO(forMomentPrise: momentPrise)
         }
-        self.medicament = newMedicament
+        //self.medicament = newMedicament
         self.dao.traitement_medicament=newMedicament.dao
     }
     

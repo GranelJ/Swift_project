@@ -35,7 +35,7 @@ extension EvenementDAO {
     }
     
     static func searchDAO(forDate date_evt: Date,forDesc desc_evt: String,forType type: String) -> EvenementDAO?{
-        let request : NSFetchRequest<EvenementDAO> = NSFetchRequest<EvenementDAO>()
+        let request : NSFetchRequest<EvenementDAO> = NSFetchRequest<EvenementDAO>(entityName: "EvenementDAO")
         request.predicate = NSPredicate(format: "date_evt == %@ AND desc_evt == %@ AND type == %@", date_evt as CVarArg, desc_evt, type)
         do{
             let result = try ManageCoreData.context.fetch(request) as [EvenementDAO]
@@ -54,12 +54,14 @@ extension EvenementDAO {
     
     static func getAll() throws -> [Evenement]{
         var list: [Evenement] = []
-        let request : NSFetchRequest<EvenementDAO> = NSFetchRequest<EvenementDAO>()
+        let request : NSFetchRequest<EvenementDAO> = NSFetchRequest<EvenementDAO>(entityName: "EvenementDAO")
         do{
             let result = try ManageCoreData.context.fetch(request) as [EvenementDAO]
-            for nb in 1...result.count{
-                let evt = Evenement(forDate: result[nb].date_evt! as Date,forDesc: result[nb].desc_evt!,forType: result[nb].type!)
-                list.append(evt)
+            if (result.count>0) {
+                for nb in 1...result.count{
+                    let evt = Evenement(forDate: result[nb-1].date_evt! as Date,forDesc: result[nb-1].desc_evt!,forType: result[nb-1].type!)
+                    list.append(evt)
+                }
             }
         }
         catch{

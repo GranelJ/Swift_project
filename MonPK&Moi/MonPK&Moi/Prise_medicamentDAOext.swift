@@ -34,7 +34,7 @@ extension Prise_medicamentDAO {
     }
     
     static func searchDAO(forDate date: Date,forLibelle libelle: String) -> Prise_medicamentDAO?{
-        let request : NSFetchRequest<Prise_medicamentDAO> = NSFetchRequest<Prise_medicamentDAO>()
+        let request : NSFetchRequest<Prise_medicamentDAO> = NSFetchRequest<Prise_medicamentDAO>(entityName: "Prise_medicamentDAO")
         request.predicate = NSPredicate(format: "date == %@ AND libelle == %@", date as CVarArg, libelle)
         do{
             let result = try ManageCoreData.context.fetch(request) as [Prise_medicamentDAO]
@@ -53,13 +53,15 @@ extension Prise_medicamentDAO {
     
     static func getAll() throws -> [Prise_medicament]{
         var list: [Prise_medicament] = []
-        let request : NSFetchRequest<Prise_medicamentDAO> = NSFetchRequest<Prise_medicamentDAO>()
+        let request : NSFetchRequest<Prise_medicamentDAO> = NSFetchRequest<Prise_medicamentDAO>(entityName: "Prise_medicamentDAO")
         do{
             let result = try ManageCoreData.context.fetch(request) as [Prise_medicamentDAO]
-            for nb in 1...result.count{
-                let synthese = Synthese(forHeureDebut: (result[nb].prise_medicament_synthese?.heure_debut)!, forHeureFin: (result[nb].prise_medicament_synthese?.heure_fin)!, forPeriodicite: (result[nb].prise_medicament_synthese?.periodicite)!)
-                let prise = Prise_medicament(forDate: (result[nb].date!) as Date,forLibelle: result[nb].libelle!,forSynthese: synthese)
-                list.append(prise)
+            if (result.count>0) {
+                for nb in 1...result.count{
+                    let synthese = Synthese(forHeureDebut: (result[nb-1].prise_medicament_synthese?.heure_debut)!, forHeureFin: (result[nb-1].prise_medicament_synthese?.heure_fin)!, forPeriodicite: (result[nb-1].prise_medicament_synthese?.periodicite)!)
+                    let prise = Prise_medicament(forDate: (result[nb-1].date!) as Date,forLibelle: result[nb-1].libelle!,forSynthese: synthese)
+                    list.append(prise)
+                }
             }
         }
         catch{

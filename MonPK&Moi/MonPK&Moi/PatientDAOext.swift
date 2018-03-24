@@ -36,8 +36,8 @@ extension PatientDAO {
     }
     
     static func searchDAO(forBirthdate birthdate: Date, forLastname lastname: String, forFirstname firstname: String, forPrepareTime prepareTime: Int64) -> PatientDAO?{
-        let request : NSFetchRequest<PatientDAO> = NSFetchRequest<PatientDAO>()
-        request.predicate = NSPredicate(format: "nom == %@ AND prenom == %@ AND date_naissance == %@ AND temps_preparation == %@", firstname, lastname, birthdate as CVarArg, prepareTime)
+        let request : NSFetchRequest<PatientDAO> = NSFetchRequest<PatientDAO>(entityName: "PatientDAO")
+        request.predicate = NSPredicate(format: "nom == %@ AND prenom == %@ AND date_naissance == %@ AND temps_preparation == %d", firstname, lastname, birthdate as CVarArg, prepareTime)
         do{
             let result = try ManageCoreData.context.fetch(request) as [PatientDAO]
             guard result.count != 0 else { return nil }
@@ -55,7 +55,7 @@ extension PatientDAO {
     
     static func getAll() throws -> [Patient]{
         var list: [Patient] = []
-        let request : NSFetchRequest<PatientDAO> = NSFetchRequest<PatientDAO>()
+        let request : NSFetchRequest<PatientDAO> = NSFetchRequest<PatientDAO>(entityName: "PatientDAO")
         do{
             let result = try ManageCoreData.context.fetch(request) as [PatientDAO]
             for nb in 1...result.count{
@@ -71,10 +71,12 @@ extension PatientDAO {
     
     static func get() throws -> Patient? {
         var pat: Patient? = nil
-        let request : NSFetchRequest<PatientDAO> = NSFetchRequest<PatientDAO>()
+        let request : NSFetchRequest<PatientDAO> = NSFetchRequest<PatientDAO>(entityName: "PatientDAO")
         do{
             let result = try ManageCoreData.context.fetch(request) as [PatientDAO]
-            pat = Patient(forDate: ((result.first?.date_naissance!)! as Date),forNom: (result.first?.nom)!,forPrenom: (result.first?.prenom)!,forTempsPreparation: (result.first?.temps_preparation)!)
+            if (result.first != nil){
+                pat = Patient(forDate: ((result.first?.date_naissance!)! as Date),forNom: (result.first?.nom)!,forPrenom: (result.first?.prenom)!,forTempsPreparation: (result.first?.temps_preparation)!)
+            }
         }
         catch{
             throw error

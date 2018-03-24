@@ -40,7 +40,7 @@ class PilulierViewController: UIViewController, UITableViewDataSource, UITableVi
         
         let cell = self.PriseMedicamentTable.dequeueReusableCell(withIdentifier: "MedicamentCell", for: indexPath) as! MedicamentTableViewCell
         cell.period.text = self.traitements[indexPath.row].moment_de_prise
-        cell.drug.text = (self.traitements[indexPath.row].medicament.nom) + " " + (self.traitements[indexPath.row].medicament.dosage)
+        cell.drug.text = (self.traitements[indexPath.row].dao.traitement_medicament?.nom)! + " " + (self.traitements[indexPath.row].dao.traitement_medicament?.dosage)!
         return cell
     }
     

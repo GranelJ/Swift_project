@@ -38,7 +38,7 @@ extension MedecinDAO {
     }
     
     static func searchDAO(forEmail email: String,forLieu lieu_travail: String,forNom nom: String,forPrenom prenom: String,forProfession profession: String,forTelephone telephone: String) -> MedecinDAO?{
-        let request : NSFetchRequest<MedecinDAO> = NSFetchRequest<MedecinDAO>()
+        let request : NSFetchRequest<MedecinDAO> = NSFetchRequest<MedecinDAO>(entityName: "MedecinDAO")
         request.predicate = NSPredicate(format: "email == %@ AND lieu_travail == %@ AND nom == %@ AND prenom == %@ AND profession == %@ AND telephone == %@", email, lieu_travail, nom, prenom, profession, telephone)
         do{
             let result = try ManageCoreData.context.fetch(request) as [MedecinDAO]
@@ -57,12 +57,14 @@ extension MedecinDAO {
     
     static func getAll() throws -> [Medecin]{
         var list: [Medecin] = []
-        let request : NSFetchRequest<MedecinDAO> = NSFetchRequest<MedecinDAO>()
+        let request : NSFetchRequest<MedecinDAO> = NSFetchRequest<MedecinDAO>(entityName: "MedecinDAO")
         do{
             let result = try ManageCoreData.context.fetch(request) as [MedecinDAO]
-            for nb in 1...result.count{
-                let med = Medecin(forEmail: result[nb].email!,forLieu: result[nb].lieu_travail!,forNom: result[nb].nom!,forPrenom: result[nb].prenom!,forProfession: result[nb].profession!,forTelephone: result[nb].telephone!)
-                list.append(med)
+            if (result.count>0) {
+                for nb in 1...result.count{
+                    let med = Medecin(forEmail: result[nb-1].email!,forLieu: result[nb-1].lieu_travail!,forNom: result[nb-1].nom!,forPrenom: result[nb-1].prenom!,forProfession: result[nb-1].profession!,forTelephone: result[nb-1].telephone!)
+                    list.append(med)
+                }
             }
         }
         catch{

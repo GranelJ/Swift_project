@@ -35,7 +35,7 @@ extension SyntheseDAO {
     }
     
     static func searchDAO(forHeureDebut heure_debut: Int64,forHeureFin heure_fin: Int64,forPeriodicite periodicite: Int64) -> SyntheseDAO?{
-        let request : NSFetchRequest<SyntheseDAO> = NSFetchRequest<SyntheseDAO>()
+        let request : NSFetchRequest<SyntheseDAO> = NSFetchRequest<SyntheseDAO>(entityName: "SyntheseDAO")
         request.predicate = NSPredicate(format: "heure_debut == %@ AND heure_fin == %@ AND periodicite == %@", heure_debut, heure_fin, periodicite)
         do{
             let result = try ManageCoreData.context.fetch(request) as [SyntheseDAO]
@@ -54,12 +54,14 @@ extension SyntheseDAO {
     
     static func getAll() throws -> [Synthese]{
         var list: [Synthese] = []
-        let request : NSFetchRequest<SyntheseDAO> = NSFetchRequest<SyntheseDAO>()
+        let request : NSFetchRequest<SyntheseDAO> = NSFetchRequest<SyntheseDAO>(entityName: "SyntheseDAO")
         do{
             let result = try ManageCoreData.context.fetch(request) as [SyntheseDAO]
-            for nb in 1...result.count{
-                let synth = Synthese(forHeureDebut: result[nb].heure_debut,forHeureFin: result[nb].heure_fin,forPeriodicite: result[nb].periodicite)
-                list.append(synth)
+            if (result.count>0) {
+                for nb in 1...result.count{
+                    let synth = Synthese(forHeureDebut: result[nb-1].heure_debut,forHeureFin: result[nb-1].heure_fin,forPeriodicite: result[nb-1].periodicite)
+                    list.append(synth)
+                }
             }
         }
         catch{

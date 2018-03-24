@@ -47,7 +47,7 @@ class AgendaViewController: UIViewController,UITableViewDataSource, UITableViewD
         let dateString = formatter.string(from: self.rdvs[indexPath.row].date_rdv)
         cell.dateLabel.text = dateString
         cell.libelleLabel.text = self.rdvs[indexPath.row].libelle
-        cell.medecinLabel.text = self.rdvs[indexPath.row].medecin.nom
+        cell.medecinLabel.text = self.rdvs[indexPath.row].dao.rdv_medecin?.nom
         return cell
     }
     

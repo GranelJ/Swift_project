@@ -36,7 +36,7 @@ extension Contact_persoDAO {
     }
     
     static func searchDAO(forEmail email: String, forNom nom: String, forPrenom prenom: String, forTelephone telephone: String) -> Contact_persoDAO?{
-        let request : NSFetchRequest<Contact_persoDAO> = NSFetchRequest<Contact_persoDAO>()
+        let request : NSFetchRequest<Contact_persoDAO> = NSFetchRequest<Contact_persoDAO>(entityName: "Contact_persoDAO")
         request.predicate = NSPredicate(format: "email == %@ AND nom == %@ AND prenom == %@ AND telephone == %@", email, nom, prenom, telephone)
         do{
             let result = try ManageCoreData.context.fetch(request) as [Contact_persoDAO]
@@ -55,12 +55,14 @@ extension Contact_persoDAO {
     
     static func getAll() throws -> [Contact_perso]{
         var list: [Contact_perso] = []
-        let request : NSFetchRequest<Contact_persoDAO> = NSFetchRequest<Contact_persoDAO>()
+        let request : NSFetchRequest<Contact_persoDAO> = NSFetchRequest<Contact_persoDAO>(entityName: "Contact_persoDAO")
         do{
             let result = try ManageCoreData.context.fetch(request) as [Contact_persoDAO]
-            for nb in 1...result.count{
-                let contact = Contact_perso(forEmail: result[nb].email!,forNom: result[nb].nom!,forPrenom: result[nb].prenom!,forTelephone: result[nb].telephone!)
-                list.append(contact)
+            if (result.count>0) {
+                for nb in 1...result.count{
+                    let contact = Contact_perso(forEmail: result[nb-1].email!,forNom: result[nb-1].nom!,forPrenom: result[nb-1].prenom!,forTelephone: result[nb-1].telephone!)
+                    list.append(contact)
+                }
             }
         }
         catch{

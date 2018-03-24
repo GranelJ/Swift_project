@@ -29,20 +29,6 @@ class AjoutContactPersoViewController: UIViewController, UITextFieldDelegate {
         }
     }
     
-    func saveNewContact(withName nom: String?,withNum num: String?,withMail mail: String?,withPrenom prenom: String?){
-        let contact = Contact_persoDAO(context: ManageCoreData.context)
-        contact.nom=nom
-        contact.telephone=num
-        contact.email=mail
-        contact.prenom=prenom
-        do{
-            try ManageCoreData.context.save()
-        }
-        catch let error as NSError{
-            ManageErrorHelper.alertError(view: self, WithTitle: "\(error)", andMessage: "\(error.userInfo)")
-            return
-        }
-    }
     
     override func viewDidLoad() {
         super.viewDidLoad()

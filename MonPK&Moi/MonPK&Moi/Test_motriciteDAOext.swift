@@ -34,7 +34,7 @@ extension Test_motriciteDAO {
     }
     
     static func searchDAO(forDate date: Date,forReponse reponse: String) -> Test_motriciteDAO?{
-        let request : NSFetchRequest<Test_motriciteDAO> = NSFetchRequest<Test_motriciteDAO>()
+        let request : NSFetchRequest<Test_motriciteDAO> = NSFetchRequest<Test_motriciteDAO>(entityName: "Test_motriciteDAO")
         request.predicate = NSPredicate(format: "date_test == %@ AND reponse == %@", date as CVarArg, reponse)
         do{
             let result = try ManageCoreData.context.fetch(request) as [Test_motriciteDAO]
@@ -53,13 +53,15 @@ extension Test_motriciteDAO {
     
     static func getAll() throws -> [Test_motricite]{
         var list: [Test_motricite] = []
-        let request : NSFetchRequest<Test_motriciteDAO> = NSFetchRequest<Test_motriciteDAO>()
+        let request : NSFetchRequest<Test_motriciteDAO> = NSFetchRequest<Test_motriciteDAO>(entityName: "Test_motriciteDAO")
         do{
             let result = try ManageCoreData.context.fetch(request) as [Test_motriciteDAO]
-            for nb in 1...result.count{
-                let synthese = Synthese(forHeureDebut: (result[nb].motricite_synthese?.heure_debut)!, forHeureFin: (result[nb].motricite_synthese?.heure_fin)!, forPeriodicite: (result[nb].motricite_synthese?.periodicite)!)
-                let prise = Test_motricite(forDate: (result[nb].date_test!) as Date,forReponse: result[nb].reponse!,forSynthese: synthese)
-                list.append(prise)
+            if (result.count>0) {
+                for nb in 1...result.count{
+                    let synthese = Synthese(forHeureDebut: (result[nb-1].motricite_synthese?.heure_debut)!, forHeureFin: (result[nb-1].motricite_synthese?.heure_fin)!, forPeriodicite: (result[nb-1].motricite_synthese?.periodicite)!)
+                    let prise = Test_motricite(forDate: (result[nb-1].date_test!) as Date,forReponse: result[nb-1].reponse!,forSynthese: synthese)
+                    list.append(prise)
+                }
             }
         }
         catch{

@@ -33,7 +33,7 @@ extension TraitementDAO {
     }
     
     static func searchDAO(forMomentPrise momentPrise: String) -> TraitementDAO?{
-        let request : NSFetchRequest<TraitementDAO> = NSFetchRequest<TraitementDAO>()
+        let request : NSFetchRequest<TraitementDAO> = NSFetchRequest<TraitementDAO>(entityName: "TraitementDAO")
         request.predicate = NSPredicate(format: "moment_de_prise == %@", momentPrise)
         do{
             let result = try ManageCoreData.context.fetch(request) as [TraitementDAO]
@@ -52,13 +52,15 @@ extension TraitementDAO {
     
     static func getAll() throws -> [Traitement]{
         var list: [Traitement] = []
-        let request : NSFetchRequest<TraitementDAO> = NSFetchRequest<TraitementDAO>()
+        let request : NSFetchRequest<TraitementDAO> = NSFetchRequest<TraitementDAO>(entityName: "TraitementDAO")
         do{
             let result = try ManageCoreData.context.fetch(request) as [TraitementDAO]
-            for nb in 1...result.count{
-                let medicament = Medicament(forDesc: (result[nb].traitement_medicament?.desc_med)!, forDosage: (result[nb].traitement_medicament?.dosage)!, forNom: (result[nb].traitement_medicament?.nom)!)
-                let prise = Traitement(forMomentPrise: result[nb].moment_de_prise!, forMedicament: medicament)
-                list.append(prise)
+            if (result.count>0) {
+                for nb in 1...result.count{
+                    let medicament = Medicament(forDesc: (result[nb-1].traitement_medicament?.desc_med)!, forDosage: (result[nb-1].traitement_medicament?.dosage)!, forNom: (result[nb-1].traitement_medicament?.nom)!)
+                    let prise = Traitement(forMomentPrise: result[nb-1].moment_de_prise!, forMedicament: medicament)
+                    list.append(prise)
+                }
             }
         }
         catch{

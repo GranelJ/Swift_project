@@ -42,7 +42,7 @@ class AjouterRendezVousViewController: UIViewController, UITextFieldDelegate, UI
         let date = datePicker.date
         let lib = libelleField.text ?? ""
         if (lib != "") {
-            Rdv(forDate: date, forLibelle: lib, forMedecin: medecin, forSynthese: nil) //TODO
+            Rdv(forDate: date, forLibelle: lib, forMedecin: medecin.dao, forSynthese: nil) //TODO
             self.performSegue(withIdentifier: "AddRDV", sender: self)
         }else{
             ManageErrorHelper.alertError(view: self, WithTitle: "Champ(s) manquant(s)", andMessage: "Veuillez remplir tous les champs du formulaire")

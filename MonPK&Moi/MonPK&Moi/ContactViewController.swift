@@ -29,14 +29,16 @@ class ContactViewController: UIViewController, UITableViewDataSource, UITableVie
         // Do any additional setup after loading the view.
         do{
             patient = try Patient.get()
-            NomLabel.text = patient?.nom
-            PrenomLabel.text = patient?.prenom
-            TpsPreplabel.text = patient?.temps_preparation.description
-            // formate la date en txt
-            let formatter = DateFormatter()
-            formatter.dateFormat = "dd/MM/YYYY"
-            let dateString = formatter.string(from: patient?.date_naissance as! Date)
-            Agelabel.text = dateString
+            if patient != nil {
+                NomLabel.text = patient?.nom
+                PrenomLabel.text = patient?.prenom
+                TpsPreplabel.text = patient?.temps_preparation.description
+                // formate la date en txt
+                let formatter = DateFormatter()
+                formatter.dateFormat = "dd/MM/YYYY"
+                let dateString = formatter.string(from: patient?.date_naissance as! Date)
+                Agelabel.text = dateString
+            }
         }catch let error as NSError{
             ManageErrorHelper.alertError(view: self, WithTitle: "\(error)", andMessage: "\(error.userInfo)")
         }
