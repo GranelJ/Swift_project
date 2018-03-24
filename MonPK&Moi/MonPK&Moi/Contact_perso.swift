@@ -56,4 +56,12 @@ class Contact_perso {
         Contact_persoDAO.deleteDAO(ForContact: self.dao)
     }
     
+    func getAll() throws -> [Contact_perso]{
+        do{
+            return try Contact_persoDAO.getAll()
+        }catch{
+            throw error
+        }
+    }
+
 }

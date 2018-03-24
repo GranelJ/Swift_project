@@ -48,4 +48,12 @@ class Medicament {
         MedicamentDAO.deleteDAO(ForMedicament: self.dao)
     }
     
+    func getAll() throws -> [Medicament]{
+        do{
+            return try Medicament.getAll()
+        }catch{
+            throw error
+        }
+    }
+    
 }

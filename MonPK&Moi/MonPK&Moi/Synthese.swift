@@ -48,4 +48,11 @@ class Synthese {
         SyntheseDAO.deleteDAO(ForSynthese: self.dao)
     }
     
+    func getAll() throws -> [Synthese]{
+        do{
+            return try SyntheseDAO.getAll()
+        }catch{
+            throw error
+        }
+    }
 }

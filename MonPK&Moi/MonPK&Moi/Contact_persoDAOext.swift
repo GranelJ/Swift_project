@@ -52,5 +52,21 @@ extension Contact_persoDAO {
         ManageCoreData.context.delete(contact)
         self.save()
     }
+    
+    static func getAll() throws -> [Contact_perso]{
+        var list: [Contact_perso] = []
+        let request : NSFetchRequest<Contact_persoDAO> = NSFetchRequest<Contact_persoDAO>()
+        do{
+            let result = try ManageCoreData.context.fetch(request) as [Contact_persoDAO]
+            for nb in 1...result.count{
+                let contact = Contact_perso(forEmail: result[nb].email!,forNom: result[nb].nom!,forPrenom: result[nb].prenom!,forTelephone: result[nb].telephone!)
+                list.append(contact)
+            }
+        }
+        catch{
+            throw error
+        }
+        return list
+    }
 
 }

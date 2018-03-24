@@ -53,4 +53,20 @@ extension PatientDAO {
         self.save()
     }
     
+    static func getAll() throws -> [Patient]{
+        var list: [Patient] = []
+        let request : NSFetchRequest<PatientDAO> = NSFetchRequest<PatientDAO>()
+        do{
+            let result = try ManageCoreData.context.fetch(request) as [PatientDAO]
+            for nb in 1...result.count{
+                let pat = Patient(forDate: result[nb].date_naissance! as Date,forNom: result[nb].nom!,forPrenom: result[nb].prenom!,forTempsPreparation: result[nb].temps_preparation)
+                list.append(pat)
+            }
+        }
+        catch{
+            throw error
+        }
+        return list
+    }
+    
 }

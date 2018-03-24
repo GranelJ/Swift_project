@@ -46,8 +46,25 @@ extension Test_motriciteDAO {
         }
     }
     
-    static func deleteDAO(ForTest test: TestDAO){
+    static func deleteDAO(ForTest test: Test_motriciteDAO){
         ManageCoreData.context.delete(test)
         self.save()
+    }
+    
+    static func getAll() throws -> [Test_motricite]{
+        var list: [Test_motricite] = []
+        let request : NSFetchRequest<Test_motriciteDAO> = NSFetchRequest<Test_motriciteDAO>()
+        do{
+            let result = try ManageCoreData.context.fetch(request) as [Test_motriciteDAO]
+            for nb in 1...result.count{
+                let synthese = Synthese(forHeureDebut: (result[nb].motricite_synthese?.heure_debut)!, forHeureFin: (result[nb].motricite_synthese?.heure_fin)!, forPeriodicite: (result[nb].motricite_synthese?.periodicite)!)
+                let prise = Test_motricite(forDate: (result[nb].date_test!) as Date,forReponse: result[nb].reponse!,forSynthese: synthese)
+                list.append(prise)
+            }
+        }
+        catch{
+            throw error
+        }
+        return list
     }
 }

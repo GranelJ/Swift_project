@@ -51,5 +51,19 @@ extension ExerciceDAO {
         self.save()
     }
     
-    
+    static func getAll() throws -> [Exercice]{
+        var list: [Exercice] = []
+        let request : NSFetchRequest<ExerciceDAO> = NSFetchRequest<ExerciceDAO>()
+        do{
+            let result = try ManageCoreData.context.fetch(request) as [ExerciceDAO]
+            for nb in 1...result.count{
+                let ex = Exercice(forJour: result[nb].jour,forLibelle: result[nb].libelle!)
+                list.append(ex)
+            }
+        }
+        catch{
+            throw error
+        }
+        return list
+    }
 }
