@@ -59,7 +59,7 @@ extension RdvDAO {
             if (result.count>0) {
                 for nb in 1...result.count{
                    // let synthese = Synthese(forHeureDebut: (result[nb-1].rdv_synthese?.heure_debut)!, forHeureFin: (result[nb-1].rdv_synthese?.heure_fin)!, forPeriodicite: (result[nb-1].rdv_synthese?.periodicite)!)
-                    let rdv = Rdv(forDate: (result[nb-1].date_rdv!) as Date,forLibelle: result[nb-1].libelle!,forMedecin: result[nb-1].rdv_medecin! ,forSynthese: nil)
+                    let rdv = Rdv(forDate: (result[nb-1].date_rdv!) as Date, forLibelle: result[nb-1].libelle!,forMedecin: result[nb-1].rdv_medecin! ,forSynthese: nil) //TODO pb rdv_medcin nil lorsque quitte app et reviens
                     list.append(rdv)
                 }
             }

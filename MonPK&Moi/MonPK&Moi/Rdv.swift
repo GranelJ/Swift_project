@@ -35,7 +35,7 @@ class Rdv {
         }else{
             self.dao = RdvDAO.createDAO(forDate: date,forLibelle: libelle)
         }
-        self.dao.rdv_medecin=newMedecin
+        self.dao.rdv_medecin = newMedecin
         
         if let synth = newSynthese{
             self.dao.rdv_synthese = synth.dao

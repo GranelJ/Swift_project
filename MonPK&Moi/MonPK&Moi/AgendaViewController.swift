@@ -43,7 +43,7 @@ class AgendaViewController: UIViewController,UITableViewDataSource, UITableViewD
         
         let cell = self.rdvsTable.dequeueReusableCell(withIdentifier: "RDVCell", for: indexPath) as! RdvTableViewCell
         let formatter = DateFormatter()
-        formatter.dateFormat = "dd/MM hh:mm"
+        formatter.dateFormat = "dd/MM HH:mm"
         let dateString = formatter.string(from: self.rdvs[indexPath.row].date_rdv)
         cell.dateLabel.text = dateString
         cell.libelleLabel.text = self.rdvs[indexPath.row].libelle
