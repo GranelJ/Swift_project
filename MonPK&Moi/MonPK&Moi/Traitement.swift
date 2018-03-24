@@ -22,8 +22,8 @@ class Traitement {
     }
     
     init(forMomentPrise momentPrise: String, forMedicament newMedicament: Medicament){
-        if let dao = TraitementDAO.searchDAO(forMomentPrise: momentPrise){
-            self.dao = dao
+        if let ndao = TraitementDAO.searchDAO(forMomentPrise: momentPrise, forMedicament: newMedicament.nom){
+            self.dao = ndao
         }else{
             self.dao = TraitementDAO.createDAO(forMomentPrise: momentPrise)
         }

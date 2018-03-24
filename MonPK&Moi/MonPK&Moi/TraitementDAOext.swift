@@ -32,9 +32,9 @@ extension TraitementDAO {
         return dao
     }
     
-    static func searchDAO(forMomentPrise momentPrise: String) -> TraitementDAO?{
+    static func searchDAO(forMomentPrise momentPrise: String, forMedicament medicamentName: String) -> TraitementDAO?{
         let request : NSFetchRequest<TraitementDAO> = NSFetchRequest<TraitementDAO>(entityName: "TraitementDAO")
-        request.predicate = NSPredicate(format: "moment_de_prise == %@", momentPrise)
+        request.predicate = NSPredicate(format: "moment_de_prise == %@ AND traitement_medicament.nom == %@", momentPrise, medicamentName)
         do{
             let result = try ManageCoreData.context.fetch(request) as [TraitementDAO]
             guard result.count != 0 else { return nil }
