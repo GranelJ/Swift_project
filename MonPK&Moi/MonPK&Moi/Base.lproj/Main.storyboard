@@ -526,7 +526,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" red="0.92554813619999998" green="0.86786671049999997" blue="0.92267659400000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="fvb-9D-bAi" firstAttribute="leading" secondItem="oS4-rf-NIi" secondAttribute="leadingMargin" id="6zf-5c-5UC"/>
                             <constraint firstItem="DMC-pM-gfY" firstAttribute="top" secondItem="fOl-GE-jW3" secondAttribute="bottom" constant="10" id="7nj-du-rQb"/>
@@ -660,7 +660,7 @@
                                 </subviews>
                             </stackView>
                         </subviews>
-                        <color key="backgroundColor" red="0.92554813619999998" green="0.86786671049999997" blue="0.92267659400000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="epa-rr-ki5" firstAttribute="top" secondItem="165-Mp-uf7" secondAttribute="bottom" constant="10" id="0Qn-ra-6gR"/>
                             <constraint firstItem="iUv-kL-wBU" firstAttribute="top" secondItem="epa-rr-ki5" secondAttribute="bottom" id="Em6-Ss-9i7"/>
@@ -961,7 +961,7 @@
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" red="0.92554813619999998" green="0.86786671049999997" blue="0.92267659400000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Accueil" image="Accueil" id="fmj-0M-hJh"/>
                     <navigationItem key="navigationItem" title="Mon PK &amp; Moi" id="jRV-0b-aHH"/>
@@ -1317,13 +1317,13 @@
                             </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="yqC-yB-t0Y">
                                 <rect key="frame" x="10" y="124" width="394" height="512"/>
-                                <color key="backgroundColor" red="0.92554813623428345" green="0.86786671054794207" blue="0.92267659403254476" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ExerciceCell" id="0Dv-BM-ucn" customClass="ExerciceTableViewCell" customModule="MonPK_Moi" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="394" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="0Dv-BM-ucn" id="Eou-l7-WJh">
-                                            <rect key="frame" x="0.0" y="0.0" width="394" height="44"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="394" height="43.666666666666664"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFit" semanticContentAttribute="forceLeftToRight" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9hQ-F1-J1I">
@@ -1343,7 +1343,7 @@
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
-                                        <color key="backgroundColor" red="0.92554813619999998" green="0.86786671049999997" blue="0.92267659400000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <connections>
                                             <outlet property="jourLabel" destination="9hQ-F1-J1I" id="K4Q-rv-ZZr"/>
                                             <outlet property="nomLabel" destination="op6-3O-lSt" id="7pA-bc-ovC"/>
@@ -1356,7 +1356,7 @@
                                 </connections>
                             </tableView>
                         </subviews>
-                        <color key="backgroundColor" red="0.92554813619999998" green="0.86786671049999997" blue="0.92267659400000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="Gom-Nu-MWR" firstAttribute="centerX" secondItem="W0f-uh-G65" secondAttribute="centerX" id="5wO-kW-Qlq"/>
                             <constraint firstItem="yqC-yB-t0Y" firstAttribute="leading" secondItem="W0f-uh-G65" secondAttribute="leading" constant="10" id="Ds4-oz-eRQ"/>
