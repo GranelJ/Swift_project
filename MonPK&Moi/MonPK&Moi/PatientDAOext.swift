@@ -69,4 +69,16 @@ extension PatientDAO {
         return list
     }
     
+    static func get() throws -> Patient? {
+        var pat: Patient? = nil
+        let request : NSFetchRequest<PatientDAO> = NSFetchRequest<PatientDAO>()
+        do{
+            let result = try ManageCoreData.context.fetch(request) as [PatientDAO]
+            pat = Patient(forDate: ((result.first?.date_naissance!)! as Date),forNom: (result.first?.nom)!,forPrenom: (result.first?.prenom)!,forTempsPreparation: (result.first?.temps_preparation)!)
+        }
+        catch{
+            throw error
+        }
+        return pat
+    }
 }

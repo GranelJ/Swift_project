@@ -63,4 +63,12 @@ class Patient {
             throw error
         }
     }
+    
+    func get() throws -> Patient?{
+        do{
+            return try PatientDAO.get()
+        }catch{
+            throw error
+        }
+    }
 }
