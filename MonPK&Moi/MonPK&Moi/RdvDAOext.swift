@@ -23,19 +23,20 @@ extension RdvDAO {
         return RdvDAO(context: ManageCoreData.context)
     }
     
-    static func createDAO(forDate date: Date,forLibelle libelle: String) -> RdvDAO{
+    static func createDAO(forDate date: Date,forLibelle libelle: String, forMedecin medecin: MedecinDAO) -> RdvDAO{
         let dao = self.createDAO()
         dao.date_rdv=date as NSDate
         dao.libelle=libelle
-        
+        dao.rdv_medecin = medecin
+            
         self.save()
         
         return dao
     }
     
-    static func searchDAO(forDate date: Date,forLibelle libelle: String) -> RdvDAO?{
+    static func searchDAO(forDate date: Date,forLibelle libelle: String, forMedecin medecinName: String) -> RdvDAO?{
         let request : NSFetchRequest<RdvDAO> = NSFetchRequest<RdvDAO>(entityName: "RdvDAO")
-        request.predicate = NSPredicate(format: "date_rdv == %@ AND libelle == %@", date as CVarArg, libelle)
+        request.predicate = NSPredicate(format: "date_rdv == %@ AND libelle == %@ AND rdv_medecin.nom == %@", date as CVarArg, libelle, medecinName)
         do{
             let result = try ManageCoreData.context.fetch(request) as [RdvDAO]
             guard result.count != 0 else { return nil }

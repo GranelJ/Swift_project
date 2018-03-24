@@ -30,12 +30,12 @@ class Rdv {
 
     
     init(forDate date: Date,forLibelle libelle: String, forMedecin newMedecin: MedecinDAO, forSynthese newSynthese: Synthese?){
-        if let dao = RdvDAO.searchDAO(forDate: date,forLibelle: libelle){
+        if let dao = RdvDAO.searchDAO(forDate: date,forLibelle: libelle, forMedecin: newMedecin.nom!){
             self.dao = dao
         }else{
-            self.dao = RdvDAO.createDAO(forDate: date,forLibelle: libelle)
+            self.dao = RdvDAO.createDAO(forDate: date,forLibelle: libelle, forMedecin: newMedecin)
         }
-        self.dao.rdv_medecin = newMedecin
+        //self.dao.rdv_medecin = newMedecin
         
         if let synth = newSynthese{
             self.dao.rdv_synthese = synth.dao
