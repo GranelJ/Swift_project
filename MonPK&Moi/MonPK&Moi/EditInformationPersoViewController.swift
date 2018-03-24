@@ -42,13 +42,13 @@ class EditInformationPersoViewController: UIViewController, UITextFieldDelegate 
         let nom = NomTF.text ?? ""
         let prenom = PrenomTF.text ?? ""
         let tpsPrep = Int64(TpsPrepTF.text!)!
-        let dateNaissance = DateNaissanceDP.date as NSDate
+        let dateNaissance = DateNaissanceDP.date
         do{
-            let exist = try PatientDAO.exist()
-            if exist{
+            let exist = try Patient.get()
+            if (exist != nil){
                 self.editPatient(nom: nom, prenom: prenom, dateNaissance: dateNaissance, TpsPrep: tpsPrep)
             }else{
-                self.createNewPatient(nom: nom, prenom: prenom, dateNaissance: dateNaissance, TpsPrep: tpsPrep)
+                Patient(forDate: dateNaissance, forNom: nom, forPrenom: prenom, forTempsPreparation: tpsPrep)
             }
         }catch{
             
@@ -57,39 +57,23 @@ class EditInformationPersoViewController: UIViewController, UITextFieldDelegate 
     }
     
     // MARK: - helper methods
-    func editPatient(nom: String, prenom: String, dateNaissance: NSDate, TpsPrep: Int64){
+    func editPatient(nom: String, prenom: String, dateNaissance: Date, TpsPrep: Int64){
         //create Patient managedObj
         
         do{
-            let patient = try PatientDAO.get()
+            let patient = try Patient.get()
             patient?.nom = nom
             patient?.prenom = prenom
             patient?.temps_preparation = TpsPrep
             patient?.date_naissance = dateNaissance
-        }catch{
-            
+        }catch let error as NSError{
+            ManageErrorHelper.alertError(view: self, WithTitle: "\(error)", andMessage: "\(error.userInfo)")
         }
         do{
             try ManageCoreData.context.save()
         }
         catch let error as NSError{
         ManageErrorHelper.alertError(view: self, error: error)
-            return
-        }
-    }
-
-    func createNewPatient(nom: String, prenom: String, dateNaissance: NSDate, TpsPrep: Int64){
-        //create Patient managedObj
-        let patient = PatientDAO(context: ManageCoreData.context)
-        patient.nom = nom
-        patient.prenom = prenom
-        patient.temps_preparation = TpsPrep
-        patient.date_naissance = dateNaissance
-        do{
-            try ManageCoreData.context.save()
-        }
-        catch let error as NSError{
-            ManageErrorHelper.alertError(view: self, error: error)
             return
         }
     }

@@ -11,13 +11,13 @@ import UIKit
 class AgendaViewController: UIViewController,UITableViewDataSource, UITableViewDelegate {
 
     @IBOutlet weak var rdvsTable: UITableView!
-    var rdvs: [RdvDAO] = []
+    var rdvs: [Rdv] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         do{
-            try rdvs=RdvDAO.getAll()
+            try rdvs=Rdv.getAll()
         }catch let error as NSError{
             ManageErrorHelper.alertError(view: self, WithTitle: "\(error)", andMessage: "\(error.userInfo)")
         }
@@ -31,7 +31,7 @@ class AgendaViewController: UIViewController,UITableViewDataSource, UITableViewD
     
     @IBAction func unwindAfterAddingRDV(segue: UIStoryboardSegue){
         do{
-            try rdvs = RdvDAO.getAll()
+            try rdvs = Rdv.getAll()
             rdvsTable.reloadData()
         }catch let error as NSError{
             ManageErrorHelper.alertError(view: self, WithTitle: "\(error)", andMessage: "\(error.userInfo)")
@@ -44,10 +44,10 @@ class AgendaViewController: UIViewController,UITableViewDataSource, UITableViewD
         let cell = self.rdvsTable.dequeueReusableCell(withIdentifier: "RDVCell", for: indexPath) as! RdvTableViewCell
         let formatter = DateFormatter()
         formatter.dateFormat = "dd/MM hh:mm"
-        let dateString = formatter.string(from: self.rdvs[indexPath.row].date_rdv! as Date)
+        let dateString = formatter.string(from: self.rdvs[indexPath.row].date_rdv)
         cell.dateLabel.text = dateString
         cell.libelleLabel.text = self.rdvs[indexPath.row].libelle
-        cell.medecinLabel.text = self.rdvs[indexPath.row].rdv_medecin?.nom
+        cell.medecinLabel.text = self.rdvs[indexPath.row].medecin.nom
         return cell
     }
     
@@ -72,16 +72,9 @@ class AgendaViewController: UIViewController,UITableViewDataSource, UITableViewD
     // MARK: - Delete management
     func delete_rdv(rdvWithIndex index: Int) -> Bool{
         let rdv = self.rdvs[index]
-        ManageCoreData.context.delete(rdv)
-        do{
-            try ManageCoreData.context.save()
-            self.rdvs.remove(at: index)
-            return true
-        }
-        catch let error as NSError{
-            ManageErrorHelper.alertError(view: self, error: error)
-            return false
-        }
+        rdv.delete()
+        self.rdvs.remove(at: index)
+        return true
     }
     
 }

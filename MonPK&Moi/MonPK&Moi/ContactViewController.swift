@@ -11,9 +11,9 @@ import CoreData
 
 class ContactViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
-    var medecins : [MedecinDAO] = []
-    var contacts : [Contact_persoDAO] = []
-    var patient : PatientDAO?
+    var medecins : [Medecin] = []
+    var contacts : [Contact_perso] = []
+    var patient : Patient?
     
     @IBOutlet weak var medecinsTable: UITableView!
     @IBOutlet weak var contactsTable: UITableView!
@@ -28,38 +28,29 @@ class ContactViewController: UIViewController, UITableViewDataSource, UITableVie
         
         // Do any additional setup after loading the view.
         do{
-            let exist: Bool = try Patient.exist()
-            if exist{
-                do{
-                    patient = try Patient.get()
-                    NomLabel.text = patient?.nom
-                    PrenomLabel.text = patient?.prenom
-                    TpsPreplabel.text = patient?.temps_preparation.description
-                    // formate la date en txt
-                    let formatter = DateFormatter()
-                    formatter.dateFormat = "dd/MM/YYYY"
-                    let dateString = formatter.string(from: patient?.date_naissance as! Date)
-                    Agelabel.text = dateString
-                }catch let error as NSError{
-                    ManageErrorHelper.alertError(view: self, WithTitle: "\(error)", andMessage: "\(error.userInfo)")
-                }
-            }
-        }catch{
-            fatalError("Application Error")
+            patient = try Patient.get()
+            NomLabel.text = patient?.nom
+            PrenomLabel.text = patient?.prenom
+            TpsPreplabel.text = patient?.temps_preparation.description
+            // formate la date en txt
+            let formatter = DateFormatter()
+            formatter.dateFormat = "dd/MM/YYYY"
+            let dateString = formatter.string(from: patient?.date_naissance as! Date)
+            Agelabel.text = dateString
+        }catch let error as NSError{
+            ManageErrorHelper.alertError(view: self, WithTitle: "\(error)", andMessage: "\(error.userInfo)")
         }
         
         //Request to get Contacts
-        let request : NSFetchRequest<MedecinDAO> = MedecinDAO.fetchRequest()
         do{
-            try self.medecins = ManageCoreData.context.fetch(request)
+            try self.medecins = Medecin.getAll()
         }
         catch let error as NSError{
             ManageErrorHelper.alertError(view: self, WithTitle: "\(error)", andMessage: "\(error.userInfo)")
         }
         
-        let request2 : NSFetchRequest<Contact_persoDAO> = Contact_persoDAO.fetchRequest()
         do{
-            try self.contacts = ManageCoreData.context.fetch(request2)
+            try self.contacts = Contact_perso.getAll()
         }
         catch let error as NSError{
             ManageErrorHelper.alertError(view: self, WithTitle: "\(error)", andMessage: "\(error.userInfo)")
@@ -174,30 +165,18 @@ class ContactViewController: UIViewController, UITableViewDataSource, UITableVie
     // MARK: - Delete management
     func delete_contact(contactWithIndex index: Int) -> Bool{
         let contact = self.contacts[index]
-        ManageCoreData.context.delete(contact)
-        do{
-            try ManageCoreData.context.save()
-            self.contacts.remove(at: index)
-            return true
-        }
-        catch let error as NSError{
-            ManageErrorHelper.alertError(view: self, error: error)
-            return false
-        }
+        contact.delete()
+        self.contacts.remove(at: index)
+        return true
+ 
     }
 
     func delete_medecin(contactWithIndex index: Int) -> Bool{
         let medecin = self.medecins[index]
-        ManageCoreData.context.delete(medecin)
-        do{
-            try ManageCoreData.context.save()
-            self.medecins.remove(at: index)
-            return true
-        }
-        catch let error as NSError{
-            ManageErrorHelper.alertError(view: self, error: error)
-            return false
-        }
+        medecin.delete()
+        self.medecins.remove(at: index)
+        return true
+
     }
     
     /*

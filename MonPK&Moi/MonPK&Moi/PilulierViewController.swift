@@ -10,14 +10,14 @@ import UIKit
 
 class PilulierViewController: UIViewController, UITableViewDataSource, UITableViewDelegate{
 
-    var traitements : [TraitementDAO] = []
+    var traitements : [Traitement] = []
     @IBOutlet weak var PriseMedicamentTable: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         do{
-            try traitements = TraitementDAO.getAll()
+            try traitements = Traitement.getAll()
         }catch let error as NSError{
             ManageErrorHelper.alertError(view: self, WithTitle: "\(error)", andMessage: "\(error.userInfo)")
         }
@@ -40,7 +40,7 @@ class PilulierViewController: UIViewController, UITableViewDataSource, UITableVi
         
         let cell = self.PriseMedicamentTable.dequeueReusableCell(withIdentifier: "MedicamentCell", for: indexPath) as! MedicamentTableViewCell
         cell.period.text = self.traitements[indexPath.row].moment_de_prise
-        cell.drug.text = (self.traitements[indexPath.row].traitement_medicament?.nom)! + " " + (self.traitements[indexPath.row].traitement_medicament?.dosage)!
+        cell.drug.text = (self.traitements[indexPath.row].medicament.nom) + " " + (self.traitements[indexPath.row].medicament.dosage)
         return cell
     }
     
@@ -67,16 +67,9 @@ class PilulierViewController: UIViewController, UITableViewDataSource, UITableVi
     // MARK: - Delete management
     func delete_traitement(traitementWithIndex index: Int) -> Bool{
         let traitement = self.traitements[index]
-        ManageCoreData.context.delete(traitement)
-        do{
-            try ManageCoreData.context.save()
-            self.traitements.remove(at: index)
-            return true
-        }
-        catch let error as NSError{
-            ManageErrorHelper.alertError(view: self, error: error)
-            return false
-        }
+        traitement.delete()
+        self.traitements.remove(at: index)
+        return true
     }
 
 

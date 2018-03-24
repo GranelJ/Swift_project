@@ -17,25 +17,17 @@ class AjoutExerciceViewController: UIViewController, UITextFieldDelegate {
     
     @IBAction func validateButton(_ sender: Any) {
         self.saveNewExercice(withName: nameText.text, weekDays: semaineSwitch)
+        self.performSegue(withIdentifier: "AddExercice", sender: self)
     }
     
     func saveNewExercice(withName name: String?, weekDays days: [UISwitch]){
         
         for nbDeLignes in 0...6 {
             if(days[nbDeLignes].isOn){
-                let exercice = ExerciceDAO(context: ManageCoreData.context)
-                exercice.libelle=name
-                exercice.jour=Int64(nbDeLignes)
-                do{
-                    try ManageCoreData.context.save()
+                let nbDeLignes64 = Int64(nbDeLignes)
+                Exercice(forJour: nbDeLignes64, forLibelle: name!)
                 }
-                catch let error as NSError{
-                    ManageErrorHelper.alertError(view: self, error: error)
-                    return
-                }
-            }
         }
-        self.performSegue(withIdentifier: "AddExercice", sender: self)
     }
     
     override func viewDidLoad() {

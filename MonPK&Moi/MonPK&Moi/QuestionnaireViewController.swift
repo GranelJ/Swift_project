@@ -41,22 +41,16 @@ class QuestionnaireViewController: UIViewController {
     }
     
     @IBAction func validateButton(_ sender: Any) {
-        let test = Test_motriciteDAO(context: ManageCoreData.context)
-        test.date_test=Date() as NSDate
+        let date_test = Date()
+        let reponse: String
         if(switchON.isOn){
-            test.reponse="ON"
+            reponse="ON"
         }else if(switchDYS.isOn){
-            test.reponse="Dyskinesies"
-        }else if(switchOFF.isOn){
-            test.reponse="OFF"
+            reponse="Dyskinesies"
+        }else{
+            reponse="OFF"
         }
-        do{
-            try ManageCoreData.context.save()
-        }
-        catch let error as NSError{
-            ManageErrorHelper.alertError(view: self, WithTitle: "\(error)", andMessage: "\(error.userInfo)")
-            return
-        }
+        Test_motricite(forDate: date_test, forReponse: reponse, forSynthese: nil)//TODO
         self.navigationController?.popViewController(animated: true)
     }
     /*

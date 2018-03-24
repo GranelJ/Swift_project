@@ -10,7 +10,7 @@ import UIKit
 
 class AjouterRendezVousViewController: UIViewController, UITextFieldDelegate, UIPickerViewDelegate, UIPickerViewDataSource {
 
-    var pickerData: [MedecinDAO] = []
+    var pickerData: [Medecin] = []
     
     @IBOutlet weak var datePicker: UIDatePicker!
     @IBOutlet weak var libelleField: UITextField!
@@ -19,7 +19,7 @@ class AjouterRendezVousViewController: UIViewController, UITextFieldDelegate, UI
     override func viewDidLoad() {
         super.viewDidLoad()
         do{
-            try pickerData = MedecinDAO.getAll()
+            try pickerData = Medecin.getAll()
         }catch let error as NSError{
             ManageErrorHelper.alertError(view: self, WithTitle: "\(error)", andMessage: "\(error.userInfo)")
         }
@@ -39,22 +39,13 @@ class AjouterRendezVousViewController: UIViewController, UITextFieldDelegate, UI
     @IBAction func ValidateButton(_ sender: Any) {
         let medecinrow = medecinPiker.selectedRow(inComponent: 0)
         let medecin = pickerData[medecinrow]
-        
-        self.saveNewRdv(withDate: datePicker.date, withLibelle: libelleField.text, withMedecin: medecin)
-        self.performSegue(withIdentifier: "AddRDV", sender: self)
-        }
-    
-    func saveNewRdv(withDate date: Date?,withLibelle libelle: String?,withMedecin medecin: MedecinDAO?){
-        let rdv = RdvDAO(context: ManageCoreData.context)
-        rdv.date_rdv=date! as NSDate
-        rdv.libelle=libelle
-        rdv.rdv_medecin=medecin
-        
-        do{
-            try ManageCoreData.context.save()
-        }
-        catch let error as NSError{
-            ManageErrorHelper.alertError(view: self, WithTitle: "\(error)", andMessage: "\(error.userInfo)")
+        let date = datePicker.date
+        let lib = libelleField.text ?? ""
+        if (lib != "") {
+            Rdv(forDate: date, forLibelle: lib, forMedecin: medecin, forSynthese: nil) //TODO
+            self.performSegue(withIdentifier: "AddRDV", sender: self)
+        }else{
+            ManageErrorHelper.alertError(view: self, WithTitle: "Champ(s) manquant(s)", andMessage: "Veuillez remplir tous les champs du formulaire")
             return
         }
     }
@@ -69,7 +60,7 @@ class AjouterRendezVousViewController: UIViewController, UITextFieldDelegate, UI
     }
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return pickerData[row].prenom! + " " + pickerData[row].nom!
+        return pickerData[row].prenom + " " + pickerData[row].nom
     }
 
 }

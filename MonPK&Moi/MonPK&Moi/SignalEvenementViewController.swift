@@ -26,10 +26,16 @@ class SignalEvenementViewController: UIViewController, UIPickerViewDelegate, UIP
     }
     
     @IBAction func ValidateButton(_ sender: Any) {
-        let desc = descriptionTF.text
+        let desc = descriptionTF.text ?? ""
         let evtType = eventTypePicker.description
-        saveNewEvenement(withdesc: desc!, witheventtype: evtType)
-        self.navigationController?.popViewController(animated: true)
+        let date_evt = Date()
+        if (desc != "") {
+            Evenement(forDate: date_evt, forDesc: desc, forType: evtType)
+            self.navigationController?.popViewController(animated: true)
+        }else{
+            ManageErrorHelper.alertError(view: self, WithTitle: "Champ(s) manquant(s)", andMessage: "Veuillez remplir tous les champs du formulaire")
+            return
+        }
     }
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
@@ -49,17 +55,6 @@ class SignalEvenementViewController: UIViewController, UIPickerViewDelegate, UIP
         return true
     }
 
-    func saveNewEvenement(withdesc desc: String, witheventtype evttype: String){
-        let event = EvenementDAO(context: ManageCoreData.context)
-        event.desc_evt = desc
-        event.type = evttype
-        do{
-            try ManageCoreData.context.save()
-        }catch let error as NSError{
-            ManageErrorHelper.alertError(view: self, WithTitle: "\(error)", andMessage: "\(error.userInfo)")
-            return
-        }
-    }
     /*
     // MARK: - Navigation
 

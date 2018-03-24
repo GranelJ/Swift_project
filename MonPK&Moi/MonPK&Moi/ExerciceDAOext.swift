@@ -72,7 +72,7 @@ extension ExerciceDAO {
         let request : NSFetchRequest<ExerciceDAO> = NSFetchRequest<ExerciceDAO>()
         request.sortDescriptors = [NSSortDescriptor(key:"jour", ascending: true)]
         do{
-            let result = try ManageCoreData.context.fetch(request) as [ExerciceDAO]
+            let result = try ManageCoreData.context.fetch(request)
             for nb in 1...result.count{
                 let ex = Exercice(forJour: result[nb].jour,forLibelle: result[nb].libelle!)
                 list.append(ex)

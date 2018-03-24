@@ -13,7 +13,7 @@ class AjoutTraitementViewController: UIViewController, UIPickerViewDelegate, UIP
     @IBOutlet weak var picker: UIPickerView!
     @IBOutlet weak var timepicker: UIPickerView!
     
-    var pickerData: [MedicamentDAO] = []
+    var pickerData: [Medicament] = []
     var timepickerData: [String] = ["8h", "12h", "16h", "20h"]
     
     override func viewDidLoad() {
@@ -21,18 +21,15 @@ class AjoutTraitementViewController: UIViewController, UIPickerViewDelegate, UIP
 
         // Do any additional setup after loading the view.
         do{
-            try pickerData = MedicamentDAO.getAll()
-        }catch{
-            
+            try pickerData = Medicament.getAll()
+        }catch let error as NSError{
+            ManageErrorHelper.alertError(view: self, WithTitle: "\(error)", andMessage: "\(error.userInfo)")
         }
-        
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
-
-        
     }
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
@@ -49,7 +46,7 @@ class AjoutTraitementViewController: UIViewController, UIPickerViewDelegate, UIP
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         if (pickerView == picker) {
-            return pickerData[row].nom! + " " + pickerData[row].dosage!
+            return pickerData[row].nom + " " + pickerData[row].dosage
         }else{
             return timepickerData[row]
         }
@@ -60,22 +57,8 @@ class AjoutTraitementViewController: UIViewController, UIPickerViewDelegate, UIP
         let medicament = pickerData[medicamentrow]
         let heurerow = timepicker.selectedRow(inComponent: 0)
         let heure = timepickerData[heurerow]
-        saveNewTraitement(withmedicament: medicament, withheure: heure)
+        Traitement(forMomentPrise: heure, forMedicament: medicament)
         self.performSegue(withIdentifier: "AddTraitement", sender: self)
-    }
-    
-    
-    
-    func saveNewTraitement(withmedicament medicament: MedicamentDAO, withheure heure: String) {
-        let traitement = TraitementDAO(context: ManageCoreData.context)
-        traitement.traitement_medicament = medicament
-        traitement.moment_de_prise = heure
-        do{
-            try ManageCoreData.context.save()
-        }catch let error as NSError{
-            ManageErrorHelper.alertError(view: self, error: error)
-            return
-        }
     }
 
     /*

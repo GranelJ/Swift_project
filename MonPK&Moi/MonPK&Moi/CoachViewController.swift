@@ -84,14 +84,8 @@ class CoachViewController: UIViewController, UITableViewDataSource, UITableViewD
     func delete_exercice(contactWithIndex index: Int) -> Bool{
         let exercice = self.exercices[index]
         exercice.delete()
-        do{
-            self.exercices.remove(at: index)
-            return true
-        }
-        catch let error as NSError{
-            ManageErrorHelper.alertError(view: self, error: error)
-            return false
-        }
+        self.exercices.remove(at: index)
+        return true
     }
     
     @IBAction func unwindAfterAddExercice(segue: UIStoryboardSegue){
