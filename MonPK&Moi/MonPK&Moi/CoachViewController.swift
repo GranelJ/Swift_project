@@ -97,7 +97,7 @@ class CoachViewController: UIViewController, UITableViewDataSource, UITableViewD
     
     @IBAction func unwindAfterAddExercice(segue: UIStoryboardSegue){
         do{
-            try exercices = ExerciceDAO.getAll()
+            try exercices = ExerciceDAO.getAllOrdered()
             exercicesTable.reloadData()
         }catch let error as NSError{
             ManageErrorHelper.alertError(view: self, WithTitle: "\(error)", andMessage: "\(error.userInfo)")
