@@ -11,7 +11,7 @@ import CoreData
 
 class CoachViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
-    var exercices : [ExerciceDAO] = []
+    var exercices : [Exercice] = []
     
     var nbJour: Int64 = -1
     
@@ -53,7 +53,7 @@ class CoachViewController: UIViewController, UITableViewDataSource, UITableViewD
     override func viewDidLoad() {
         super.viewDidLoad()
         do{
-            try self.exercices = ExerciceDAO.getAllOrdered()
+            try self.exercices = Exercice.getAllOrdered()
         }
         catch let error as NSError{
             ManageErrorHelper.alertError(view: self, WithTitle: "\(error)", andMessage: "\(error.userInfo)")
@@ -97,7 +97,7 @@ class CoachViewController: UIViewController, UITableViewDataSource, UITableViewD
     
     @IBAction func unwindAfterAddExercice(segue: UIStoryboardSegue){
         do{
-            try exercices = ExerciceDAO.getAll()
+            try exercices = Exercice.getAllOrdered()
             exercicesTable.reloadData()
         }catch let error as NSError{
             ManageErrorHelper.alertError(view: self, WithTitle: "\(error)", andMessage: "\(error.userInfo)")

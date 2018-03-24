@@ -67,12 +67,10 @@ class Traitement {
         TraitementDAO.deleteDAO(ForTraitement: self.dao)
     }
     
-    func getAll() throws -> [TraitementDAO]{
+    func getAll() throws -> [Traitement]{
         do{
-            let traitementL = try TraitementDAO.getAll()
-            return traitementL
-        }
-        catch let error as NSError{
+            return try TraitementDAO.getAll()
+        }catch{
             throw error
         }
         

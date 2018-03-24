@@ -51,5 +51,20 @@ extension EvenementDAO {
         ManageCoreData.context.delete(evenement)
         self.save()
     }
-
+    
+    static func getAll() throws -> [Evenement]{
+        var list: [Evenement] = []
+        let request : NSFetchRequest<EvenementDAO> = NSFetchRequest<EvenementDAO>()
+        do{
+            let result = try ManageCoreData.context.fetch(request) as [EvenementDAO]
+            for nb in 1...result.count{
+                let evt = Evenement(forDate: result[nb].date_evt! as Date,forDesc: result[nb].desc_evt!,forType: result[nb].type!)
+                list.append(evt)
+            }
+        }
+        catch{
+            throw error
+        }
+        return list
+    }
 }

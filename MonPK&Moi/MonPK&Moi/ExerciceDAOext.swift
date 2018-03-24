@@ -66,4 +66,21 @@ extension ExerciceDAO {
         }
         return list
     }
+    
+    static func getAllOrdered() throws -> [Exercice]{
+        var list: [Exercice] = []
+        let request : NSFetchRequest<ExerciceDAO> = NSFetchRequest<ExerciceDAO>()
+        request.sortDescriptors = [NSSortDescriptor(key:"jour", ascending: true)]
+        do{
+            let result = try ManageCoreData.context.fetch(request) as [ExerciceDAO]
+            for nb in 1...result.count{
+                let ex = Exercice(forJour: result[nb].jour,forLibelle: result[nb].libelle!)
+                list.append(ex)
+            }
+        }
+        catch{
+            throw error
+        }
+        return list
+    }
 }

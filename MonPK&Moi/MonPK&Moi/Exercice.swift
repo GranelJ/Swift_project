@@ -47,5 +47,13 @@ class Exercice {
             throw error
         }
     }
+    
+    func getAllOrdered() throws -> [Exercice]{
+        do{
+            return try ExerciceDAO.getAllOrdered()
+        }catch{
+            throw error
+        }
+    }
 
 }

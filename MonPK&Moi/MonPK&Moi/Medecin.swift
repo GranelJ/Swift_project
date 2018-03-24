@@ -74,8 +74,7 @@ class Medecin {
     
     func getAll() throws -> [Medecin]{
         do{
-            let result = try MedecinDAO.getAll()
-            return result
+            return try MedecinDAO.getAll()
         }catch{
             throw error
         }

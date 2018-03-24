@@ -28,10 +28,10 @@ class ContactViewController: UIViewController, UITableViewDataSource, UITableVie
         
         // Do any additional setup after loading the view.
         do{
-            let exist: Bool = try PatientDAO.exist()
+            let exist: Bool = try Patient.exist()
             if exist{
                 do{
-                    patient = try PatientDAO.get()
+                    patient = try Patient.get()
                     NomLabel.text = patient?.nom
                     PrenomLabel.text = patient?.prenom
                     TpsPreplabel.text = patient?.temps_preparation.description
