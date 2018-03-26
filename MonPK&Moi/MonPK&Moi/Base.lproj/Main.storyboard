@@ -1213,6 +1213,9 @@
                                                 <constraint firstItem="rox-NE-I6M" firstAttribute="leading" secondItem="4qg-L4-jGN" secondAttribute="leadingMargin" id="twB-0g-onv"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="Wqf-nw-beQ" kind="show" id="KRy-M8-ci0"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
@@ -1229,7 +1232,7 @@
             </objects>
             <point key="canvasLocation" x="-1301.449275362319" y="1859.5108695652175"/>
         </scene>
-        <!--Synthese Jour View Controller-->
+        <!--Synthèse journalière-->
         <scene sceneID="Zzc-dW-GWI">
             <objects>
                 <viewController id="Wqf-nw-beQ" customClass="SyntheseJourViewController" customModule="MonPK_Moi" customModuleProvider="target" sceneMemberID="viewController">
@@ -1264,6 +1267,7 @@
                             <constraint firstItem="I5h-6M-DKq" firstAttribute="leading" secondItem="FUM-Xd-U2X" secondAttribute="leadingMargin" id="vnH-Sv-f3H"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" title="Synthèse journalière" id="Nds-dp-MB5"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EgW-32-bjW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
