@@ -43,6 +43,7 @@
 		AA81A81F20517C7A0056CFA8 /* TraceurViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA81A81E20517C7A0056CFA8 /* TraceurViewController.swift */; };
 		AA81A82120517CA20056CFA8 /* QuestionnaireViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA81A82020517CA20056CFA8 /* QuestionnaireViewController.swift */; };
 		AA81A823205180B00056CFA8 /* SignalEvenementViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA81A822205180B00056CFA8 /* SignalEvenementViewController.swift */; };
+		AAAB8FD020691FB90094880E /* SyntheseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAAB8FCF20691FB90094880E /* SyntheseTableViewCell.swift */; };
 		AAAC5A49204E786700D4DD99 /* AgendaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAAC5A48204E786700D4DD99 /* AgendaViewController.swift */; };
 		AAAC5A4B204E7D2700D4DD99 /* AjouterRendezVousViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAAC5A4A204E7D2700D4DD99 /* AjouterRendezVousViewController.swift */; };
 		AAC3C386204D9E86006C5B14 /* AjoutContactMedicalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAC3C385204D9E86006C5B14 /* AjoutContactMedicalViewController.swift */; };
@@ -106,6 +107,7 @@
 		AA81A81E20517C7A0056CFA8 /* TraceurViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TraceurViewController.swift; sourceTree = "<group>"; };
 		AA81A82020517CA20056CFA8 /* QuestionnaireViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuestionnaireViewController.swift; sourceTree = "<group>"; };
 		AA81A822205180B00056CFA8 /* SignalEvenementViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignalEvenementViewController.swift; sourceTree = "<group>"; };
+		AAAB8FCF20691FB90094880E /* SyntheseTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SyntheseTableViewCell.swift; sourceTree = "<group>"; };
 		AAAC5A48204E786700D4DD99 /* AgendaViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AgendaViewController.swift; sourceTree = "<group>"; };
 		AAAC5A4A204E7D2700D4DD99 /* AjouterRendezVousViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AjouterRendezVousViewController.swift; sourceTree = "<group>"; };
 		AAC3C385204D9E86006C5B14 /* AjoutContactMedicalViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AjoutContactMedicalViewController.swift; sourceTree = "<group>"; };
@@ -192,6 +194,7 @@
 		AA5E19B6204D96DD00C25FC1 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				AAAB8FCF20691FB90094880E /* SyntheseTableViewCell.swift */,
 				2C827B15205A62F100376D55 /* ExerciceTableViewCell.swift */,
 				2C20C91F205980A900BF6D46 /* ContactTableViewCell.swift */,
 				AA5E19B9204D973F00C25FC1 /* AjoutContactPersoViewController.swift */,
@@ -406,6 +409,7 @@
 				2C505101205ADE1F00850AE7 /* MedecinDAOext.swift in Sources */,
 				AAAC5A49204E786700D4DD99 /* AgendaViewController.swift in Sources */,
 				AA4F85382062C85E0071E300 /* RdvTableViewCell.swift in Sources */,
+				AAAB8FD020691FB90094880E /* SyntheseTableViewCell.swift in Sources */,
 				AAC3C38C204DAA83006C5B14 /* AjoutMedicamentViewController.swift in Sources */,
 				AA4A253A205928D4001480E5 /* PatientDAOext.swift in Sources */,
 				2C50510B205AE16900850AE7 /* Test_motriciteDAOext.swift in Sources */,
