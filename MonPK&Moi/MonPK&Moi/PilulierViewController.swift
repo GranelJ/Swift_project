@@ -39,7 +39,10 @@ class PilulierViewController: UIViewController, UITableViewDataSource, UITableVi
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = self.PriseMedicamentTable.dequeueReusableCell(withIdentifier: "MedicamentCell", for: indexPath) as! MedicamentTableViewCell
-        cell.period.text = self.traitements[indexPath.row].moment_de_prise
+        let formatter = DateFormatter()
+        formatter.dateFormat = "HH:mm"
+        let dateString = formatter.string(from: self.traitements[indexPath.row].moment_de_prise)
+        cell.period.text = dateString
         cell.drug.text = (self.traitements[indexPath.row].dao.traitement_medicament?.nom)! + " " + (self.traitements[indexPath.row].dao.traitement_medicament?.dosage)!
         return cell
     }

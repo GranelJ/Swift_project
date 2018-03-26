@@ -12,23 +12,22 @@ class Traitement {
     
     internal var dao : TraitementDAO
     
-    var moment_de_prise: String{
+    var moment_de_prise: Date{
         get{
-            return self.dao.moment_de_prise!
+            return self.dao.moment_de_prise as! Date
         }
         set{
-            self.dao.moment_de_prise = newValue
+            self.dao.moment_de_prise = newValue as NSDate
         }
     }
     
-    init(forMomentPrise momentPrise: String, forMedicament newMedicament: Medicament){
-        if let ndao = TraitementDAO.searchDAO(forMomentPrise: momentPrise, forMedicament: newMedicament.nom){
+    init(forMomentPrise momentPrise: Date, forMedicament newMedicament: MedicamentDAO){
+        if let ndao = TraitementDAO.searchDAO(forMomentPrise: momentPrise, forMedicament: newMedicament.nom!){
             self.dao = ndao
         }else{
-            self.dao = TraitementDAO.createDAO(forMomentPrise: momentPrise)
+            self.dao = TraitementDAO.createDAO(forMomentPrise: momentPrise, forMedicament: newMedicament)
         }
-        //self.medicament = newMedicament
-        self.dao.traitement_medicament=newMedicament.dao
+        //self.dao.traitement_medicament=newMedicament
     }
     
     func delete(){

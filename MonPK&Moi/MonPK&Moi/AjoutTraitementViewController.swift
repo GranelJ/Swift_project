@@ -11,10 +11,9 @@ import UIKit
 class AjoutTraitementViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
 
     @IBOutlet weak var picker: UIPickerView!
-    @IBOutlet weak var timepicker: UIPickerView!
+    @IBOutlet weak var timePicker: UIDatePicker!
     
     var pickerData: [Medicament] = []
-    var timepickerData: [String] = ["8h", "12h", "16h", "20h"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,27 +36,20 @@ class AjoutTraitementViewController: UIViewController, UIPickerViewDelegate, UIP
     }
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        if (pickerView == picker) {
-            return pickerData.count
-        }else{
-            return timepickerData.count
-        }
+        return pickerData.count
+
     }
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        if (pickerView == picker) {
-            return pickerData[row].nom + " " + pickerData[row].dosage
-        }else{
-            return timepickerData[row]
-        }
+        return pickerData[row].nom + " " + pickerData[row].dosage
+
     }
     
     @IBAction func ValidateButton(_ sender: Any) {
         let medicamentrow = picker.selectedRow(inComponent: 0)
         let medicament = pickerData[medicamentrow]
-        let heurerow = timepicker.selectedRow(inComponent: 0)
-        let heure = timepickerData[heurerow]
-        Traitement(forMomentPrise: heure, forMedicament: medicament)
+        let heure = timePicker.date
+        Traitement(forMomentPrise: heure, forMedicament: medicament.dao)
         self.performSegue(withIdentifier: "AddTraitement", sender: self)
     }
 
