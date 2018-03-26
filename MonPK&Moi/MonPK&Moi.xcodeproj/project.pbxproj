@@ -58,6 +58,8 @@
 		AACCDBE520468EB6002112F7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AACCDBE320468EB6002112F7 /* LaunchScreen.storyboard */; };
 		AACCDBF020468EB6002112F7 /* MonPK_MoiTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AACCDBEF20468EB6002112F7 /* MonPK_MoiTests.swift */; };
 		AACCDC042046B666002112F7 /* MedicamentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AACCDC032046B666002112F7 /* MedicamentTableViewCell.swift */; };
+		AAE13EC02069250000534DE1 /* SyntheseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAE13EBF2069250000534DE1 /* SyntheseViewController.swift */; };
+		AAE13EC22069253C00534DE1 /* SyntheseJourViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAE13EC12069253C00534DE1 /* SyntheseJourViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -126,6 +128,8 @@
 		AACCDBEF20468EB6002112F7 /* MonPK_MoiTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonPK_MoiTests.swift; sourceTree = "<group>"; };
 		AACCDBF120468EB6002112F7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AACCDC032046B666002112F7 /* MedicamentTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MedicamentTableViewCell.swift; sourceTree = "<group>"; };
+		AAE13EBF2069250000534DE1 /* SyntheseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SyntheseViewController.swift; sourceTree = "<group>"; };
+		AAE13EC12069253C00534DE1 /* SyntheseJourViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SyntheseJourViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -195,6 +199,8 @@
 			isa = PBXGroup;
 			children = (
 				AAAB8FCF20691FB90094880E /* SyntheseTableViewCell.swift */,
+				AAE13EC12069253C00534DE1 /* SyntheseJourViewController.swift */,
+				AAE13EBF2069250000534DE1 /* SyntheseViewController.swift */,
 				2C827B15205A62F100376D55 /* ExerciceTableViewCell.swift */,
 				2C20C91F205980A900BF6D46 /* ContactTableViewCell.swift */,
 				AA5E19B9204D973F00C25FC1 /* AjoutContactPersoViewController.swift */,
@@ -391,6 +397,7 @@
 				2C5050FF205ADDA800850AE7 /* EvenementDAOext.swift in Sources */,
 				AA5E19BE204D97B500C25FC1 /* ContactViewController.swift in Sources */,
 				AA81A823205180B00056CFA8 /* SignalEvenementViewController.swift in Sources */,
+				AAE13EC02069250000534DE1 /* SyntheseViewController.swift in Sources */,
 				AA5E19AD204D6CEC00C25FC1 /* PilulierViewController.swift in Sources */,
 				AAAC5A4B204E7D2700D4DD99 /* AjouterRendezVousViewController.swift in Sources */,
 				AA81A81F20517C7A0056CFA8 /* TraceurViewController.swift in Sources */,
@@ -399,6 +406,7 @@
 				AA4A253C205929D0001480E5 /* ManageCoreData.swift in Sources */,
 				2C505116205AF10F00850AE7 /* Contact_perso.swift in Sources */,
 				2C20C920205980A900BF6D46 /* ContactTableViewCell.swift in Sources */,
+				AAE13EC22069253C00534DE1 /* SyntheseJourViewController.swift in Sources */,
 				2C505103205ADE5D00850AE7 /* MedicamentDAOext.swift in Sources */,
 				AA5E19BA204D973F00C25FC1 /* AjoutContactPersoViewController.swift in Sources */,
 				AA4A253720591E17001480E5 /* ManageErrorHelper.swift in Sources */,
