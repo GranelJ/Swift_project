@@ -10,10 +10,14 @@ import UIKit
 
 class SyntheseJourViewController: UIViewController, UITableViewDataSource, UITableViewDelegate  {
 
+    // MARK: - Variable creation
+    
     var passedvalue: SyntheseTableViewCell!
     @IBOutlet weak var jourTable: UITableView!
     var tests: [Test_motricite] = []
     var p: Int!
+    
+    // MARK: - SegmentedControl management
     
     @IBAction func switchDay(_ sender: UISegmentedControl) {
         p = sender.selectedSegmentIndex
@@ -24,6 +28,8 @@ class SyntheseJourViewController: UIViewController, UITableViewDataSource, UITab
         }
         jourTable.reloadData()
     }
+    
+    // MARK: - Function for the view
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,6 +46,8 @@ class SyntheseJourViewController: UIViewController, UITableViewDataSource, UITab
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    // MARK: - TableView management
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = self.jourTable.dequeueReusableCell(withIdentifier: "hourCell", for: indexPath) as! JourTableViewCell
@@ -61,14 +69,5 @@ class SyntheseJourViewController: UIViewController, UITableViewDataSource, UITab
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.tests.count
     }
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

@@ -50,15 +50,15 @@ class Prise_medicament {
         }
     }
     
-    /// <#Description#>
+    /// Function to delete a Prise_medicament
     func delete(){
         Prise_medicamentDAO.deleteDAO(ForPrise: self.dao)
     }
     
-    /// <#Description#>
+    /// Function to get all the Prise_medicament from the DB
     ///
-    /// - Returns: <#return value description#>
-    /// - Throws: <#throws value description#>
+    /// - Returns: a list of Prise_medicament
+    /// - Throws: throw error
     static func getAll() throws -> [Prise_medicament]{
         do{
             return try Prise_medicamentDAO.getAll()

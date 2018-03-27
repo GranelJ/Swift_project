@@ -10,9 +10,13 @@ import UIKit
 
 class SyntheseViewController: UIViewController, UITableViewDataSource, UITableViewDelegate  {
 
+    // MARK: - Variable creation
+    
     @IBOutlet weak var syntheseTable: UITableView!
     var syntheses: [Synthese] = []
     var valueToPass:SyntheseTableViewCell!
+    
+    // MARK: - Function for the view
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -59,6 +63,8 @@ class SyntheseViewController: UIViewController, UITableViewDataSource, UITableVi
             self.syntheseTable.endUpdates()
         }
     }
+    
+    // MARK: - Delete management
     
     func delete_synthese(contactWithIndex index: Int) -> Bool{
         let synthese = self.syntheses[index]
