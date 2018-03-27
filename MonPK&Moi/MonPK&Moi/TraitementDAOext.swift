@@ -25,7 +25,7 @@ extension TraitementDAO {
     
     static func createDAO(forMomentPrise momentPrise: Date, forMedicament medicament: MedicamentDAO) -> TraitementDAO{
         let dao = self.createDAO()
-        dao.moment_de_prise=momentPrise as NSDate
+        dao.moment_de_prise = momentPrise as NSDate
         dao.traitement_medicament = medicament
         
         self.save()
