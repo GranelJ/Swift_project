@@ -36,10 +36,15 @@ class Exercice {
         }
     }
     
+    /// Function to delete an exercice
     func delete(){
         ExerciceDAO.deleteDAO(ForExercice: self.dao)
     }
     
+    /// Function to get all the exercice from the DB
+    ///
+    /// - Returns: a list of Exercice
+    /// - Throws: throw error
     static func getAll() throws -> [Exercice]{
         do{
             return try ExerciceDAO.getAll()
@@ -48,6 +53,10 @@ class Exercice {
         }
     }
     
+    /// Function to get all the exercice ordered by day from the DB
+    ///
+    /// - Returns: a list of exercice
+    /// - Throws: throw error
     static func getAllOrdered() throws -> [Exercice]{
         do{
             return try ExerciceDAO.getAllOrdered()

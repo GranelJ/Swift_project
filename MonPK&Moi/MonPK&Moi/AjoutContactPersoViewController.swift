@@ -10,11 +10,18 @@ import UIKit
 
 class AjoutContactPersoViewController: UIViewController, UITextFieldDelegate {
 
+    // MARK: - Variable from the view
+    
     @IBOutlet weak var lastNameLabel: UITextField!
     @IBOutlet weak var numLabel: UITextField!
     @IBOutlet weak var mailLabel: UITextField!
     @IBOutlet weak var firstNameLabel: UITextField!
     
+    // MARK: - Function for the view
+    
+    /// Function used when the user press the validate button to add a personnal contact
+    ///
+    /// - Parameter sender: any
     @IBAction func validateButton(_ sender: Any) {
         let nom = lastNameLabel.text ?? ""
         let prenom = firstNameLabel.text ?? ""
@@ -44,19 +51,11 @@ class AjoutContactPersoViewController: UIViewController, UITextFieldDelegate {
         // Dispose of any resources that can be recreated.
     }
     
+    // MARK: - Keyboard management for textfield
 
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
         return true
     }
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

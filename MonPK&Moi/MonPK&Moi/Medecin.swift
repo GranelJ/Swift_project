@@ -68,10 +68,15 @@ class Medecin {
         }
     }
     
+    /// Function to delete a medecin
     func delete(){
         MedecinDAO.deleteDAO(ForMedecin: self.dao)
     }
     
+    /// Function to get all the medecin form the DB
+    ///
+    /// - Returns: a list of medecin
+    /// - Throws: throw error
     static func getAll() throws -> [Medecin]{
         do{
             return try MedecinDAO.getAll()

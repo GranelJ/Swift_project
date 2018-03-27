@@ -49,10 +49,15 @@ class Test_motricite {
         }
     }
     
+    /// Function to delete a test
     func delete(){
         Test_motriciteDAO.deleteDAO(ForTest: self.dao)
     }
     
+    /// Function to get all the test from the DB
+    ///
+    /// - Returns: a list of test
+    /// - Throws: throw error
     static func getAll() throws -> [Test_motricite]{
         do{
             return try Test_motriciteDAO.getAll()

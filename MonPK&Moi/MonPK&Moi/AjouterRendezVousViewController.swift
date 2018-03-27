@@ -10,11 +10,15 @@ import UIKit
 
 class AjouterRendezVousViewController: UIViewController, UITextFieldDelegate, UIPickerViewDelegate, UIPickerViewDataSource {
 
+    // MARK: - Variable creation
+    
     var pickerData: [Medecin] = []
     
     @IBOutlet weak var datePicker: UIDatePicker!
     @IBOutlet weak var libelleField: UITextField!
     @IBOutlet weak var medecinPiker: UIPickerView!
+    
+    // MARK: - Function for the view
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,11 +35,10 @@ class AjouterRendezVousViewController: UIViewController, UITextFieldDelegate, UI
         // Dispose of any resources that can be recreated.
     }
     
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        textField.resignFirstResponder()
-        return true
-    }
     
+    /// Function used when the user press the validate button to add a rendez-vous
+    ///
+    /// - Parameter sender: any
     @IBAction func ValidateButton(_ sender: Any) {
         let medecinrow = medecinPiker.selectedRow(inComponent: 0)
         let medecin = pickerData[medecinrow]
@@ -55,7 +58,15 @@ class AjouterRendezVousViewController: UIViewController, UITextFieldDelegate, UI
         }
     }
     
-    // MARK - Manage Picker
+    // MARK: - Keyboard management
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
+    
+    // MARK: - Manage Picker
+    
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
     }

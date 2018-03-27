@@ -11,6 +11,8 @@ import CoreData
 
 class AjoutContactMedicalViewController: UIViewController, UITextFieldDelegate {
     
+    // MARK: - Variable creation
+    
     @IBOutlet weak var textNom: UITextField!
     @IBOutlet weak var textNum: UITextField!
     @IBOutlet weak var textMail: UITextField!
@@ -18,6 +20,11 @@ class AjoutContactMedicalViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var textMetier: UITextField!
     @IBOutlet weak var textLieu: UITextField!
     
+    // MARK: - Function for the view
+    
+    /// Function used when the used press the validate button to create a medical contact
+    ///
+    /// - Parameter sender: any
     @IBAction func ValidateButton(_ sender: Any) {
         let nom = textNom.text ?? ""
         let num = textNum.text ?? ""
@@ -50,19 +57,11 @@ class AjoutContactMedicalViewController: UIViewController, UITextFieldDelegate {
         // Dispose of any resources that can be recreated.
     }
     
+    // MARK: - Keyboard management for textfield
+    
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
         return true
     }
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

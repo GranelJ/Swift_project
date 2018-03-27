@@ -10,8 +10,12 @@ import UIKit
 
 class AgendaViewController: UIViewController,UITableViewDataSource, UITableViewDelegate {
 
+    // MARK: - Variable creation
+    
     @IBOutlet weak var rdvsTable: UITableView!
     var rdvs: [Rdv] = []
+    
+    // MARK: - Function for the view
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,6 +33,9 @@ class AgendaViewController: UIViewController,UITableViewDataSource, UITableViewD
     }
     
     
+    /// Function called after adding a rendez-vous to refresh the tableview
+    ///
+    /// - Parameter segue: the segue that lead to this page from the add rendez-vous form
     @IBAction func unwindAfterAddingRDV(segue: UIStoryboardSegue){
         do{
             try rdvs = Rdv.getAll()
@@ -39,6 +46,7 @@ class AgendaViewController: UIViewController,UITableViewDataSource, UITableViewD
     }
 
     // MARK: - Table View Management
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = self.rdvsTable.dequeueReusableCell(withIdentifier: "RDVCell", for: indexPath) as! RdvTableViewCell
@@ -70,6 +78,11 @@ class AgendaViewController: UIViewController,UITableViewDataSource, UITableViewD
     }
     
     // MARK: - Delete management
+
+    /// Function to delete a rendez-vous from the tableview
+    ///
+    /// - Parameter index: the index of the rendez-vous to delete
+    /// - Returns: returns true
     func delete_rdv(rdvWithIndex index: Int) -> Bool{
         let rdv = self.rdvs[index]
         rdv.delete()

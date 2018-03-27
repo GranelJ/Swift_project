@@ -42,10 +42,15 @@ class Rdv {
         }
     }
     
+    /// Function to delete a rendez-vous
     func delete(){
         RdvDAO.deleteDAO(ForRdv: self.dao)
     }
     
+    /// Function to get all the rendez-vous from the DB
+    ///
+    /// - Returns: a list of Rdv
+    /// - Throws: throw error
     static func getAll() throws -> [Rdv]{
         do{
             return try RdvDAO.getAll()
