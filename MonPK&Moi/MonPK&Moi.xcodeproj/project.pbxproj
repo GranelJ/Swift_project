@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2C13F0A7206A3C24003961CB /* JourTableViewCel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C13F0A6206A3C24003961CB /* JourTableViewCel.swift */; };
 		2C20C91E2059798400BF6D46 /* MedecinTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C20C91D2059798400BF6D46 /* MedecinTableViewCell.swift */; };
 		2C20C920205980A900BF6D46 /* ContactTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C20C91F205980A900BF6D46 /* ContactTableViewCell.swift */; };
 		2C5050FB205AB97E00850AE7 /* ExerciceDAOext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C5050FA205AB97E00850AE7 /* ExerciceDAOext.swift */; };
@@ -73,6 +74,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2C13F0A6206A3C24003961CB /* JourTableViewCel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JourTableViewCel.swift; sourceTree = "<group>"; };
 		2C20C91D2059798400BF6D46 /* MedecinTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MedecinTableViewCell.swift; sourceTree = "<group>"; };
 		2C20C91F205980A900BF6D46 /* ContactTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactTableViewCell.swift; sourceTree = "<group>"; };
 		2C5050FA205AB97E00850AE7 /* ExerciceDAOext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExerciceDAOext.swift; sourceTree = "<group>"; };
@@ -220,6 +222,7 @@
 				AA81A822205180B00056CFA8 /* SignalEvenementViewController.swift */,
 				2C20C91D2059798400BF6D46 /* MedecinTableViewCell.swift */,
 				AA4F85372062C85E0071E300 /* RdvTableViewCell.swift */,
+				2C13F0A6206A3C24003961CB /* JourTableViewCel.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -397,6 +400,7 @@
 				2C5050FF205ADDA800850AE7 /* EvenementDAOext.swift in Sources */,
 				AA5E19BE204D97B500C25FC1 /* ContactViewController.swift in Sources */,
 				AA81A823205180B00056CFA8 /* SignalEvenementViewController.swift in Sources */,
+				2C13F0A7206A3C24003961CB /* JourTableViewCel.swift in Sources */,
 				AAE13EC02069250000534DE1 /* SyntheseViewController.swift in Sources */,
 				AA5E19AD204D6CEC00C25FC1 /* PilulierViewController.swift in Sources */,
 				AAAC5A4B204E7D2700D4DD99 /* AjouterRendezVousViewController.swift in Sources */,

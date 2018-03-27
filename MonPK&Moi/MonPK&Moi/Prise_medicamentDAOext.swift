@@ -58,7 +58,7 @@ extension Prise_medicamentDAO {
             let result = try ManageCoreData.context.fetch(request) as [Prise_medicamentDAO]
             if (result.count>0) {
                 for nb in 1...result.count{
-                    let synthese = Synthese(forHeureDebut: (result[nb-1].prise_medicament_synthese?.heure_debut)!, forHeureFin: (result[nb-1].prise_medicament_synthese?.heure_fin)!, forPeriodicite: (result[nb-1].prise_medicament_synthese?.periodicite)!)
+                    let synthese = Synthese(forHeureDebut: (result[nb-1].prise_medicament_synthese?.heure_debut)!, forHeureFin: (result[nb-1].prise_medicament_synthese?.heure_fin)!, forPeriodicite: (result[nb-1].prise_medicament_synthese?.periodicite)!, forRdv: (result[nb-1].prise_medicament_synthese?.synthese_rdv)!)
                     let prise = Prise_medicament(forDate: (result[nb-1].date!) as Date,forLibelle: result[nb-1].libelle!,forSynthese: synthese)
                     list.append(prise)
                 }
