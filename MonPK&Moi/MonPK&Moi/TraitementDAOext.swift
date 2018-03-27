@@ -23,18 +23,19 @@ extension TraitementDAO {
         return TraitementDAO(context: ManageCoreData.context)
     }
     
-    static func createDAO(forMomentPrise momentPrise: String) -> TraitementDAO{
+    static func createDAO(forMomentPrise momentPrise: Date, forMedicament medicament: MedicamentDAO) -> TraitementDAO{
         let dao = self.createDAO()
-        dao.moment_de_prise=momentPrise
+        dao.moment_de_prise=momentPrise as NSDate
+        dao.traitement_medicament = medicament
         
         self.save()
         
         return dao
     }
     
-    static func searchDAO(forMomentPrise momentPrise: String, forMedicament medicamentName: String) -> TraitementDAO?{
+    static func searchDAO(forMomentPrise momentPrise: Date, forMedicament medicamentName: String) -> TraitementDAO?{
         let request : NSFetchRequest<TraitementDAO> = NSFetchRequest<TraitementDAO>(entityName: "TraitementDAO")
-        request.predicate = NSPredicate(format: "moment_de_prise == %@ AND traitement_medicament.nom == %@", momentPrise, medicamentName)
+        request.predicate = NSPredicate(format: "moment_de_prise == %@ AND traitement_medicament.nom == %@", momentPrise as CVarArg, medicamentName)
         do{
             let result = try ManageCoreData.context.fetch(request) as [TraitementDAO]
             guard result.count != 0 else { return nil }
@@ -57,8 +58,8 @@ extension TraitementDAO {
             let result = try ManageCoreData.context.fetch(request) as [TraitementDAO]
             if (result.count>0) {
                 for nb in 1...result.count{
-                    let medicament = Medicament(forDesc: (result[nb-1].traitement_medicament?.desc_med)!, forDosage: (result[nb-1].traitement_medicament?.dosage)!, forNom: (result[nb-1].traitement_medicament?.nom)!)
-                    let prise = Traitement(forMomentPrise: result[nb-1].moment_de_prise!, forMedicament: medicament)
+                    let medicament = result[nb-1].traitement_medicament
+                    let prise = Traitement(forMomentPrise: result[nb-1].moment_de_prise! as Date, forMedicament: medicament!)
                     list.append(prise)
                 }
             }
