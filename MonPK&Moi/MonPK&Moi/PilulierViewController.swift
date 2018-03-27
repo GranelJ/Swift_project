@@ -10,12 +10,17 @@ import UIKit
 
 class PilulierViewController: UIViewController, UITableViewDataSource, UITableViewDelegate{
 
-    var priseMedicament : [String] = [] //changer string par Medicament lorsque type medicmanet cree
+    var traitements : [Traitement] = []
     @IBOutlet weak var PriseMedicamentTable: UITableView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
         // Do any additional setup after loading the view.
+        do{
+            try traitements = Traitement.getAll()
+        }catch let error as NSError{
+            ManageErrorHelper.alertError(view: self, WithTitle: "\(error)", andMessage: "\(error.userInfo)")
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -24,25 +29,51 @@ class PilulierViewController: UIViewController, UITableViewDataSource, UITableVi
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.priseMedicament.count
+        return self.traitements.count
+    }
+    
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return true
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
         let cell = self.PriseMedicamentTable.dequeueReusableCell(withIdentifier: "MedicamentCell", for: indexPath) as! MedicamentTableViewCell
-        cell.period.text = self.priseMedicament[indexPath.row]
-        cell.drug.text = self.priseMedicament[indexPath.row]
+        let formatter = DateFormatter()
+        formatter.dateFormat = "HH:mm"
+        let dateString = formatter.string(from: self.traitements[indexPath.row].moment_de_prise)
+        cell.period.text = dateString
+        cell.drug.text = (self.traitements[indexPath.row].dao.traitement_medicament?.nom)! + " " + (self.traitements[indexPath.row].dao.traitement_medicament?.dosage)!
         return cell
     }
-
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        if (editingStyle==UITableViewCellEditingStyle.delete){
+            self.PriseMedicamentTable.beginUpdates()
+            if(self.delete_traitement(traitementWithIndex: indexPath.row)){
+                self.PriseMedicamentTable.deleteRows(at: [indexPath], with:UITableViewRowAnimation.automatic)
+            }
+            self.PriseMedicamentTable.endUpdates()
+        }
     }
-    */
+
+    
+    @IBAction func unwindAfterAddingTraitement(segue: UIStoryboardSegue){
+        do{
+            try traitements = TraitementDAO.getAll()
+            PriseMedicamentTable.reloadData()
+        }catch let error as NSError{
+            ManageErrorHelper.alertError(view: self, WithTitle: "\(error)", andMessage: "\(error.userInfo)")
+        }
+    }
+    
+    // MARK: - Delete management
+    func delete_traitement(traitementWithIndex index: Int) -> Bool{
+        let traitement = self.traitements[index]
+        traitement.delete()
+        self.traitements.remove(at: index)
+        return true
+    }
+
 
 }

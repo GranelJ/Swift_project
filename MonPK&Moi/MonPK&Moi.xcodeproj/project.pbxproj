@@ -7,7 +7,49 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2C20C91E2059798400BF6D46 /* MedecinTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C20C91D2059798400BF6D46 /* MedecinTableViewCell.swift */; };
+		2C20C920205980A900BF6D46 /* ContactTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C20C91F205980A900BF6D46 /* ContactTableViewCell.swift */; };
+		2C5050FB205AB97E00850AE7 /* ExerciceDAOext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C5050FA205AB97E00850AE7 /* ExerciceDAOext.swift */; };
+		2C5050FD205ADD2600850AE7 /* Contact_persoDAOext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C5050FC205ADD2600850AE7 /* Contact_persoDAOext.swift */; };
+		2C5050FF205ADDA800850AE7 /* EvenementDAOext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C5050FE205ADDA800850AE7 /* EvenementDAOext.swift */; };
+		2C505101205ADE1F00850AE7 /* MedecinDAOext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C505100205ADE1F00850AE7 /* MedecinDAOext.swift */; };
+		2C505103205ADE5D00850AE7 /* MedicamentDAOext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C505102205ADE5D00850AE7 /* MedicamentDAOext.swift */; };
+		2C505105205AE07B00850AE7 /* Prise_medicamentDAOext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C505104205AE07B00850AE7 /* Prise_medicamentDAOext.swift */; };
+		2C505107205AE0B900850AE7 /* RdvDAOext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C505106205AE0B900850AE7 /* RdvDAOext.swift */; };
+		2C505109205AE11500850AE7 /* SyntheseDAOext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C505108205AE11500850AE7 /* SyntheseDAOext.swift */; };
+		2C50510B205AE16900850AE7 /* Test_motriciteDAOext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C50510A205AE16900850AE7 /* Test_motriciteDAOext.swift */; };
+		2C50510D205AE1A600850AE7 /* TraitementDAOext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C50510C205AE1A600850AE7 /* TraitementDAOext.swift */; };
+		2C505112205AE8B900850AE7 /* Patient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C505111205AE8B900850AE7 /* Patient.swift */; };
+		2C505114205AEF8600850AE7 /* Exercice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C505113205AEF8600850AE7 /* Exercice.swift */; };
+		2C505116205AF10F00850AE7 /* Contact_perso.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C505115205AF10F00850AE7 /* Contact_perso.swift */; };
+		2C505118205AF23E00850AE7 /* Evenement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C505117205AF23E00850AE7 /* Evenement.swift */; };
+		2C827B16205A62F100376D55 /* ExerciceTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C827B15205A62F100376D55 /* ExerciceTableViewCell.swift */; };
+		2C9864C2205BA9B400788C91 /* Medecin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C9864C1205BA9B400788C91 /* Medecin.swift */; };
+		2C9864C4205BADAB00788C91 /* Medicament.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C9864C3205BADAB00788C91 /* Medicament.swift */; };
+		2C9864C6205BAF3900788C91 /* Prise_medicament.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C9864C5205BAF3900788C91 /* Prise_medicament.swift */; };
+		2C9864C8205BB0A500788C91 /* Rdv.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C9864C7205BB0A500788C91 /* Rdv.swift */; };
+		2C9864CA205BB15400788C91 /* Synthese.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C9864C9205BB15400788C91 /* Synthese.swift */; };
+		2C9864CC205BB60600788C91 /* Test_motricite.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C9864CB205BB60600788C91 /* Test_motricite.swift */; };
+		2C9864CE205BB73000788C91 /* Traitement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C9864CD205BB73000788C91 /* Traitement.swift */; };
+		AA4A253720591E17001480E5 /* ManageErrorHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA4A253620591E17001480E5 /* ManageErrorHelper.swift */; };
+		AA4A253A205928D4001480E5 /* PatientDAOext.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA4A2539205928D4001480E5 /* PatientDAOext.swift */; };
+		AA4A253C205929D0001480E5 /* ManageCoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA4A253B205929D0001480E5 /* ManageCoreData.swift */; };
+		AA4F85382062C85E0071E300 /* RdvTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA4F85372062C85E0071E300 /* RdvTableViewCell.swift */; };
 		AA5E19AD204D6CEC00C25FC1 /* PilulierViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA5E19AC204D6CEC00C25FC1 /* PilulierViewController.swift */; };
+		AA5E19BA204D973F00C25FC1 /* AjoutContactPersoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA5E19B9204D973F00C25FC1 /* AjoutContactPersoViewController.swift */; };
+		AA5E19BC204D979900C25FC1 /* CoachViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA5E19BB204D979900C25FC1 /* CoachViewController.swift */; };
+		AA5E19BE204D97B500C25FC1 /* ContactViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA5E19BD204D97B500C25FC1 /* ContactViewController.swift */; };
+		AA5E19C0204D97F700C25FC1 /* EditInformationPersoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA5E19BF204D97F700C25FC1 /* EditInformationPersoViewController.swift */; };
+		AA81A81F20517C7A0056CFA8 /* TraceurViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA81A81E20517C7A0056CFA8 /* TraceurViewController.swift */; };
+		AA81A82120517CA20056CFA8 /* QuestionnaireViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA81A82020517CA20056CFA8 /* QuestionnaireViewController.swift */; };
+		AA81A823205180B00056CFA8 /* SignalEvenementViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA81A822205180B00056CFA8 /* SignalEvenementViewController.swift */; };
+		AAAB8FD020691FB90094880E /* SyntheseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAAB8FCF20691FB90094880E /* SyntheseTableViewCell.swift */; };
+		AAAC5A49204E786700D4DD99 /* AgendaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAAC5A48204E786700D4DD99 /* AgendaViewController.swift */; };
+		AAAC5A4B204E7D2700D4DD99 /* AjouterRendezVousViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAAC5A4A204E7D2700D4DD99 /* AjouterRendezVousViewController.swift */; };
+		AAC3C386204D9E86006C5B14 /* AjoutContactMedicalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAC3C385204D9E86006C5B14 /* AjoutContactMedicalViewController.swift */; };
+		AAC3C388204DA1B8006C5B14 /* AjoutExerciceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAC3C387204DA1B8006C5B14 /* AjoutExerciceViewController.swift */; };
+		AAC3C38A204DA1EB006C5B14 /* AjoutTraitementViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAC3C389204DA1EB006C5B14 /* AjoutTraitementViewController.swift */; };
+		AAC3C38C204DAA83006C5B14 /* AjoutMedicamentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAC3C38B204DAA83006C5B14 /* AjoutMedicamentViewController.swift */; };
 		AACCDBD820468EB6002112F7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AACCDBD720468EB6002112F7 /* AppDelegate.swift */; };
 		AACCDBDA20468EB6002112F7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AACCDBD920468EB6002112F7 /* ViewController.swift */; };
 		AACCDBDD20468EB6002112F7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AACCDBDB20468EB6002112F7 /* Main.storyboard */; };
@@ -15,11 +57,9 @@
 		AACCDBE220468EB6002112F7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AACCDBE120468EB6002112F7 /* Assets.xcassets */; };
 		AACCDBE520468EB6002112F7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AACCDBE320468EB6002112F7 /* LaunchScreen.storyboard */; };
 		AACCDBF020468EB6002112F7 /* MonPK_MoiTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AACCDBEF20468EB6002112F7 /* MonPK_MoiTests.swift */; };
-		AACCDBFF20469122002112F7 /* clock.png in Resources */ = {isa = PBXBuildFile; fileRef = AACCDBFB20469122002112F7 /* clock.png */; };
-		AACCDC0020469122002112F7 /* information.png in Resources */ = {isa = PBXBuildFile; fileRef = AACCDBFC20469122002112F7 /* information.png */; };
-		AACCDC0120469122002112F7 /* medical-drug-pill.png in Resources */ = {isa = PBXBuildFile; fileRef = AACCDBFD20469122002112F7 /* medical-drug-pill.png */; };
-		AACCDC0220469122002112F7 /* running.png in Resources */ = {isa = PBXBuildFile; fileRef = AACCDBFE20469122002112F7 /* running.png */; };
 		AACCDC042046B666002112F7 /* MedicamentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AACCDC032046B666002112F7 /* MedicamentTableViewCell.swift */; };
+		AAE13EC02069250000534DE1 /* SyntheseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAE13EBF2069250000534DE1 /* SyntheseViewController.swift */; };
+		AAE13EC22069253C00534DE1 /* SyntheseJourViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAE13EC12069253C00534DE1 /* SyntheseJourViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -33,7 +73,49 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2C20C91D2059798400BF6D46 /* MedecinTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MedecinTableViewCell.swift; sourceTree = "<group>"; };
+		2C20C91F205980A900BF6D46 /* ContactTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactTableViewCell.swift; sourceTree = "<group>"; };
+		2C5050FA205AB97E00850AE7 /* ExerciceDAOext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExerciceDAOext.swift; sourceTree = "<group>"; };
+		2C5050FC205ADD2600850AE7 /* Contact_persoDAOext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Contact_persoDAOext.swift; sourceTree = "<group>"; };
+		2C5050FE205ADDA800850AE7 /* EvenementDAOext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EvenementDAOext.swift; sourceTree = "<group>"; };
+		2C505100205ADE1F00850AE7 /* MedecinDAOext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MedecinDAOext.swift; sourceTree = "<group>"; };
+		2C505102205ADE5D00850AE7 /* MedicamentDAOext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MedicamentDAOext.swift; sourceTree = "<group>"; };
+		2C505104205AE07B00850AE7 /* Prise_medicamentDAOext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Prise_medicamentDAOext.swift; sourceTree = "<group>"; };
+		2C505106205AE0B900850AE7 /* RdvDAOext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RdvDAOext.swift; sourceTree = "<group>"; };
+		2C505108205AE11500850AE7 /* SyntheseDAOext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SyntheseDAOext.swift; sourceTree = "<group>"; };
+		2C50510A205AE16900850AE7 /* Test_motriciteDAOext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Test_motriciteDAOext.swift; sourceTree = "<group>"; };
+		2C50510C205AE1A600850AE7 /* TraitementDAOext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TraitementDAOext.swift; sourceTree = "<group>"; };
+		2C505111205AE8B900850AE7 /* Patient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Patient.swift; sourceTree = "<group>"; };
+		2C505113205AEF8600850AE7 /* Exercice.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Exercice.swift; sourceTree = "<group>"; };
+		2C505115205AF10F00850AE7 /* Contact_perso.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Contact_perso.swift; sourceTree = "<group>"; };
+		2C505117205AF23E00850AE7 /* Evenement.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Evenement.swift; sourceTree = "<group>"; };
+		2C827B15205A62F100376D55 /* ExerciceTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExerciceTableViewCell.swift; sourceTree = "<group>"; };
+		2C9864C1205BA9B400788C91 /* Medecin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Medecin.swift; sourceTree = "<group>"; };
+		2C9864C3205BADAB00788C91 /* Medicament.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Medicament.swift; sourceTree = "<group>"; };
+		2C9864C5205BAF3900788C91 /* Prise_medicament.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Prise_medicament.swift; sourceTree = "<group>"; };
+		2C9864C7205BB0A500788C91 /* Rdv.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Rdv.swift; sourceTree = "<group>"; };
+		2C9864C9205BB15400788C91 /* Synthese.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Synthese.swift; sourceTree = "<group>"; };
+		2C9864CB205BB60600788C91 /* Test_motricite.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Test_motricite.swift; sourceTree = "<group>"; };
+		2C9864CD205BB73000788C91 /* Traitement.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Traitement.swift; sourceTree = "<group>"; };
+		AA4A253620591E17001480E5 /* ManageErrorHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ManageErrorHelper.swift; sourceTree = "<group>"; };
+		AA4A2539205928D4001480E5 /* PatientDAOext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PatientDAOext.swift; sourceTree = "<group>"; };
+		AA4A253B205929D0001480E5 /* ManageCoreData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ManageCoreData.swift; sourceTree = "<group>"; };
+		AA4F85372062C85E0071E300 /* RdvTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RdvTableViewCell.swift; sourceTree = "<group>"; };
 		AA5E19AC204D6CEC00C25FC1 /* PilulierViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PilulierViewController.swift; sourceTree = "<group>"; };
+		AA5E19B9204D973F00C25FC1 /* AjoutContactPersoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AjoutContactPersoViewController.swift; sourceTree = "<group>"; };
+		AA5E19BB204D979900C25FC1 /* CoachViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoachViewController.swift; sourceTree = "<group>"; };
+		AA5E19BD204D97B500C25FC1 /* ContactViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactViewController.swift; sourceTree = "<group>"; };
+		AA5E19BF204D97F700C25FC1 /* EditInformationPersoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditInformationPersoViewController.swift; sourceTree = "<group>"; };
+		AA81A81E20517C7A0056CFA8 /* TraceurViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TraceurViewController.swift; sourceTree = "<group>"; };
+		AA81A82020517CA20056CFA8 /* QuestionnaireViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuestionnaireViewController.swift; sourceTree = "<group>"; };
+		AA81A822205180B00056CFA8 /* SignalEvenementViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignalEvenementViewController.swift; sourceTree = "<group>"; };
+		AAAB8FCF20691FB90094880E /* SyntheseTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SyntheseTableViewCell.swift; sourceTree = "<group>"; };
+		AAAC5A48204E786700D4DD99 /* AgendaViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AgendaViewController.swift; sourceTree = "<group>"; };
+		AAAC5A4A204E7D2700D4DD99 /* AjouterRendezVousViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AjouterRendezVousViewController.swift; sourceTree = "<group>"; };
+		AAC3C385204D9E86006C5B14 /* AjoutContactMedicalViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AjoutContactMedicalViewController.swift; sourceTree = "<group>"; };
+		AAC3C387204DA1B8006C5B14 /* AjoutExerciceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AjoutExerciceViewController.swift; sourceTree = "<group>"; };
+		AAC3C389204DA1EB006C5B14 /* AjoutTraitementViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AjoutTraitementViewController.swift; sourceTree = "<group>"; };
+		AAC3C38B204DAA83006C5B14 /* AjoutMedicamentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AjoutMedicamentViewController.swift; sourceTree = "<group>"; };
 		AACCDBD420468EB6002112F7 /* MonPK&Moi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "MonPK&Moi.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AACCDBD720468EB6002112F7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AACCDBD920468EB6002112F7 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -45,11 +127,9 @@
 		AACCDBEB20468EB6002112F7 /* MonPK&MoiTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "MonPK&MoiTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AACCDBEF20468EB6002112F7 /* MonPK_MoiTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonPK_MoiTests.swift; sourceTree = "<group>"; };
 		AACCDBF120468EB6002112F7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		AACCDBFB20469122002112F7 /* clock.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = clock.png; path = ../Image/clock.png; sourceTree = "<group>"; };
-		AACCDBFC20469122002112F7 /* information.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = information.png; path = ../Image/information.png; sourceTree = "<group>"; };
-		AACCDBFD20469122002112F7 /* medical-drug-pill.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "medical-drug-pill.png"; path = "../Image/medical-drug-pill.png"; sourceTree = "<group>"; };
-		AACCDBFE20469122002112F7 /* running.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = running.png; path = ../Image/running.png; sourceTree = "<group>"; };
 		AACCDC032046B666002112F7 /* MedicamentTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MedicamentTableViewCell.swift; sourceTree = "<group>"; };
+		AAE13EBF2069250000534DE1 /* SyntheseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SyntheseViewController.swift; sourceTree = "<group>"; };
+		AAE13EC12069253C00534DE1 /* SyntheseJourViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SyntheseJourViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,10 +150,83 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2C50510E205AE2C400850AE7 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				2C505111205AE8B900850AE7 /* Patient.swift */,
+				2C505113205AEF8600850AE7 /* Exercice.swift */,
+				2C505115205AF10F00850AE7 /* Contact_perso.swift */,
+				2C505117205AF23E00850AE7 /* Evenement.swift */,
+				2C9864C1205BA9B400788C91 /* Medecin.swift */,
+				2C9864C3205BADAB00788C91 /* Medicament.swift */,
+				2C9864C5205BAF3900788C91 /* Prise_medicament.swift */,
+				2C9864C7205BB0A500788C91 /* Rdv.swift */,
+				2C9864C9205BB15400788C91 /* Synthese.swift */,
+				2C9864CB205BB60600788C91 /* Test_motricite.swift */,
+				2C9864CD205BB73000788C91 /* Traitement.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		AA4A253520591DE5001480E5 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				AA4A253620591E17001480E5 /* ManageErrorHelper.swift */,
+				AA4A253B205929D0001480E5 /* ManageCoreData.swift */,
+			);
+			name = Helper;
+			sourceTree = "<group>";
+		};
+		AA4A25382059241A001480E5 /* DAO */ = {
+			isa = PBXGroup;
+			children = (
+				AA4A2539205928D4001480E5 /* PatientDAOext.swift */,
+				2C5050FA205AB97E00850AE7 /* ExerciceDAOext.swift */,
+				2C5050FC205ADD2600850AE7 /* Contact_persoDAOext.swift */,
+				2C5050FE205ADDA800850AE7 /* EvenementDAOext.swift */,
+				2C505100205ADE1F00850AE7 /* MedecinDAOext.swift */,
+				2C505102205ADE5D00850AE7 /* MedicamentDAOext.swift */,
+				2C505104205AE07B00850AE7 /* Prise_medicamentDAOext.swift */,
+				2C505106205AE0B900850AE7 /* RdvDAOext.swift */,
+				2C505108205AE11500850AE7 /* SyntheseDAOext.swift */,
+				2C50510A205AE16900850AE7 /* Test_motriciteDAOext.swift */,
+				2C50510C205AE1A600850AE7 /* TraitementDAOext.swift */,
+			);
+			name = DAO;
+			sourceTree = "<group>";
+		};
+		AA5E19B6204D96DD00C25FC1 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				AAAB8FCF20691FB90094880E /* SyntheseTableViewCell.swift */,
+				AAE13EC12069253C00534DE1 /* SyntheseJourViewController.swift */,
+				AAE13EBF2069250000534DE1 /* SyntheseViewController.swift */,
+				2C827B15205A62F100376D55 /* ExerciceTableViewCell.swift */,
+				2C20C91F205980A900BF6D46 /* ContactTableViewCell.swift */,
+				AA5E19B9204D973F00C25FC1 /* AjoutContactPersoViewController.swift */,
+				AA5E19BB204D979900C25FC1 /* CoachViewController.swift */,
+				AA5E19BD204D97B500C25FC1 /* ContactViewController.swift */,
+				AA5E19AC204D6CEC00C25FC1 /* PilulierViewController.swift */,
+				AACCDC032046B666002112F7 /* MedicamentTableViewCell.swift */,
+				AA5E19BF204D97F700C25FC1 /* EditInformationPersoViewController.swift */,
+				AAC3C385204D9E86006C5B14 /* AjoutContactMedicalViewController.swift */,
+				AAC3C387204DA1B8006C5B14 /* AjoutExerciceViewController.swift */,
+				AAC3C389204DA1EB006C5B14 /* AjoutTraitementViewController.swift */,
+				AAC3C38B204DAA83006C5B14 /* AjoutMedicamentViewController.swift */,
+				AAAC5A48204E786700D4DD99 /* AgendaViewController.swift */,
+				AAAC5A4A204E7D2700D4DD99 /* AjouterRendezVousViewController.swift */,
+				AA81A81E20517C7A0056CFA8 /* TraceurViewController.swift */,
+				AA81A82020517CA20056CFA8 /* QuestionnaireViewController.swift */,
+				AA81A822205180B00056CFA8 /* SignalEvenementViewController.swift */,
+				2C20C91D2059798400BF6D46 /* MedecinTableViewCell.swift */,
+				AA4F85372062C85E0071E300 /* RdvTableViewCell.swift */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
 		AACCDBCB20468EB6002112F7 = {
 			isa = PBXGroup;
 			children = (
-				AACCDBFA204690FF002112F7 /* Images */,
 				AACCDBD620468EB6002112F7 /* MonPK&Moi */,
 				AACCDBEE20468EB6002112F7 /* MonPK&MoiTests */,
 				AACCDBD520468EB6002112F7 /* Products */,
@@ -92,15 +245,17 @@
 		AACCDBD620468EB6002112F7 /* MonPK&Moi */ = {
 			isa = PBXGroup;
 			children = (
+				2C50510E205AE2C400850AE7 /* Model */,
+				AA4A25382059241A001480E5 /* DAO */,
+				AA4A253520591DE5001480E5 /* Helper */,
+				AA5E19B6204D96DD00C25FC1 /* Controller */,
 				AACCDBD720468EB6002112F7 /* AppDelegate.swift */,
 				AACCDBD920468EB6002112F7 /* ViewController.swift */,
 				AACCDBDB20468EB6002112F7 /* Main.storyboard */,
-				AA5E19AC204D6CEC00C25FC1 /* PilulierViewController.swift */,
 				AACCDBE120468EB6002112F7 /* Assets.xcassets */,
 				AACCDBE320468EB6002112F7 /* LaunchScreen.storyboard */,
 				AACCDBE620468EB6002112F7 /* Info.plist */,
 				AACCDBDE20468EB6002112F7 /* MonPK_Moi.xcdatamodeld */,
-				AACCDC032046B666002112F7 /* MedicamentTableViewCell.swift */,
 			);
 			path = "MonPK&Moi";
 			sourceTree = "<group>";
@@ -112,17 +267,6 @@
 				AACCDBF120468EB6002112F7 /* Info.plist */,
 			);
 			path = "MonPK&MoiTests";
-			sourceTree = "<group>";
-		};
-		AACCDBFA204690FF002112F7 /* Images */ = {
-			isa = PBXGroup;
-			children = (
-				AACCDBFB20469122002112F7 /* clock.png */,
-				AACCDBFC20469122002112F7 /* information.png */,
-				AACCDBFD20469122002112F7 /* medical-drug-pill.png */,
-				AACCDBFE20469122002112F7 /* running.png */,
-			);
-			name = Images;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -208,12 +352,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AACCDC0220469122002112F7 /* running.png in Resources */,
-				AACCDC0020469122002112F7 /* information.png in Resources */,
-				AACCDBFF20469122002112F7 /* clock.png in Resources */,
 				AACCDBE520468EB6002112F7 /* LaunchScreen.storyboard in Resources */,
 				AACCDBE220468EB6002112F7 /* Assets.xcassets in Resources */,
-				AACCDC0120469122002112F7 /* medical-drug-pill.png in Resources */,
 				AACCDBDD20468EB6002112F7 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -233,10 +373,54 @@
 			buildActionMask = 2147483647;
 			files = (
 				AACCDBDA20468EB6002112F7 /* ViewController.swift in Sources */,
+				2C505118205AF23E00850AE7 /* Evenement.swift in Sources */,
+				2C9864C4205BADAB00788C91 /* Medicament.swift in Sources */,
+				2C505105205AE07B00850AE7 /* Prise_medicamentDAOext.swift in Sources */,
 				AACCDBD820468EB6002112F7 /* AppDelegate.swift in Sources */,
+				2C50510D205AE1A600850AE7 /* TraitementDAOext.swift in Sources */,
+				2C9864CE205BB73000788C91 /* Traitement.swift in Sources */,
+				2C505112205AE8B900850AE7 /* Patient.swift in Sources */,
+				AA5E19C0204D97F700C25FC1 /* EditInformationPersoViewController.swift in Sources */,
+				AAC3C386204D9E86006C5B14 /* AjoutContactMedicalViewController.swift in Sources */,
+				AA81A82120517CA20056CFA8 /* QuestionnaireViewController.swift in Sources */,
+				2C9864C6205BAF3900788C91 /* Prise_medicament.swift in Sources */,
 				AACCDC042046B666002112F7 /* MedicamentTableViewCell.swift in Sources */,
+				2C505109205AE11500850AE7 /* SyntheseDAOext.swift in Sources */,
+				2C5050FB205AB97E00850AE7 /* ExerciceDAOext.swift in Sources */,
+				2C9864C8205BB0A500788C91 /* Rdv.swift in Sources */,
+				AAC3C38A204DA1EB006C5B14 /* AjoutTraitementViewController.swift in Sources */,
 				AACCDBE020468EB6002112F7 /* MonPK_Moi.xcdatamodeld in Sources */,
+				AA5E19BC204D979900C25FC1 /* CoachViewController.swift in Sources */,
+				2C9864CC205BB60600788C91 /* Test_motricite.swift in Sources */,
+				2C827B16205A62F100376D55 /* ExerciceTableViewCell.swift in Sources */,
+				2C9864C2205BA9B400788C91 /* Medecin.swift in Sources */,
+				2C5050FF205ADDA800850AE7 /* EvenementDAOext.swift in Sources */,
+				AA5E19BE204D97B500C25FC1 /* ContactViewController.swift in Sources */,
+				AA81A823205180B00056CFA8 /* SignalEvenementViewController.swift in Sources */,
+				AAE13EC02069250000534DE1 /* SyntheseViewController.swift in Sources */,
 				AA5E19AD204D6CEC00C25FC1 /* PilulierViewController.swift in Sources */,
+				AAAC5A4B204E7D2700D4DD99 /* AjouterRendezVousViewController.swift in Sources */,
+				AA81A81F20517C7A0056CFA8 /* TraceurViewController.swift in Sources */,
+				2C9864CA205BB15400788C91 /* Synthese.swift in Sources */,
+				2C505114205AEF8600850AE7 /* Exercice.swift in Sources */,
+				AA4A253C205929D0001480E5 /* ManageCoreData.swift in Sources */,
+				2C505116205AF10F00850AE7 /* Contact_perso.swift in Sources */,
+				2C20C920205980A900BF6D46 /* ContactTableViewCell.swift in Sources */,
+				AAE13EC22069253C00534DE1 /* SyntheseJourViewController.swift in Sources */,
+				2C505103205ADE5D00850AE7 /* MedicamentDAOext.swift in Sources */,
+				AA5E19BA204D973F00C25FC1 /* AjoutContactPersoViewController.swift in Sources */,
+				AA4A253720591E17001480E5 /* ManageErrorHelper.swift in Sources */,
+				2C505107205AE0B900850AE7 /* RdvDAOext.swift in Sources */,
+				2C20C91E2059798400BF6D46 /* MedecinTableViewCell.swift in Sources */,
+				2C5050FD205ADD2600850AE7 /* Contact_persoDAOext.swift in Sources */,
+				AAC3C388204DA1B8006C5B14 /* AjoutExerciceViewController.swift in Sources */,
+				2C505101205ADE1F00850AE7 /* MedecinDAOext.swift in Sources */,
+				AAAC5A49204E786700D4DD99 /* AgendaViewController.swift in Sources */,
+				AA4F85382062C85E0071E300 /* RdvTableViewCell.swift in Sources */,
+				AAAB8FD020691FB90094880E /* SyntheseTableViewCell.swift in Sources */,
+				AAC3C38C204DAA83006C5B14 /* AjoutMedicamentViewController.swift in Sources */,
+				AA4A253A205928D4001480E5 /* PatientDAOext.swift in Sources */,
+				2C50510B205AE16900850AE7 /* Test_motriciteDAOext.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
