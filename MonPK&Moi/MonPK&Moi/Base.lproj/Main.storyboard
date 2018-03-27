@@ -917,7 +917,7 @@
                     <tabBar key="tabBar" contentMode="scaleToFill" id="CNK-Kd-tlJ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.95709651708602905" green="0.99978440999984741" blue="0.22618913650512695" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </tabBar>
                     <connections>
                         <segue destination="LgB-fQ-55S" kind="relationship" relationship="viewControllers" id="2AK-gw-mlP"/>
