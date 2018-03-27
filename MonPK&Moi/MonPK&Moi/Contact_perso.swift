@@ -52,10 +52,15 @@ class Contact_perso {
         }
     }
     
+    /// Function to delete a personnal contact
     func delete(){
         Contact_persoDAO.deleteDAO(ForContact: self.dao)
     }
     
+    /// Function to get all the pesonnal contact from the DB
+    ///
+    /// - Returns: a list of personnal contact
+    /// - Throws: throw error
     static func getAll() throws -> [Contact_perso]{
         do{
             return try Contact_persoDAO.getAll()

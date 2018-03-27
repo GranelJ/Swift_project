@@ -10,9 +10,13 @@ import UIKit
 
 class SignalEvenementViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource, UITextFieldDelegate {
 
+    // MARK: - Variable creation
+    
     @IBOutlet weak var eventTypePicker: UIPickerView!
     let pickerData: [String] = ["Somnolence", "Chute", "Hallucination", "Prise de dispersible", " Clic/bolus d'Apokinon"]
     @IBOutlet weak var descriptionTF: UITextField!
+    
+    // MARK: - Function for the view
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,6 +29,9 @@ class SignalEvenementViewController: UIViewController, UIPickerViewDelegate, UIP
         // Dispose of any resources that can be recreated.
     }
     
+    /// Function used when the user press the validate button to add a event
+    ///
+    /// - Parameter sender: any
     @IBAction func ValidateButton(_ sender: Any) {
         let desc = descriptionTF.text ?? ""
         let evtType = eventTypePicker.description
@@ -38,6 +45,8 @@ class SignalEvenementViewController: UIViewController, UIPickerViewDelegate, UIP
         }
     }
     
+    // MARK: - Picker management
+    
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
     }
@@ -50,19 +59,11 @@ class SignalEvenementViewController: UIViewController, UIPickerViewDelegate, UIP
         return pickerData[row]
     }
 
+    // MARK: - Keyboard management for textfield
+    
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
         return true
     }
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

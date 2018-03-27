@@ -38,6 +38,10 @@ class EditInformationPersoViewController: UIViewController, UITextFieldDelegate 
         // Pass the selected object to the new view controller.
     }
     */
+    
+    /// Function called after editing the patient's personnal information
+    ///
+    /// - Parameter sender: any
     @IBAction func unwindToContactListAfterSavingNewPerson(_ sender: Any) {
         let nom = NomTF.text ?? ""
         let prenom = PrenomTF.text ?? ""
@@ -57,9 +61,15 @@ class EditInformationPersoViewController: UIViewController, UITextFieldDelegate 
     }
     
     // MARK: - helper methods
+    
+    /// Function used to edit the personnal information of the patient
+    ///
+    /// - Parameters:
+    ///   - nom: the patient's new lastname
+    ///   - prenom: the patient's new firstname
+    ///   - dateNaissance: the patient's new birth date
+    ///   - TpsPrep: the patient's new preparation time
     func editPatient(nom: String, prenom: String, dateNaissance: Date, TpsPrep: Int64){
-        //create Patient managedObj
-        
         do{
             let patient = try Patient.get()
             patient?.nom = nom
@@ -77,6 +87,8 @@ class EditInformationPersoViewController: UIViewController, UITextFieldDelegate 
             return
         }
     }
+    
+    // MARK: - Keyboard management for textfield
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()

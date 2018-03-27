@@ -44,10 +44,15 @@ class Evenement {
         }
     }
     
+    /// Function to delete an event
     func delete(){
         EvenementDAO.deleteDAO(ForEvenement: self.dao)
     }
     
+    /// Function to get all the events from the DB
+    ///
+    /// - Returns: a list of event
+    /// - Throws: throw error
     static func getAll() throws -> [Evenement]{
         do{
             return try EvenementDAO.getAll()

@@ -44,10 +44,15 @@ class Synthese {
         }
     }
     
+    /// Function to delete a synthese
     func delete(){
         SyntheseDAO.deleteDAO(ForSynthese: self.dao)
     }
     
+    /// Function to get all the synthese
+    ///
+    /// - Returns: a list a synthese
+    /// - Throws: throw error
     static func getAll() throws -> [Synthese]{
         do{
             return try SyntheseDAO.getAll()

@@ -11,11 +11,15 @@ import CoreData
 
 class CoachViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
+    // MARK: - Variable creation
+    
     var exercices : [Exercice] = []
     
     var nbJour: Int64 = -1
     
     @IBOutlet weak var exercicesTable: UITableView!
+    
+    // MARK: - TableView Management
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 
@@ -81,6 +85,12 @@ class CoachViewController: UIViewController, UITableViewDataSource, UITableViewD
         }
     }
     
+    // MARK: - Delete management
+    
+    /// Function to delete an exercice from the table view
+    ///
+    /// - Parameter index: the index corresponding to the position of the exercice to delete in the liste
+    /// - Returns: returns true
     func delete_exercice(contactWithIndex index: Int) -> Bool{
         let exercice = self.exercices[index]
         exercice.delete()
@@ -88,6 +98,11 @@ class CoachViewController: UIViewController, UITableViewDataSource, UITableViewD
         return true
     }
     
+    // MARK: - Tableview refreshment
+    
+    /// Fucntion executed after adding an exercice from the form to refresh the tableview
+    ///
+    /// - Parameter segue: the segue that lead to this page from the from
     @IBAction func unwindAfterAddExercice(segue: UIStoryboardSegue){
         do{
             try exercices = Exercice.getAllOrdered()
@@ -96,15 +111,5 @@ class CoachViewController: UIViewController, UITableViewDataSource, UITableViewD
             ManageErrorHelper.alertError(view: self, WithTitle: "\(error)", andMessage: "\(error.userInfo)")
         }
     }
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+    
 }
