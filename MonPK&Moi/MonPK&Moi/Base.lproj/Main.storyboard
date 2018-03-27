@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G1212" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="0jM-M5-Nif">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="0jM-M5-Nif">
     <device id="retina5_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -1214,7 +1214,8 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <segue destination="Wqf-nw-beQ" kind="show" id="KRy-M8-ci0"/>
+                                            <outlet property="dateSynthese" destination="tvk-s7-Ewg" id="t8H-n8-jme"/>
+                                            <segue destination="Wqf-nw-beQ" kind="show" identifier="synthese" id="KRy-M8-ci0"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -1227,6 +1228,9 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="Synthèse" id="3qv-5F-t3O"/>
+                    <connections>
+                        <outlet property="syntheseTable" destination="Jmj-kC-GwZ" id="9tG-Sf-5QF"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="m54-jF-gf2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1244,8 +1248,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="I5h-6M-DKq">
-                                <rect key="frame" x="20" y="148" width="374" height="29"/>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="I5h-6M-DKq">
+                                <rect key="frame" x="20" y="64" width="374" height="29"/>
                                 <segments>
                                     <segment title="Jour 1"/>
                                     <segment title="Jour 2"/>
@@ -1253,25 +1257,66 @@
                                     <segment title="Jour 4"/>
                                     <segment title="Jour 5"/>
                                 </segments>
+                                <connections>
+                                    <action selector="switchDay:" destination="Wqf-nw-beQ" eventType="valueChanged" id="XH5-Zp-HeP"/>
+                                </connections>
                             </segmentedControl>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="TYf-Mp-GRm">
-                                <rect key="frame" x="87" y="304" width="240" height="128"/>
+                                <rect key="frame" x="20" y="100" width="374" height="554"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="hourCell" id="DyS-hT-bKN" customClass="JourTableViewCell" customModule="MonPK_Moi" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="374" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="DyS-hT-bKN" id="atO-8F-Gze">
+                                            <rect key="frame" x="0.0" y="0.0" width="374" height="44"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Heure" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bMj-Of-y3X">
+                                                    <rect key="frame" x="8" y="0.0" width="77" height="44"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Etat" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7if-AO-rYe">
+                                                    <rect key="frame" x="93" y="8" width="130" height="28"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="etatLabel" destination="7if-AO-rYe" id="pFC-oD-3c8"/>
+                                            <outlet property="heureLabel" destination="bMj-Of-y3X" id="Y7a-qh-gGs"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="Wqf-nw-beQ" id="DUo-FM-eZn"/>
+                                    <outlet property="delegate" destination="Wqf-nw-beQ" id="Tg4-sW-dys"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="trailingMargin" secondItem="I5h-6M-DKq" secondAttribute="trailing" id="MF2-5y-bce"/>
                             <constraint firstItem="I5h-6M-DKq" firstAttribute="centerX" secondItem="FUM-Xd-U2X" secondAttribute="centerX" id="dFF-CE-fyd"/>
+                            <constraint firstItem="I5h-6M-DKq" firstAttribute="top" secondItem="6h3-sQ-KuB" secondAttribute="bottom" id="qg0-zj-SZq"/>
                             <constraint firstItem="I5h-6M-DKq" firstAttribute="leading" secondItem="FUM-Xd-U2X" secondAttribute="leadingMargin" id="vnH-Sv-f3H"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Synthèse journalière" id="Nds-dp-MB5"/>
+                    <connections>
+                        <outlet property="jourTable" destination="TYf-Mp-GRm" id="tPy-ml-g1U"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EgW-32-bjW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-226" y="1860"/>
+            <point key="canvasLocation" x="-226.08695652173915" y="1859.5108695652175"/>
         </scene>
         <!--Ajout d'un médicament-->
         <scene sceneID="F9g-cr-Z1l">

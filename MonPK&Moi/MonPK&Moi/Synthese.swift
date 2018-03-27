@@ -36,11 +36,11 @@ class Synthese {
         }
     }
     
-    init(forHeureDebut heure_debut: Int64,forHeureFin heure_fin: Int64,forPeriodicite periodicite: Int64){
-        if let dao = SyntheseDAO.searchDAO(forHeureDebut: heure_debut,forHeureFin: heure_fin,forPeriodicite: periodicite){
+    init(forHeureDebut heure_debut: Int64,forHeureFin heure_fin: Int64,forPeriodicite periodicite: Int64, forRdv rdv: RdvDAO){
+        if let dao = SyntheseDAO.searchDAO(forHeureDebut: heure_debut,forHeureFin: heure_fin,forPeriodicite: periodicite, forRdv: rdv){
             self.dao = dao
         }else{
-            self.dao = SyntheseDAO.createDAO(forHeureDebut: heure_debut,forHeureFin: heure_fin,forPeriodicite: periodicite)
+            self.dao = SyntheseDAO.createDAO(forHeureDebut: heure_debut,forHeureFin: heure_fin,forPeriodicite: periodicite, forRdv: rdv)
         }
     }
     

@@ -66,4 +66,12 @@ class Test_motricite {
         }
     }
     
+    static func getAllDiffDay(diff: Int, date: Date) throws -> [Test_motricite]{
+        do{
+            return try Test_motriciteDAO.getAllDiffDay(diff: diff,date: date)
+        }catch{
+            throw error
+        }
+    }
+    
 }

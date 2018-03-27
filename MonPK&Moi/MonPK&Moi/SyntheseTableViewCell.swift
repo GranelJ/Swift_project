@@ -10,6 +10,8 @@ import UIKit
 
 class SyntheseTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var dateSynthese: UILabel!
+    var date_rdv: Date!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
