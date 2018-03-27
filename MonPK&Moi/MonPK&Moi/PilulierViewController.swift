@@ -10,8 +10,12 @@ import UIKit
 
 class PilulierViewController: UIViewController, UITableViewDataSource, UITableViewDelegate{
 
+    // MARK: - Variable creation
+    
     var traitements : [Traitement] = []
     @IBOutlet weak var PriseMedicamentTable: UITableView!
+    
+    // MARK: - Function for the view
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,6 +31,8 @@ class PilulierViewController: UIViewController, UITableViewDataSource, UITableVi
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    // MARK: - TableView Management
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.traitements.count
@@ -57,7 +63,11 @@ class PilulierViewController: UIViewController, UITableViewDataSource, UITableVi
         }
     }
 
+    // MARK: - TableView refreshment
     
+    /// Function called after adding a new treatment to refresh the tableview
+    ///
+    /// - Parameter segue: the segue that lead to the Pilulierview from the add traitement form
     @IBAction func unwindAfterAddingTraitement(segue: UIStoryboardSegue){
         do{
             try traitements = TraitementDAO.getAll()
@@ -68,6 +78,11 @@ class PilulierViewController: UIViewController, UITableViewDataSource, UITableVi
     }
     
     // MARK: - Delete management
+    
+    /// Function to delete a treatment from the tableview
+    ///
+    /// - Parameter index: the index of the traitement to delete
+    /// - Returns: returns true
     func delete_traitement(traitementWithIndex index: Int) -> Bool{
         let traitement = self.traitements[index]
         traitement.delete()

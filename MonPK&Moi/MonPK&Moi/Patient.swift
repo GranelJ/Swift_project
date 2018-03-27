@@ -52,10 +52,15 @@ class Patient {
         }
     }
     
+    /// Function to delete a patient
     func delete(){
         PatientDAO.deleteDAO(ForPatient: self.dao)
     }
     
+    /// Function to get all the patient from the DB
+    ///
+    /// - Returns: a patient list
+    /// - Throws: throw error
     static func getAll() throws -> [Patient]{
         do{
             return try PatientDAO.getAll()
@@ -64,6 +69,10 @@ class Patient {
         }
     }
     
+    /// Function to get the patient from the DB
+    ///
+    /// - Returns: a patient
+    /// - Throws: throw error
     static func get() throws -> Patient?{
         do{
             return try PatientDAO.get()

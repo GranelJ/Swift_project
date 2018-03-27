@@ -27,13 +27,17 @@ class Traitement {
         }else{
             self.dao = TraitementDAO.createDAO(forMomentPrise: momentPrise, forMedicament: newMedicament)
         }
-        //self.dao.traitement_medicament=newMedicament
     }
     
+    /// Function to delete a treatment
     func delete(){
         TraitementDAO.deleteDAO(ForTraitement: self.dao)
     }
     
+    /// Function to get all the treatment from the DB
+    ///
+    /// - Returns: a list of treatement
+    /// - Throws: throw error
     static func getAll() throws -> [Traitement]{
         do{
             return try TraitementDAO.getAll()

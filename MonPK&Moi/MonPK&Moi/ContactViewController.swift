@@ -11,6 +11,8 @@ import CoreData
 
 class ContactViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
+    // MARK: - Variable creation
+    
     var medecins : [Medecin] = []
     var contacts : [Contact_perso] = []
     var patient : Patient?
@@ -22,6 +24,8 @@ class ContactViewController: UIViewController, UITableViewDataSource, UITableVie
     @IBOutlet weak var PrenomLabel: UILabel!
     @IBOutlet weak var TpsPreplabel: UILabel!
     @IBOutlet weak var Agelabel: UILabel!
+    
+    //MARK: - Function for the view
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -64,7 +68,11 @@ class ContactViewController: UIViewController, UITableViewDataSource, UITableVie
         // Dispose of any resources that can be recreated.
     }
     
-    //refresh medecinsTable
+    //MARK: - TableView Resfreshment
+    
+    /// Function called after adding a medical contact to refresh the medical contact list
+    ///
+    /// - Parameter segue: the segue that lead to the contactview from the add medical contact form
     @IBAction func unwindAfterAddContactMedical(segue: UIStoryboardSegue){
         do{
             try self.medecins = MedecinDAO.getAll()
@@ -74,7 +82,9 @@ class ContactViewController: UIViewController, UITableViewDataSource, UITableVie
         }
     }
     
-    //refresh contactsTable
+    /// Function called after adding a personnal contact to refresh the personnal contact tableview
+    ///
+    /// - Parameter segue: the segue that lead to the contactview from the add personnal contact form
     @IBAction func unwindAfterAddContactPerso(segue: UIStoryboardSegue){
         do{
             try self.contacts = Contact_persoDAO.getAll()
@@ -84,7 +94,9 @@ class ContactViewController: UIViewController, UITableViewDataSource, UITableVie
         }
     }
     
-    //refresh personal info
+    /// Function called after editing personnal information to update the personnal information in the view
+    ///
+    /// - Parameter segue: the segue that lead to the contactview from the edit info form
     @IBAction func unwindAfterEditInfoPerso(segue: UIStoryboardSegue){
         do{
             patient = try PatientDAO.get()
@@ -102,6 +114,7 @@ class ContactViewController: UIViewController, UITableViewDataSource, UITableVie
     }
 
     // MARK: - Table View Management
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = UITableViewCell()
@@ -165,30 +178,27 @@ class ContactViewController: UIViewController, UITableViewDataSource, UITableVie
     }
     
     // MARK: - Delete management
+    
+    /// Function to delete a personnal contact from the tableview
+    ///
+    /// - Parameter index: the index of the personnal contact to delete
+    /// - Returns: returns true
     func delete_contact(contactWithIndex index: Int) -> Bool{
         let contact = self.contacts[index]
         contact.delete()
         self.contacts.remove(at: index)
         return true
- 
     }
 
+    /// Function to delete a medical contact from the tableview
+    ///
+    /// - Parameter index: the index of the medical contact to delete
+    /// - Returns: returns true
     func delete_medecin(contactWithIndex index: Int) -> Bool{
         let medecin = self.medecins[index]
         medecin.delete()
         self.medecins.remove(at: index)
         return true
-
     }
-    
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

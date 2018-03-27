@@ -10,9 +10,13 @@ import UIKit
 
 class QuestionnaireViewController: UIViewController {
 
+    // MARK: - Variable creation
+    
     @IBOutlet weak var switchON: UISwitch!
     @IBOutlet weak var switchDYS: UISwitch!
     @IBOutlet weak var switchOFF: UISwitch!
+    
+    // MARK: - Function for the view
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,21 +29,33 @@ class QuestionnaireViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    /// Function to turn off the others switch when the On switch in turned on
+    ///
+    /// - Parameter sender: any
     @IBAction func ActSwitchON(_ sender: Any) {
         switchDYS.setOn(false, animated: true)
         switchOFF.setOn(false, animated: true)
     }
 
+    /// Function to turn off the others switch when the DYS switch in turned on
+    ///
+    /// - Parameter sender: any
     @IBAction func ActSwitchDYS(_ sender: Any) {
         switchON.setOn(false, animated: true)
         switchOFF.setOn(false, animated: true)
     }
     
+    /// Function to turn off the others switch when the Off switch in turned on
+    ///
+    /// - Parameter sender: any
     @IBAction func ActSwitchOFF(_ sender: Any) {
         switchON.setOn(false, animated: true)
         switchDYS.setOn(false, animated: true)
     }
     
+    /// Function used when the user press the validate button to add a test
+    ///
+    /// - Parameter sender: any
     @IBAction func validateButton(_ sender: Any) {
         let date_test = Date()
         let reponse: String
@@ -53,14 +69,5 @@ class QuestionnaireViewController: UIViewController {
         Test_motricite(forDate: date_test, forReponse: reponse, forSynthese: nil)//TODO
         self.navigationController?.popViewController(animated: true)
     }
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

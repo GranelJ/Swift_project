@@ -44,10 +44,15 @@ class Medicament {
         }
     }
     
+    /// Function to delete a drug
     func delete(){
         MedicamentDAO.deleteDAO(ForMedicament: self.dao)
     }
     
+    /// Function to get all the drugs from the DB
+    ///
+    /// - Returns: a list of drugs
+    /// - Throws: throw error
     static func getAll() throws -> [Medicament]{
         do{
             return try MedicamentDAO.getAll()
