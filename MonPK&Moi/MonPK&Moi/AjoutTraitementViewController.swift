@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import UserNotifications
 
 class AjoutTraitementViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
 
@@ -24,6 +25,7 @@ class AjoutTraitementViewController: UIViewController, UIPickerViewDelegate, UIP
         }catch let error as NSError{
             ManageErrorHelper.alertError(view: self, WithTitle: "\(error)", andMessage: "\(error.userInfo)")
         }
+        UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound, .badge], completionHandler: {didAllow, erro in})
     }
 
     override func didReceiveMemoryWarning() {
@@ -49,10 +51,31 @@ class AjoutTraitementViewController: UIViewController, UIPickerViewDelegate, UIP
         let medicamentrow = picker.selectedRow(inComponent: 0)
         let medicament = pickerData[medicamentrow]
         let heure = timePicker.date
-        Traitement(forMomentPrise: heure, forMedicament: medicament.dao)
+        let trait = Traitement(forMomentPrise: heure, forMedicament: medicament.dao)
+        let calendar = Calendar.current
+        AddNotification(heure: calendar.component(.hour, from: heure), minute: calendar.component(.minute, from: heure), traitement: trait)
         self.performSegue(withIdentifier: "AddTraitement", sender: self)
     }
 
+    
+    public func AddNotification(heure: Int, minute: Int, traitement: Traitement){
+        let content = UNMutableNotificationContent()
+        content.title = "Prise de " + (traitement.dao.traitement_medicament?.nom)!
+        content.body = "Rappel: Prenez votre médicament " + (traitement.dao.traitement_medicament?.nom)! + " " + (traitement.dao.traitement_medicament?.dosage)!
+        if content.badge == 0{
+            content.badge = NSNumber(integerLiteral: 1)
+        }else{
+            content.badge = UIApplication.shared.applicationIconBadgeNumber + 1 as NSNumber
+        }
+        
+        var dateComponents = DateComponents()
+        dateComponents.hour = heure
+        dateComponents.minute = minute
+        let notificationTrigger = UNCalendarNotificationTrigger(dateMatching: dateComponents, repeats: true)
+        
+        let request = UNNotificationRequest(identifier: UUID().uuidString, content: content, trigger: notificationTrigger)
+        UNUserNotificationCenter.current().add(request, withCompletionHandler: nil)
+    }
     /*
     // MARK: - Navigation
 
